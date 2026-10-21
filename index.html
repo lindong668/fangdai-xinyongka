@@ -51,16 +51,8 @@
   .result .good { color:#16a34a; }
   .rate-hint { font-size:12px; color:#94a3b8; margin-top:2px; }
   .note { font-size:13px; color:#666; margin-top:14px; border-top:1px solid #eee; padding-top:12px; }
-  .ad-box { width:100%; min-height:100px; margin:14px 0; background:#fafafa; border:1px dashed #ddd; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:12px; color:#aaa; overflow:hidden; }
+  .ad-box { display:none; } /* 广告位已隐藏：AdSense 通过后改为 display:block 即可恢复 */
 
-  /* 顶部固定横幅 */
-  .ad-top-fixed { position:fixed; top:0; left:0; width:100%; z-index:9999; background:#fff; text-align:center; }
-  /* 底部固定横幅 */
-  .ad-bottom-fixed { position:fixed; bottom:0; left:0; width:100%; z-index:9999; background:#fff; text-align:center; }
-  /* 防止固定横幅遮挡内容 */
-  body { padding-top:0; padding-bottom:0; }
-  body.has-top-ad { padding-top:90px; }
-  body.has-bottom-ad { padding-bottom:90px; }
   .divider { border:none; border-top:1px dashed #e2e8f0; margin:12px 0; }
   footer { margin-top:30px; font-size:13px; color:#666; text-align:center; }
   footer a { color:#2563eb; text-decoration:none; margin:0 6px; }
@@ -75,10 +67,6 @@
 </style>
 </head>
 <body>
-<!-- Vignette Banner 弹窗广告 开始 -->
-<script>(function(s){s.dataset.zone='12038825',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-<!-- Vignette Banner 弹窗广告 结束 -->
-
 <div class="wrap">
   <!-- 顶部 -->
   <div class="topbar">
@@ -107,12 +95,6 @@
       </div>
     </div>
   </div>
-
-  <!-- 顶部固定横幅广告 In-Page Push Banner 开始 -->
-  <div class="ad-top-fixed">
-    <script>(function(s){s.dataset.zone='12038842',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-  </div>
-  <!-- 顶部固定横幅广告 In-Page Push Banner 结束 -->
 
   <div class="tabs">
     <div class="tab active" data-tab="mortgage" data-i18n="tab_mortgage">🏠 房贷</div>
@@ -185,7 +167,9 @@
       <div class="note" data-i18n="afford_note">银行审批通常要求月供不超过月收入的 50%，国际通行的"安全线"是 28%-36%。</div>
     </div>
 
+    <!-- AD SLOT（AdSense 通过后取消注释）
     <div class="ad-box" data-i18n="ad_mortgage">[广告位] 房贷页内</div>
+    -->
     <div class="note" data-i18n="mortgage_note">数据基于标准房贷公式测算，利率浮动、银行政策差异请以实际审批为准。本工具不构成任何贷款建议。</div>
   </div>
 
@@ -219,7 +203,9 @@
       <div class="result" id="cp_result"></div>
     </div>
 
+    <!-- AD SLOT（AdSense 通过后取消注释）
     <div class="ad-box" data-i18n="ad_credit">[广告位] 信用卡页内</div>
+    -->
     <div class="note" data-i18n="credit_note">银行的"名义年化"=月费率×12，而真实年化(APR)用 IRR 估算，通常接近翻倍。决策前请看清费率条款。</div>
   </div>
 
@@ -234,15 +220,11 @@
     <select id="fx_to"></select>
     <button class="calc" onclick="calcFx()" data-i18n="btn_fx">换算</button>
     <div class="result" id="fx_result" data-i18n="fx_waiting">选择币种后点换算</div>
+    <!-- AD SLOT（AdSense 通过后取消注释）
     <div class="ad-box" data-i18n="ad_fx">[广告位] 汇率页内</div>
+    -->
     <div class="note" data-i18n="fx_note">显示的是<b>每日市场中间价</b>，非银行实时牌价。实际换汇以银行卖出价为准，通常会比中间价高 0.3%~1%。</div>
   </div>
-
-  <!-- 底部固定横幅广告 In-Page Push Banner 开始 -->
-  <div class="ad-bottom-fixed">
-    <script>(function(s){s.dataset.zone='12038865',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-  </div>
-  <!-- 底部固定横幅广告 In-Page Push Banner 结束 -->
 
   <footer>
     <a href="/about.html" data-i18n="footer_about">About</a>·
@@ -252,29 +234,6 @@
 </div>
 
 <script>
-// ============ 广告横幅防遮挡处理 ============
-// 检测固定横幅是否有内容（广告是否加载成功），动态给 body 加 padding 防止遮挡
-(function(){
-  function adjustPadding() {
-    var topAd = document.querySelector('.ad-top-fixed');
-    var bottomAd = document.querySelector('.ad-bottom-fixed');
-    // 给 body 加标记类，由 CSS 控制 padding
-    if (topAd && topAd.children.length > 1) {
-      document.body.classList.add('has-top-ad');
-    }
-    if (bottomAd && bottomAd.children.length > 1) {
-      document.body.classList.add('has-bottom-ad');
-    }
-  }
-  // DOM 加载后执行一次
-  document.addEventListener('DOMContentLoaded', function(){
-    adjustPadding();
-    // 延迟再检查一次，等广告脚本加载渲染完成
-    setTimeout(adjustPadding, 1500);
-    setTimeout(adjustPadding, 3000);
-  });
-})();
-
 // ============ 翻译字典 ============
 const i18n = {
   zh: {
