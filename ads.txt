@@ -1,0 +1,6 @@
+# AdSense 授权文件
+# 审核通过后，把下面这行替换成你自己的信息：
+# google.com, pub-你的CA_PUB_ID, DIRECT, f08c47fec0942fa0
+#
+# 示例（请勿直接使用，需换成你 AdSense 后台的 ID）：
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
