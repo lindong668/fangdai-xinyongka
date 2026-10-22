@@ -129,74 +129,74 @@
   </div>
 
   <div class="tabs">
-    <div class="tab active" data-tab="mortgage" data-i18n="tab_mortgage">🏠 房贷</div>
-    <div class="tab" data-tab="credit" data-i18n="tab_credit">💳 信用卡</div>
-    <div class="tab" data-tab="fx" data-i18n="tab_fx">💱 汇率</div>
+    <div class="tab active" data-tab="mortgage" data-i18n="tab_mortgage">🏠 Mortgage</div>
+    <div class="tab" data-tab="credit" data-i18n="tab_credit">💳 Credit Card</div>
+    <div class="tab" data-tab="fx" data-i18n="tab_fx">💱 Exchange</div>
   </div>
 
   <!-- ========== 房贷 ========== -->
   <div class="card active" id="mortgage">
     <div class="sub-tabs">
-      <div class="sub-tab active" data-sub="loan" data-i18n="sub_loan">🏢 商业/公积金贷款</div>
-      <div class="sub-tab" data-sub="prepay" data-i18n="sub_prepay">⚡ 提前还款测算</div>
-      <div class="sub-tab" data-sub="afford" data-i18n="sub_afford">🛡️ 负债承受力评估</div>
+      <div class="sub-tab active" data-sub="loan" data-i18n="sub_loan">🏢 Loan Calculator</div>
+      <div class="sub-tab" data-sub="prepay" data-i18n="sub_prepay">⚡ Early Repayment</div>
+      <div class="sub-tab" data-sub="afford" data-i18n="sub_afford">🛡️ Affordability</div>
     </div>
 
     <div class="sub-card active" id="loan">
-      <label data-i18n="loan_p_label">贷款本金（元）</label>
+      <label data-i18n="loan_p_label">Loan Principal (¥)</label>
       <input id="loan_p" type="number" value="1000000">
-      <label data-i18n="loan_base_label">基准利率（%）</label>
+      <label data-i18n="loan_base_label">Base Rate (%)</label>
       <input id="loan_base" type="number" value="4.2" step="0.01">
-      <label data-i18n="loan_discount_label">利率折扣</label>
+      <label data-i18n="loan_discount_label">Rate Discount</label>
       <select id="loan_discount">
-        <option value="1" data-i18n="disc_1">不打折 (1.0)</option>
-        <option value="0.95" data-i18n="disc_95">95 折</option>
-        <option value="0.9" data-i18n="disc_9">9 折</option>
-        <option value="0.85" selected data-i18n="disc_85">85 折</option>
-        <option value="0.8" data-i18n="disc_8">8 折</option>
+        <option value="1" data-i18n="disc_1">No discount (1.0)</option>
+        <option value="0.95" data-i18n="disc_95">5% off</option>
+        <option value="0.9" data-i18n="disc_9">10% off</option>
+        <option value="0.85" selected data-i18n="disc_85">15% off</option>
+        <option value="0.8" data-i18n="disc_8">20% off</option>
       </select>
-      <label data-i18n="loan_years_label">年限（年）</label>
+      <label data-i18n="loan_years_label">Term (Years)</label>
       <input id="loan_years" type="number" value="30">
-      <label data-i18n="loan_type_label">还款方式</label>
+      <label data-i18n="loan_type_label">Repayment Method</label>
       <select id="loan_type">
-        <option value="equal" data-i18n="repay_equal">等额本息</option>
-        <option value="principal" data-i18n="repay_principal">等额本金</option>
+        <option value="equal" data-i18n="repay_equal">Equal Installments</option>
+        <option value="principal" data-i18n="repay_principal">Equal Principal</option>
       </select>
-      <label data-i18n="loan_lpr_label">预估 LPR 未来涨幅（%，压力测试）</label>
+      <label data-i18n="loan_lpr_label">Estimated Future LPR Increase (%) - Stress Test</label>
       <input id="loan_lpr" type="number" value="0" step="0.1">
-      <div class="rate-hint" data-i18n="loan_lpr_hint">填 0.5 表示未来利率可能再涨 0.5%，看压力下的月供</div>
-      <button class="calc" onclick="calcLoan()" data-i18n="btn_analyze">开始分析</button>
+      <div class="rate-hint" data-i18n="loan_lpr_hint">Enter 0.5 to see monthly payment if rates rise 0.5%</div>
+      <button class="calc" onclick="calcLoan()" data-i18n="btn_analyze">Analyze</button>
       <div class="result" id="loan_result"></div>
     </div>
 
     <div class="sub-card" id="prepay">
-      <label data-i18n="pp_p_label">剩余贷款本金（元）</label>
+      <label data-i18n="pp_p_label">Remaining Principal (¥)</label>
       <input id="pp_p" type="number" value="800000">
-      <label data-i18n="pp_rate_label">当前年利率（%）</label>
+      <label data-i18n="pp_rate_label">Current Annual Rate (%)</label>
       <input id="pp_rate" type="number" value="3.57" step="0.01">
-      <label data-i18n="pp_years_label">剩余年限（年）</label>
+      <label data-i18n="pp_years_label">Remaining Years</label>
       <input id="pp_years" type="number" value="25">
-      <label data-i18n="pp_amount_label">计划提前还款金额（元）</label>
+      <label data-i18n="pp_amount_label">Early Repayment Amount (¥)</label>
       <input id="pp_amount" type="number" value="200000">
-      <label data-i18n="pp_strategy_label">还款后策略</label>
+      <label data-i18n="pp_strategy_label">Strategy After Repayment</label>
       <select id="pp_strategy">
-        <option value="reduce-term" data-i18n="pp_strategy_term">缩短年限，月供不变（推荐，更省利息）</option>
-        <option value="reduce-payment" data-i18n="pp_strategy_pay">月供减少，年限不变</option>
+        <option value="reduce-term" data-i18n="pp_strategy_term">Shorten term, keep payment (recommended, saves more interest)</option>
+        <option value="reduce-payment" data-i18n="pp_strategy_pay">Reduce payment, keep term</option>
       </select>
-      <button class="calc" onclick="calcPrepay()" data-i18n="btn_prepay">测算提前还款</button>
+      <button class="calc" onclick="calcPrepay()" data-i18n="btn_prepay">Calculate Early Repayment</button>
       <div class="result" id="pp_result"></div>
     </div>
 
     <div class="sub-card" id="afford">
-      <label data-i18n="af_income_label">家庭月收入（元）</label>
+      <label data-i18n="af_income_label">Household Monthly Income (¥)</label>
       <input id="af_income" type="number" value="20000">
-      <label data-i18n="af_other_label">其他固定月支出（车贷/消费贷等，元）</label>
+      <label data-i18n="af_other_label">Other Fixed Monthly Expenses (¥)</label>
       <input id="af_other" type="number" value="3000">
-      <label data-i18n="af_payment_label">计划月供（元）</label>
+      <label data-i18n="af_payment_label">Planned Monthly Payment (¥)</label>
       <input id="af_payment" type="number" value="5000">
-      <button class="calc" onclick="calcAfford()" data-i18n="btn_afford">评估承受力</button>
+      <button class="calc" onclick="calcAfford()" data-i18n="btn_afford">Assess Affordability</button>
       <div class="result" id="af_result"></div>
-      <div class="note" data-i18n="afford_note">银行审批通常要求月供不超过月收入的 50%，国际通行的"安全线"是 28%-36%。</div>
+      <div class="note" data-i18n="afford_note">Banks typically require DTI ≤ 50%. International "safe zone" is 28%-36%.</div>
     </div>
 
     <!-- ===== AD SLOT 1：房贷页内 =====
@@ -211,36 +211,36 @@
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 ===== /AD SLOT 1 ===== -->
-    <div class="note" data-i18n="mortgage_note">数据基于标准房贷公式测算，利率浮动、银行政策差异请以实际审批为准。本工具不构成任何贷款建议。</div>
+    <div class="note" data-i18n="mortgage_note">Data based on standard mortgage formulas. Rates and policies vary by bank. Not financial advice.</div>
   </div>
 
   <!-- ========== 信用卡 ========== -->
   <div class="card" id="credit">
     <div class="sub-tabs">
-      <div class="sub-tab active" data-sub="apr" data-i18n="sub_apr">💰 分期真实成本</div>
-      <div class="sub-tab" data-sub="compare" data-i18n="sub_compare">📊 多期数对比</div>
+      <div class="sub-tab active" data-sub="apr" data-i18n="sub_apr">💰 Real APR Cost</div>
+      <div class="sub-tab" data-sub="compare" data-i18n="sub_compare">📊 Term Comparison</div>
     </div>
 
     <div class="sub-card active" id="apr">
-      <label data-i18n="cr_p_label">分期本金（元）</label>
+      <label data-i18n="cr_p_label">Installment Principal (¥)</label>
       <input id="cr_p" type="number" value="10000">
-      <label data-i18n="cr_fee_label">月手续费率（%）</label>
+      <label data-i18n="cr_fee_label">Monthly Fee Rate (%)</label>
       <input id="cr_fee" type="number" value="0.6" step="0.01">
-      <label data-i18n="cr_months_label">期数（月）</label>
+      <label data-i18n="cr_months_label">Months</label>
       <input id="cr_months" type="number" value="12">
-      <label data-i18n="cr_invest_label">对比：这笔钱若拿去理财的年化收益（%）</label>
+      <label data-i18n="cr_invest_label">Comparison: Annual investment return if this money was invested (%)</label>
       <input id="cr_invest" type="number" value="3" step="0.1">
-      <div class="rate-hint" data-i18n="cr_invest_hint">分期=放弃这笔钱的理财收益+承担手续费，双重成本</div>
-      <button class="calc" onclick="calcApr()" data-i18n="btn_apr">计算真实成本</button>
+      <div class="rate-hint" data-i18n="cr_invest_hint">Installment = giving up investment returns + paying fees, double cost</div>
+      <button class="calc" onclick="calcApr()" data-i18n="btn_apr">Calculate Real Cost</button>
       <div class="result" id="cr_result"></div>
     </div>
 
     <div class="sub-card" id="compare">
-      <label data-i18n="cp_p_label">分期本金（元）</label>
+      <label data-i18n="cp_p_label">Instalment Principal (¥)</label>
       <input id="cp_p" type="number" value="10000">
-      <label data-i18n="cp_fee_label">月手续费率（%）</label>
+      <label data-i18n="cp_fee_label">Monthly Fee Rate (%)</label>
       <input id="cp_fee" type="number" value="0.6" step="0.01">
-      <button class="calc" onclick="calcCompare()" data-i18n="btn_compare">对比 3/6/12/24 期</button>
+      <button class="calc" onclick="calcCompare()" data-i18n="btn_compare">Compare 3/6/12/24 Months</button>
       <div class="result" id="cp_result"></div>
     </div>
 
@@ -256,20 +256,20 @@
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 ===== /AD SLOT 2 ===== -->
-    <div class="note" data-i18n="credit_note">银行的"名义年化"=月费率×12，而真实年化(APR)用 IRR 估算，通常接近翻倍。决策前请看清费率条款。</div>
+    <div class="note" data-i18n="credit_note">Banks' "nominal APR" = monthly fee × 12. Real APR uses IRR and is typically nearly double. Read terms carefully.</div>
   </div>
 
   <!-- ========== 汇率 ========== -->
   <div class="card" id="fx">
-    <label data-i18n="fx_amount_label">金额</label>
+    <label data-i18n="fx_amount_label">Amount</label>
     <input id="fx_amount" type="number" value="1000">
-    <label data-i18n="fx_from_label">从</label>
+    <label data-i18n="fx_from_label">From</label>
     <select id="fx_from"></select>
     <div style="text-align:center;margin:6px 0;"><button onclick="swapCurrency()" style="background:none;border:1px solid #ddd;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;">⇅</button></div>
-    <label data-i18n="fx_to_label">到</label>
+    <label data-i18n="fx_to_label">To</label>
     <select id="fx_to"></select>
-    <button class="calc" onclick="calcFx()" data-i18n="btn_fx">换算</button>
-    <div class="result" id="fx_result" data-i18n="fx_waiting">选择币种后点换算</div>
+    <button class="calc" onclick="calcFx()" data-i18n="btn_fx">Convert</button>
+    <div class="result" id="fx_result" data-i18n="fx_waiting">Select currencies and click convert</div>
     <!-- ===== AD SLOT 3：汇率页内 =====
      AdSense 通过后：删掉注释标记，把 data-ad-slot 换成后台真实广告单元 ID
 <div class="ad-slot">
@@ -282,7 +282,7 @@
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 ===== /AD SLOT 3 ===== -->
-    <div class="note" data-i18n="fx_note">显示的是<b>每日市场中间价</b>，非银行实时牌价。实际换汇以银行卖出价为准，通常会比中间价高 0.3%~1%。</div>
+    <div class="note" data-i18n="fx_note">Shows <b>daily mid-market rate</b>, not real-time bank rates. Actual exchange uses bank sell rate, typically 0.3%-1% higher than mid-rate.</div>
   </div>
 
   <!-- 指南文章入口卡片 -->
@@ -348,6 +348,7 @@ const i18n = {
     btn_afford: '评估承受力', afford_note: '银行审批通常要求月供不超过月收入的 50%，国际通行的"安全线"是 28%-36%。',
     ad_mortgage: '[广告位] 房贷页内', mortgage_note: '数据基于标准房贷公式测算，利率浮动、银行政策差异请以实际审批为准。本工具不构成任何贷款建议。',
     sub_apr: '💰 分期真实成本', sub_compare: '📊 多期数对比',
+    cp_p_label: '分期本金（元）', cp_fee_label: '月手续费率（%）',
     cr_p_label: '分期本金（元）', cr_fee_label: '月手续费率（%）', cr_months_label: '期数（月）',
     cr_invest_label: '对比：这笔钱若拿去理财的年化收益（%）', cr_invest_hint: '分期=放弃这笔钱的理财收益+承担手续费，双重成本',
     btn_apr: '计算真实成本', btn_compare: '对比 3/6/12/24 期',
@@ -405,6 +406,7 @@ const i18n = {
     btn_afford: 'Assess Affordability', afford_note: 'Banks typically require DTI ≤ 50%. International "safe zone" is 28%-36%.',
     ad_mortgage: '[Ad] Mortgage Page', mortgage_note: 'Data based on standard mortgage formulas. Rates and policies vary by bank. Not financial advice.',
     sub_apr: '💰 Real APR Cost', sub_compare: '📊 Term Comparison',
+    cp_p_label: 'Instalment Principal (¥)', cp_fee_label: 'Monthly Fee Rate (%)',
     cr_p_label: 'Installment Principal (¥)', cr_fee_label: 'Monthly Fee Rate (%)', cr_months_label: 'Months',
     cr_invest_label: 'Comparison: Annual investment return if this money was invested (%)', cr_invest_hint: 'Installment = giving up investment returns + paying fees, double cost',
     btn_apr: 'Calculate Real Cost', btn_compare: 'Compare 3/6/12/24 Months',
@@ -459,6 +461,7 @@ const i18n = {
     btn_afford: 'Evaluar Capacidad', afford_note: 'Los bancos suelen exigir DTI ≤ 50%. La zona segura internacional es 28%-36%.',
     ad_mortgage: '[Anuncio] Página Hipoteca', mortgage_note: 'Datos basados en fórmulas estándar. Las tasas varían según el banco. No es asesoramiento financiero.',
     sub_apr: '💰 Costo Real APR', sub_compare: '📊 Comparar Plazos',
+    cp_p_label: 'Capital de Cuotas (¥)', cp_fee_label: 'Tasa de Comisión Mensual (%)',
     cr_p_label: 'Capital de Cuotas (¥)', cr_fee_label: 'Tasa de Comisión Mensual (%)', cr_months_label: 'Meses',
     cr_invest_label: 'Comparación: retorno anual si se invierte (%)', cr_invest_hint: 'Cuotas = renunciar a ganancias de inversión + pagar comisiones',
     btn_apr: 'Calcular Costo Real', btn_compare: 'Comparar 3/6/12/24 Meses',
@@ -496,6 +499,7 @@ const i18n = {
     btn_afford: 'Évaluer Capacité', afford_note: 'Les banques exigent généralement DTI ≤ 50%. La zone de sécurité est 28%-36%.',
     ad_mortgage: '[Pub] Page Prêt', mortgage_note: 'Données basées sur formules standard. Les taux varient selon la banque.',
     sub_apr: '💰 Coût Réel APR', sub_compare: '📊 Comparer Durées',
+    cp_p_label: 'Capital de Mensualités (¥)', cp_fee_label: 'Taux de Frais Mensuel (%)',
     cr_p_label: 'Capital de Mensualités (¥)', cr_fee_label: 'Taux de Frais Mensuel (%)', cr_months_label: 'Mois',
     cr_invest_label: 'Comparaison : rendement annuel si investi (%)', cr_invest_hint: 'Mensualités = renoncer aux gains d\'investissement + payer des frais',
     btn_apr: 'Calculer Coût Réel', btn_compare: 'Comparer 3/6/12/24 Mois',
@@ -533,6 +537,7 @@ const i18n = {
     btn_afford: 'Tragbarkeit Prüfen', afford_note: 'Banken fordern meist DTI ≤ 50%. Internationale Sicherheitszone ist 28%-36%.',
     ad_mortgage: '[Anzeige] Hypothekenseite', mortgage_note: 'Daten basieren auf Standardformeln. Zinsen variieren je nach Bank.',
     sub_apr: '💰 Realer APR', sub_compare: '📊 Laufzeiten Vergleichen',
+    cp_p_label: 'Ratenkapital (¥)', cp_fee_label: 'Monatliche Gebühr (%)',
     cr_p_label: 'Ratenkapital (¥)', cr_fee_label: 'Monatliche Gebühr (%)', cr_months_label: 'Monate',
     cr_invest_label: 'Vergleich: Jährliche Rendite bei Anlage (%)', cr_invest_hint: 'Raten = Anlagerendite aufgeben + Gebühren zahlen',
     btn_apr: 'Realen Kosten Berechnen', btn_compare: '3/6/12/24 Monate Vergleichen',
@@ -570,6 +575,7 @@ const i18n = {
     btn_afford: '返済能力評価', afford_note: '銀行は通常DTI≤50%を要求。国際的な安全基準は28%-36%。',
     ad_mortgage: '[広告] ローンページ', mortgage_note: '標準的な住宅ローン計算式に基づく。金利は銀行により異なる。',
     sub_apr: '💰 実質APR計算', sub_compare: '📊 期間比較',
+    cp_p_label: '分割元本（元）', cp_fee_label: '月手数料率（%）',
     cr_p_label: '分割元本（元）', cr_fee_label: '月手数料率（%）', cr_months_label: '期間（月）',
     cr_invest_label: '比較：この資金を投資した場合の年利回り（%）', cr_invest_hint: '分割＝投資収益を放棄＋手数料負担、二重のコスト',
     btn_apr: '実質コスト計算', btn_compare: '3/6/12/24ヶ月比較',
@@ -607,6 +613,7 @@ const i18n = {
     btn_afford: '상환 능력 평가', afford_note: '은행은 보통 DTI ≤ 50% 요구. 국제 안전 기준은 28%-36%.',
     ad_mortgage: '[광고] 대출 페이지', mortgage_note: '표준 대출 공식 기반. 금리는 은행마다 다름.',
     sub_apr: '💰 실제 APR 비용', sub_compare: '📊 기간 비교',
+    cp_p_label: '할부 원금 (¥)', cp_fee_label: '월 수수료율 (%)',
     cr_p_label: '할부 원금 (¥)', cr_fee_label: '월 수수료율 (%)', cr_months_label: '개월',
     cr_invest_label: '비교: 이 돈을 투자했을 때 연 수익률 (%)', cr_invest_hint: '할부 = 투자 수익 포기 + 수수료 부담',
     btn_apr: '실제 비용 계산', btn_compare: '3/6/12/24개월 비교',
@@ -644,6 +651,7 @@ const i18n = {
     btn_afford: 'Avaliar Capacidade', afford_note: 'Bancos exigem DTI ≤ 50%. Zona segura internacional é 28%-36%.',
     ad_mortgage: '[Anúncio] Página Hipoteca', mortgage_note: 'Dados baseados em fórmulas padrão. Taxas variam por banco.',
     sub_apr: '💰 Custo Real APR', sub_compare: '📊 Comparar Prazos',
+    cp_p_label: 'Valor Parcelado (¥)', cp_fee_label: 'Taxa de Mensalidade (%)',
     cr_p_label: 'Valor Parcelado (¥)', cr_fee_label: 'Taxa de Mensalidade (%)', cr_months_label: 'Meses',
     cr_invest_label: 'Comparação: retorno anual se investido (%)', cr_invest_hint: 'Parcelamento = abrir mão de ganhos de investimento + pagar taxas',
     btn_apr: 'Calcular Custo Real', btn_compare: 'Comparar 3/6/12/24 Meses',
@@ -681,6 +689,7 @@ const i18n = {
     btn_afford: 'Оценить платежеспособность', afford_note: 'Банки обычно требуют DTI ≤ 50%. Безопасная зона 28%-36%.',
     ad_mortgage: '[Реклама] Страница ипотеки', mortgage_note: 'Данные по стандартным формулам. Ставки различаются.',
     sub_apr: '💰 Реальная стоимость', sub_compare: '📊 Сравнение сроков',
+    cp_p_label: 'Сумма рассрочки (¥)', cp_fee_label: 'Месячная комиссия (%)',
     cr_p_label: 'Сумма рассрочки (¥)', cr_fee_label: 'Месячная комиссия (%)', cr_months_label: 'Месяцев',
     cr_invest_label: 'Сравнение: годовая доходность инвестиций (%)', cr_invest_hint: 'Рассрочка = отказ от инвестиционного дохода + комиссии',
     btn_apr: 'Рассчитать реальную стоимость', btn_compare: 'Сравнить 3/6/12/24 мес',
@@ -718,6 +727,7 @@ const i18n = {
     btn_afford: 'تقييم القدرة', afford_note: 'البنوك تتطلب عادة DTI ≤ 50%. المنطقة الآمنة 28%-36%.',
     ad_mortgage: '[إعلان] صفحة الرهن', mortgage_note: 'البيانات بناءً على صيغ قياسية. الأسعار تختلف حسب البنك.',
     sub_apr: '💰 التكلفة الحقيقية APR', sub_compare: '📊 مقارنة المدد',
+    cp_p_label: 'أصل الأقساط (¥)', cp_fee_label: 'رسوم شهرية (%)',
     cr_p_label: 'أصل الأقساط (¥)', cr_fee_label: 'رسوم شهرية (%)', cr_months_label: 'أشهر',
     cr_invest_label: 'مقارنة: عائد سنوي إذا تم استثمار المبلغ (%)', cr_invest_hint: 'التقسيط = التخلي عن عوائد الاستثمار + دفع الرسوم',
     btn_apr: 'حساب التكلفة الحقيقية', btn_compare: 'مقارنة 3/6/12/24 شهر',
@@ -755,6 +765,7 @@ const i18n = {
     btn_afford: 'Valuta Capacità', afford_note: 'Le banche richiedono solitamente DTI ≤ 50%. Zona sicura 28%-36%.',
     ad_mortgage: '[Annuncio] Pagina Mutuo', mortgage_note: 'Dati basati su formule standard. Tassi variano per banca.',
     sub_apr: '💰 Costo Reale APR', sub_compare: '📊 Confronta Durate',
+    cp_p_label: 'Capitale Rateale (¥)', cp_fee_label: 'Tasso Commissione Mensile (%)',
     cr_p_label: 'Capitale Rateale (¥)', cr_fee_label: 'Tasso Commissione Mensile (%)', cr_months_label: 'Mesi',
     cr_invest_label: 'Confronto: rendimento annuale se investito (%)', cr_invest_hint: 'Rate = rinunciare a guadagni di investimento + pagare commissioni',
     btn_apr: 'Calcola Costo Reale', btn_compare: 'Confronta 3/6/12/24 Mesi',
@@ -792,6 +803,7 @@ const i18n = {
     btn_afford: 'ประเมินความสามารถ', afford_note: 'ธนาคารมักต้องการ DTI ≤ 50% โซนปลอดภัยสากลคือ 28%-36%',
     ad_mortgage: '[โฆษณา] หน้าสินเชื่อ', mortgage_note: 'ข้อมูลตามสูตรมาตรฐาน อัตราดอกเบี้ยแตกต่างกันตามธนาคาร',
     sub_apr: '💰 ต้นทุน APR จริง', sub_compare: '📊 เปรียบเทียบระยะเวลา',
+    cp_p_label: 'เงินต้นผ่อน (¥)', cp_fee_label: 'ค่าธรรมเนียมรายเดือน (%)',
     cr_p_label: 'เงินต้นผ่อน (¥)', cr_fee_label: 'ค่าธรรมเนียมรายเดือน (%)', cr_months_label: 'เดือน',
     cr_invest_label: 'เปรียบเทียบ: ผลตอบแทนรายปีหากนำไปลงทุน (%)', cr_invest_hint: 'ผ่อน = สละผลตอบแทนการลงทุน + จ่ายค่าธรรมเนียม',
     btn_apr: 'คำนวณต้นทุนจริง', btn_compare: 'เปรียบเทียบ 3/6/12/24 เดือน',
@@ -1028,7 +1040,7 @@ function calcApr() {
 function calcCompare() {
   const dict = i18n[currentLang] || i18n.en;
   const P = +cp_p.value, fr = +cp_fee.value/100;
-  let html = `<b>${dict.cp_p_label.replace('（元）','')} ${P.toLocaleString()} 元 / ${dict.cp_fee_label.replace('（%）','')} ${fr*100}%</b><br><br>`;
+  let html = `<b>${dict.cp_p_label} ${P.toLocaleString()} / ${dict.cp_fee_label} ${(fr*100).toFixed(2)}%</b><br><br>`;
   [3, 6, 12, 24].forEach(n => {
     const pay = P/n + P*fr;
     const fee = P*fr*n;
