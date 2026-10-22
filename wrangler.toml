@@ -1,12 +1,12 @@
 # ============================================================
-# 5号 房贷站 CalcHub Pro（k789.cc.cd）—— Cloudflare Workers + Assets
+# 5号 房贷站 CalcHub Pro（k889.de5.net）—— Cloudflare Workers + Assets
 #
 # 部署方式一（推荐，命令行）：
 #   npx wrangler deploy
 #
 # 部署方式二（网页上传）：
 #   CF 控制台 → Workers 和 Pages → 创建 → Workers → 上传本目录
-#   然后在「设置 → 域和路由」里添加自定义域 k789.cc.cd
+#   然后在「设置 → 域和路由」里添加自定义域 k889.de5.net
 #
 # name 必须与 CF 控制台上的 Worker 名字一致
 #   （若控制台里已有别的名字，改这一行即可）
@@ -22,7 +22,7 @@ directory = "./public"
 binding = "ASSETS"
 
 # 路由在 CF 控制台配置：Workers → fangdai-xinyong-ka → 设置 → 域和路由
-# k789.cc.cd/*
+# k889.de5.net/*
 
 # 请求日志（CF 控制台 → Workers → 该站 → Observability 实时查看）
 #

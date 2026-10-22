@@ -1,5 +1,5 @@
 /**
- * 5号 房贷站 CalcHub Pro（k789.cc.cd）—— Cloudflare Workers + Assets
+ * 5号 房贷站 CalcHub Pro（k889.de5.net）—— Cloudflare Workers + Assets
  *
  * ★ 为什么从「纯静态」改成 Workers：
  *   纯静态部署时，Search Console 容易出现「无法抓取 / 类型未知 / 0 个网址」，
@@ -16,8 +16,8 @@ export default {
     const url = new URL(request.url);
 
     // 统一走主域名，避免 www 与非 www 双份索引
-    if (url.hostname === 'www.k789.cc.cd') {
-      return Response.redirect('https://k789.cc.cd' + url.pathname + url.search, 301);
+    if (url.hostname === 'www.k889.de5.net') {
+      return Response.redirect('https://k889.de5.net' + url.pathname + url.search, 301);
     }
 
     const pathname = url.pathname;
@@ -41,7 +41,7 @@ export default {
     /* ★ robots.txt 硬拦截（含 Mediapartners-Google，AdSense 专用爬虫） */
     if (pathname === '/robots.txt') {
       return new Response(
-        'User-agent: Mediapartners-Google\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://k789.cc.cd/sitemap.xml\n',
+        'User-agent: Mediapartners-Google\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://k889.de5.net/sitemap.xml\n',
         {
           status: 200,
           headers: {

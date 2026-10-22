@@ -10,4 +10,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://k789.cc.cd/sitemap.xml
+Sitemap: https://k889.de5.net/sitemap.xml
