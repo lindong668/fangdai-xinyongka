@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta name="google-adsense-account" content="ca-pub-8915931557404979">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8915931557404979" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CalcHub Pro - 专业房贷 / 信用卡 / 汇率工具</title>
+<title>CalcHub Pro - Mortgage, Credit Card &amp; Currency Calculators</title>
+<meta name="description" content="Free online calculators for mortgages, credit card instalment APR and live currency exchange rates. Transparent formulas, runs entirely in your browser, nothing uploaded.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="mortgage calculator, credit card APR calculator, currency converter, exchange rate, loan amortization, prepayment calculator">
+<link rel="canonical" href="https://k789.cc.cd/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="alternate" hreflang="en" href="https://k789.cc.cd/">
+<link rel="alternate" hreflang="zh-Hans" href="https://k789.cc.cd/">
+<link rel="alternate" hreflang="x-default" href="https://k789.cc.cd/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcHub Pro">
+<meta property="og:title" content="CalcHub Pro - Mortgage, Credit Card &amp; Currency Calculators">
+<meta property="og:description" content="Free mortgage analysis, true credit card instalment APR and live currency rates. Transparent formulas, private by design.">
+<meta property="og:url" content="https://k789.cc.cd/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CalcHub Pro - Mortgage, Credit Card &amp; Currency Calculators">
+<meta name="twitter:description" content="Free mortgage analysis, true credit card instalment APR and live currency rates.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CalcHub Pro","url":"https://k789.cc.cd/",
+"applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript",
+"description":"Free mortgage, credit card APR and currency conversion calculators that run entirely in the browser.",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, -apple-system, sans-serif; background:#f5f7fa; color:#222; line-height:1.6; }
@@ -73,27 +97,17 @@
   <!-- 顶部 -->
   <div class="topbar">
     <div>
-      <h1 data-i18n="site_title">CalcHub Pro <span style="font-size:13px;color:#94a3b8;">专业金融计算</span></h1>
-      <div class="sub" data-i18n="site_sub">房贷决策分析 · 信用卡真实成本 · 汇率换算与换汇成本</div>
+      <h1 data-i18n="site_title">CalcHub Pro <span style="font-size:13px;color:#94a3b8;">Financial Calculators</span></h1>
+      <div class="sub" data-i18n="site_sub">Mortgage analysis &middot; True credit card cost &middot; Currency conversion</div>
     </div>
     <div class="lang-switcher">
       <div class="lang-btn" id="langBtn" onclick="toggleLang()">
-        <span id="langLabel">🇨🇳 中文</span>
+        <span id="langLabel">🇺🇸 English</span>
         <span class="arrow">▼</span>
       </div>
       <div class="lang-dropdown" id="langDropdown">
-        <div class="lang-option active" data-lang="zh" onclick="selectLang('zh')"><span class="flag">🇨🇳</span> 中文</div>
         <div class="lang-option" data-lang="en" onclick="selectLang('en')"><span class="flag">🇺🇸</span> English</div>
-        <div class="lang-option" data-lang="es" onclick="selectLang('es')"><span class="flag">🇪🇸</span> Español</div>
-        <div class="lang-option" data-lang="fr" onclick="selectLang('fr')"><span class="flag">🇫🇷</span> Français</div>
-        <div class="lang-option" data-lang="de" onclick="selectLang('de')"><span class="flag">🇩🇪</span> Deutsch</div>
-        <div class="lang-option" data-lang="ja" onclick="selectLang('ja')"><span class="flag">🇯🇵</span> 日本語</div>
-        <div class="lang-option" data-lang="ko" onclick="selectLang('ko')"><span class="flag">🇰🇷</span> 한국어</div>
-        <div class="lang-option" data-lang="pt" onclick="selectLang('pt')"><span class="flag">🇵🇹</span> Português</div>
-        <div class="lang-option" data-lang="ru" onclick="selectLang('ru')"><span class="flag">🇷🇺</span> Русский</div>
-        <div class="lang-option" data-lang="ar" onclick="selectLang('ar')"><span class="flag">🇸🇦</span> العربية</div>
-        <div class="lang-option" data-lang="it" onclick="selectLang('it')"><span class="flag">🇮🇹</span> Italiano</div>
-        <div class="lang-option" data-lang="th" onclick="selectLang('th')"><span class="flag">🇹🇭</span> ไทย</div>
+        <div class="lang-option" data-lang="zh" onclick="selectLang('zh')"><span class="flag">🇨🇳</span> 中文</div>
       </div>
     </div>
   </div>
@@ -229,9 +243,14 @@
   </div>
 
   <footer>
+    <a href="/guides/">Guides</a>·
     <a href="/about.html" data-i18n="footer_about">About</a>·
-    <a href="/privacy.html" data-i18n="footer_privacy">Privacy</a>·
     <a href="/contact.html" data-i18n="footer_contact">Contact</a>
+    <br>
+    <a href="/privacy.html" data-i18n="footer_privacy">Privacy Policy</a>·
+    <a href="/terms.html">Terms of Use</a>·
+    <a href="/disclaimer.html">Disclaimer</a>
+    <p style="margin-top:10px;font-size:12px;color:#94a3b8;">Results are estimates for reference only and do not constitute financial advice.</p>
   </footer>
 </div>
 
@@ -239,6 +258,7 @@
 // ============ 翻译字典 ============
 const i18n = {
   zh: {
+    pp_result_term: '剩余期限', pp_unit_month: '期', pp_saved_months: '提前', pp_unchanged: '保持不变', pp_from: '原为',
     site_title: 'CalcHub Pro <span style="font-size:13px;color:#94a3b8;">专业金融计算</span>',
     site_sub: '房贷决策分析 · 信用卡真实成本 · 汇率换算与换汇成本',
     ad_top: '[广告位] 顶部首屏',
@@ -278,7 +298,8 @@ const i18n = {
     fx_source_label: '数据时间', fx_source_from: '来源'
   },
   en: {
-    site_title: 'CalcHub Pro <span style="font-size:13px;color:#94a3b8;">Pro Financial Calculator</span>',
+    pp_result_term: 'Remaining term', pp_unit_month: 'months', pp_saved_months: 'shortened by', pp_unchanged: 'unchanged', pp_from: 'was',
+    site_title: 'CalcHub Pro <span style="font-size:13px;color:#94a3b8;">Financial Calculators</span>',
     site_sub: 'Mortgage Analysis · Credit Card Real Cost · Exchange Rate & Transfer Cost',
     ad_top: '[Ad] Top Banner',
     tab_mortgage: '🏠 Mortgage', tab_credit: '💳 Credit Card', tab_fx: '💱 Exchange',
@@ -689,10 +710,10 @@ const i18n = {
 // ============ 语言切换逻辑 ============
 let currentLang = 'zh';
 
-function getBrowserLang() {
-  const l = navigator.language || navigator.userLanguage || 'en';
-  const short = l.split('-')[0];
-  return i18n[short] ? short : 'en';
+// ★ 默认永远英文：不根据访客地区/浏览器语言自动切换
+//   只有用户手动选过（存在 localStorage）才用他选的语言
+function getDefaultLang() {
+  return 'en';
 }
 
 function toggleLang() {
@@ -703,11 +724,12 @@ function toggleLang() {
 }
 
 function selectLang(lang) {
+  if (lang !== 'zh' && lang !== 'en') lang = 'en';   // 仅中英
   currentLang = lang;
   localStorage.setItem('calchub_lang', lang);
   applyTranslations();
   // 更新下拉按钮显示
-  const labels = {zh:'🇨🇳 中文',en:'🇺🇸 English',es:'🇪🇸 Español',fr:'🇫🇷 Français',de:'🇩🇪 Deutsch',ja:'🇯🇵 日本語',ko:'🇰🇷 한국어',pt:'🇵🇹 Português',ru:'🇷🇺 Русский',ar:'🇸🇦 العربية',it:'🇮🇹 Italiano',th:'🇹🇭 ไทย'};
+  const labels = {en:'🇺🇸 English', zh:'🇨🇳 中文'};
   document.getElementById('langLabel').textContent = labels[lang] || '🇺🇸 English';
   // 更新选项高亮
   document.querySelectorAll('.lang-option').forEach(opt => {
@@ -755,8 +777,8 @@ document.addEventListener('click', e => {
 // 初始化语言
 (function initLang(){
   const saved = localStorage.getItem('calchub_lang');
-  currentLang = saved || getBrowserLang();
-  const labels = {zh:'🇨🇳 中文',en:'🇺🇸 English',es:'🇪🇸 Español',fr:'🇫🇷 Français',de:'🇩🇪 Deutsch',ja:'🇯🇵 日本語',ko:'🇰🇷 한국어',pt:'🇵🇹 Português',ru:'🇷🇺 Русский',ar:'🇸🇦 العربية',it:'🇮🇹 Italiano',th:'🇹🇭 ไทย'};
+  currentLang = (saved === 'zh' || saved === 'en') ? saved : 'en';
+  const labels = {en:'🇺🇸 English', zh:'🇨🇳 中文'};
   document.getElementById('langLabel').textContent = labels[currentLang] || '🇺🇸 English';
   document.querySelectorAll('.lang-option').forEach(opt => {
     opt.classList.toggle('active', opt.dataset.lang === currentLang);
@@ -821,14 +843,44 @@ function calcPrepay() {
   const dict = i18n[currentLang] || i18n.en;
   const P = +pp_p.value, rate = +pp_rate.value, years = +pp_years.value, amount = +pp_amount.value, strategy = pp_strategy.value;
   const res = monthly(P, rate, years, 'equal');
-  const newRes = monthly(P - amount, rate, years, 'equal');
-  const saved = res.totalInterest - newRes.totalInterest;
+  const B = P - amount;                      // 提前还款后剩余本金
+  const r = rate / 100 / 12;
+
+  let newRes, saved, monthsLeft = null;
+  if (strategy === 'reduce-term') {
+    // ★ 缩短期限：月供保持不变，反解剩余期数
+    //   由 pay = B*r*(1+r)^n / ((1+r)^n - 1)  反解 n：
+    //   n = ln( pay / (pay - B*r) ) / ln(1+r)
+    const target = res.pay;
+    if (r === 0) {
+      monthsLeft = B / (P / (years * 12));
+      newRes = { pay: target, totalInterest: 0 };
+    } else if (target <= B * r) {
+      // 月供不足以覆盖利息，退化处理
+      monthsLeft = years * 12;
+      newRes = monthly(B, rate, years, 'equal');
+    } else {
+      monthsLeft = Math.log(target / (target - B * r)) / Math.log(1 + r);
+      const n = Math.max(1, Math.round(monthsLeft));
+      newRes = { pay: target, totalInterest: target * n - B };
+    }
+    saved = res.totalInterest - newRes.totalInterest;
+  } else {
+    // ★ 减少月供：期限不变，本金减少，重算月供
+    newRes = monthly(B, rate, years, 'equal');
+    saved  = res.totalInterest - newRes.totalInterest;
+    monthsLeft = years * 12;
+  }
   let html = `${dict.result_prepay_before}：${dict.result_monthly} ${res.pay.toFixed(2)} 元，${dict.result_total_interest} ${res.totalInterest.toFixed(2)} 元<br>`;
   html += `${dict.result_prepay_after} <b>${amount.toLocaleString()} 元</b> ${dict.result_prepay_after.replace('提前还款','')}：<br>`;
   if (strategy === 'reduce-term') {
-    html += `${dict.result_monthly} ${dict.pp_strategy_term.replace('（推荐，更省利息）','')}，<br>${dict.result_save} <span class="good"><b>${saved.toFixed(2)} 元</b></span><br>`;
+    const savedMonths = Math.max(0, years * 12 - monthsLeft);
+    html += `${dict.pp_result_term || 'Remaining term'}: <b>${Math.ceil(monthsLeft)} ${dict.pp_unit_month || 'months'}</b> (${dict.pp_saved_months || 'save'} <span class="good">${Math.round(savedMonths)} ${dict.pp_unit_month || 'months'}</span>)<br>`;
+    html += `${dict.result_monthly}: <b>${res.pay.toFixed(2)}</b> (${dict.pp_unchanged || 'unchanged'})<br>`;
+    html += `${dict.result_save}: <span class="good"><b>${saved.toFixed(2)}</b></span><br>`;
   } else {
-    html += `${dict.pp_strategy_pay.replace('（推荐，更省利息）','')}，${dict.result_monthly} ${dict.pp_strategy_pay.replace('（推荐，更省利息）','')} <b>${newRes.pay.toFixed(2)} 元</b>，${dict.result_save} <span class="good"><b>${saved.toFixed(2)} 元</b></span>`;
+    html += `${dict.result_monthly}: <b>${newRes.pay.toFixed(2)}</b> (${dict.pp_from || 'was'} ${res.pay.toFixed(2)})<br>`;
+    html += `${dict.result_save}: <span class="good"><b>${saved.toFixed(2)}</b></span>`;
   }
   html += `<hr class="divider"><span class="badge good">${dict.result_save}</span> ${dict.result_save.replace('节省利息','')}`;
   pp_result.innerHTML = html;
