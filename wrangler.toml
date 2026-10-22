@@ -11,7 +11,7 @@
 # name 必须与 CF 控制台上的 Worker 名字一致
 #   （若控制台里已有别的名字，改这一行即可）
 # ============================================================
-name = "fangdai-xinyong-ka"
+name = 'fangdai-xinyong-ka'
 # 账号 ID 写死，deploy 时不再交互提问选账号
 account_id = "d49e51b1279804c22035a33a9c1cb06e"
 compatibility_date = "2026-09-01"
