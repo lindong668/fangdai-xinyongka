@@ -1,7 +1,6 @@
 # ============================================================
 # 5号 房贷站 CalcHub Pro（k789.cc.cd）—— Cloudflare Workers + Assets
-## wrangler.toml
-name = 'fangdai-xinyong-ka'
+#
 # 部署方式一（推荐，命令行）：
 #   npx wrangler deploy
 #
@@ -12,7 +11,7 @@ name = 'fangdai-xinyong-ka'
 # name 必须与 CF 控制台上的 Worker 名字一致
 #   （若控制台里已有别的名字，改这一行即可）
 # ============================================================
-name = "fangdai-xinyongka"
+name = "fangdai-xinyong-ka"
 # 账号 ID 写死，deploy 时不再交互提问选账号
 account_id = "d49e51b1279804c22035a33a9c1cb06e"
 compatibility_date = "2026-09-01"
@@ -22,7 +21,7 @@ main = "src/index.js"
 directory = "./public"
 binding = "ASSETS"
 
-# 路由在 CF 控制台配置：Workers → fangdai-xinyongka → 设置 → 域和路由
+# 路由在 CF 控制台配置：Workers → fangdai-xinyong-ka → 设置 → 域和路由
 # k789.cc.cd/*
 
 # 请求日志（CF 控制台 → Workers → 该站 → Observability 实时查看）
