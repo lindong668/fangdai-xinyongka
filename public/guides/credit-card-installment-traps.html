@@ -6,19 +6,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Credit Card Instalments: Why a 0.6% Monthly Fee Is Really About 13% a Year | CalcHub Pro</title>
-<meta name="description" content="How credit card instalment fees really work: why the true APR is roughly double the advertised rate, the IRR method, term comparison and traps to avoid.">
+<meta name="description" content="How credit card instalment fees really work: the constant-fee mechanism, the IRR method with a full derivation, term-by-term comparison, instalments vs revolving balances, and six traps to check.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://k789.cc.cd/guides/credit-card-installment-traps.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="CalcHub Pro">
 <meta property="og:title" content="Credit Card Instalments: Why a 0.6% Monthly Fee Is Really About 13% a Year | CalcHub Pro">
-<meta property="og:description" content="How credit card instalment fees really work: why the true APR is roughly double the advertised rate, the IRR method, term comparison and traps to avoid.">
+<meta property="og:description" content="How credit card instalment fees really work: the constant-fee mechanism, the IRR method with a full derivation, term-by-term comparison, instalments vs revolving balances, and six traps to check.">
 <meta property="og:url" content="https://k789.cc.cd/guides/credit-card-installment-traps.html">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Credit Card Instalments: Why a 0.6% Monthly Fee Is Really About 13% a Year | CalcHub Pro">
-<meta name="twitter:description" content="How credit card instalment fees really work: why the true APR is roughly double the advertised rate, the IRR method, term comparison and traps to avoid.">
+<meta name="twitter:description" content="How credit card instalment fees really work: the constant-fee mechanism, the IRR method with a full derivation, term-by-term comparison, instalments vs revolving balances, and six traps to check.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="alternate" hreflang="en" href="https://k789.cc.cd/guides/credit-card-installment-traps.html">
 <link rel="alternate" hreflang="zh-Hans" href="https://k789.cc.cd/guides/credit-card-installment-traps.html">
@@ -38,12 +38,13 @@
   .meta { color:#64748b; font-size:13px; margin-bottom:18px; }
   .box { background:#f0f6ff; border-radius:8px; padding:16px 18px; margin:16px 0; border-left:3px solid #2563eb; }
   .warnbox { background:#fff7ed; border-left:3px solid #ea580c; border-radius:8px; padding:14px 18px; margin:16px 0; }
+  .tipbox { background:#f0fdf4; border-left:3px solid #16a34a; border-radius:8px; padding:14px 18px; margin:16px 0; }
   table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
   th,td { border:1px solid #e2e8f0; padding:9px 11px; text-align:left; }
   th { background:#f1f5f9; font-weight:600; }
+  .lead { font-size:16px; color:#475569; background:#f8fafc; border-left:3px solid #94a3b8; padding:14px 18px; margin:14px 0 22px; border-radius:6px; }
   footer { margin-top:48px; padding-top:18px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; text-align:center; line-height:2; }
   footer a { color:#2563eb; text-decoration:none; margin:0 7px; }
-  /* 语言切换 */
   .lang-switcher { position:relative; float:right; margin-left:12px; }
   .lang-btn { display:flex; align-items:center; gap:6px; padding:6px 12px; background:#fff; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:13px; min-width:112px; justify-content:space-between; }
   .lang-btn:hover { border-color:#2563eb; }
@@ -69,125 +70,267 @@
   </div>
 </div>
 <div class="clear"></div>
-<a class="back" href="/">&larr; Back to Home</a><div data-lang-block="en">
-
+<div data-lang-block="en">
+<a class="back" href="/">&larr; Back to Home</a>
+</div>
+<div data-lang-block="zh">
+<a class="back" href="/">&larr; 返回首页</a>
+</div>
+<div data-lang-block="en">
 <h1>Credit Card Instalments: Why "0.6% per Month" Is Really About 13% a Year</h1>
-<p class="meta">Published October 22, 2026 &middot; 8 min read &middot; By CalcHub Pro</p>
-<p>"Convert your purchase into 12 easy instalments at just 0.6% per month." It sounds cheap: 0.6 &times; 12 is 7.2%, which feels manageable. The true cost is closer to 13% a year. This guide explains why, and how to work out the real number yourself.</p>
+<div class="lead">"Convert your purchase into 12 easy instalments at just 0.6% per month." It sounds cheap: 0.6 &times; 12 is 7.2%, which feels manageable. The true cost is closer to 13% a year. This guide explains precisely why, derives the calculation so you can reproduce it yourself, and sets out the traps that make instalments more expensive than they appear.</div>
 
-<h2>1. The trick: the fee never shrinks, but your balance does</h2>
-<p>With a typical instalment plan, the fee each month is calculated on the <b>original</b> amount, not on what you still owe. On a 12,000 purchase at 0.6% per month:</p>
-<div class="box">Monthly fee = 12,000 &times; 0.6% = <b>72</b>, every single month<br>
+<h2>1. The gap between the advertised number and the real one</h2>
+<p>An instalment plan quoted at "0.6% per month" invites a simple mental calculation: 0.6 &times; 12 = 7.2% per year. That number is wrong, and it is wrong by nearly a factor of two.</p>
+<p>The reason is not hidden fees or fine print. It is a single structural feature: <b>the fee is charged on the original amount, while the balance you owe shrinks every month.</b> Once you see that, the doubling is obvious.</p>
+
+<h2>2. The mechanism: a fee that never shrinks</h2>
+<p>On a typical instalment plan of 12,000 over 12 months at 0.6% per month:</p>
+<div class="box">
+Monthly fee = 12,000 &times; 0.6% = <b>72</b>, charged every month without change<br>
 Monthly principal = 12,000 &divide; 12 = <b>1,000</b><br>
-Total monthly payment = <b>1,072</b></div>
-<p>By month 12 you owe only 1,000, yet you are still paying a 72 fee &mdash; a fee of 7.2% on the amount actually outstanding that month. Averaged across the year, you had use of roughly half the money, but you paid a full-year fee on all of it. That is why the effective rate is about double the headline figure.</p>
-
-<h2>2. How to get the real rate: IRR</h2>
-<p>The honest measure is the internal rate of return of the cash flows &mdash; the rate that makes the present value of your payments equal the amount you received. Solve for the monthly rate r in:</p>
-<div class="box"><b>P = &sum; (payment) / (1 + r)<sup>k</sup></b> &nbsp; for k = 1 to n<br>
-then APR &asymp; r &times; 12</div>
-<p>For the example above, r works out to about 1.086% per month, giving an APR of about <b>13.03%</b> &mdash; versus the advertised 7.2%.</p>
-
-<h2>3. A quick rule of thumb</h2>
-<p>For a short instalment plan with a constant fee on the original balance, the true annual rate is roughly <b>2 &times; monthly fee rate &times; 12 &times; n/(n+1)</b>, which approaches double the nominal rate as the term lengthens. The rule of thumb to remember: <b>the true APR is close to twice the advertised annual figure</b>.</p>
-
-<h2>4. Comparing terms</h2>
-<p>Using the same example at 0.6% per month, the true APR stays fairly stable across terms but the total fee grows with length:</p>
+Total monthly payment = <b>1,072</b><br><br>
+Total paid = 1,072 &times; 12 = <b>12,864</b><br>
+Total fee = <b>864</b>
+</div>
+<p>Now look at what happens to the effective rate on the money you actually still owe:</p>
 <table>
-  <tr><th>Term</th><th>Monthly payment</th><th>Total fee</th><th>Approx. true APR</th></tr>
-  <tr><td>3 months</td><td>4,072</td><td>216</td><td>about 10.8%</td></tr>
-  <tr><td>6 months</td><td>2,072</td><td>432</td><td>about 12.2%</td></tr>
-  <tr><td>12 months</td><td>1,072</td><td>864</td><td>about 13.0%</td></tr>
-  <tr><td>24 months</td><td>572</td><td>1,728</td><td>about 13.6%</td></tr>
+  <tr><th>Month</th><th>Balance owed at start</th><th>Fee charged</th><th>Fee as % of balance owed</th></tr>
+  <tr><td>1</td><td>12,000</td><td>72</td><td>0.60%</td></tr>
+  <tr><td>3</td><td>10,000</td><td>72</td><td>0.72%</td></tr>
+  <tr><td>6</td><td>7,000</td><td>72</td><td>1.03%</td></tr>
+  <tr><td>9</td><td>4,000</td><td>72</td><td>1.80%</td></tr>
+  <tr><td>11</td><td>2,000</td><td>72</td><td>3.60%</td></tr>
+  <tr><td>12</td><td>1,000</td><td>72</td><td><b>7.20%</b></td></tr>
 </table>
-<p>The monthly payment looks smallest at 24 months, but you pay twice the total fee. If you can afford the shorter term, it is cheaper.</p>
+<p>In the final month you owe 1,000 and pay a 72 fee &mdash; that is 7.2% for a single month, which annualises to well over 80%. Conversely, in the first month the fee on the amount you are actually using is only 0.6%. Averaged across the year, you had use of roughly <b>half</b> the money (you borrowed 12,000 at the start and zero at the end), but you paid a full-year fee on <b>all</b> of it. That is the entire trick.</p>
 
-<h2>5. When an instalment plan is still reasonable</h2>
+<h2>3. Computing the real rate: the IRR method</h2>
+<p>The honest measure of any repayment schedule is its internal rate of return &mdash; the interest rate that makes the present value of all your payments exactly equal to the amount you received. Solve for the monthly rate r in:</p>
+<div class="box"><b>P = &sum;<sub>k=1..n</sub> &nbsp; payment / (1 + r)<sup>k</sup></b><br><br>
+then &nbsp; <b>APR &asymp; r &times; 12</b><br><br>
+P = amount financed &nbsp;&middot;&nbsp; payment = your fixed monthly payment &nbsp;&middot;&nbsp; n = number of months</div>
+<p>There is no closed-form solution for r when n is large; it is found by iteration. A bisection search works well: try r = 0 (where the present value of payments exceeds P) and r = 100% (where it is far below), then repeatedly test the midpoint and keep the half that brackets the answer. Fifty to a hundred iterations give more precision than you need.</p>
+
+<h3>The result for our example</h3>
+<div class="box">
+Payment = 1,072 per month for 12 months, P = 12,000<br>
+Solving gives r &asymp; <b>1.086% per month</b><br>
+APR = 1.086% &times; 12 = <b>13.03% per year</b><br><br>
+Advertised figure: <b>7.2%</b> &nbsp;&middot;&nbsp; True figure: <b>13.03%</b>
+</div>
+<p>The true cost is about <b>1.8 times</b> the advertised annual figure. This is the calculation our APR tool performs.</p>
+
+<h2>4. A rule of thumb you can use without a calculator</h2>
+<p>For a plan with a constant fee on the original balance, the true annual rate is approximately:</p>
+<div class="box"><b>APR &asymp; 2 &times; monthly fee rate &times; 12 &times; n / (n + 1)</b></div>
+<p>where n is the number of months. The factor n/(n+1) approaches 1 as the term lengthens, so:</p>
 <ul>
-  <li><b>Zero-fee promotions.</b> If there is genuinely no fee and no interest, it is free short-term credit. Read the conditions: some convert to a high rate if you miss a payment.</li>
-  <li><b>You would otherwise revolve.</b> If the alternative is carrying a balance at 18&ndash;20% APR, a 13% instalment is cheaper.</li>
-  <li><b>Cash flow timing.</b> Spreading a necessary expense can be rational, as long as you price the cost honestly.</li>
+  <li>3 months: 2 &times; 0.6% &times; 12 &times; 3/4 = <b>10.8%</b></li>
+  <li>12 months: 2 &times; 0.6% &times; 12 &times; 12/13 = <b>13.3%</b> (close to the exact 13.03%)</li>
+  <li>24 months: 2 &times; 0.6% &times; 12 &times; 24/25 = <b>13.8%</b></li>
+</ul>
+<p><b>Memorise this: the true annual rate is roughly double the advertised annual rate.</b> A "0.6% per month" plan is a 13% loan. A "0.5% per month" plan is about 11%.</p>
+
+<h2>5. Comparing terms on the same purchase</h2>
+<p>Same 12,000 purchase, same 0.6% monthly fee, different terms:</p>
+<table>
+  <tr><th>Term</th><th>Monthly payment</th><th>Total fee</th><th>Fee as % of purchase</th><th>True APR</th></tr>
+  <tr><td>3 months</td><td>4,072</td><td>216</td><td>1.8%</td><td>about 10.8%</td></tr>
+  <tr><td>6 months</td><td>2,072</td><td>432</td><td>3.6%</td><td>about 12.2%</td></tr>
+  <tr><td>12 months</td><td>1,072</td><td>864</td><td>7.2%</td><td>about 13.0%</td></tr>
+  <tr><td>18 months</td><td>739</td><td>1,296</td><td>10.8%</td><td>about 13.3%</td></tr>
+  <tr><td>24 months</td><td>572</td><td>1,728</td><td>14.4%</td><td>about 13.6%</td></tr>
+</table>
+<p>Notice the shape of this. The <b>monthly payment</b> falls sharply as the term lengthens, which is the number the advertisement shows you. The <b>true APR</b> barely moves. The <b>total fee</b> roughly doubles from 12 to 24 months. So the choice of term is essentially a choice about how much total fee you pay, not about the rate &mdash; and shorter is cheaper in total.</p>
+
+<h2>6. Instalment plans versus revolving balances</h2>
+<p>These are different products and it matters which one you are in:</p>
+<table>
+  <tr><th></th><th>Instalment plan</th><th>Revolving balance</th></tr>
+  <tr><td>Structure</td><td>Fixed number of payments, then done</td><td>Open-ended; you choose how much to pay</td></tr>
+  <tr><td>Cost</td><td>A fee, often quoted as a monthly rate</td><td>Interest on the daily balance, quoted as APR</td></tr>
+  <tr><td>Typical rate</td><td>10&ndash;14% true APR</td><td>15&ndash;22% APR in many markets</td></tr>
+  <tr><td>End date</td><td>Known</td><td>Unknown if you pay the minimum</td></tr>
+  <tr><td>Grace period</td><td>Usually none on the instalment</td><td>Lost once you carry a balance</td></tr>
+</table>
+<p>An instalment at 13% is usually cheaper than revolving at 18&ndash;20%. <b>Converting a balance you were going to revolve into an instalment is often a genuine improvement.</b> The mistake is taking an instalment on a purchase you could otherwise have paid off in full, where the alternative cost was zero.</p>
+
+<h2>7. The minimum-payment trap, quantified</h2>
+<p>If you carry 20,000 on a revolving balance at 18% APR and pay only the minimum &mdash; commonly 2% of the balance or a small fixed amount, whichever is greater &mdash; the repayment stretches for many years and the total interest can exceed the original purchase. The exact figures depend on the minimum formula, but the shape of the outcome does not: minimum payments are designed to keep you paying, not to get you out.</p>
+<div class="warnbox">If you are only paying the minimum, the single most valuable change is not switching products &mdash; it is paying more than the minimum. Even a modest fixed extra amount, applied consistently, shortens the repayment dramatically.</div>
+
+<h2>8. Six traps to check for</h2>
+<ol>
+  <li><b>Fee charged upfront and non-refundable.</b> Some plans debit the entire fee immediately. If you settle early, you may receive no refund of the unearned portion. Ask what happens if you clear the balance in month 3 of 12.</li>
+  <li><b>Early settlement penalties.</b> Some plans charge the remaining fees, or a flat penalty, if you pay off early. This removes your ability to fix the mistake.</li>
+  <li><b>Fee calculated on the original balance.</b> This is the standard structure and the reason for the doubling. Some products calculate on the outstanding balance instead &mdash; those are genuinely cheaper and worth seeking out. Always ask which applies.</li>
+  <li><b>Fees that start after a promotional period.</b> A "0% for 6 months" offer may convert to a high rate, sometimes applied retroactively, if not cleared in time. Read the conversion terms.</li>
+  <li><b>Consumption of your credit limit.</b> An instalment typically occupies your available credit for the full term, which can push your utilisation up and affect your score even while you pay on time.</li>
+  <li><b>Interaction with the grace period.</b> Adding an instalment does not restore a grace period you have lost by revolving. Understand which part of your balance is accruing interest immediately.</li>
+</ol>
+
+<h2>9. When an instalment plan is still a reasonable choice</h2>
+<ul>
+  <li><b>Genuine zero-fee promotions</b> &mdash; if there is truly no fee and no interest, it is free short-term credit. Confirm in writing, and check what happens if you miss a payment.</li>
+  <li><b>The alternative is revolving at a higher rate</b> &mdash; a 13% instalment beats an 18% revolving balance.</li>
+  <li><b>A necessary expense with a timing mismatch</b> &mdash; spreading a genuinely needed purchase can be rational, provided you have priced the cost honestly and can sustain the payments.</li>
+  <li><b>You need the cash for something with a higher return</b> &mdash; rare, and it should be a real return, not a hoped-for one.</li>
 </ul>
 
-<h2>6. Traps to watch for</h2>
+<h2>10. A checklist before accepting any instalment offer</h2>
 <ul>
-  <li><b>Fee charged upfront, non-refundable.</b> Paying early may not refund future fees.</li>
-  <li><b>Early settlement penalties.</b> Some plans charge the remaining fees if you clear early.</li>
-  <li><b>Minimum payment illusion.</b> Paying the minimum on a revolving balance can take decades and cost several times the purchase.</li>
-  <li><b>Fee on the original balance.</b> Always ask whether the fee is on the original amount or the outstanding balance &mdash; it changes the real rate substantially.</li>
-  <li><b>Reduced credit limit.</b> Instalments can consume your available credit.</li>
+  <li>Compute the <b>true APR</b>, not the advertised rate. Our calculator does this from the fee rate and term.</li>
+  <li>Compute the <b>total fee in currency</b>, and decide whether that amount is acceptable for the convenience.</li>
+  <li>Ask whether the fee is on the <b>original or outstanding balance</b>.</li>
+  <li>Ask what happens if you <b>settle early</b>.</li>
+  <li>Check the effect on your <b>available credit</b> and utilisation.</li>
+  <li>Confirm you can sustain the payment <b>alongside all other obligations</b> &mdash; add it to your total debt ratio, not to your memory.</li>
+  <li>Read whether the offer <b>converts</b> to a different rate after any promotional period.</li>
 </ul>
 
-<div class="warnbox"><b>Reference only.</b> Calculations use the IRR method on a constant-fee schedule. Issuers may calculate and disclose costs differently. Always read your card agreement and confirm figures with your issuer.</div>
+<div class="warnbox"><b>Reference only.</b> Calculations here use the IRR method on a constant-fee schedule, which is the standard approach but not the only one. Issuers may calculate, disclose and round costs differently, and consumer protection rules vary by country. Always read your card agreement and confirm figures with your issuer.</div>
 
 </div>
 <div data-lang-block="zh">
-
 <h1>信用卡分期：为什么"月费率 0.6%"实际年化接近 13%</h1>
-<p class="meta">发布于 2026 年 10 月 22 日 &middot; 阅读约 8 分钟 &middot; CalcHub Pro</p>
-<p>"12 期分期，月费率只要 0.6%。"听起来很便宜：0.6 &times; 12 = 7.2%，似乎可以接受。但真实成本接近年化 13%。本文解释为什么会这样，以及如何自己算出真实数字。</p>
+<div class="lead">"12 期分期，月费率只要 0.6%。"听起来很便宜：0.6 &times; 12 = 7.2%，似乎可以接受。但真实成本接近年化 13%，差了将近一倍。本文精确解释为什么会这样，推导出你可以自己复现的算法，并列出让分期比表面更贵的那些陷阱。</div>
 
-<h2>1. 关键：手续费不缩水，但你的欠款在缩水</h2>
-<p>典型分期中，每月手续费按<b>原始金额</b>计算，而非按你剩余未还的部分。以 12,000 元、月费率 0.6% 为例：</p>
-<div class="box">每月手续费 = 12,000 &times; 0.6% = <b>72 元</b>，月月如此<br>
+<h2>1. 宣传数字与真实数字之间的鸿沟</h2>
+<p>一个标为"月费率 0.6%"的分期方案，会引导你做一个简单的心算：0.6 &times; 12 = 年化 7.2%。这个数字是错的，而且错了将近一倍。</p>
+<p>原因不在于隐藏费用或条款细则，而在于一个结构性特征：<b>手续费按原始金额收取，而你欠的钱逐月在减少。</b>一旦看清这一点，"翻倍"就显而易见了。</p>
+
+<h2>2. 机制：一笔永不缩水的手续费</h2>
+<p>以 12,000 元分 12 期、月费率 0.6% 为例：</p>
+<div class="box">
+每月手续费 = 12,000 &times; 0.6% = <b>72 元</b>，月月如此、分文不变<br>
 每月本金 = 12,000 &divide; 12 = <b>1,000 元</b><br>
-每月还款 = <b>1,072 元</b></div>
-<p>到第 12 个月你只欠 1,000 元，却仍在付 72 元手续费 &mdash;&mdash; 相当于当月实际占用资金的 7.2%。全年平均下来，你只用了约一半的钱，却按全额付了一整年的费用。这就是为什么实际利率约为宣传数字的两倍。</p>
-
-<h2>2. 如何得到真实利率：IRR 法</h2>
-<p>诚实的衡量方式是现金流的内部收益率（IRR）&mdash;&mdash; 使你还款现值等于你拿到手金额的那个利率。解出月利率 r：</p>
-<div class="box"><b>P = &sum; (每期还款) / (1 + r)<sup>k</sup></b> &nbsp; k 从 1 到 n<br>
-则 APR &asymp; r &times; 12</div>
-<p>上例中解出 r 约 1.086%/月，对应 <b>APR 约 13.03%</b> &mdash;&mdash; 而宣传口径是 7.2%。</p>
-
-<h2>3. 一个快速估算口诀</h2>
-<p>对按原始本金恒定收费的短期分期，真实年化约等于 <b>2 &times; 月费率 &times; 12 &times; n/(n+1)</b>，期限越长越接近名义费率的两倍。记住这句口诀：<b>真实 APR 约为宣传年化数字的两倍</b>。</p>
-
-<h2>4. 不同期数的横向对比</h2>
-<p>仍以 12,000 元、月费率 0.6% 为例，真实年化在各期数间相近，但总手续费随期限增长：</p>
+每月还款合计 = <b>1,072 元</b><br><br>
+累计还款 = 1,072 &times; 12 = <b>12,864 元</b><br>
+总手续费 = <b>864 元</b>
+</div>
+<p>现在看这笔手续费相对于"你实际还欠多少"的比率如何变化：</p>
 <table>
-  <tr><th>期数</th><th>月供</th><th>总手续费</th><th>真实年化约</th></tr>
-  <tr><td>3 期</td><td>4,072</td><td>216</td><td>约 10.8%</td></tr>
-  <tr><td>6 期</td><td>2,072</td><td>432</td><td>约 12.2%</td></tr>
-  <tr><td>12 期</td><td>1,072</td><td>864</td><td>约 13.0%</td></tr>
-  <tr><td>24 期</td><td>572</td><td>1,728</td><td>约 13.6%</td></tr>
+  <tr><th>期数</th><th>期初尚欠</th><th>当期手续费</th><th>占尚欠余额比例</th></tr>
+  <tr><td>第 1 期</td><td>12,000</td><td>72</td><td>0.60%</td></tr>
+  <tr><td>第 3 期</td><td>10,000</td><td>72</td><td>0.72%</td></tr>
+  <tr><td>第 6 期</td><td>7,000</td><td>72</td><td>1.03%</td></tr>
+  <tr><td>第 9 期</td><td>4,000</td><td>72</td><td>1.80%</td></tr>
+  <tr><td>第 11 期</td><td>2,000</td><td>72</td><td>3.60%</td></tr>
+  <tr><td>第 12 期</td><td>1,000</td><td>72</td><td><b>7.20%</b></td></tr>
 </table>
-<p>24 期的月供看起来最轻松，但总手续费翻倍。负担得起的话，期数越短越便宜。</p>
+<p>最后一期你只欠 1,000 元，却仍付 72 元手续费 &mdash;&mdash; 单月 7.2%，年化超过 80%。反过来，第一期你实际占用全部 12,000 元，72 元只占 0.6%。全年平均，你大约只用了<b>一半</b>的钱（期初借用 12,000，期末归零），却按<b>全额</b>付了一整年费用。这就是全部的玄机。</p>
 
-<h2>5. 什么情况下分期仍然合理</h2>
+<h2>3. 计算真实利率：IRR 法</h2>
+<p>衡量任何还款方案诚实的指标是它的内部收益率（IRR）&mdash;&mdash; 使你所有还款的现值恰好等于你拿到手金额的那个利率。解出月利率 r：</p>
+<div class="box"><b>P = &sum;<sub>k=1..n</sub> &nbsp; 每期还款 / (1 + r)<sup>k</sup></b><br><br>
+则 &nbsp; <b>APR &asymp; r &times; 12</b><br><br>
+P = 分期本金 &nbsp;&middot;&nbsp; 每期还款 = 你的固定月供 &nbsp;&middot;&nbsp; n = 期数</div>
+<p>当 n 较大时，r 没有闭式解，需迭代求解。二分法很好用：先试 r = 0（此时还款现值大于 P）和 r = 100%（此时远小于 P），然后反复取中点测试，保留夹住答案的那半区间。迭代 50~100 次，精度已远超需要。</p>
+
+<h3>上例的计算结果</h3>
+<div class="box">
+每期还款 = 1,072 元 &times; 12 期，P = 12,000 元<br>
+解得 r &asymp; <b>1.086% / 月</b><br>
+APR = 1.086% &times; 12 = <b>年化 13.03%</b><br><br>
+宣传口径：<b>7.2%</b> &nbsp;&middot;&nbsp; 真实口径：<b>13.03%</b>
+</div>
+<p>真实成本约为宣传年化数字的 <b>1.8 倍</b>。这正是我们信用卡 APR 工具所执行的计算。</p>
+
+<h2>4. 不用计算器也能用的口诀</h2>
+<p>对"按原始本金恒定收费"的分期，真实年化约等于：</p>
+<div class="box"><b>APR &asymp; 2 &times; 月费率 &times; 12 &times; n / (n + 1)</b></div>
+<p>其中 n 为期数。因子 n/(n+1) 随期限变长趋近于 1，于是：</p>
 <ul>
-  <li><b>真正的零手续费活动。</b>若确实无息无费，就是免费的短期资金。但要看清条款：部分活动一旦逾期即转为高利率。</li>
-  <li><b>否则就得挂账循环。</b>若替代方案是按 18~20% 的循环利率挂着账单，那么 13% 的分期更划算。</li>
-  <li><b>现金流时点错配。</b>把一笔必要支出摊开是理性的，只要你诚实地给成本定价。</li>
+  <li>3 期：2 &times; 0.6% &times; 12 &times; 3/4 = <b>10.8%</b></li>
+  <li>12 期：2 &times; 0.6% &times; 12 &times; 12/13 = <b>13.3%</b>（与精确的 13.03% 很接近）</li>
+  <li>24 期：2 &times; 0.6% &times; 12 &times; 24/25 = <b>13.8%</b></li>
+</ul>
+<p><b>请记住这句：真实年化约为宣传年化数字的两倍。</b>"月费率 0.6%"就是一笔 13% 的贷款；"月费率 0.5%"约为 11%。</p>
+
+<h2>5. 同一笔消费，不同期数横向对比</h2>
+<p>同样是 12,000 元、月费率 0.6%，只改变期数：</p>
+<table>
+  <tr><th>期数</th><th>月供</th><th>总手续费</th><th>占消费额比例</th><th>真实年化</th></tr>
+  <tr><td>3 期</td><td>4,072</td><td>216</td><td>1.8%</td><td>约 10.8%</td></tr>
+  <tr><td>6 期</td><td>2,072</td><td>432</td><td>3.6%</td><td>约 12.2%</td></tr>
+  <tr><td>12 期</td><td>1,072</td><td>864</td><td>7.2%</td><td>约 13.0%</td></tr>
+  <tr><td>18 期</td><td>739</td><td>1,296</td><td>10.8%</td><td>约 13.3%</td></tr>
+  <tr><td>24 期</td><td>572</td><td>1,728</td><td>14.4%</td><td>约 13.6%</td></tr>
+</table>
+<p>注意这张表的形状：<b>月供</b>随期限显著下降，而这正是广告展示给你的那个数字；<b>真实年化</b>几乎不动；<b>总手续费</b>从 12 期到 24 期大约翻倍。所以选择期数，本质上是在选择"总手续费付多少"，而不是在选利率 &mdash;&mdash; 且期限越短，总额越便宜。</p>
+
+<h2>6. 分期与循环账单：两种不同产品</h2>
+<p>这是两种不同的产品，你身处哪一种很关键：</p>
+<table>
+  <tr><th></th><th>分期计划</th><th>循环账单</th></tr>
+  <tr><td>结构</td><td>固定期数，还完即止</td><td>开放式，还多少由你定</td></tr>
+  <tr><td>计价</td><td>手续费，常以月费率表述</td><td>按日计息，以年化利率表述</td></tr>
+  <tr><td>常见水平</td><td>真实年化 10~14%</td><td>多数市场 15~22%</td></tr>
+  <tr><td>结束时间</td><td>明确</td><td>只还最低还款则无期</td></tr>
+  <tr><td>免息期</td><td>分期部分通常没有</td><td>一旦挂账即整体失效</td></tr>
+</table>
+<p>13% 的分期通常比 18~20% 的循环便宜。<b>把一笔你本来就要挂着的账单转成分期，往往是实打实的改善。</b>真正的错误在于：对一笔你本可以一次性还清的消费去办分期 &mdash;&mdash; 那种情况下替代成本是零。</p>
+
+<h2>7. 最低还款陷阱，量化来看</h2>
+<p>若你挂着 20,000 元循环账单、年利率 18%，且只还最低还款额（常见为余额的 2% 或一个小额固定值，取较高者），还款会拖上很多年，总利息甚至可能超过消费本金本身。具体数字取决于最低还款的计算公式，但结果的形状不变：<b>最低还款额的设计目的是让你一直还，而不是让你还清。</b></p>
+<div class="warnbox">如果你现在只还最低还款额，最有价值的改变不是换产品，而是<b>多还一点</b>。哪怕只是固定多还一小笔、且持续坚持，也能把还款周期大幅缩短。</div>
+
+<h2>8. 六个必须确认的坑</h2>
+<ol>
+  <li><b>手续费一次性收取、提前结清不退。</b>部分方案在首期即扣全额手续费。若你提前结清，未发生部分可能不予退还。要问清：12 期的分期在第 3 期还清会怎样。</li>
+  <li><b>提前结清违约金。</b>部分方案提前还清时收取剩余手续费或固定罚金。这直接拿掉了你纠正错误的机会。</li>
+  <li><b>手续费按原始本金计。</b>这是标准结构，也正是"翻倍"的成因。也有产品按剩余本金计费 &mdash;&mdash; 那些确实更便宜，值得优先选择。一定问清是哪一种。</li>
+  <li><b>优惠期结束后才开收的费用。</b>"前 6 期 0 费率"可能在到期后转为高利率，有时甚至具有追溯性。务必读清转换条款。</li>
+  <li><b>占用信用额度。</b>分期通常在整个期间占用你的可用额度。即便你按时还款，也可能推高使用率、影响评分。</li>
+  <li><b>与免息期的相互作用。</b>增加一笔分期，并不会恢复你因挂账而失去的免息期。要弄清余额中哪一部分正在即时计息。</li>
+</ol>
+
+<h2>9. 什么情况下分期仍然合理</h2>
+<ul>
+  <li><b>真正的零费率活动</b> &mdash;&mdash; 若确实无息无费，那就是免费的短期资金。要有书面确认，并查清逾期会怎样。</li>
+  <li><b>替代方案是更高利率的循环</b> &mdash;&mdash; 13% 的分期优于 18% 的循环账单。</li>
+  <li><b>必要支出与时点错配</b> &mdash;&mdash; 把一笔真实需要的支出摊开可以是理性的，前提是你诚实地给它定了价，且撑得住月供。</li>
+  <li><b>手上的现金有更高回报用途</b> &mdash;&mdash; 这种情况很少，而且那个回报必须是真实的，而不是你希望中的。</li>
 </ul>
 
-<h2>6. 需要留意的坑</h2>
+<h2>10. 接受任何分期方案前的清单</h2>
 <ul>
-  <li><b>手续费一次性收取、提前还款不退。</b>提前结清未必退还未发生的费用。</li>
-  <li><b>提前结清违约金。</b>部分方案提前还清时要收剩余费用。</li>
-  <li><b>最低还款的错觉。</b>循环账单只还最低还款额，可能要还几十年，总支出可达消费本金的数倍。</li>
-  <li><b>按原始本金收费。</b>一定要问清手续费是按原始金额还是剩余本金计 &mdash;&mdash; 这会显著改变真实利率。</li>
-  <li><b>占用信用额度。</b>分期会吃掉你的可用额度。</li>
+  <li>算清<b>真实年化</b>，而不是看宣传费率。我们的计算器可按费率与期数直接算出。</li>
+  <li>算清<b>总手续费的绝对金额</b>，并判断为这份便利付这笔钱是否值得。</li>
+  <li>问清手续费是按<b>原始本金还是剩余本金</b>计。</li>
+  <li>问清<b>提前结清</b>会怎样。</li>
+  <li>检查对<b>可用额度与使用率</b>的影响。</li>
+  <li>确认你能同时负担这笔月供与<b>所有其他负债</b> &mdash;&mdash; 把它加进总负债比，而不是只记在脑子里。</li>
+  <li>看清优惠期结束后是否会<b>转换</b>为另一种费率。</li>
 </ul>
 
-<div class="warnbox"><b>仅供参考。</b>本计算采用恒定收费下的 IRR 法。发卡行的计算与披露口径可能不同。请阅读你的信用卡协议并向发卡行核实。</div>
+<div class="warnbox"><b>仅供参考。</b>本文计算采用恒定收费方案下的 IRR 法，这是标准做法但不是唯一做法。发卡行在计算、披露与进位上可能采用不同口径，消费者保护规则也因国家而异。请阅读你的信用卡协议，并向发卡行核实具体数字。</div>
 
 </div>
+<div data-lang-block="en">
 <footer>
   <a href="/">Home</a>·<a href="/guides/">Guides</a>·<a href="/about.html">About</a>·<a href="/contact.html">Contact</a><br>
   <a href="/privacy.html">Privacy Policy</a>·<a href="/terms.html">Terms of Use</a>·<a href="/disclaimer.html">Disclaimer</a>
-  <p style="margin-top:12px;font-size:12px;">© 2026 CalcHub Pro · Calculator results are for reference only and do not constitute financial advice.</p>
+  <p style="margin-top:12px;font-size:12px;">Calculator results are estimates for reference only and do not constitute financial advice.</p>
 </footer>
+
+</div>
+<div data-lang-block="zh">
+<footer>
+  <a href="/">首页</a>·<a href="/guides/">指南文章</a>·<a href="/about.html">关于我们</a>·<a href="/contact.html">联系我们</a><br>
+  <a href="/privacy.html">隐私政策</a>·<a href="/terms.html">使用条款</a>·<a href="/disclaimer.html">免责声明</a>
+  <p style="margin-top:12px;font-size:12px;">本站计算结果为参考性估算，不构成任何金融建议。</p>
+</footer>
+
+</div>
 </div>
 
 <script>
 (function(){
   var KEY='calchub_lang';
   function valid(v){ return (v==='zh'||v==='en') ? v : null; }
-  function cur(){
-    // ★ 默认永远英文，不看访客地区/浏览器语言
-    return valid(localStorage.getItem(KEY)) || 'en';
-  }
+  function cur(){ return valid(localStorage.getItem(KEY)) || 'en'; }
   function apply(lang){
     document.documentElement.lang = (lang==='zh') ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-lang-block]').forEach(function(el){
