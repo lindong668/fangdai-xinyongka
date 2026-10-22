@@ -90,6 +90,21 @@
     .topbar { flex-direction:column; align-items:stretch; }
     .lang-switcher { align-self:flex-end; }
   }
+
+  /* 指南文章入口卡片 */
+  .guide-card { background:linear-gradient(135deg,#f0f6ff 0%,#eef2ff 100%); border:1px solid #c7d7fe; border-radius:14px; padding:20px 22px; margin-top:24px; }
+  .guide-card h3 { font-size:17px; color:#1e40af; margin:0 0 6px; display:flex; align-items:center; gap:8px; }
+  .guide-card .gsub { font-size:13px; color:#475569; margin:0 0 14px; }
+  .guide-list { list-style:none; margin:0; padding:0; }
+  .guide-list li { border-top:1px solid #dbe4fe; }
+  .guide-list li:first-child { border-top:none; }
+  .guide-list a { display:block; padding:10px 2px; text-decoration:none; color:#1e293b; font-size:14px; transition:color .15s; }
+  .guide-list a:hover { color:#2563eb; }
+  .guide-list a .gt { display:block; font-weight:600; }
+  .guide-list a .gd { display:block; font-size:12px; color:#64748b; margin-top:2px; font-weight:400; }
+  .guide-all { display:inline-block; margin-top:14px; padding:9px 18px; background:#2563eb; color:#fff !important; border-radius:8px; text-decoration:none; font-size:14px; font-weight:600; }
+  .guide-all:hover { background:#1d4ed8; }
+  @media (max-width:600px){ .guide-card{padding:16px 14px;} }
 </style>
 </head>
 <body>
@@ -242,15 +257,42 @@
     <div class="note" data-i18n="fx_note">显示的是<b>每日市场中间价</b>，非银行实时牌价。实际换汇以银行卖出价为准，通常会比中间价高 0.3%~1%。</div>
   </div>
 
+  <!-- 指南文章入口卡片 -->
+  <div class="guide-card">
+    <h3><span>📚</span><span data-i18n="gc_title">In-depth Guides</span></h3>
+    <p class="gsub" data-i18n="gc_sub">Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.</p>
+    <ul class="guide-list">
+      <li><a href="/guides/mortgage-basics.html">
+        <span class="gt" data-i18n="gc_g1_t">How Mortgages Actually Work</span>
+        <span class="gd" data-i18n="gc_g1_d">Amortisation, equal instalment vs equal principal, fixed vs variable rates</span></a></li>
+      <li><a href="/guides/mortgage-prepayment.html">
+        <span class="gt" data-i18n="gc_g2_t">Early Repayment: Shorten the Term or Cut the Payment?</span>
+        <span class="gd" data-i18n="gc_g2_d">A worked example, the formula behind it, and five checks before you prepay</span></a></li>
+      <li><a href="/guides/credit-card-installment-traps.html">
+        <span class="gt" data-i18n="gc_g3_t">Why a 0.6% Monthly Fee Is Really About 13% a Year</span>
+        <span class="gd" data-i18n="gc_g3_d">How instalment pricing hides the true cost, and how to compute it</span></a></li>
+      <li><a href="/guides/credit-card-usage-tips.html">
+        <span class="gt" data-i18n="gc_g4_t">Credit Card Habits That Protect Your Wallet and Score</span>
+        <span class="gd" data-i18n="gc_g4_d">Paying in full, grace periods, utilisation, and clearing existing debt</span></a></li>
+      <li><a href="/guides/exchange-rate-basics.html">
+        <span class="gt" data-i18n="gc_g5_t">Exchange Rates Explained</span>
+        <span class="gd" data-i18n="gc_g5_d">Mid-market vs bank vs card network rates, and where the spread hides</span></a></li>
+      <li><a href="/guides/remittance-cost-guide.html">
+        <span class="gt" data-i18n="gc_g6_t">Sending Money Abroad: How to Compare the True Cost</span>
+        <span class="gd" data-i18n="gc_g6_d">The one-line effective cost formula and the four places fees hide</span></a></li>
+    </ul>
+    <a class="guide-all" href="/guides/" data-i18n="gc_all">Read all guides →</a>
+  </div>
+
   <footer>
-    <a href="/guides/">Guides</a>·
+    <a href="/guides/" data-i18n="footer_guides">Guides</a>·
     <a href="/about.html" data-i18n="footer_about">About</a>·
     <a href="/contact.html" data-i18n="footer_contact">Contact</a>
     <br>
     <a href="/privacy.html" data-i18n="footer_privacy">Privacy Policy</a>·
-    <a href="/terms.html">Terms of Use</a>·
-    <a href="/disclaimer.html">Disclaimer</a>
-    <p style="margin-top:10px;font-size:12px;color:#94a3b8;">Results are estimates for reference only and do not constitute financial advice.</p>
+    <a href="/terms.html" data-i18n="footer_terms">Terms of Use</a>·
+    <a href="/disclaimer.html" data-i18n="footer_disclaimer">Disclaimer</a>
+    <p style="margin-top:10px;font-size:12px;color:#94a3b8;" data-i18n="footer_note">Results are estimates for reference only and do not constitute financial advice.</p>
   </footer>
 </div>
 
@@ -284,7 +326,24 @@ const i18n = {
     ad_credit: '[广告位] 信用卡页内', credit_note: '银行的"名义年化"=月费率×12，而真实年化(APR)用 IRR 估算，通常接近翻倍。决策前请看清费率条款。',
     fx_amount_label: '金额', fx_from_label: '从', fx_to_label: '到', btn_fx: '换算', fx_waiting: '选择币种后点换算',
     ad_fx: '[广告位] 汇率页内', fx_note: '显示的是<b>每日市场中间价</b>，非银行实时牌价。实际换汇以银行卖出价为准，通常会比中间价高 0.3%~1%。',
-    footer_about: 'About', footer_privacy: 'Privacy', footer_contact: 'Contact',
+    footer_guides: '指南文章', footer_about: '关于我们', footer_contact: '联系我们',
+    footer_privacy: '隐私政策', footer_terms: '使用条款', footer_disclaimer: '免责声明',
+    footer_note: '本站计算结果为参考性估算，不构成任何金融建议。',
+    gc_title: '深度指南文章',
+    gc_sub: '关于房贷、信用卡与汇率的原创长篇解读 —— 追求多年后仍然有用，而非追逐一时热点。',
+    gc_g1_t: '房贷到底怎么算：本金、利息与摊销',
+    gc_g1_d: '摊销机制、等额本息对比等额本金、固定与浮动利率',
+    gc_g2_t: '提前还款：缩短期限还是减少月供？',
+    gc_g2_d: '实例演算、背后的公式，以及还款前必须确认的五件事',
+    gc_g3_t: '为什么月费率 0.6% 实际年化接近 13%',
+    gc_g3_d: '分期定价如何隐藏真实成本，以及怎么自己算出来',
+    gc_g4_t: '保护钱包与信用的用卡习惯',
+    gc_g4_d: '全额还款、守住免息期、压低使用率，以及已负债时怎么办',
+    gc_g5_t: '汇率详解：中间价、银行报价与点差',
+    gc_g5_d: '中间价、银行价与卡组织汇率的区别，点差藏在哪里',
+    gc_g6_t: '跨境汇款：如何比较真实成本',
+    gc_g6_d: '一行公式算出实际成本，以及费用常藏的四个地方',
+    gc_all: '阅读全部指南 →',
     // 结果页动态文本
     result_rate: '执行利率', result_monthly: '月供', result_first: '首月月供', result_total_interest: '总利息',
     result_total: '本息合计', result_stress: '压力测试', result_if_rise: '若利率再涨',
@@ -324,7 +383,24 @@ const i18n = {
     ad_credit: '[Ad] Credit Card Page', credit_note: 'Banks\' "nominal APR" = monthly fee × 12. Real APR uses IRR and is typically nearly double. Read terms carefully.',
     fx_amount_label: 'Amount', fx_from_label: 'From', fx_to_label: 'To', btn_fx: 'Convert', fx_waiting: 'Select currencies and click convert',
     ad_fx: '[Ad] Exchange Page', fx_note: 'Shows <b>daily mid-market rate</b>, not real-time bank rates. Actual exchange uses bank sell rate, typically 0.3%-1% higher than mid-rate.',
-    footer_about: 'About', footer_privacy: 'Privacy', footer_contact: 'Contact',
+    footer_guides: 'Guides', footer_about: 'About', footer_contact: 'Contact',
+    footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Use', footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
     result_rate: 'Applied Rate', result_monthly: 'Monthly Payment', result_first: 'First Month Payment', result_total_interest: 'Total Interest',
     result_total: 'Total Principal + Interest', result_stress: 'Stress Test', result_if_rise: 'If rate rises',
     result_prepay_before: 'Before early repayment', result_prepay_after: 'Early repayment', result_save: 'Interest saved',

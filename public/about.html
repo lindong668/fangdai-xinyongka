@@ -38,12 +38,13 @@
   .meta { color:#64748b; font-size:13px; margin-bottom:18px; }
   .box { background:#f0f6ff; border-radius:8px; padding:16px 18px; margin:16px 0; border-left:3px solid #2563eb; }
   .warnbox { background:#fff7ed; border-left:3px solid #ea580c; border-radius:8px; padding:14px 18px; margin:16px 0; }
+  .tipbox { background:#f0fdf4; border-left:3px solid #16a34a; border-radius:8px; padding:14px 18px; margin:16px 0; }
   table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
   th,td { border:1px solid #e2e8f0; padding:9px 11px; text-align:left; }
   th { background:#f1f5f9; font-weight:600; }
+  .lead { font-size:16px; color:#475569; background:#f8fafc; border-left:3px solid #94a3b8; padding:14px 18px; margin:14px 0 22px; border-radius:6px; }
   footer { margin-top:48px; padding-top:18px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; text-align:center; line-height:2; }
   footer a { color:#2563eb; text-decoration:none; margin:0 7px; }
-  /* 语言切换 */
   .lang-switcher { position:relative; float:right; margin-left:12px; }
   .lang-btn { display:flex; align-items:center; gap:6px; padding:6px 12px; background:#fff; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:13px; min-width:112px; justify-content:space-between; }
   .lang-btn:hover { border-color:#2563eb; }
@@ -69,10 +70,16 @@
   </div>
 </div>
 <div class="clear"></div>
-<a class="back" href="/">&larr; Back to Home</a><div data-lang-block="en">
+<div data-lang-block="en">
+<a class="back" href="/">&larr; Back to Home</a>
+</div>
+<div data-lang-block="zh">
+<a class="back" href="/">&larr; 返回首页</a>
+</div>
+<div data-lang-block="en">
 
 <h1>About CalcHub Pro</h1>
-<p class="meta">Free financial calculators &mdash; transparent formulas, no sign-up, no data collection.</p>
+
 <p>CalcHub Pro is a free online calculator site focused on turning the financial decisions people find confusing into plain numbers: what a mortgage actually costs, what a credit card instalment really charges you, and what your money is worth in another currency.</p>
 
 <h2>What we offer</h2>
@@ -101,7 +108,7 @@
 <div data-lang-block="zh">
 
 <h1>关于 CalcHub Pro</h1>
-<p class="meta">免费金融计算器 &mdash;&mdash; 公式透明、无需注册、不收集数据。</p>
+
 <p>CalcHub Pro 是一个免费在线计算工具站，专注把"看不懂、算不清"的金融决策变成清清楚楚的数字：房贷到底要付多少、信用卡分期真实收费几何、你的钱换成另一种货币值多少。</p>
 
 <h2>我们提供什么</h2>
@@ -127,21 +134,29 @@
 <p>我们还发布<a href="/guides/">原创指南</a>，讲解房贷、分期与汇率的真实运作机制。这些文章追求多年后仍然有用，而非追逐一时热点。</p>
 
 </div>
+<div data-lang-block="en">
 <footer>
   <a href="/">Home</a>·<a href="/guides/">Guides</a>·<a href="/about.html">About</a>·<a href="/contact.html">Contact</a><br>
   <a href="/privacy.html">Privacy Policy</a>·<a href="/terms.html">Terms of Use</a>·<a href="/disclaimer.html">Disclaimer</a>
-  <p style="margin-top:12px;font-size:12px;">© 2026 CalcHub Pro · Calculator results are for reference only and do not constitute financial advice.</p>
+  <p style="margin-top:12px;font-size:12px;">Calculator results are estimates for reference only and do not constitute financial advice.</p>
 </footer>
+
+</div>
+<div data-lang-block="zh">
+<footer>
+  <a href="/">首页</a>·<a href="/guides/">指南文章</a>·<a href="/about.html">关于我们</a>·<a href="/contact.html">联系我们</a><br>
+  <a href="/privacy.html">隐私政策</a>·<a href="/terms.html">使用条款</a>·<a href="/disclaimer.html">免责声明</a>
+  <p style="margin-top:12px;font-size:12px;">本站计算结果为参考性估算，不构成任何金融建议。</p>
+</footer>
+
+</div>
 </div>
 
 <script>
 (function(){
   var KEY='calchub_lang';
   function valid(v){ return (v==='zh'||v==='en') ? v : null; }
-  function cur(){
-    // ★ 默认永远英文，不看访客地区/浏览器语言
-    return valid(localStorage.getItem(KEY)) || 'en';
-  }
+  function cur(){ return valid(localStorage.getItem(KEY)) || 'en'; }
   function apply(lang){
     document.documentElement.lang = (lang==='zh') ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-lang-block]').forEach(function(el){
