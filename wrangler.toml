@@ -1,6 +1,7 @@
 # ============================================================
 # 5号 房贷站 CalcHub Pro（k789.cc.cd）—— Cloudflare Workers + Assets
-#
+## wrangler.toml
+name = 'fangdai-xinyong-ka'
 # 部署方式一（推荐，命令行）：
 #   npx wrangler deploy
 #
