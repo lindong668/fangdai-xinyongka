@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-adsense-account" content="ca-pub-8915931557404979">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8915931557404979" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Mortgages Work: Amortization & Principal | CalcHub</title>
+<meta name="description" content="How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.">
+<meta name="keywords" content="mortgage calculator, amortization schedule, mortgage principal and interest, equal instalment vs equal principal, fixed vs variable mortgage rate, debt to income ratio, 房贷计算器,等额本息,等额本金,房贷摊销,提前还款,LPR,负债收入比">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://k789.cc.cd/guides/mortgage-basics.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CalcHub Pro">
+<meta property="og:title" content="How Mortgages Work: Amortization & Principal | CalcHub">
+<meta property="og:description" content="How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.">
+<meta property="og:url" content="https://k789.cc.cd/guides/mortgage-basics.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Mortgages Work: Amortization & Principal | CalcHub">
+<meta name="twitter:description" content="How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="alternate" hreflang="en" href="https://k789.cc.cd/guides/mortgage-basics.html">
+<link rel="alternate" hreflang="x-default" href="https://k789.cc.cd/guides/mortgage-basics.html">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:#f5f7fa; color:#222; line-height:1.85; }
+  .wrap { max-width:820px; margin:0 auto; padding:24px 20px 64px; background:#fff; min-height:100vh; box-shadow:0 0 20px rgba(0,0,0,.04); }
+  h1 { font-size:24px; color:#1e40af; margin-bottom:6px; line-height:1.4; }
+  h2 { font-size:18px; margin-top:32px; margin-bottom:8px; color:#1e293b; border-left:4px solid #2563eb; padding-left:10px; }
+  h3 { font-size:15px; margin-top:20px; margin-bottom:6px; color:#334155; }
+  p { margin:10px 0; }
+  ul, ol { margin:10px 0 10px 22px; }
+  li { margin:6px 0; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:18px; color:#2563eb; text-decoration:none; font-size:14px; }
+  .meta { color:#64748b; font-size:13px; margin-bottom:18px; }
+  .box { background:#f0f6ff; border-radius:8px; padding:16px 18px; margin:16px 0; border-left:3px solid #2563eb; }
+  .warnbox { background:#fff7ed; border-left:3px solid #ea580c; border-radius:8px; padding:14px 18px; margin:16px 0; }
+  .tipbox { background:#f0fdf4; border-left:3px solid #16a34a; border-radius:8px; padding:14px 18px; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+  th,td { border:1px solid #e2e8f0; padding:9px 11px; text-align:left; }
+  th { background:#f1f5f9; font-weight:600; }
+  .lead { font-size:16px; color:#475569; background:#f8fafc; border-left:3px solid #94a3b8; padding:14px 18px; margin:14px 0 22px; border-radius:6px; }
+  footer { margin-top:48px; padding-top:18px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; text-align:center; line-height:2; }
+  footer a { color:#2563eb; text-decoration:none; margin:0 7px; }
+  .lang-switcher { position:relative; float:right; margin-left:12px; }
+  .lang-btn { display:flex; align-items:center; gap:6px; padding:6px 12px; background:#fff; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:13px; min-width:112px; justify-content:space-between; }
+  .lang-btn:hover { border-color:#2563eb; }
+  .lang-btn .arrow { font-size:10px; transition:transform .2s; }
+  .lang-btn.open .arrow { transform:rotate(180deg); }
+  .lang-dropdown { position:absolute; top:calc(100% + 4px); right:0; background:#fff; border:1px solid #ddd; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.12); min-width:150px; z-index:100; display:none; }
+  .lang-dropdown.show { display:block; }
+  .lang-option { display:flex; align-items:center; gap:8px; padding:9px 13px; cursor:pointer; font-size:13px; }
+  .lang-option:hover { background:#f0f6ff; }
+  .lang-option.active { background:#eff6ff; color:#2563eb; }
+  .crumb { font-size:13px; color:#64748b; margin-bottom:10px; }
+  .crumb a { color:#64748b; }
+  .ad-slot { margin:22px 0; padding:0; text-align:center; }
+  .ad-slot-hint { display:none; }
+  .clear { clear:both; }
+  @media (max-width:600px){ .wrap{padding:18px 14px 48px;} h1{font-size:20px;} }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How Mortgages Work: Amortization & Principal",
+      "description": "How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.",
+      "inLanguage": "en",
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-10-22",
+      "author": {
+        "@type": "Organization",
+        "name": "CalcHub",
+        "url": "https://k789.cc.cd"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CalcHub",
+        "url": "https://k789.cc.cd"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://k789.cc.cd/guides/mortgage-basics.html"
+      },
+      "keywords": "mortgage calculator, amortization schedule, mortgage principal and interest, equal instalment vs equal principal, fixed vs variable mortgage rate, debt to income ratio",
+      "articleSection": "Personal Finance",
+      "wordCount": 2500
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://k789.cc.cd/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://k789.cc.cd/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Mortgages Work",
+          "item": "https://k789.cc.cd/guides/mortgage-basics.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap"><div class="lang-switcher">
+  <div class="lang-btn" id="langBtn" onclick="toggleLang()">
+    <span id="langLabel">🇺🇸 English</span><span class="arrow">▼</span>
+  </div>
+  <div class="lang-dropdown" id="langDropdown">
+    <div class="lang-option" data-lang="en" onclick="selectLang('en')"><span>🇺🇸</span> English</div>
+    <div class="lang-option" data-lang="zh" onclick="selectLang('zh')"><span>🇨🇳</span> 中文</div>
+  </div>
+</div>
+<div class="clear"></div>
+<div data-lang-block="en">
+<div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; How Mortgages Work</div>
+<a class="back" href="/">&larr; Back to Home</a>
+</div>
+<div data-lang-block="zh">
+<div class="crumb"><a href="/">首页</a> &rsaquo; <a href="/guides/">深度指南</a> &rsaquo; 房贷机制</div>
+<a class="back" href="/">&larr; 返回首页</a>
+</div>
+<div data-lang-block="en">
+<h1>How Mortgages Actually Work: Principal, Interest and Amortisation</h1>
+<div class="lead">Most borrowers know their monthly payment and almost nothing else about their loan. That gap is expensive. This guide walks through the full mechanics &mdash; the four variables that drive everything, both repayment structures with real numbers, why the first years are mostly interest, and how to stress-test your own budget before you sign.</div>
+
+<h2>1. The four variables that determine everything</h2>
+<p>Every mortgage, in every country, is built from the same four inputs. Everything else &mdash; fees, insurance, rate structures &mdash; is layered on top of them.</p>
+<ul>
+  <li><b>Principal (P)</b> &mdash; the amount you actually borrow. Note this is not the property price; it is the price minus your down payment.</li>
+  <li><b>Annual interest rate</b> &mdash; the price of the money. What matters is the <b>effective annual rate</b> after any discount or margin, not the headline benchmark.</li>
+  <li><b>Term (n)</b> &mdash; the number of payments, usually expressed in years but used in months in every formula.</li>
+  <li><b>Repayment structure</b> &mdash; equal instalment or equal principal. This is the choice most borrowers never realise they have.</li>
+</ul>
+<p>One conversion trips people up constantly: formulas work in <b>months</b>. An annual rate of 4.9% is a monthly rate of 4.9% &divide; 12 = 0.4083%, and a 30-year term is 360 payments, not 30.</p>
+
+<!-- ===== AD SLOT 1 =====
+     AdSense 审核通过后：删掉本注释标记，并把 data-ad-slot 换成后台生成的真实广告单元 ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 1 ===== -->
+<h2>2. Equal monthly instalment (annuity)</h2>
+<p>You pay the same amount every month from the first payment to the last. The formula:</p>
+<div class="box"><b>M = P &times; r &times; (1+r)<sup>n</sup> / [ (1+r)<sup>n</sup> &minus; 1 ]</b><br><br>
+M = monthly payment &nbsp;&middot;&nbsp; P = principal &nbsp;&middot;&nbsp; r = monthly rate (annual rate &divide; 12) &nbsp;&middot;&nbsp; n = total number of monthly payments</div>
+
+<h3>Worked example</h3>
+<p>Principal 1,000,000, annual rate 4.9%, term 30 years:</p>
+<div class="box">
+r = 0.049 &divide; 12 = 0.0040833 &nbsp;&middot;&nbsp; n = 360<br>
+(1+r)<sup>360</sup> = (1.0040833)<sup>360</sup> &asymp; 4.3366<br>
+M = 1,000,000 &times; 0.0040833 &times; 4.3366 &divide; 3.3366 &asymp; <b>5,307.27</b><br><br>
+Total paid over 360 months = 5,307.27 &times; 360 = <b>1,910,616</b><br>
+Total interest = 1,910,616 &minus; 1,000,000 = <b>910,616</b>
+</div>
+<p>Read that last line again. On a 30-year loan at 4.9%, the interest is roughly <b>91% of the amount borrowed</b>. You do not borrow a million and pay back a bit more; you borrow a million and pay back nearly two.</p>
+
+<h3>How the split shifts over time</h3>
+<p>Within each payment, interest comes first &mdash; it is simply the outstanding balance multiplied by the monthly rate &mdash; and whatever is left reduces the principal.</p>
+<table>
+  <tr><th>Period</th><th>Monthly payment</th><th>Interest portion</th><th>Principal portion</th><th>Balance remaining</th></tr>
+  <tr><td>Month 1</td><td>5,307.27</td><td>4,083.33</td><td>1,223.94</td><td>998,776</td></tr>
+  <tr><td>Year 1 total</td><td>63,687</td><td>about 48,700</td><td>about 15,000</td><td>about 985,000</td></tr>
+  <tr><td>Year 5</td><td>5,307.27</td><td>about 3,700</td><td>about 1,600</td><td>about 906,000</td></tr>
+  <tr><td>Year 15</td><td>5,307.27</td><td>about 2,600</td><td>about 2,700</td><td>about 637,000</td></tr>
+  <tr><td>Year 25</td><td>5,307.27</td><td>about 1,100</td><td>about 4,200</td><td>about 270,000</td></tr>
+  <tr><td>Final month</td><td>5,307.27</td><td>about 21</td><td>about 5,286</td><td>0</td></tr>
+</table>
+<p>In month one, only about 23% of your payment reduces what you owe. It takes roughly <b>15 to 18 years</b> before the principal portion finally overtakes the interest portion. That single fact explains almost every counter-intuitive thing about mortgages.</p>
+
+<h2>3. Equal principal</h2>
+<p>Here you repay the same slice of principal every month &mdash; P &divide; n &mdash; plus interest on whatever is still outstanding. The payment is highest in month one and declines every month thereafter.</p>
+<div class="box">
+Monthly principal = 1,000,000 &divide; 360 = <b>2,777.78</b> (constant)<br>
+Month 1 interest = 1,000,000 &times; 0.0040833 = <b>4,083.33</b><br>
+Month 1 payment = 2,777.78 + 4,083.33 = <b>6,861.11</b><br><br>
+Final month interest &asymp; 2,777.78 &times; 0.0040833 &asymp; <b>11.34</b><br>
+Final payment &asymp; <b>2,789.12</b><br><br>
+<b>Total interest</b> = P &times; r &times; (n + 1) &divide; 2 = 1,000,000 &times; 0.0040833 &times; 361 &divide; 2 = <b>737,042</b>
+</div>
+
+<h3>Side-by-side comparison</h3>
+<table>
+  <tr><th></th><th>Equal instalment</th><th>Equal principal</th><th>Difference</th></tr>
+  <tr><td>First payment</td><td>5,307.27</td><td>6,861.11</td><td>+1,554 heavier</td></tr>
+  <tr><td>Payment after 10 years</td><td>5,307.27</td><td>about 5,860</td><td>+553 heavier</td></tr>
+  <tr><td>Final payment</td><td>5,307.27</td><td>about 2,789</td><td>2,518 lighter</td></tr>
+  <tr><td><b>Total interest</b></td><td><b>910,616</b></td><td><b>737,042</b></td><td><b>173,574 saved</b></td></tr>
+  <tr><td>Break-even</td><td colspan="3">Equal principal becomes cheaper per month around month 90&ndash;100</td></tr>
+</table>
+<p>Equal principal saves about 173,600 in interest on this loan &mdash; real money. But it demands roughly 1,550 more per month in the early years, precisely when buyers are also furnishing a home and least able to absorb it. <b>The cheaper option is only better if you can actually sustain the payments.</b></p>
+
+<h2>4. Why the early years are almost entirely interest</h2>
+<p>Interest is not a fixed charge; it is a percentage of the balance. At the start the balance is at its maximum, so the interest is at its maximum, and almost none of your payment reaches the principal. This is not a trick or a penalty &mdash; it is arithmetic.</p>
+<p>The practical consequences are large:</p>
+<ul>
+  <li><b>Equity builds slowly at first.</b> After five years on the example loan you have paid about 318,000 but reduced the balance by only about 94,000.</li>
+  <li><b>Prepayment is far more powerful early.</b> Paying 100,000 in year 2 removes decades of interest on that 100,000. Paying it in year 25 removes almost none.</li>
+  <li><b>Refinancing resets the clock.</b> Extending the term to lower the monthly payment restarts the interest-heavy phase, which is how borrowers end up paying more in total while feeling they pay less each month.</li>
+</ul>
+
+<h2>5. Term length: what 20 years versus 30 years really costs</h2>
+<p>Same loan, 1,000,000 at 4.9%, changing only the term:</p>
+<table>
+  <tr><th>Term</th><th>Monthly payment</th><th>Total interest</th><th>Interest as % of principal</th></tr>
+  <tr><td>10 years</td><td>10,557</td><td>266,800</td><td>26.7%</td></tr>
+  <tr><td>20 years</td><td>6,543</td><td>570,300</td><td>57.0%</td></tr>
+  <tr><td>25 years</td><td>5,786</td><td>735,800</td><td>73.6%</td></tr>
+  <tr><td>30 years</td><td>5,307</td><td>910,600</td><td>91.1%</td></tr>
+</table>
+<p>Going from 30 years to 20 years costs about 1,236 more per month and saves about 340,300 in total interest. Going from 20 to 10 costs another 4,014 per month and saves about 303,500 more. <b>The first 10 years of a 30-year loan are the most expensive, and shortening is where the money is.</b></p>
+<div class="tipbox"><b>A useful middle path.</b> Take the longer term for flexibility, then pay extra whenever you can. You get the lower contractual obligation with the option to behave like a shorter-term borrower &mdash; and in most markets, additional prepayments go entirely to principal.</div>
+
+<h2>6. Fixed versus variable rates</h2>
+<p>A <b>fixed rate</b> is locked for a period or the whole term. You know exactly what you will pay, which makes budgeting straightforward, but fixed rates usually start higher because the lender carries the risk of rates rising.</p>
+<p>A <b>variable rate</b> is typically expressed as a benchmark plus a margin &mdash; for example a prime rate or an LPR plus or minus a fixed number of basis points. When the benchmark moves, your payment moves. Some products cap how much it can move in a year, or over the life of the loan; some do not.</p>
+<h3>The right question to ask</h3>
+<p>Not "which is cheaper today?" but <b>"what happens to my budget if rates rise by 1 or 2 percentage points?"</b> On the example loan:</p>
+<table>
+  <tr><th>Scenario</th><th>New rate</th><th>New payment</th><th>Increase per month</th><th>Increase per year</th></tr>
+  <tr><td>Base case</td><td>4.90%</td><td>5,307</td><td>&mdash;</td><td>&mdash;</td></tr>
+  <tr><td>+0.5 points</td><td>5.40%</td><td>5,613</td><td>+306</td><td>+3,672</td></tr>
+  <tr><td>+1.0 point</td><td>5.90%</td><td>5,931</td><td>+624</td><td>+7,488</td></tr>
+  <tr><td>+2.0 points</td><td>6.90%</td><td>6,596</td><td>+1,289</td><td>+15,468</td></tr>
+  <tr><td>+3.0 points</td><td>7.90%</td><td>7,272</td><td>+1,965</td><td>+23,580</td></tr>
+</table>
+<p>A two-point rise adds more than 15,000 a year to the housing budget. If that would break your finances, a variable rate is not a saving &mdash; it is a gamble. Run this test on your own numbers before committing.</p>
+
+<h2>7. Debt-to-income: the ratio lenders actually watch</h2>
+<p>Two thresholds appear in lending guidance across many markets:</p>
+<ul>
+  <li><b>Housing ratio (front-end DTI)</b> &mdash; housing payment &divide; gross monthly income. Commonly treated as comfortable at <b>28% or below</b>.</li>
+  <li><b>Total debt ratio (back-end DTI)</b> &mdash; all debt obligations &divide; gross monthly income. Commonly treated as comfortable at <b>36% or below</b>, with <b>43%</b> often used as an upper limit.</li>
+</ul>
+<h3>Example</h3>
+<div class="box">
+Gross monthly income: 25,000<br>
+Housing payment: 5,307 &nbsp;&rarr;&nbsp; front-end DTI = <b>21.2%</b> (comfortable)<br>
+Car loan: 3,000 &nbsp;&middot;&nbsp; Card instalments: 2,000<br>
+Total obligations: 10,307 &nbsp;&rarr;&nbsp; back-end DTI = <b>41.2%</b> (elevated)
+</div>
+<p>The borrower passes the housing test comfortably and still looks stretched overall. Lenders generally look at the second number, and it is the one borrowers rarely calculate.</p>
+<p>These are conventions, not laws; thresholds vary by lender, country and loan programme. But they are a useful reality check before you commit, and they tell you something a payment calculator cannot: <b>whether this loan fits your whole financial life, not just your housing budget.</b></p>
+
+<h2>8. Costs that sit outside the interest rate</h2>
+<p>The rate is the largest cost, not the only one. Budget for:</p>
+<ul>
+  <li><b>Origination or arrangement fees</b> &mdash; sometimes a flat amount, sometimes a percentage of the loan.</li>
+  <li><b>Valuation and legal fees</b> &mdash; the lender's assessment of the property, plus conveyancing.</li>
+  <li><b>Mandatory insurance</b> &mdash; property insurance, and in many markets mortgage insurance when the down payment is small.</li>
+  <li><b>Early repayment penalties</b> &mdash; a fee, or a restriction on when and how much you may prepay.</li>
+  <li><b>Ongoing charges</b> &mdash; account fees, or a required relationship such as holding deposits with the lender.</li>
+</ul>
+<div class="warnbox"><b>The trap:</b> a loan with a marginally lower rate but substantial upfront fees can cost <i>more</i> than a slightly higher-rate loan if you repay or refinance early, because the fees are paid immediately while the rate saving accrues slowly. Compare total cost over the period you actually expect to hold the loan.</div>
+
+<h2>9. Five mistakes worth avoiding</h2>
+<ol>
+  <li><b>Comparing only the monthly payment.</b> A lower payment almost always means a longer term and more total interest. Always look at total cost.</li>
+  <li><b>Ignoring the effective rate.</b> "Benchmark minus 10%" tells you nothing without the benchmark's current value. Ask for the effective annual rate.</li>
+  <li><b>Stretching to the maximum you are approved for.</b> Approval is based on your ability to pay, not on what leaves you comfortable. Borrowing less than the maximum is usually the better decision.</li>
+  <li><b>Refinancing purely to lower the payment.</b> If it extends the term, you may pay more overall. Ask what the total interest does, not what the payment does.</li>
+  <li><b>Not reading the prepayment clause.</b> If you might come into money later, a loan that penalises prepayment quietly removes your best option.</li>
+</ol>
+
+<h2>10. A practical checklist before you sign</h2>
+<ul>
+  <li>Compute the <b>total interest</b>, not just the monthly payment, for every offer.</li>
+  <li>Run a <b>rate stress test</b> at +1, +2 and +3 points if the rate can move.</li>
+  <li>Calculate your <b>back-end DTI</b> including every obligation you already carry.</li>
+  <li>Compare offers on <b>total cost</b> over the period you expect to keep the loan, fees included.</li>
+  <li>Confirm the <b>prepayment terms</b> in writing.</li>
+  <li>Keep an <b>emergency fund</b> separate from your down payment. A mortgage cannot be un-borrowed if your income drops.</li>
+</ul>
+
+<div class="warnbox"><b>Reference only.</b> All figures above are illustrative examples computed with standard formulas, not quotes or offers. Lender practices, rate structures, tax treatment and consumer protections differ substantially by country and institution. Confirm every figure with your lender and, where the amounts are significant, with a qualified adviser before committing.</div>
+
+</div>
+<div data-lang-block="zh">
+<h1>房贷到底怎么算：本金、利息与摊销的完整机制</h1>
+<div class="lead">多数借款人只知道自己每月还多少，对贷款的其他部分几乎一无所知。这个信息差是有代价的。本文完整讲清这套机制：决定一切的四个变量、两种还款结构的真实数字演算、为什么前几年几乎都在还利息，以及在你签字前该如何给自己的预算做压力测试。</div>
+
+<h2>1. 决定一切的四个变量</h2>
+<p>全世界的房贷，都由同样四个输入项构成。其余的一切 &mdash;&mdash; 手续费、保险、利率结构 &mdash;&mdash; 都是叠加在这四个变量之上的。</p>
+<ul>
+  <li><b>本金（P）</b> &mdash;&mdash; 你实际借到的金额。注意这不是房价，而是房价减去你的首付。</li>
+  <li><b>年利率</b> &mdash;&mdash; 资金的价格。真正起作用的是<b>打折或加点之后的实际执行年利率</b>，而非宣传的基准利率。</li>
+  <li><b>期限（n）</b> &mdash;&mdash; 还款次数，通常按"年"表述，但所有公式中都按"月"计算。</li>
+  <li><b>还款结构</b> &mdash;&mdash; 等额本息或等额本金。这是多数借款人从未意识到自己其实有得选的一项。</li>
+</ul>
+<p>有一个换算常年让人栽跟头：公式一律按<b>月</b>计算。年利率 4.9% 对应月利率 4.9% &divide; 12 = 0.4083%；30 年期限是 360 期，不是 30 期。</p>
+
+<!-- ===== AD SLOT 1 =====
+     AdSense 审核通过后：删掉本注释标记，并把 data-ad-slot 换成后台生成的真实广告单元 ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 1 ===== -->
+<h2>2. 等额本息</h2>
+<p>从第一期到最后一期，每月还款额完全相同。公式如下：</p>
+<div class="box"><b>M = P &times; r &times; (1+r)<sup>n</sup> / [ (1+r)<sup>n</sup> &minus; 1 ]</b><br><br>
+M = 月供 &nbsp;&middot;&nbsp; P = 本金 &nbsp;&middot;&nbsp; r = 月利率（年利率 &divide; 12） &nbsp;&middot;&nbsp; n = 总期数（月）</div>
+
+<h3>实例演算</h3>
+<p>本金 100 万元、年利率 4.9%、期限 30 年：</p>
+<div class="box">
+r = 0.049 &divide; 12 = 0.0040833 &nbsp;&middot;&nbsp; n = 360<br>
+(1+r)<sup>360</sup> = (1.0040833)<sup>360</sup> &asymp; 4.3366<br>
+M = 1,000,000 &times; 0.0040833 &times; 4.3366 &divide; 3.3366 &asymp; <b>5,307.27 元</b><br><br>
+360 期累计还款 = 5,307.27 &times; 360 = <b>1,910,616 元</b><br>
+总利息 = 1,910,616 &minus; 1,000,000 = <b>910,616 元</b>
+</div>
+<p>最后这行请再读一遍。30 年期、4.9% 的贷款，总利息约为<b>本金的 91%</b>。你不是借 100 万还"多一点"，而是借 100 万、还接近 200 万。</p>
+
+<h3>本金与利息的占比如何随时间反转</h3>
+<p>每期还款中，利息优先扣除 &mdash;&mdash; 它等于剩余本金乘以月利率 &mdash;&mdash; 剩下的部分才冲抵本金。</p>
+<table>
+  <tr><th>时点</th><th>月供</th><th>其中利息</th><th>其中本金</th><th>剩余本金</th></tr>
+  <tr><td>第 1 期</td><td>5,307.27</td><td>4,083.33</td><td>1,223.94</td><td>998,776</td></tr>
+  <tr><td>第 1 年合计</td><td>63,687</td><td>约 48,700</td><td>约 15,000</td><td>约 985,000</td></tr>
+  <tr><td>第 5 年</td><td>5,307.27</td><td>约 3,700</td><td>约 1,600</td><td>约 906,000</td></tr>
+  <tr><td>第 15 年</td><td>5,307.27</td><td>约 2,600</td><td>约 2,700</td><td>约 637,000</td></tr>
+  <tr><td>第 25 年</td><td>5,307.27</td><td>约 1,100</td><td>约 4,200</td><td>约 270,000</td></tr>
+  <tr><td>最后一期</td><td>5,307.27</td><td>约 21</td><td>约 5,286</td><td>0</td></tr>
+</table>
+<p>第一个月，月供中只有约 23% 真正减少了你的欠款。要等大约 <b>15 到 18 年</b>，本金部分才会最终超过利息部分。这一个事实，几乎解释了房贷中所有反直觉的现象。</p>
+
+<h2>3. 等额本金</h2>
+<p>每月偿还相同的本金 &mdash;&mdash; P &divide; n &mdash;&mdash; 加上剩余本金的利息。首月最高，此后逐月递减。</p>
+<div class="box">
+每月本金 = 1,000,000 &divide; 360 = <b>2,777.78 元</b>（恒定）<br>
+第 1 期利息 = 1,000,000 &times; 0.0040833 = <b>4,083.33 元</b><br>
+第 1 期月供 = 2,777.78 + 4,083.33 = <b>6,861.11 元</b><br><br>
+末期利息 &asymp; 2,777.78 &times; 0.0040833 &asymp; <b>11.34 元</b><br>
+末期月供 &asymp; <b>2,789.12 元</b><br><br>
+<b>总利息</b> = P &times; r &times; (n + 1) &divide; 2 = 1,000,000 &times; 0.0040833 &times; 361 &divide; 2 = <b>737,042 元</b>
+</div>
+
+<h3>两种方式横向对比</h3>
+<table>
+  <tr><th></th><th>等额本息</th><th>等额本金</th><th>差异</th></tr>
+  <tr><td>首期月供</td><td>5,307.27</td><td>6,861.11</td><td>多 1,554 元</td></tr>
+  <tr><td>第 10 年月供</td><td>5,307.27</td><td>约 5,860</td><td>多 553 元</td></tr>
+  <tr><td>末期月供</td><td>5,307.27</td><td>约 2,789</td><td>少 2,518 元</td></tr>
+  <tr><td><b>总利息</b></td><td><b>910,616</b></td><td><b>737,042</b></td><td><b>省 173,574</b></td></tr>
+  <tr><td>反超时点</td><td colspan="3">约第 90~100 期起，等额本金的月供低于等额本息</td></tr>
+</table>
+<p>等额本金在这笔贷款上省下约 17.36 万元利息 &mdash;&mdash; 这是真金白银。但它要求前期每月多拿出约 1,550 元，而这恰恰是买房人同时在装修置家、最拿不出钱的阶段。<b>更省钱的选择，只有你真的撑得住月供时才更优。</b></p>
+
+<h2>4. 为什么前几年几乎都在还利息</h2>
+<p>利息不是固定收费，而是余额的一个百分比。初期余额最大，利息也就最大，于是月供中只有极小部分能触及本金。这不是套路，也不是惩罚 &mdash;&mdash; 这就是算术。</p>
+<p>由此产生三个影响很大的现实后果：</p>
+<ul>
+  <li><b>权益积累得极慢。</b>上例贷款还满 5 年，你累计付出了约 31.8 万元，但本金只减少了约 9.4 万元。</li>
+  <li><b>提前还款越早越有力。</b>第 2 年还 10 万元，省掉的是这 10 万元未来几十年的利息；第 25 年再还，几乎省不了什么。</li>
+  <li><b>再融资会重置时钟。</b>为降低月供而延长年限，等于重新启动"利息占比最高"的阶段 &mdash;&mdash; 这就是为什么不少借款人每月感觉轻松了，总支出反而更多。</li>
+</ul>
+
+<h2>5. 期限长短：20 年与 30 年的真实差距</h2>
+<p>同一笔贷款，100 万元、4.9%，只改变期限：</p>
+<table>
+  <tr><th>期限</th><th>月供</th><th>总利息</th><th>利息占本金比例</th></tr>
+  <tr><td>10 年</td><td>10,557</td><td>266,800</td><td>26.7%</td></tr>
+  <tr><td>20 年</td><td>6,543</td><td>570,300</td><td>57.0%</td></tr>
+  <tr><td>25 年</td><td>5,786</td><td>735,800</td><td>73.6%</td></tr>
+  <tr><td>30 年</td><td>5,307</td><td>910,600</td><td>91.1%</td></tr>
+</table>
+<p>从 30 年改 20 年，月供增加约 1,236 元，总利息省下约 34.03 万元。从 20 年再改 10 年，月供再增 4,014 元，总利息又省约 30.35 万元。<b>30 年期贷款的前 10 年最贵，缩短期限才是真正省钱的地方。</b></p>
+<div class="tipbox"><b>一条实用的中间路线。</b>选较长年限拿到灵活性，然后有能力时多还。你既拿到了更低的合约义务，又保留了按短期限借款人行事的权利 &mdash;&mdash; 而且在多数市场，额外还款全额冲抵本金。</div>
+
+<h2>6. 固定利率与浮动利率</h2>
+<p><b>固定利率</b>在一段时期或整个期限内锁定。你确切知道要还多少，预算很好做；但固定利率通常起点更高，因为利率上升的风险由贷款机构承担。</p>
+<p><b>浮动利率</b>通常表示为"基准 + 加点"，例如最优贷款利率或 LPR 加减若干个基点。基准一动，你的月供就动。部分产品设有年度或全周期的调整上限，也有产品完全没有。</p>
+<h3>该问的正确问题</h3>
+<p>不是"现在哪个更便宜"，而是<b>"利率涨 1 个或 2 个百分点，我的预算撑得住吗？"</b>仍以上例贷款测算：</p>
+<table>
+  <tr><th>情景</th><th>新利率</th><th>新月供</th><th>月增加</th><th>年增加</th></tr>
+  <tr><td>基准情形</td><td>4.90%</td><td>5,307</td><td>&mdash;</td><td>&mdash;</td></tr>
+  <tr><td>+0.5 个点</td><td>5.40%</td><td>5,613</td><td>+306</td><td>+3,672</td></tr>
+  <tr><td>+1.0 个点</td><td>5.90%</td><td>5,931</td><td>+624</td><td>+7,488</td></tr>
+  <tr><td>+2.0 个点</td><td>6.90%</td><td>6,596</td><td>+1,289</td><td>+15,468</td></tr>
+  <tr><td>+3.0 个点</td><td>7.90%</td><td>7,272</td><td>+1,965</td><td>+23,580</td></tr>
+</table>
+<p>上升 2 个点，住房支出一年增加超过 1.5 万元。如果这会击穿你的财务，那么浮动利率不是省钱，而是赌博。请用你自己的数字先跑一遍这个测试。</p>
+
+<h2>7. 负债收入比：贷款机构真正在看的指标</h2>
+<p>多数市场的信贷指引中会出现两个阈值：</p>
+<ul>
+  <li><b>住房负担比（前端 DTI）</b> &mdash;&mdash; 住房月供 &divide; 税前月收入。通常认为 <b>28% 以下</b>较为舒适。</li>
+  <li><b>总负债比（后端 DTI）</b> &mdash;&mdash; 全部负债月供 &divide; 税前月收入。通常认为 <b>36% 以下</b>较为舒适，<b>43%</b> 常被视为上限。</li>
+</ul>
+<h3>实例</h3>
+<div class="box">
+税前月收入：25,000 元<br>
+住房月供：5,307 元 &nbsp;&rarr;&nbsp; 前端 DTI = <b>21.2%</b>（舒适）<br>
+车贷：3,000 元 &nbsp;&middot;&nbsp; 信用卡分期：2,000 元<br>
+全部月供合计：10,307 元 &nbsp;&rarr;&nbsp; 后端 DTI = <b>41.2%</b>（偏高）
+</div>
+<p>这位借款人轻松通过住房测试，整体却已显得吃力。贷款机构通常看的是第二个数字，而这恰恰是借款人很少去算的那个。</p>
+<p>这些是行业惯例而非法律规定，阈值因机构、国家与贷款品种而异。但在你签字前，它们是有用的现实检验，而且能告诉你月供计算器无法回答的事：<b>这笔贷款是否适配你的整个财务生活，而不只是住房预算。</b></p>
+
+<h2>8. 利率之外的成本</h2>
+<p>利率是最大的成本，但不是唯一的成本。要预算这些：</p>
+<ul>
+  <li><b>手续费 / 安排费</b> &mdash;&mdash; 有时是固定金额，有时按贷款额百分比收。</li>
+  <li><b>评估费与法律费用</b> &mdash;&mdash; 贷款机构对房产的评估，加上产权过户相关费用。</li>
+  <li><b>强制保险</b> &mdash;&mdash; 房产险；在不少市场，首付比例较低时还需房贷保险。</li>
+  <li><b>提前还款违约金</b> &mdash;&mdash; 一笔费用，或对提前还款时间、金额的限制。</li>
+  <li><b>持续性费用</b> &mdash;&mdash; 账户管理费，或诸如须在该行存放存款的附加要求。</li>
+</ul>
+<div class="warnbox"><b>一个陷阱：</b>利率略低但前期费用很高的贷款，如果你提前还款或再融资，<b>实际可能更贵</b> &mdash;&mdash; 因为费用立即支付，而利率节省是慢慢累积的。请在你预期持有该贷款的期间内比较总成本。</div>
+
+<h2>9. 值得避免的五个错误</h2>
+<ol>
+  <li><b>只比较月供。</b>月供更低几乎总意味着期限更长、总利息更多。永远看总成本。</li>
+  <li><b>忽略实际执行利率。</b>"基准下浮 10%"在不知道基准当前值的情况下毫无意义。要问实际执行年利率。</li>
+  <li><b>按批准额度的上限借款。</b>批准额度基于你的偿付能力，而非让你过得舒服的金额。借得比上限少，通常是更好的决定。</li>
+  <li><b>纯粹为降低月供而再融资。</b>若同时延长了期限，总支出可能反而更多。要看总利息怎么变，而不是月供怎么变。</li>
+  <li><b>不看提前还款条款。</b>若你日后可能有一笔钱进账，一份惩罚提前还款的合同会悄悄拿掉你最好的选项。</li>
+</ol>
+
+<h2>10. 签字前的实操清单</h2>
+<ul>
+  <li>对每个报价都算<b>总利息</b>，而不只是月供。</li>
+  <li>若利率会浮动，做 <b>+1、+2、+3 个点的压力测试</b>。</li>
+  <li>计算你的<b>后端 DTI</b>，把你已有的每一项负债都算进去。</li>
+  <li>在你预期持有贷款的期间内，按<b>含费用的总成本</b>比较各家报价。</li>
+  <li>把<b>提前还款条款</b>落到书面确认。</li>
+  <li>把<b>应急金</b>与首付分开留好。收入一旦下降，房贷是没法"退回去"的。</li>
+</ul>
+
+<div class="warnbox"><b>仅供参考。</b>以上数字均为使用标准公式计算的示例，不构成报价或要约。贷款机构做法、利率结构、税务处理与消费者保护因国家和机构差异很大。请在签约前向贷款机构核实每一个数字；金额重大时，另请咨询合格的专业顾问。</div>
+
+</div>
+<div data-lang-block="en">
+<!-- ===== AD SLOT 2 =====
+     AdSense 审核通过后：删掉本注释标记，并把 data-ad-slot 换成后台生成的真实广告单元 ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 2 ===== -->
+<footer>
+  <a href="/">Home</a>·<a href="/guides/">Guides</a>·<a href="/about.html">About</a>·<a href="/contact.html">Contact</a><br>
+  <a href="/privacy.html">Privacy Policy</a>·<a href="/terms.html">Terms of Use</a>·<a href="/disclaimer.html">Disclaimer</a>
+  <p style="margin-top:12px;font-size:12px;">Calculator results are estimates for reference only and do not constitute financial advice.</p>
+</footer>
+
+</div>
+<div data-lang-block="zh">
+<!-- ===== AD SLOT 2 =====
+     AdSense 审核通过后：删掉本注释标记，并把 data-ad-slot 换成后台生成的真实广告单元 ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 2 ===== -->
+<footer>
+  <a href="/">首页</a>·<a href="/guides/">指南文章</a>·<a href="/about.html">关于我们</a>·<a href="/contact.html">联系我们</a><br>
+  <a href="/privacy.html">隐私政策</a>·<a href="/terms.html">使用条款</a>·<a href="/disclaimer.html">免责声明</a>
+  <p style="margin-top:12px;font-size:12px;">本站计算结果为参考性估算，不构成任何金融建议。</p>
+</footer>
+
+</div>
+</div>
+
+<script>
+(function(){
+  var KEY='calchub_lang';
+  function valid(v){ return (v==='zh'||v==='en') ? v : null; }
+  function cur(){ return valid(localStorage.getItem(KEY)) || 'en'; }
+  function apply(lang){
+    document.documentElement.lang = (lang==='zh') ? 'zh-CN' : 'en';
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.style.display = (el.getAttribute('data-lang-block')===lang) ? '' : 'none';
+    });
+    var lb=document.getElementById('langLabel');
+    if(lb) lb.textContent = (lang==='zh') ? '🇨🇳 中文' : '🇺🇸 English';
+    document.querySelectorAll('.lang-option').forEach(function(o){
+      o.classList.toggle('active', o.getAttribute('data-lang')===lang);
+    });
+  }
+  window.selectLang=function(lang){
+    if(!valid(lang)) lang='en';
+    localStorage.setItem(KEY,lang); apply(lang);
+    var d=document.getElementById('langDropdown'); if(d) d.classList.remove('show');
+    var b=document.getElementById('langBtn'); if(b) b.classList.remove('open');
+  };
+  window.toggleLang=function(){
+    document.getElementById('langDropdown').classList.toggle('show');
+    document.getElementById('langBtn').classList.toggle('open');
+  };
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.lang-switcher')){
+      var d=document.getElementById('langDropdown'); if(d) d.classList.remove('show');
+      var b=document.getElementById('langBtn'); if(b) b.classList.remove('open');
+    }
+  });
+  apply(cur());
+})();
+</script>
+</body>
+</html>
