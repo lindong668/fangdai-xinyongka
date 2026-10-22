@@ -10,4 +10,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://k889.de5.net/sitemap.xml
+Sitemap: https://658.ccwu.cc/sitemap.xml
