@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://k789.cc.cd/sitemap.xml
