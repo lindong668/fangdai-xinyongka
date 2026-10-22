@@ -84,6 +84,22 @@ export default {
       }
     }
 
+    // /guides/ 与 /guides/xxx 补 .html（目录索引 + 文章干净 URL）
+    if (isNav && pathname.startsWith('/guides')) {
+      const clean = pathname.replace(/\/+$/, '');          // /guides/ → /guides
+      const probe = await env.ASSETS.fetch(
+        new Request(url.origin + clean + '.html', request.clone())
+      );
+      if (probe.status === 200) {
+        return Response.redirect(url.origin + clean + '.html' + url.search, 301);
+      }
+      // /guides 或 /guides/ → 索引页
+      const idx = await env.ASSETS.fetch(
+        new Request(url.origin + '/guides/index.html', request.clone())
+      );
+      if (idx.status === 200) return idx;
+    }
+
     const res = await env.ASSETS.fetch(request);
 
     // 404 兜底
