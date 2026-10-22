@@ -6,7 +6,7 @@
 #
 # 部署方式二（网页上传）：
 #   CF 控制台 → Workers 和 Pages → 创建 → Workers → 上传本目录
-#   然后在「设置 → 域和路由」里添加自定义域 658.ccwu.cc
+#   routes 已在下方写好，deploy 后自动绑定，无需手动添加
 #
 # name 必须与 CF 控制台上的 Worker 名字一致
 #   （若控制台里已有别的名字，改这一行即可）
@@ -17,12 +17,18 @@ account_id = "d49e51b1279804c22035a33a9c1cb06e"
 compatibility_date = "2026-09-01"
 main = "src/index.js"
 
+# ★ D6 改动：改用 routes 方式绑定（解决「自定义域」证书不匹配问题）
+#   原因：自定义域方式走企业版证书服务，遇 PSL 后缀报「通配符证书不覆盖」
+#         routes 方式直接用站点自己的免费 Universal SSL 证书
+#   域名保持 658.ccwu.cc 不变，无需加 www
+# ⚠️ 必须在所有 [section] 之前，否则会被当成 assets.routes
+routes = [
+  { pattern = "658.ccwu.cc/*", zone_name = "658.ccwu.cc" }
+]
+
 [assets]
 directory = "./public"
 binding = "ASSETS"
-
-# 路由在 CF 控制台配置：Workers → fangdai-xinyong-ka → 设置 → 域和路由
-# 658.ccwu.cc/*
 
 # 请求日志（CF 控制台 → Workers → 该站 → Observability 实时查看）
 #
