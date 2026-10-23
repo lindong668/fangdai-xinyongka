@@ -99,3 +99,52 @@ OG 方形裁切      左右余量 35/37，100% 保留 ✅
 ```
 
 部署：无增删 → 覆盖上传
+
+## D16 变更（2026-10-24）— 修复 Workers Builds 预览构建红叉
+
+**现象**
+GitHub 仓库 lindong668/fangdai-xinyongka 提交旁出现红叉：
+`Workers Builds: fangdai-xinyong-ka`
+但生产部署 Success，站点 658.ccwu.cc 访问正常。
+
+**根因（CF 构建日志原文）**
+```
+Executing user deploy command: npx wrangler preview
+✘ [ERROR] Your Wrangler configuration is missing a `previews` block
+  to run this command. Add the following to your configuration file:
+
+  [previews]
+
+  To create or update a Preview with `npx wrangler preview`, your Wrangler
+  configuration must include a `previews` block. The block can be empty.
+  Assets, compatibility settings, migrations, and placement stay at the
+  top level and do not need to be added to `previews`.
+```
+
+**已排除的其他可能**
+- Worker 名字不匹配：CF 控制台项目名 `fangdai-xinyong-ka`
+  与 wrangler.toml 的 name 完全一致 ✅ 排除
+- 缺 account_id / main：均已正确配置 ✅ 排除
+- 超长行 / 包体积：全包最长行仅 477 字符 ✅ 排除
+
+**修复**
+在 wrangler.toml 末尾新增空的 `[previews]` 块。
+本站 src/index.js 仅引用 env.ASSETS，无任何环境变量，
+故按 CF 官方说明留空块即可，无需配置 previews.vars。
+
+**校验**
+```
+TOML 解析：顶层键 name/account_id/compatibility_date/main/routes/
+           assets/observability/previews，previews = {} ✅
+其余配置一字未动，26 个其他文件未改动
+```
+
+**部署**：无增删 → 覆盖上传（27 文件），实际只需替换 wrangler.toml。
+
+**替代方案**：CF 控制台 → Workers & Pages → fangdai-xinyong-ka
+→ Settings → Build → 关闭 Preview Builds，预览构建不再触发，红叉同样消失。
+
+**备注**：同为 wrangler 4.152.0 的 beta 版 `wrangler preview`，
+对 2号（有 12 个 vars）的报错要求写全 previews.vars，
+对本站（无 vars）仅要求块存在即可为空——提示随项目配置而异。
+2号 已按更严格的版本处理（含 12 个变量），兼容性更优。
