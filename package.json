@@ -1,0 +1,15 @@
+{
+  "name": "fangdai-xinyong-ka",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CalcHub Pro 房贷站（658.ccwu.cc）on Cloudflare Workers + Assets",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.152.0"
+  }
+}
