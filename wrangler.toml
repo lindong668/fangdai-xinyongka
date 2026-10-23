@@ -1,5 +1,5 @@
 # ============================================================
-# 5号 房贷站 CalcHub Pro（658.ccwu.cc）—— Cloudflare Workers + Assets
+# 5号 房贷站 CalcHub（658.ccwu.cc）—— Cloudflare Workers + Assets
 #
 # 部署方式一（推荐，命令行）：
 #   npx wrangler deploy

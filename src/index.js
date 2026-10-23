@@ -1,5 +1,5 @@
 /**
- * 5号 房贷站 CalcHub Pro（658.ccwu.cc）—— Cloudflare Workers + Assets
+ * 5号 房贷站 CalcHub（658.ccwu.cc）—— Cloudflare Workers + Assets
  *
  * ★ 为什么从「纯静态」改成 Workers：
  *   纯静态部署时，Search Console 容易出现「无法抓取 / 类型未知 / 0 个网址」，
