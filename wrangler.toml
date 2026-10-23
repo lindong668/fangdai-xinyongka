@@ -1,0 +1,44 @@
+# ============================================================
+# 5号 房贷站 CalcHub Pro（658.ccwu.cc）—— Cloudflare Workers + Assets
+#
+# 部署方式一（推荐，命令行）：
+#   npx wrangler deploy
+#
+# 部署方式二（网页上传）：
+#   CF 控制台 → Workers 和 Pages → 创建 → Workers → 上传本目录
+#   routes 已在下方写好，deploy 后自动绑定，无需手动添加
+#
+# name 必须与 CF 控制台上的 Worker 名字一致
+#   （若控制台里已有别的名字，改这一行即可）
+# ============================================================
+name = "fangdai-xinyong-ka"
+# 账号 ID 写死，deploy 时不再交互提问选账号
+account_id = "d49e51b1279804c22035a33a9c1cb06e"
+compatibility_date = "2026-09-01"
+main = "src/index.js"
+
+# ★ D6 改动：改用 routes 方式绑定（解决「自定义域」证书不匹配问题）
+#   原因：自定义域方式走企业版证书服务，遇 PSL 后缀报「通配符证书不覆盖」
+#         routes 方式直接用站点自己的免费 Universal SSL 证书
+#   域名保持 658.ccwu.cc 不变，无需加 www
+# ⚠️ 必须在所有 [section] 之前，否则会被当成 assets.routes
+routes = [
+  { pattern = "658.ccwu.cc/*", zone_name = "658.ccwu.cc" }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# 请求日志（CF 控制台 → Workers → 该站 → Observability 实时查看）
+#
+# ⚠️ invocation_logs = true 是关键：
+#    只写 enabled = true 只会记录 console.log 的输出，
+#    invocation_logs 才负责记录「每一次请求」（URL / UA / IP / 状态码）。
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+invocation_logs = true      # ★ 记录每次调用，缺了它看不到访问者
+head_sampling_rate = 1      # 100% 采样，不漏
