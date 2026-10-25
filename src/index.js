@@ -52,13 +52,29 @@ export default {
       );
     }
 
-    /* ★ sitemap.xml 硬拦截
-     * Google 要求 application/xml，且内容必须是合法 XML。
-     * 这里强制改写 Content-Type 再吐出，确保万无一失。 */
+    /* ★ sitemap.xml 硬拦截（D17 重写 —— 不再依赖静态资源）
+     *
+     * 【为什么改】
+     *   旧写法用 env.ASSETS.fetch() 去读 public/sitemap.xml。
+     *   对照本站其他两个 SEO 文件：
+     *     ads.txt     → Worker 硬编码字符串 → AdSense 抓到「已授权」
+     *     robots.txt  → Worker 硬编码字符串 → Google 正常读取
+     *     sitemap.xml → 读静态文件          → GSC「无法抓取」
+     *   唯一失败项 = 唯一依赖静态文件的项，相关性 100%。
+     *
+     * 【失效机制】静态文件若未真正部署（404），src.text() 会拿到
+     *   404 错误页的 HTML，再被贴上 application/xml 的 Content-Type
+     *   吐给 Google —— 标着 XML 的 HTML —— 解析失败 —— 报「无法抓取」。
+     *   站点本身能正常访问，所以「手动能打开、爬虫抓不到」并不矛盾。
+     *
+     * 【修法】照抄 ads.txt 的成功做法：内容直接内联在 Worker 里，
+     *   不读 ASSETS、不依赖上传、不受边缘缓存影响。
+     *   内联体积 2449 字符，完全可控。
+     */
+    const SITEMAP_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://658.ccwu.cc/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/mortgage-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/mortgage-prepayment.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/credit-card-installment-traps.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/credit-card-usage-tips.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/exchange-rate-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/remittance-cost-guide.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/about.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/contact.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/privacy.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/terms.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/disclaimer.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n</urlset>\n";
+
     if (pathname === '/sitemap.xml') {
-      const src = await env.ASSETS.fetch(new Request(url.origin + '/sitemap.xml', request));
-      const body = await src.text();
-      return new Response(body, {
+      return new Response(SITEMAP_XML, {
         status: 200,
         headers: {
           'content-type': 'application/xml; charset=utf-8',
