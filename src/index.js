@@ -1,5 +1,5 @@
 /**
- * 5号 房贷站 CalcHub（658.ccwu.cc）—— Cloudflare Workers + Assets
+ * 5号 房贷站 CalcHub（home.saoo.me）—— Cloudflare Workers + Assets
  *
  * ★ 为什么从「纯静态」改成 Workers：
  *   纯静态部署时，Search Console 容易出现「无法抓取 / 类型未知 / 0 个网址」，
@@ -16,8 +16,8 @@ export default {
     const url = new URL(request.url);
 
     // 统一走主域名，避免 www 与非 www 双份索引
-    if (url.hostname === 'www.658.ccwu.cc') {
-      return Response.redirect('https://658.ccwu.cc' + url.pathname + url.search, 301);
+    if (url.hostname === 'www.home.saoo.me') {
+      return Response.redirect('https://home.saoo.me' + url.pathname + url.search, 301);
     }
 
     const pathname = url.pathname;
@@ -41,7 +41,7 @@ export default {
     /* ★ robots.txt 硬拦截（含 Mediapartners-Google，AdSense 专用爬虫） */
     if (pathname === '/robots.txt') {
       return new Response(
-        'User-agent: Mediapartners-Google\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://658.ccwu.cc/sitemap.xml\n',
+        'User-agent: Mediapartners-Google\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://home.saoo.me/sitemap.xml\n',
         {
           status: 200,
           headers: {
@@ -71,7 +71,7 @@ export default {
      *   不读 ASSETS、不依赖上传、不受边缘缓存影响。
      *   内联体积 2449 字符，完全可控。
      */
-    const SITEMAP_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://658.ccwu.cc/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/mortgage-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/mortgage-prepayment.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/credit-card-installment-traps.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/credit-card-usage-tips.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/exchange-rate-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/guides/remittance-cost-guide.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/about.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/contact.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/privacy.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/terms.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://658.ccwu.cc/disclaimer.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n</urlset>\n";
+    const SITEMAP_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://home.saoo.me/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/mortgage-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/mortgage-prepayment.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/credit-card-installment-traps.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/credit-card-usage-tips.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/exchange-rate-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/remittance-cost-guide.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/about.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/contact.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/privacy.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/terms.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/disclaimer.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n</urlset>\n";
 
     if (pathname === '/sitemap.xml') {
       return new Response(SITEMAP_XML, {

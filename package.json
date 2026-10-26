@@ -2,7 +2,7 @@
   "name": "fangdai-xinyong-ka",
   "version": "1.0.0",
   "private": true,
-  "description": "CalcHub 房贷站（658.ccwu.cc）on Cloudflare Workers + Assets",
+  "description": "CalcHub 房贷站（home.saoo.me）on Cloudflare Workers + Assets",
   "main": "src/index.js",
   "scripts": {
     "dev": "wrangler dev",

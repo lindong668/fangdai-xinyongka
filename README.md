@@ -1,4 +1,4 @@
-# 5号 房贷站 CalcHub（658.ccwu.cc）
+# 5号 房贷站 CalcHub（home.saoo.me）
 
 Cloudflare Workers + Assets 静态站。
 
@@ -105,7 +105,7 @@ OG 方形裁切      左右余量 35/37，100% 保留 ✅
 **现象**
 GitHub 仓库 lindong668/fangdai-xinyongka 提交旁出现红叉：
 `Workers Builds: fangdai-xinyong-ka`
-但生产部署 Success，站点 658.ccwu.cc 访问正常。
+但生产部署 Success，站点 home.saoo.me 访问正常。
 
 **根因（CF 构建日志原文）**
 ```
@@ -148,3 +148,49 @@ TOML 解析：顶层键 name/account_id/compatibility_date/main/routes/
 对 2号（有 12 个 vars）的报错要求写全 previews.vars，
 对本站（无 vars）仅要求块存在即可为空——提示随项目配置而异。
 2号 已按更严格的版本处理（含 12 个变量），兼容性更优。
+
+
+## D19 换域：home.saoo.me（2026-10-25）
+
+**为什么换域**：
+```
+原 658.ccwu.cc 所在的 .cc 后缀风险极高：
+  · alphaMountain 2026-05：.cc 风险域名占比 69.2%（全网第 6）
+  · Interisle 2025：.cc 人均钓鱼分 113（.com=30），worst-10，超 10% 域名涉网络犯罪
+→ .cc 被长期当作"廉价 .com 替代品"滥用，整体信誉拖累抓取优先级。
+→ 且 ccwu.cc 父域失联（ss99 / 658 两个子域同时出问题，换 us.ci 立刻恢复）。
+→ 结论：彻底离开 .cc。
+```
+
+**本次改动**：
+```
+658.ccwu.cc → home.saoo.me
+19 个文件、138 处替换：
+  · wrangler.toml：routes pattern + zone_name（★ zone_name 必须是根域 saoo.me）
+  · public/sitemap.xml：13 处 URL
+  · public/robots.txt：Sitemap 行
+  · src/index.js：17 处（canonical / 安全头 / 路由）
+  · 全部 HTML 内链与 canonical
+★ ads.txt 的 pub ID 不变（pub-8915931557404979 / f08c47fec0942fa0）
+```
+
+**部署前提**（★ 顺序不能错）：
+```
+① saoo.me 必须已托管到 CF（改 NS → 等生效）
+② saoo.me 的 Universal SSL 证书状态为「有效」
+③ 再部署本包
+```
+
+**部署后验证**：
+```
+https://home.saoo.me/           → 200
+https://home.saoo.me/ads.txt    → 200，显示 pub 行
+https://home.saoo.me/sitemap.xml → 200，13 条 URL 全为 home.saoo.me
+```
+
+**注意**：
+```
+沿用 D6 定案：绑 routes 而非「自定义域」，
+因为自定义域走企业版证书服务，遇 PSL 后缀会报"通配符证书不覆盖"。
+★ 子域 home.saoo.me 不需单独加 DNS 记录，routes 模式下 CF 自动处理。
+```

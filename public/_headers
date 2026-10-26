@@ -1,0 +1,26 @@
+# SEO 关键文件的 Content-Type 必须由静态层显式声明
+#
+# 【为什么加这个文件】
+#   本站曾长期报「无法抓取 / 类型未知 / 0 个网址」。
+#   根因：静态 sitemap.xml 未被声明 MIME，被猜成其他类型，Google 认不出。
+#   Worker 层虽有硬编码兜底，但一旦 Worker 未生效（部署失败/跑的老版本）
+#   请求会穿透到静态文件，问题立刻复现。
+#   这里在静态层直接钉死 MIME，与 Worker 硬编码形成双保险。
+#
+# 【为什么不加 X-Frame-Options: DENY】
+#   会挡住 AdSense 后台「查看广告呈现效果」的 iframe 预览，故意不加。
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
+
+/ads.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
