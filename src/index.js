@@ -71,16 +71,25 @@ export default {
      *   不读 ASSETS、不依赖上传、不受边缘缓存影响。
      *   内联体积 2449 字符，完全可控。
      */
-    const SITEMAP_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://home.saoo.me/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/mortgage-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/mortgage-prepayment.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/credit-card-installment-traps.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/credit-card-usage-tips.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/exchange-rate-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/remittance-cost-guide.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/about.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/contact.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/privacy.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/terms.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/disclaimer.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n</urlset>\n";
+
+    /* ★ sitemap.xml —— 静态文件优先 + 严格校验 + 内联兜底
+     * 旧版把 URL 硬编码在这里，加页面时只改 public/sitemap.xml 忘了改这里，
+     * 线上就会一直返回旧的硬编码（4号站已实测踩坑：静态96条，线上返回31条
+     * 且含已删除页面）。现在改为优先读静态，以后加页面不用再动这里。 */
+    const SITEMAP_FALLBACK = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://home.saoo.me/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/mortgage-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/mortgage-prepayment.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/credit-card-installment-traps.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/credit-card-usage-tips.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/exchange-rate-basics.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/guides/remittance-cost-guide.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/about.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/contact.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.5</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/privacy.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/terms.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n  <url>\n    <loc>https://home.saoo.me/disclaimer.html</loc>\n    <lastmod>2026-10-22</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.4</priority>\n  </url>\n</urlset>\n";
 
     if (pathname === '/sitemap.xml') {
-      return new Response(SITEMAP_XML, {
-        status: 200,
-        headers: {
-          'content-type': 'application/xml; charset=utf-8',
-          'cache-control': 'public, max-age=3600',
-        },
-      });
+      let body = SITEMAP_FALLBACK;
+      try {
+        const r = await env.ASSETS.fetch(new Request(url.origin + '/sitemap.xml', request.clone()));
+        if (r.status === 200) {
+          const t = (await r.text()).trim();
+          if (t.startsWith('<?xml') && t.includes('<urlset')) body = t;
+        }
+      } catch (e) {}
+      return new Response(body, { status: 200, headers: {
+        'content-type': 'application/xml; charset=utf-8',
+        'cache-control': 'public, max-age=3600' } });
     }
 
     /* 无扩展名路径补 .html（如 /about → /about.html），301 转移权重
