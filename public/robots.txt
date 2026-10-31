@@ -1,3 +1,7 @@
+# robots.txt — home.saoo.me
+# 精简版：不拦任何爬虫（含 AI），最大化 Google / Bing 收录与 AI 引用曝光
+# 已移除非标准信号行，消除 GSC「Googlebot 忽略的规则」警告
+
 User-agent: Mediapartners-Google
 Allow: /
 
