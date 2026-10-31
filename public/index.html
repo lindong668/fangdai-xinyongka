@@ -82,6 +82,7 @@
   .result .warn { color:#dc2626; }
   .result .good { color:#16a34a; }
   .rate-hint { font-size:12px; color:#94a3b8; margin-top:2px; }
+  .fx-credit a { color:#2563eb; text-decoration:underline; }
   .note { font-size:13px; color:#666; margin-top:14px; border-top:1px solid #eee; padding-top:12px; }
   .ad-box { display:none; }
   .ad-slot { margin:16px 0; text-align:center; }
@@ -400,7 +401,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <a href="/terms.html" data-i18n="footer_terms">Terms of Use</a>·
     <a href="/disclaimer.html" data-i18n="footer_disclaimer">Disclaimer</a>
     <p style="margin-top:10px;font-size:12px;color:#94a3b8;" data-i18n="footer_note">Results are estimates for reference only and do not constitute financial advice.</p>
-    <p style="margin-top:6px;font-size:12px;color:#94a3b8;">Contact: <a href="mailto:juju089@qq.com">juju089@qq.com</a></p>
+    <p style="margin-top:6px;font-size:12px;color:#94a3b8;">Contact: <a href="mailto:yokok8@outlook.com">yokok8@outlook.com</a></p>
   
   <p class="ad-disclosure"><span class="en-t">This site contains advertisements. Ads do not influence our calculators, results or the opinions expressed in our guides.</span><span class="cn-t">本站包含广告，广告不影响我们的计算器、计算结果，也不影响指南中表达的观点。</span></p></footer>
 </div>
@@ -2512,12 +2513,12 @@ async function fetchLiveRate(from, to) {
     const res = await fetch(`https://open.er-api.com/v6/latest/${from}`, { signal: AbortSignal.timeout(8000) });
     const data = await res.json();
     const rate = data?.rates?.[to];
-    if (rate) return { rate, date: data.time_last_update_utc || 'today', source: 'ExchangeRate-API Open' };
+    if (rate) return { rate, date: data.time_last_update_utc || 'today', source: '<a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener nofollow">ExchangeRate-API</a> Open' };
   } catch(e) {}
   try {
     const res = await fetch(`https://api.frankfurter.dev/v1/latest?base=${from}&symbols=${to}`);
     const data = await res.json();
-    if (data?.rates?.[to]) return { rate: data.rates[to], date: data.date, source: 'ECB / Frankfurter' };
+    if (data?.rates?.[to]) return { rate: data.rates[to], date: data.date, source: '<a href="https://frankfurter.dev/" target="_blank" rel="noopener nofollow">Frankfurter</a> (ECB)' };
   } catch(e) {}
   return null;
 }
@@ -2532,7 +2533,7 @@ async function calcFx() {
   fx_result.innerHTML =
     `${amt.toLocaleString()} ${from} = <b>${(amt*r.rate).toFixed(2)} ${to}</b><br>` +
     `1 ${from} = ${r.rate} ${to}<br>` +
-    `<span class="rate-hint">${dict.fx_source_label}：${r.date}<br>${dict.fx_source_from}：${r.source} · 每日中间价参考</span>`;
+    `<span class="rate-hint">${dict.fx_source_label}：${r.date}<br>${dict.fx_source_from}：<span class="fx-credit">${r.source}</span> · 每日中间价参考</span>`;
 }
 </script>
 </body>

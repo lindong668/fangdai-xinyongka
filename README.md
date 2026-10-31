@@ -1,4 +1,17 @@
-# 5号 房贷站 CalcHub（home.saoo.me）
+# 5号 · CalcHub 房贷站 — https://home.saoo.me（子域） · Cloudflare Workers · D22
+
+> **一眼识别卡**
+> | 项 | 值 |
+> |---|---|
+> | 站名 | **CalcHub 房贷站** |
+> | 域名 | **https://home.saoo.me（子域）** |
+> | Worker 名 | `fangdai-xinyong-ka` |
+> | 形态 | **Cloudflare Workers + Assets** |
+> | 本包版本 | **D22** = D20 + 汇率署名改为可点击链接 + 联系邮箱统一为 yokok8@outlook.com |
+> | 生成日期 | 2026-10-27 |
+> | 关键特性 | 房贷/信用卡/汇率计算；含 Bing 验证文件 |
+
+---
 
 Cloudflare Workers + Assets 静态站。
 
