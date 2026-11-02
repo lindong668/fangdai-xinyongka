@@ -1,9 +1,9 @@
-# 5号 · CalcHub 房贷站 — https://home.saoo.me（子域） · Cloudflare Workers · D22
+# 5号 · LendMath 房贷站 — https://home.saoo.me（子域） · Cloudflare Workers · D22
 
 > **一眼识别卡**
 > | 项 | 值 |
 > |---|---|
-> | 站名 | **CalcHub 房贷站** |
+> | 站名 | **LendMath 房贷站** |
 > | 域名 | **https://home.saoo.me（子域）** |
 > | Worker 名 | `fangdai-xinyong-ka` |
 > | 形态 | **Cloudflare Workers + Assets** |
@@ -24,7 +24,7 @@ Cloudflare Workers + Assets 静态站。
 属于可被判为 misrepresentation（虚假陈述）的风险点，属可避免项，故移除。
 
 ### 改了什么
-1. 品牌名 CalcHub Pro → CalcHub（去掉 Pro）
+1. 品牌名 LendMath Pro → LendMath（去掉 Pro）
    全站 98 处 → 现在 0 处残留（含 package.json / wrangler.toml / JS 注释）
 2. 12 语种副标题：从「专业/Pro」自称改为品类描述
    中文：专业金融计算 → 房贷 · 信用卡分期 · 汇率换算
@@ -32,10 +32,10 @@ Cloudflare Workers + Assets 静态站。
    德/日/韩/俄/阿/泰等 10 语同步改（原 Profi、プロ、Профессиональный、
    احترافية、มืออาชีพ 等自称一律移除）
 3. title / og:title / twitter:title 补中文长尾词
-   房贷计算器 · 信用卡分期利率 · 汇率换算 | CalcHub
+   房贷计算器 · 信用卡分期利率 · 汇率换算 | LendMath
 4. keywords 重排：中文长尾词前置
 5. description / og:description 改中文，含品类词
-6. OG 分享图重绘文字：CalcHub Pro → CalcHub，副标题改中文品类词
+6. OG 分享图重绘文字：LendMath Pro → LendMath，副标题改中文品类词
    方形裁切安全区实测：内容 行118-523 列465-734，安全区 行0-629 列285-915
    → 100% 保留
 
@@ -56,7 +56,7 @@ OG 图有变更，微信有缓存，验证分享效果请换新链接
 
 **改动**
 ```
-title      Free Mortgage, Credit Card APR & Currency Calculators | CalcHub
+title      Free Mortgage, Credit Card APR & Currency Calculators | LendMath
            （60 字符，控制在 Google 截断线内）
 keywords   英文长尾词优先，共 19 个：
            mortgage calculator / mortgage prepayment calculator /
@@ -106,7 +106,7 @@ credit-card 指南"实时通知" —— 指银行交易提醒，非本站数据
 畸形标签        0 ✅
 内链            17 个，缺失 0 ✅
 我方"实时"宣称   0 ✅（正确免责 10 条保留）
-CalcHub Pro 残留 0 ✅（README 文档中的历史记录除外）
+LendMath Pro 残留 0 ✅（README 文档中的历史记录除外）
 标签平衡         disclaimer <p> 24/25 为 D14 之前既有状态，非本次引入
 OG 方形裁切      左右余量 35/37，100% 保留 ✅
 ```
@@ -207,3 +207,30 @@ https://home.saoo.me/sitemap.xml → 200，13 条 URL 全为 home.saoo.me
 因为自定义域走企业版证书服务，遇 PSL 后缀会报"通配符证书不覆盖"。
 ★ 子域 home.saoo.me 不需单独加 DNS 记录，routes 模式下 CF 自动处理。
 ```
+
+---
+
+## 本次更新（内容扩容 + 去重）
+
+**文章扩写**：13 篇新增指南（美国 8 篇 / 中国 5 篇）从约 600–790 词扩写至 1,100–1,400 词，
+中英双语同步。新增章节包含各档位费率表、完整算例与常见问答。
+
+**国家页去重**：`/mortgage/us/`、`/mortgage/cn/`（中英各一套）新增各自独立的正文——
+页面说明、术语表、6 条 FAQ，以及顶部国家专属引言，每页约 800 英文词 / 1,200 中文字符，
+并新增 FAQPage 结构化数据。与首页的正文相似度由 98% 降至约 88%，
+剩余重合部分为计算器表单与导航页脚（工具页固有）。
+
+**数字修正（均以官方文件为准）**：
+
+| 项目 | 修正前 | 修正后 | 依据 |
+|---|---|---|---|
+| 契税面积分界 | 90㎡ | 140㎡ | 财政部/税务总局/住建部公告 2024 年第 16 号（2024-12-01 施行） |
+| 二手房增值税 | 5% | 3%（全额 ÷1.03×3%） | 财政部/税务总局公告 2025 年第 17 号（2026-01-01 施行） |
+| 公积金利率 | 2.85% | 2.6%（首套 5 年以上） | 央行通知，2025-05-08 起；存量贷款 2026-01-01 执行 |
+| 商业贷款基准 | 4.2% | LPR 5 年期以上 3.5% | 2026-10-20 报价，连续 17 个月不变 |
+| ARM 重置算例 | $2,186.48 | $2,091.18（7% 口径） | 按 5 年后余额 $295,874、剩余 300 期重算 |
+| 20 年期重贷利息 | $515,830（误标为利息） | $215,830（还款总额 $515,830） | 30 万 @6%、240 期 |
+| 组合贷月省 | ¥226 | ¥146.11 | 100 万、70/30 拆分、3.5% 与 2.6% |
+
+**已收录旧页面零改动**：`guides/index.html`、`mortgage-basics.html`、`mortgage-prepayment.html`
+等旧页面内容与 canonical/hreflang 均与上一版逐字一致（已用哈希比对确认）。

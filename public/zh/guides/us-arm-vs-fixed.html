@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta content="ca-pub-8915931557404979" name="google-adsense-account"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8915931557404979"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>浮动利率 ARM 与固定利率房贷：利率怎么重置 | LendMath</title>
+<meta content="ARM 与固定利率对比详解：5/1 ARM 的重置机制、指数加利差、三重利率上限，以及与 30 年固定利率的实测比较。" name="description"/>
+<meta content="浮动利率房贷,5/1 ARM,ARM 利率重置,固定利率对比,房贷利率上限" name="keywords"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://home.saoo.me/zh/guides/us-arm-vs-fixed.html" rel="canonical"/>
+<link rel="alternate" hreflang="en" href="https://home.saoo.me/guides/us-arm-vs-fixed.html"/>
+<link rel="alternate" hreflang="zh-CN" href="https://home.saoo.me/zh/guides/us-arm-vs-fixed.html"/>
+<link rel="alternate" hreflang="x-default" href="https://home.saoo.me/guides/us-arm-vs-fixed.html"/>
+  
+  
+<meta content="article" property="og:type"/>
+<meta content="LendMath" property="og:site_name"/>
+<meta content="浮动利率 ARM 与固定利率房贷：利率怎么重置 | LendMath" property="og:title"/>
+<meta content="ARM 与固定利率对比详解：5/1 ARM 的重置机制、指数加利差、三重利率上限，以及与 30 年固定利率的实测比较。" property="og:description"/>
+<meta content="https://home.saoo.me/zh/guides/us-arm-vs-fixed.html" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="zh_CN" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="浮动利率 ARM 与固定利率房贷：利率怎么重置 | LendMath" name="twitter:title"/>
+<meta content="ARM 与固定利率对比详解：5/1 ARM 的重置机制、指数加利差、三重利率上限，以及与 30 年固定利率的实测比较。" name="twitter:description"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="https://home.saoo.me/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="LendMath 品牌分享图" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://home.saoo.me/og-image.png" name="twitter:image"/>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:#f5f7fa; color:#222; line-height:1.85; }
+  .wrap { max-width:820px; margin:0 auto; padding:24px 20px 64px; background:#fff; min-height:100vh; box-shadow:0 0 20px rgba(0,0,0,.04); }
+  h1 { font-size:24px; color:#1e40af; margin-bottom:6px; line-height:1.4; }
+  h2 { font-size:18px; margin-top:32px; margin-bottom:8px; color:#1e293b; border-left:4px solid #2563eb; padding-left:10px; }
+  h3 { font-size:15px; margin-top:20px; margin-bottom:6px; color:#334155; }
+  p { margin:10px 0; }
+  ul, ol { margin:10px 0 10px 22px; }
+  li { margin:6px 0; }
+  a { color:#2563eb; }
+  .back { display:inline-block; margin-bottom:18px; color:#2563eb; text-decoration:none; font-size:14px; }
+  .meta { color:#64748b; font-size:13px; margin-bottom:18px; }
+  .box { background:#f0f6ff; border-radius:8px; padding:16px 18px; margin:16px 0; border-left:3px solid #2563eb; }
+  .warnbox { background:#fff7ed; border-left:3px solid #ea580c; border-radius:8px; padding:14px 18px; margin:16px 0; }
+  .tipbox { background:#f0fdf4; border-left:3px solid #16a34a; border-radius:8px; padding:14px 18px; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+  th,td { border:1px solid #e2e8f0; padding:9px 11px; text-align:left; }
+  th { background:#f1f5f9; font-weight:600; }
+  .lead { font-size:16px; color:#475569; background:#f8fafc; border-left:3px solid #94a3b8; padding:14px 18px; margin:14px 0 22px; border-radius:6px; }
+  footer { margin-top:48px; padding-top:18px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; text-align:center; line-height:2; }
+  footer a { color:#2563eb; text-decoration:none; margin:0 7px; }
+  .lang-switcher { position:relative; float:right; margin-left:12px; }
+  .lang-btn { display:flex; align-items:center; gap:6px; padding:6px 12px; background:#fff; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:13px; min-width:112px; justify-content:space-between; }
+  .lang-btn:hover { border-color:#2563eb; }
+  .lang-btn .arrow { font-size:10px; transition:transform .2s; }
+  .lang-btn.open .arrow { transform:rotate(180deg); }
+  .lang-dropdown { position:absolute; top:calc(100% + 4px); right:0; background:#fff; border:1px solid #ddd; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.12); min-width:150px; z-index:100; display:none; }
+  .lang-dropdown.show { display:block; }
+  .lang-option { display:flex; align-items:center; gap:8px; padding:9px 13px; cursor:pointer; font-size:13px; }
+  .lang-option:hover { background:#f0f6ff; }
+  .lang-option.active { background:#eff6ff; color:#2563eb; }
+  .crumb { font-size:13px; color:#64748b; margin-bottom:10px; }
+  .crumb a { color:#64748b; }
+  .ad-slot { margin:22px 0; padding:0; text-align:center; }
+  .ad-slot-hint { display:none; }
+  .clear { clear:both; }
+  @media (max-width:600px){ .wrap{padding:18px 14px 48px;} h1{font-size:20px;} }
+
+.ad-disclosure{margin-top:8px;font-size:12px;color:#94a3b8;line-height:1.7}
+html[lang="en"] .ad-disclosure .cn-t{display:none}
+html:not([lang="en"]) .ad-disclosure .en-t{display:none}
+  .pgtop { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; margin:12px 0; }
+  .tw table { min-width:100%; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How Mortgages Work: Amortization & Principal",
+      "description": "How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.",
+      "inLanguage": "en",
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-10-22",
+      "author": {
+        "@type": "Organization",
+        "name": "LendMath",
+        "url": "https://home.saoo.me"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LendMath",
+        "url": "https://home.saoo.me"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://home.saoo.me/guides/mortgage-basics.html"
+      },
+      "keywords": "mortgage calculator, amortization schedule, mortgage principal and interest, equal instalment vs equal principal, fixed vs variable mortgage rate, debt to income ratio",
+      "articleSection": "Personal Finance",
+      "wordCount": 2500
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://home.saoo.me/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://home.saoo.me/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Mortgages Work",
+          "item": "https://home.saoo.me/guides/mortgage-basics.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="clear"></div>
+
+<div data-lang-block="zh">
+<div class="crumb"><a href="/zh/">首页</a> › <a href="/zh/guides/">深度指南</a> › ARM 对比</div>
+<div class="pgtop"><a class="back" href="/zh/">← 返回首页</a><div class="lang-switcher">
+<div class="lang-btn" id="langBtn" onclick="toggleLang()">
+<span id="langLabel">中文</span>
+<span class="arrow">▼</span>
+</div>
+<div class="lang-dropdown" id="langDropdown">
+<div class="lang-option active" data-lang="zh" onclick="closeLang()">中文</div>
+<div class="lang-option" data-lang="en" onclick="goEn()">English</div>
+</div>
+</div></div>
+</div>
+
+<div data-lang-block="zh">
+<h1>浮动利率 ARM 与固定利率房贷：浮动怎么重置，什么时候才划算</h1>
+<div class="lead">浮动利率房贷在固定期内确实给出更低的月供，之后按市场指数重新定价。这笔交易值不值得做，取决于一件没人能向你保证的事：接下来利率往哪走。本文讲清重置机制、限制损失的利率上限，并用真实数字把 5/1 ARM 与 30 年固定利率放在一起比较。</div>
+
+<h2>1. ARM 到底是什么</h2>
+<p>ARM 先有一段固定利率期，之后按约定周期调整。产品标签直接告诉你结构：<b>5/1 ARM</b> 表示前 5 年固定、之后每年调整一次；7/1 是固定 7 年，10/1 是固定 10 年。</p>
+<p>固定期结束后，新利率由两部分重建：</p>
+<ul>
+  <li><b>指数（Index）</b>——贷款挂钩的公开基准</li>
+  <li><b>利差（Margin）</b>——机构在签约时固定的加点，永不改变</li>
+</ul>
+<p>指数加利差等于你的新利率。指数上行，月供跟着涨；指数下行，月供也可能降，但都受上限约束。</p>
+
+<h2>2. 保护你的三重上限</h2>
+<p>每笔 ARM 都有三个限制，通常按序列标示：</p>
+<ul>
+  <li><b>首次调整上限</b>——第一次重置时利率最多能跳多少</li>
+  <li><b>周期上限</b>——此后每次调整的最大变动幅度</li>
+  <li><b>全周期上限</b>——整个贷款期内利率永远不能突破的天花板</li>
+</ul>
+<p>签约前务必读这三项。起息利率相同的两笔 ARM，固定期结束后的表现可能天差地别。</p>
+
+<h2>3. 固定利率的基准线</h2>
+<p>$400,000 房价、20% 首付，贷款额 $320,000。按 6.5% 固定、30 年期，本金利息为 <b>$2,022.62</b>——三百六十个月纹丝不动。</p>
+
+<h2>4. ARM 的第 1 至第 5 年</h2>
+<p>同样贷款额，初始利率 5.5%：</p>
+<ul>
+  <li>初始月供：<b>$1,816.92</b></li>
+  <li>相对固定利率每月省：<b>$205.69</b></li>
+  <li>60 个月累计节省：<b>$12,342</b></li>
+</ul>
+<p>这是实打实的钱，而且正好落在搬家、家具、维修开销最集中的那几年。</p>
+
+<h2>5. 重置的那一刻</h2>
+<p>五年后贷款余额约为 <b>$295,874</b>。若利率重置为 7%、剩余 25 年，月供变为 <b>$2,091.18</b>。</p>
+<p>这比你当初放弃的固定利率贷款每月<b>多 $68.56</b>。前五年攒下的 $12,342，大约能覆盖 180 个月的这个差额。超过这个点之后，ARM 就成了更贵的那个选择。</p>
+
+<h2>6. 什么情况下 ARM 讲得通</h2>
+<ul>
+  <li><b>你打算在固定期内卖房或重贷。</b> 折扣拿到手，重置前来走人。这是最干净的情形。</li>
+  <li><b>你的收入会可预期地增长。</b> 后期更高的月供更容易承受。</li>
+  <li><b>折扣确实够大。</b> 微小的初始利差不值得承担重置风险。</li>
+</ul>
+
+<h2>7. 什么情况下不讲得通</h2>
+<ul>
+  <li><b>这是你打算长住的家。</b> 你终将经历好几次重置。</li>
+  <li><b>你的预算没有余量。</b> 若月供变高会真的吃力，就没必要为几百美元冒这个险。</li>
+  <li><b>你没做过上限压力测试。</b> 按全周期上限算一遍月供。如果那一刻你还不起，这笔贷款就不适合你。</li>
+</ul>
+
+<h2>8. 如何决策</h2>
+<p>跑三个场景：利率持平、首次重置即触及首次上限、最终触及全周期上限。把每种情形下的 ARM 月供，与你放弃的固定利率月供对照。如果 ARM 只在第一个场景里胜出，那你正在承担一个已经算清、却并未获赔的下行风险。</p>
+
+
+<h2>9. 挂钩的指数到底是什么</h2>
+<p>如今多数 ARM 挂钩的是公开基准，而不是机构自己定的利率。搞清楚挂哪个基准很重要，因为它决定了市场变动时你的月供怎么走。</p>
+<ul>
+  <li><b>基于 SOFR 的指数：</b>取代旧 LIBOR 基准的标准选择，每日公布，反映短期融资市场。</li>
+  <li><b>加点（margin）：</b>签约时确定的固定百分点，通常在 2 到 3 个百分点左右，永不改变。</li>
+  <li><b>取整规则：</b>最终利率通常取整到八分之一百分点的整数倍。</li>
+</ul>
+<p>要问清挂哪个指数、加点多少、怎么取整。两笔同样宣传 5.5% 起始利率的 ARM，如果挂钩的指数波动更快或加点更宽，重置后的表现可以差很多。</p>
+
+<h2>10. 三种重置利率下的月供</h2>
+<p>沿用前例——32 万美元贷款，五年后余额 $295,874，剩余 25 年——重置后的月供完全取决于利率落在哪里：</p>
+<div class="tw"><table>
+<tr><th>重置利率</th><th>新月供</th><th>对比固定贷款 $2,022.62</th></tr>
+<tr><td>6.0%</td><td>$1,906.32</td><td>便宜 $116.30</td></tr>
+<tr><td>7.0%</td><td>$2,091.18</td><td>贵 $68.56</td></tr>
+<tr><td>8.0%</td><td>$2,283.60</td><td>贵 $260.98</td></tr>
+</table></div>
+<p>固定期存下的 $12,342，可以填平 7% 情况下约 180 个月（十五年）的差额。若重置到 8%，只够填约 47 个月。结果区间很宽，而且不在你掌控之内。</p>
+
+<h2>11. 如果利率是往下走呢</h2>
+<p>ARM 双向调整，但受周期上限约束。多数是在下一个调整日才调低月供，不会在周期中途立刻降。部分贷款允许付费一次性转成固定利率——值得问一句，因为它给了你一条不必完整重贷的退路。</p>
+
+<h2>12. 盈亏平衡的持有期</h2>
+<p>判断 ARM 最诚实的办法，是问自己要住多久，才能让前期省下的钱扛过重置。算法是：</p>
+<ul>
+  <li>固定期总节省：60 个月共 $12,342。</li>
+  <li>重置到 7% 后每月多付：$68.56。</li>
+  <li>省下的钱能撑几个月：$12,342 ÷ $68.56 ≈ 180。</li>
+</ul>
+<p>如果你打算在重置后十五年内卖掉或重贷，按这些数字 ARM 更划算。如果打算持有到期，固定利率更划算。其余都是附加说明。</p>
+
+<h2>13. 签约前该问的问题</h2>
+<ul>
+  <li>挂哪个指数？加点多少？取整规则是什么？</li>
+  <li>三个上限分别是多少——首次、周期、终身？请写下来。</li>
+  <li>有没有提前还款罚金？在哪个期间适用？</li>
+  <li>是否有只付利息的阶段？该阶段结束后月供会不会跳升？</li>
+  <li>以后能否转成固定利率？成本多少？</li>
+  <li>按终身上限算，最坏情况的月供是多少？我届时还负担得起吗？</li>
+</ul>
+<p>最后一个问题才是关键。如果答案是否定的，那么无论起始利率多诱人，这笔 ARM 都不适合你。</p>
+
+<div class="tipbox"><b>算你自己的数：</b> <a href="/zh/mortgage/us/">美国房贷计算器</a> —— PITI、PMI、FHA/VA、ARM 重置与提前还款，用自己的数字实时计算。</div>
+<footer>
+
+<a href="/zh/">首页</a>·<a href="/zh/guides/">指南文章</a>·<a href="/zh/about.html">关于我们</a>·<a href="/zh/contact.html">联系我们</a><br/>
+<a href="/zh/privacy.html">隐私政策</a>·<a href="/zh/terms.html">使用条款</a>·<a href="/zh/disclaimer.html">免责声明</a>
+<p style="margin-top:12px;font-size:12px;">本站计算结果为参考性估算，不构成任何金融建议。</p>
+</footer>
+</div>
+</div>
+
+<script>
+function toggleLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.toggle('show');if(b)b.classList.toggle('open');}
+function closeLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.remove('show');if(b)b.classList.remove('open');}
+function goEn(){var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
+document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.lang-switcher')){closeLang();}});
+(function(){var l=document.getElementById('langLabel');if(l)l.textContent='中文';})();
+</script>
+</body>
+</html>

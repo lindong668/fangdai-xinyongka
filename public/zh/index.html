@@ -1,0 +1,3443 @@
+<html lang="zh-CN"><head>
+<meta content="ca-pub-8915931557404979" name="google-adsense-account"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8915931557404979"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LendMath 房贷 · 信用卡分期 · 汇率换算计算器</title>
+<meta content="免费在线房贷、信用卡分期与汇率换算计算器。美国与中国房贷完整测算、信用卡真实年化利率、换汇成本一目了然。" name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="mortgage calculator, mortgage prepayment calculator, early repayment calculator, mortgage affordability calculator, credit card installment APR calculator, true APR calculator, credit card interest calculator, currency converter, exchange rate calculator, remittance cost calculator, loan amortization calculator, calculadora hipoteca, calculateur pret immobilier, hypothekenrechner, calculadora de hipoteca, Mutuo Rechner, 房贷计算器, 信用卡分期利率, 汇率换算" name="keywords"/>
+<link href="https://home.saoo.me/zh/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="https://home.saoo.me/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="LendMath 品牌分享图" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://home.saoo.me/og-image.png" name="twitter:image"/>
+<meta content="website" property="og:type"/>
+<meta content="LendMath" property="og:site_name"/>
+<meta content="Free Mortgage, Credit Card APR &amp; Currency Calculators | LendMath" property="og:title"/>
+<meta content="Mortgage payments, early repayment, the real APR behind credit card instalments, and true currency conversion cost. Transparent formulas, calculated in your browser, nothing uploaded." property="og:description"/>
+<meta content="https://home.saoo.me/zh/" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="zh_CN" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Free Mortgage, Credit Card APR &amp; Currency Calculators | LendMath" name="twitter:title"/>
+<meta content="Free mortgage analysis, true credit card instalment APR and daily mid-market currency rates." name="twitter:description"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"LendMath","url":"https://home.saoo.me/",
+"applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript",
+"description":"Free mortgage, credit card APR and currency conversion calculators that run entirely in the browser.",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background:#f5f7fa; color:#222; line-height:1.6; }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 20px 16px 60px; }
+  
+  /* 顶部栏：标题 + 语言切换 */
+  .topbar { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:4px; }
+  h1 { font-size: 22px; }
+  .sub { color:#666; font-size:14px; margin:4px 0 16px; }
+  
+  /* 语言切换器 */
+  .lang-switcher { position:relative; flex-shrink:0; }
+  .lang-btn { display:flex; align-items:center; gap:6px; padding:8px 14px; background:#fff; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:14px; min-width:140px; justify-content:space-between; }
+  .lang-btn:hover { border-color:#2563eb; }
+  .lang-btn .arrow { transition:transform .2s; font-size:12px; }
+  .lang-btn.open .arrow { transform:rotate(180deg); }
+  .lang-dropdown { position:absolute; top:calc(100% + 4px); right:0; background:#fff; border:1px solid #ddd; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.12); min-width:180px; max-height:300px; overflow-y:auto; z-index:100; display:none; }
+  .lang-dropdown.show { display:block; }
+  .lang-option { display:flex; align-items:center; gap:8px; padding:10px 14px; cursor:pointer; font-size:14px; }
+  .lang-option:hover { background:#f0f6ff; }
+  .lang-option .flag { font-size:18px; }
+  .lang-option.active { background:#eff6ff; color:#2563eb; }
+
+  .ad-top { width:100%; min-height:90px; margin:14px 0; background:#fafafa; border:1px dashed #ddd; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:12px; color:#aaa; overflow:hidden; }
+
+  .tabs { display:flex; gap:8px; margin:8px 0 16px; flex-wrap:wrap; }
+  .tab { padding:8px 14px; border-radius:999px; background:#fff; border:1px solid #ddd; cursor:pointer; font-size:14px; }
+  .tab.active { background:#2563eb; color:#fff; border-color:#2563eb; }
+
+  .card { background:#fff; border-radius:12px; padding:18px; box-shadow:0 1px 3px rgba(0,0,0,.08); display:none; }
+  .card.active { display:block; }
+
+  .sub-tabs { display:flex; gap:8px; margin:6px 0 16px; flex-wrap:wrap; }
+  .sub-tab { padding:6px 14px; border-radius:8px; background:#f1f5f9; border:1px solid #e2e8f0; cursor:pointer; font-size:13px; }
+  .sub-tab.active { background:#2563eb; color:#fff; border-color:#2563eb; }
+  .sub-card { display:none; }
+  .sub-card.active { display:block; }
+
+  label { display:block; font-size:13px; color:#555; margin:12px 0 4px; }
+  input, select { width:100%; padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:15px; background:#fff; }
+  button.calc { margin-top:16px; width:100%; padding:12px; background:#2563eb; color:#fff; border:none; border-radius:8px; font-size:15px; cursor:pointer; }
+  .result { margin-top:14px; background:#f0f6ff; border-radius:8px; padding:14px; font-size:14px; }
+  .result b { color:#2563eb; }
+  .result .warn { color:#dc2626; }
+  .result .good { color:#16a34a; }
+  .rate-hint { font-size:12px; color:#94a3b8; margin-top:2px; }
+  .fx-credit a { color:#2563eb; text-decoration:underline; }
+  .note { font-size:13px; color:#666; margin-top:14px; border-top:1px solid #eee; padding-top:12px; }
+  .ad-box { display:none; }
+  .ad-slot { margin:16px 0; text-align:center; }
+  /* AdSense 通过后：取消 AD SLOT 注释并填入真实 data-ad-slot 即可显示广告 */
+
+  .divider { border:none; border-top:1px dashed #e2e8f0; margin:12px 0; }
+  footer { margin-top:30px; font-size:13px; color:#666; text-align:center; }
+  footer a { color:#2563eb; text-decoration:none; margin:0 6px; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:12px; margin-left:6px; }
+  .badge.warn { background:#fee2e2; color:#dc2626; }
+  .badge.good { background:#dcfce7; color:#16a34a; }
+
+  @media (max-width:600px) {
+    .topbar { flex-direction:column; align-items:stretch; }
+    .lang-switcher { align-self:flex-end; }
+  }
+
+  /* 指南文章入口卡片 */
+  .guide-card { background:linear-gradient(135deg,#f0f6ff 0%,#eef2ff 100%); border:1px solid #c7d7fe; border-radius:14px; padding:20px 22px; margin-top:24px; }
+  .guide-card h3 { font-size:17px; color:#1e40af; margin:0 0 6px; display:flex; align-items:center; gap:8px; }
+  .guide-card .gsub { font-size:13px; color:#475569; margin:0 0 14px; }
+  .guide-list { list-style:none; margin:0; padding:0; }
+  .guide-list li { border-top:1px solid #dbe4fe; }
+  .guide-list li:first-child { border-top:none; }
+  .guide-list a { display:block; padding:10px 2px; text-decoration:none; color:#1e293b; font-size:14px; transition:color .15s; }
+  .guide-list a:hover { color:#2563eb; }
+  .guide-list a .gt { display:block; font-weight:600; }
+  .guide-list a .gd { display:block; font-size:12px; color:#64748b; margin-top:2px; font-weight:400; }
+  .guide-all { display:inline-block; margin-top:14px; padding:9px 18px; background:#2563eb; color:#fff !important; border-radius:8px; text-decoration:none; font-size:14px; font-weight:600; }
+  .guide-all:hover { background:#1d4ed8; }
+
+  /* ---- 还款计划表 / 组合贷款 ---- */
+  .sch-table { width:100%; border-collapse:collapse; margin-top:10px; font-size:13px; }
+  .sch-table th { background:#dbeafe; color:#1e40af; padding:7px 6px; text-align:right; font-weight:600; border-bottom:2px solid #bfdbfe; }
+  .sch-table td { padding:6px; text-align:right; border-bottom:1px solid #e8eef7; color:#334155; }
+  .sch-table tr:nth-child(even) td { background:#f8fafc; }
+  .sch-table th:first-child, .sch-table td:first-child { text-align:center; }
+  .sch-wrap { max-height:320px; overflow-y:auto; margin-top:10px; border:1px solid #e2e8f0; border-radius:8px; }
+  .sch-btn { margin-top:10px; width:100%; padding:10px; background:#f0f6ff; color:#2563eb; border:1.5px solid #bfdbfe; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; }
+  .sch-btn:hover { background:#dbeafe; }
+  /* ---- 剩余本金推算小工具 ---- */
+  .helper { margin-top:12px; padding:12px; background:#fffbeb; border:1px dashed #fbbf24; border-radius:8px; }
+  .helper-title { font-size:13px; font-weight:600; color:#92400e; margin-bottom:8px; cursor:pointer; }
+  .helper-body { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:8px; margin-top:8px; }
+  .helper-body label { font-size:12px; color:#78350f; margin:0; }
+  .helper-body input { padding:7px; font-size:13px; margin-top:2px; }
+  .helper-btn { margin-top:8px; width:100%; padding:8px; background:#f59e0b; color:#fff; border:none; border-radius:7px; font-size:13px; font-weight:600; cursor:pointer; }
+  .helper-btn:hover { background:#d97706; }
+  .helper-note { font-size:12px; color:#78350f; margin-top:6px; line-height:1.5; }
+
+  @media (max-width:600px){ .guide-card{padding:16px 14px;} }
+
+.ad-disclosure{margin-top:8px;font-size:12px;color:#94a3b8;line-height:1.7}
+html[lang="en"] .ad-disclosure .cn-t{display:none}
+html:not([lang="en"]) .ad-disclosure .en-t{display:none}
+
+  /* ===== Mortgage: all-in-one calculator ===== */
+  .mc-sel { margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid #e2e8f0; }
+  .mc-sel label { font-size:12.5px; color:#555; margin:0 0 4px; display:block; font-weight:600; }
+  .mc-sel select { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:14px; background:#fff; }
+  .mc-hd { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:10px; display:flex; align-items:center; gap:7px; }
+  .mc-sec { margin-bottom:16px; }
+  .mc-calc { width:100%; padding:14px; background:#2563eb; color:#fff; border:none; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; margin-top:4px; }
+  .mc-calc:hover { background:#1d4ed8; }
+  .row2 { display:flex; gap:10px; flex-wrap:wrap; } .row2 > div { flex:1; min-width:104px; }
+  .hint { font-size:11.5px; color:#94a3b8; margin-top:4px; line-height:1.5; }
+  .mod { border:1px solid #e2e8f0; border-radius:10px; margin-bottom:9px; overflow:hidden; }
+  .mod-hd { display:flex; align-items:center; gap:9px; padding:11px 13px; background:#f8fafc; cursor:pointer; font-size:13px; font-weight:600; margin:0; }
+  .mod-hd input[type=checkbox] { width:16px; height:16px; accent-color:#2563eb; flex-shrink:0; }
+  .mod-bd { padding:2px 13px 13px; display:none; }
+  .mod.on .mod-bd { display:block; }
+  .pmi-state { margin-top:7px; padding:8px 11px; border-radius:7px; font-size:12px; font-weight:600; line-height:1.5; }
+  .final { margin-top:16px; background:#f0fdf4; border:2px solid #86efac; border-radius:12px; padding:16px; }
+  .final h3 { font-size:15px; color:#166534; margin:0 0 11px; }
+  .mc-hero { text-align:center; padding:10px 0 12px; border-bottom:1px dashed #a7f3d0; margin-bottom:12px; }
+  .mc-hero .big { font-size:27px; font-weight:700; color:#15803d; }
+  .mc-hero .cap { font-size:12px; color:#4b5563; margin-top:2px; }
+  .mc-sec2 { margin-bottom:12px; }
+  .mc-sec2 .t { font-size:12.5px; font-weight:700; color:#166534; margin-bottom:5px; border-left:3px solid #4ade80; padding-left:7px; }
+  .mc-tbl { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .mc-tbl th, .mc-tbl td { padding:5px 8px; border-bottom:1px solid #e5e7eb; text-align:right; }
+  .mc-tbl th:first-child, .mc-tbl td:first-child { text-align:left; }
+  .mc-tbl th { background:#f1f5f9; font-weight:600; }
+  .mc-warn { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; padding:9px 12px; border-radius:8px; font-size:12.5px; margin-top:8px; line-height:1.5; }
+  .mc-ok { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:9px 12px; border-radius:8px; font-size:12.5px; margin-top:8px; line-height:1.5; }
+  .mc-scroll { overflow-x:auto; margin-top:8px; }
+
+  
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; margin:12px 0; }
+  .tw table { min-width:100%; }
+
+
+  /* --- tab row with language switcher (mobile alignment) --- */
+  .tabrow { display:flex; align-items:center; gap:8px; flex-wrap:nowrap; }
+  .tabrow .tabs { flex:1 1 auto; min-width:0; margin:8px 0 16px; flex-wrap:nowrap; }
+  .tabrow .lang-switcher { flex:0 0 auto; margin-left:auto; }
+  @media (max-width:768px){
+    .tabrow { margin-bottom:4px; gap:8px; align-items:flex-start; flex-wrap:wrap; }
+    .tabrow .tabs { margin:8px 0 8px; gap:6px; flex:0 1 auto; }
+    .tabrow .tabs .tab { padding:8px 8px; font-size:13px; white-space:nowrap; }
+    .tabrow .lang-switcher { margin-top:8px; margin-left:auto; align-self:flex-start; }
+    .tabrow .lang-btn { min-width:0; padding:8px 12px; font-size:13px; gap:6px;
+      border-radius:999px; line-height:1.35; font-weight:500; }
+    .tabrow .lang-btn .arrow { font-size:11px; }
+    .tabrow .lang-dropdown { min-width:106px; }
+    .tabrow .lang-option { padding:9px 13px; font-size:13px; }
+  }
+  @media (min-width:769px){
+    .tabrow { display:block; }
+    .tabrow .lang-switcher { display:none; }
+  }
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<!-- 顶部 -->
+<div class="topbar">
+<div>
+<h1 data-i18n="site_title"><img class="logo-icon" src="data:image/png;base64,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" alt="LendMath" style="width:34px;height:34px;border-radius:8px;vertical-align:-8px;margin-right:8px">LendMath <span style="font-size:13px;color:#94a3b8;">房贷 · 信用卡分期 · 汇率换算</span></h1>
+<div class="sub" data-i18n="site_sub">房贷决策分析 · 信用卡真实成本 · 汇率换算与换汇成本</div>
+</div>
+
+
+</div>
+<div class="tabrow">
+<div class="tabs">
+<div class="tab active" data-i18n="tab_mortgage" data-tab="mortgage">🏠 房贷</div>
+<div class="tab" data-i18n="tab_credit" data-tab="credit">💳 信用卡</div>
+<div class="tab" data-i18n="tab_fx" data-tab="fx">💱 汇率</div>
+</div>
+<div class="lang-switcher">
+<div class="lang-btn" id="langBtn" onclick="toggleLang()">
+<span id="langLabel">中文</span>
+<span class="arrow">▼</span>
+</div>
+<div class="lang-dropdown" id="langDropdown">
+<div class="lang-option active" data-lang="zh" onclick="closeLang()">中文</div>
+<div class="lang-option" data-lang="en" onclick="goEn()">English</div>
+</div>
+</div>
+</div>
+
+<script>
+/* --- 语言框位置：手机端静态在 tab 行（零搬运→零跳动）；仅桌面端搬到标题右侧 --- */
+(function(){
+  var row=document.querySelector('.tabrow');
+  var sw=row && row.querySelector('.lang-switcher');
+  var tb=document.querySelector('.topbar');
+  if(!sw||!tb) return;
+  function place(){
+    if(window.innerWidth>768){ if(sw.parentNode!==tb) tb.appendChild(sw); }
+    else if(sw.parentNode!==row){ row.appendChild(sw); }
+  }
+  place();
+  window.addEventListener('resize',place);
+})();
+</script>
+<!-- ========== 房贷 ========== -->
+<div class="card active" id="mortgage"> <div class="mc-sel">
+<label for="mcountry">房贷计算器</label>
+<select id="mcountry">
+<option selected="" value="us">美国房贷计算器</option>
+<option value="cn">中国房贷计算器</option>
+</select>
+<div class="hint">不同国家的房贷规则与字段完全不同，切换后会整体替换下方表单。</div>
+</div>
+<!-- ============ 美国 ============ -->
+<div class="mc-grp" id="grp_us">
+<div class="mc-sec">
+<div class="mc-hd">1 · 基础贷款信息（必填）</div>
+<div class="row2">
+<div><label for="us_price">房屋总价（美元）</label><input id="us_price" type="number" value="600000"/></div>
+<div><label for="us_dpmode">首付填写方式</label>
+<select id="us_dpmode"><option value="pct">按房价百分比（%）</option><option value="amt">按金额（美元）</option></select></div>
+</div>
+<div class="row2">
+<div><label for="us_dp">首付比例（%）</label><input id="us_dp" step="0.1" type="number" value="20"/></div>
+<div><label for="us_ltype">贷款类型</label>
+<select id="us_ltype">
+<option value="conv">常规贷款（Conventional）</option>
+<option value="fha">联邦住房管理局贷款（FHA）</option>
+<option value="va">退伍军人事务部贷款（VA）</option>
+<option value="usda">农业部农村住房贷款（USDA）</option>
+<option value="jumbo">大额贷款（Jumbo）</option>
+</select></div>
+</div>
+<div class="row2">
+<div><label for="us_struct">还款结构</label>
+<select id="us_struct">
+<option value="fixed">固定利率</option>
+<option value="arm">浮动利率（ARM）</option>
+<option value="io">只付利息（Interest-Only）</option>
+<option value="balloon">气球贷（Balloon）</option>
+</select></div>
+<div><label for="us_years">贷款年限（年）</label><input id="us_years" type="number" value="30"/></div>
+</div>
+<label for="us_rate">年利率（%）</label>
+<input id="us_rate" step="0.01" type="number" value="6.5"/>
+<div id="us_armbox" style="display:none">
+<div class="row2">
+<div><label for="us_fixy">固定期（年）</label><input id="us_fixy" type="number" value="5"/></div>
+<div><label for="us_rate2">重设后年利率（%）</label><input id="us_rate2" step="0.01" type="number" value="7.5"/></div>
+</div>
+<div class="hint">浮动利率常见上限：首次调整 ±2%，之后每年 ±2%，终身 ±5%。</div>
+</div>
+</div>
+<div class="mc-sec">
+<div class="mc-hd">2 · 叠加模块（勾选即计入月供）</div>
+<div class="mod" id="us_m_tax">
+<label class="mod-hd"><input checked="" id="us_k_tax" type="checkbox"/><span>房产税</span></label>
+<div class="mod-bd">
+<label for="us_taxr">房产税率（占房价百分比 / 年）</label>
+<input id="us_taxr" step="0.01" type="number" value="1.2"/>
+<div class="hint">由州、郡、市分别征收，各地差异极大，请填写你所在地区的实际税率。</div>
+</div>
+</div>
+<div class="mod" id="us_m_ins">
+<label class="mod-hd"><input checked="" id="us_k_ins" type="checkbox"/><span>房屋保险</span></label>
+<div class="mod-bd">
+<label for="us_ins">年保费（美元 / 年）</label><input id="us_ins" type="number" value="1800"/>
+</div>
+</div>
+<div class="mod" id="us_m_hoa">
+<label class="mod-hd"><input id="us_k_hoa" type="checkbox"/><span>物业费（HOA）</span></label>
+<div class="mod-bd">
+<label for="us_hoa">每月费用（美元 / 月）</label><input id="us_hoa" type="number" value="0"/>
+</div>
+</div>
+<div class="mod" id="us_m_pmi">
+<label class="mod-hd"><input checked="" id="us_k_pmi" type="checkbox"/><span>房贷保险（PMI / MIP）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="us_pmir">年保险费率（占贷款额百分比 / 年）</label><input id="us_pmir" step="0.01" type="number" value="0.5"/></div>
+<div><label for="us_upfront">一次性预付费用（占贷款额百分比）</label><input id="us_upfront" step="0.01" type="number" value="0"/></div>
+</div>
+<label class="sub-chk"><input id="us_upfin" type="checkbox"/><span>把预付费用计入贷款本金</span></label>
+<div id="us_va_box" style="display:none">
+<label for="us_va_use">退伍军人事务部贷款额度使用情况</label>
+<select id="us_va_use"><option value="first">首次使用</option><option value="sub">再次使用</option></select>
+</div>
+<div class="hint">选择贷款类型时会自动填入该类贷款的典型费率，可按你的贷款机构实际数值修改。常规贷款（Conventional）的 PMI 在贷款价值比降至 78% 时终止。联邦住房管理局贷款（FHA）的 MIP：首付不低于 10% 时收取 11 年，否则收取至贷款结束。农业部农村住房贷款（USDA）按年收取至贷款结束。退伍军人事务部贷款（VA）不收年费，只收一次性资金费。</div>
+<div class="pmi-state" id="us_pmi_state" style="display:none"></div>
+</div>
+</div>
+<div class="mod" id="us_m_close">
+<label class="mod-hd"><input checked="" id="us_k_close" type="checkbox"/><span>过户费与买点</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="us_close">过户费（美元）</label><input id="us_close" type="number" value="12000"/></div>
+<div><label for="us_pts">买点数（1 个点 = 贷款额 1%）</label><input id="us_pts" step="0.25" type="number" value="0"/></div>
+</div>
+<div class="hint">每买 1 个点，通常可降低约 0.25% 的利率。</div>
+</div>
+</div>
+<div class="mod" id="us_m_extra">
+<label class="mod-hd"><input id="us_k_extra" type="checkbox"/><span>额外还款</span></label>
+<div class="mod-bd">
+<label for="us_extra">每月多还（美元 / 月）</label><input id="us_extra" type="number" value="300"/>
+</div>
+</div>
+<div class="mod" id="us_m_refi">
+<label class="mod-hd"><input id="us_k_refi" type="checkbox"/><span>再融资分析</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="us_orate">原年利率（%）</label><input id="us_orate" step="0.01" type="number" value="7.5"/></div>
+<div><label for="us_nrate">新年利率（%）</label><input id="us_nrate" step="0.01" type="number" value="6.0"/></div>
+</div>
+<div class="hint">对比新旧月供差额与回本月数。</div>
+</div>
+</div>
+<div class="mod" id="us_m_dti">
+<label class="mod-hd"><input checked="" id="us_k_dti" type="checkbox"/><span>负债承受力评估（28/36 规则）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="us_inc">税前年收入（美元 / 年）</label><input id="us_inc" type="number" value="120000"/></div>
+<div><label for="us_debt">其他每月负债（美元 / 月）</label><input id="us_debt" type="number" value="800"/></div>
+</div>
+<div class="hint">美国银行采用 28/36 规则：住房支出不超过月收入 28%，总负债不超过 36%。</div>
+</div>
+</div>
+</div>
+<button class="mc-calc" onclick="usRun()">计算（汇总所有已勾选模块）</button>
+<div class="final" id="us_out" style="display:none"></div>
+<div class="note" id="us_amort"></div>
+</div>
+<!-- ============ 中国 ============ -->
+<div class="mc-grp" id="grp_cn" style="display:none">
+<div class="mc-sec">
+<div class="mc-hd">1 · 基础信息（必填）</div>
+<div class="row2">
+<div><label for="cn_price">房屋总价（元）</label><input id="cn_price" type="number" value="3000000"/></div>
+<div><label for="cn_dpmode">首付填写方式</label><select id="cn_dpmode"><option value="pct">按房价百分比（%）</option><option value="amt">按金额（元）</option></select></div>
+<div><label for="cn_dppct">首付比例（%）</label><input id="cn_dppct" step="1" type="number" value="30"/></div>
+</div>
+<label for="cn_total">贷款总额（元）—— 由总价与首付自动算出，可修改</label>
+<input id="cn_total" type="number" value="2100000"/>
+<div class="row2">
+<div><label for="cn_camt">商业贷款金额（元）</label><input id="cn_camt" type="number" value="1500000"/></div>
+<div><label for="cn_crate">商业贷款年利率（%）</label><input id="cn_crate" step="0.01" type="number" value="3.5"/></div>
+</div>
+<div class="row2">
+<div><label for="cn_disc">利率折扣</label>
+<select id="cn_disc">
+<option value="1">不打折（1.0）</option><option value="0.95">95 折</option>
+<option value="0.9">9 折</option><option selected="" value="0.85">85 折</option><option value="0.8">8 折</option>
+</select></div>
+<div><label for="cn_years">贷款年限（年）</label><input id="cn_years" type="number" value="30"/></div>
+</div>
+<label for="cn_rtype">还款方式</label>
+<select id="cn_rtype"><option value="equal">等额本息（本金+利息）</option><option value="principal">等额本金</option></select>
+</div>
+<div class="mc-sec">
+<div class="mc-hd">2 · 叠加模块（勾选即参与计算）</div>
+<div class="mod" id="cn_m_fund">
+<label class="mod-hd"><input id="cn_k_fund" type="checkbox"/><span>住房公积金贷款（与商贷合并计月供）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="cn_famt">公积金贷款金额（元）</label><input id="cn_famt" type="number" value="600000"/></div>
+<div><label for="cn_frate">公积金年利率（%）</label><input id="cn_frate" step="0.01" type="number" value="2.6"/></div>
+</div>
+<label for="cn_fyears">公积金贷款年限（年）</label><input id="cn_fyears" type="number" value="30"/>
+</div>
+</div>
+<div class="mod" id="cn_m_tax">
+<label class="mod-hd"><input id="cn_k_tax" type="checkbox"/><span>购房税费（计入需准备现金）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="cn_area">建筑面积（平方米）</label><input id="cn_area" step="0.01" type="number" value="89"/></div>
+<div><label for="cn_no">房屋套数</label><select id="cn_no"><option value="1">首套</option><option value="2">二套</option><option value="3">三套及以上</option></select></div>
+</div>
+<div class="row2">
+<div><label for="cn_two">是否满两年</label><select id="cn_two"><option value="1">是</option><option value="0">否</option></select></div>
+<div><label for="cn_five">是否满五唯一</label><select id="cn_five"><option value="1">是</option><option value="0">否</option></select></div>
+<div><label for="cn_iitmode">个税计税方式</label><select id="cn_iitmode"><option value="1">核定征收 1%</option><option value="20">差额 20%</option></select></div>
+</div>
+<div class="row2">
+<div><label for="cn_orig">原值 / 网签价（元）</label><input id="cn_orig" type="number" value="2000000"/></div>
+<div><label for="cn_mf">维修基金（元 / 平方米）</label><input id="cn_mf" type="number" value="100"/></div>
+</div>
+<div class="row2">
+<div><label for="cn_agent">中介费（元）</label><input id="cn_agent" type="number" value="30000"/></div>
+<div><label for="cn_deco">装修预留（元）</label><input id="cn_deco" type="number" value="200000"/></div>
+</div>
+</div>
+</div>
+<div class="mod" id="cn_m_pre">
+<label class="mod-hd"><input id="cn_k_pre" type="checkbox"/><span>提前还款测算（在月供基础上二次计算）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="cn_paid">已还期数（月）</label><input id="cn_paid" type="number" value="36"/></div>
+<div><label for="cn_ppay">提前还款金额（元）</label><input id="cn_ppay" type="number" value="300000"/></div>
+</div>
+<div class="row2">
+<div><label for="cn_pstr">还款策略</label><select id="cn_pstr"><option value="shorten">缩短年限（月供不变）</option><option value="reduce">减少月供（年限不变）</option></select></div>
+<div><label for="cn_pfee">违约金率（%）</label><input id="cn_pfee" step="0.01" type="number" value="0"/></div>
+</div>
+</div>
+</div>
+<div class="mod" id="cn_m_ded">
+<label class="mod-hd"><input id="cn_k_ded" type="checkbox"/><span>房贷利息抵个税（降低实际成本）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="cn_taxr">个人所得税税率档（%）</label><select id="cn_taxr">
+<option value="3">3%</option><option selected="" value="10">10%</option><option value="20">20%</option>
+<option value="25">25%</option><option value="30">30%</option><option value="35">35%</option><option value="45">45%</option></select></div>
+<div><label for="cn_dmode">扣除分摊</label><select id="cn_dmode"><option value="1">全额 1000 元/月归你</option><option value="0.5">夫妻各 500 元/月</option></select></div>
+</div>
+<div class="hint">仅限首套房贷。定额 1000 元/月，最长 240 个月。</div>
+</div>
+</div>
+<div class="mod" id="cn_m_aff">
+<label class="mod-hd"><input id="cn_k_aff" type="checkbox"/><span>负债承受力评估（超线会提示）</span></label>
+<div class="mod-bd">
+<div class="row2">
+<div><label for="cn_inc">家庭月收入（元）</label><input id="cn_inc" type="number" value="30000"/></div>
+<div><label for="cn_debt">其他固定月支出（元）</label><input id="cn_debt" type="number" value="5000"/></div>
+</div>
+<label for="cn_cap">银行月供收入比上限（%）</label><input id="cn_cap" step="1" type="number" value="50"/>
+</div>
+</div>
+</div>
+<button class="mc-calc" onclick="cnRun()">计算（汇总所有已勾选模块）</button>
+<div class="final" id="cn_out" style="display:none"></div>
+<div class="note" id="cn_amort"></div>
+</div>
+</div>
+<!-- ========== 信用卡 ========== -->
+<div class="card" id="credit">
+<div class="sub-tabs">
+<div class="sub-tab active" data-i18n="sub_apr" data-sub="apr">💰 分期真实成本</div>
+<div class="sub-tab" data-i18n="sub_compare" data-sub="compare">📊 多期数对比</div>
+</div>
+<div class="sub-card active" id="apr">
+<label data-i18n="cr_p_label">分期本金（元）</label>
+<input id="cr_p" type="number" value="10000"/>
+<label data-i18n="cr_fee_label">月手续费率（%）</label>
+<input id="cr_fee" step="0.01" type="number" value="0.6"/>
+<label data-i18n="cr_months_label">期数（月）</label>
+<input id="cr_months" type="number" value="12"/>
+<label data-i18n="cr_invest_label">对比：这笔钱若拿去理财的年化收益（%）</label>
+<input id="cr_invest" step="0.1" type="number" value="3"/>
+<div class="rate-hint" data-i18n="cr_invest_hint">分期=放弃这笔钱的理财收益+承担手续费，双重成本</div>
+<button class="calc" data-i18n="btn_apr" onclick="calcApr()">计算真实成本</button>
+<div class="result" id="cr_result"></div>
+</div>
+<div class="sub-card" id="compare">
+<label data-i18n="cp_p_label">分期本金（元）</label>
+<input id="cp_p" type="number" value="10000"/>
+<label data-i18n="cp_fee_label">月手续费率（%）</label>
+<input id="cp_fee" step="0.01" type="number" value="0.6"/>
+<button class="calc" data-i18n="btn_compare" onclick="calcCompare()">对比 3/6/12/24 期</button>
+<div class="result" id="cp_result"></div>
+</div>
+<!-- ===== AD SLOT 2：信用卡页内 =====
+     AdSense 通过后：删掉注释标记，把 data-ad-slot 换成后台真实广告单元 ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 2 ===== -->
+<div class="note" data-i18n="credit_note">银行的"名义年化"=月费率×12，而真实年化(APR)用 IRR 估算，通常接近翻倍。决策前请看清费率条款。</div>
+</div>
+<!-- ========== 汇率 ========== -->
+<div class="card" id="fx">
+<label data-i18n="fx_amount_label">金额</label>
+<input id="fx_amount" type="number" value="1000"/>
+<label data-i18n="fx_from_label">从</label>
+<select id="fx_from"><option value="USD">美元 USD</option><option value="CNY">人民币 CNY</option><option value="EUR">欧元 EUR</option><option value="JPY">日元 JPY</option><option value="GBP">英镑 GBP</option><option value="HKD">港元 HKD</option><option value="TWD">新台币 TWD</option><option value="KRW">韩元 KRW</option><option value="AUD">澳元 AUD</option><option value="CAD">加元 CAD</option><option value="SGD">新加坡元 SGD</option><option value="CHF">瑞士法郎 CHF</option><option value="MYR">马来西亚林吉特 MYR</option><option value="THB">泰铢 THB</option><option value="INR">印度卢比 INR</option><option value="PHP">菲律宾比索 PHP</option><option value="VND">越南盾 VND</option><option value="NZD">新西兰元 NZD</option></select>
+<div style="text-align:center;margin:6px 0;"><button onclick="swapCurrency()" style="background:none;border:1px solid #ddd;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;">⇅</button></div>
+<label data-i18n="fx_to_label">到</label>
+<select id="fx_to"><option value="USD">美元 USD</option><option value="CNY">人民币 CNY</option><option value="EUR">欧元 EUR</option><option value="JPY">日元 JPY</option><option value="GBP">英镑 GBP</option><option value="HKD">港元 HKD</option><option value="TWD">新台币 TWD</option><option value="KRW">韩元 KRW</option><option value="AUD">澳元 AUD</option><option value="CAD">加元 CAD</option><option value="SGD">新加坡元 SGD</option><option value="CHF">瑞士法郎 CHF</option><option value="MYR">马来西亚林吉特 MYR</option><option value="THB">泰铢 THB</option><option value="INR">印度卢比 INR</option><option value="PHP">菲律宾比索 PHP</option><option value="VND">越南盾 VND</option><option value="NZD">新西兰元 NZD</option></select>
+<button class="calc" data-i18n="btn_fx" onclick="calcFx()">换算</button>
+<div class="result" data-i18n="fx_waiting" id="fx_result">选择币种后点换算</div>
+<!-- ===== AD SLOT 3：汇率页内 =====
+     AdSense 通过后：删掉注释标记，把 data-ad-slot 换成后台真实广告单元 ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 3 ===== -->
+<div class="note" data-i18n="fx_note">显示的是<b>每日市场中间价</b>，非银行实时牌价。实际换汇以银行卖出价为准，通常会比中间价高 0.3%~1%。</div>
+</div>
+<!-- 指南文章入口卡片 -->
+<div class="guide-card">
+<h3><span>📚</span><span data-i18n="gc_title">深度指南文章</span></h3>
+<p class="gsub" data-i18n="gc_sub">关于房贷、信用卡与汇率的原创长篇解读 —— 追求多年后仍然有用，而非追逐一时热点。</p>
+<ul class="guide-list">
+      <li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-mortgage-payment-breakdown.html">
+        <span class="gt" data-i18n="gc_g7_t">美国房贷月供是怎么构成的：PITI 与真实成本</span>
+        <span class="gd" data-i18n="gc_g7_d">本金利息、托管税费、PMI 与 HOA，用真实数字逐层拆解</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-pmi-guide.html">
+        <span class="gt" data-i18n="gc_g8_t">美国房贷保险 PMI：什么时候终止、怎么规避</span>
+        <span class="gd" data-i18n="gc_g8_d">78% 自动终止规则、80% 主动取消，以及四种消除办法</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-fha-vs-conventional.html">
+        <span class="gt" data-i18n="gc_g9_t">FHA、常规贷款与 VA 贷款：哪一款适合你</span>
+        <span class="gd" data-i18n="gc_g9_d">首付门槛、MIP 与 PMI 之别，以及并列的真实月供</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-arm-vs-fixed.html">
+        <span class="gt" data-i18n="gc_g10_t">浮动利率 ARM 与固定利率：利率如何重置</span>
+        <span class="gd" data-i18n="gc_g10_d">指数加利差、三重利率上限，以及 5/1 ARM 实测</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-refinance-guide.html">
+        <span class="gt" data-i18n="gc_g11_t">什么时候该重贷：回本周期这一关</span>
+        <span class="gd" data-i18n="gc_g11_d">一个公式、完整实例，以及不该重贷的几种情形</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-closing-costs.html">
+<span class="gt" data-i18n="gc_g14_t">美国过户费用详解：交割当天到底要付多少</span>
+<span class="gd" data-i18n="gc_g14_d">机构费用、第三方费用与预缴托管——通常是贷款额的 2%~5%</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-dti-affordability.html">
+<span class="gt" data-i18n="gc_g15_t">债务收入比 DTI：你到底买得起多少钱的房子</span>
+<span class="gd" data-i18n="gc_g15_d">28/36 规则、前端与后端比率，以及如何倒推真实预算</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-15-vs-30-year.html">
+<span class="gt" data-i18n="gc_g16_t">15 年期与 30 年期房贷：真实的取舍</span>
+<span class="gd" data-i18n="gc_g16_d">每月多 956 美元，换少付约 28.3 万美元利息</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/mortgage-basics.html">
+<span class="gt" data-i18n="gc_g1_t">房贷到底怎么算：本金、利息与摊销</span>
+<span class="gd" data-i18n="gc_g1_d">摊销机制、等额本息对比等额本金、固定与浮动利率</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/mortgage-prepayment.html">
+<span class="gt" data-i18n="gc_g2_t">提前还款：缩短期限还是减少月供？</span>
+<span class="gd" data-i18n="gc_g2_d">实例演算、背后的公式，以及还款前必须确认的五件事</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-combo-loan.html">
+<span class="gt" data-i18n="gc_g12_t">公积金组合贷怎么算：商贷与公积金的真实月供</span>
+<span class="gd" data-i18n="gc_g12_d">两笔贷款两个利率——七三开到底省多少</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-property-taxes.html">
+<span class="gt" data-i18n="gc_g13_t">中国买房税费全解：契税、增值税与那些被忽略的支出</span>
+<span class="gd" data-i18n="gc_g13_d">140㎡ 契税阈值、满二免征的增值税，以及没人报价的支出</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-amortization-compare.html">
+<span class="gt" data-i18n="gc_g17_t">等额本息与等额本金怎么选：中国房贷还款方式对比</span>
+<span class="gd" data-i18n="gc_g17_d">利率相同总额不同——总利息相差约 9 万元</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-lpr-repricing.html">
+<span class="gt" data-i18n="gc_g18_t">LPR 与房贷重定价日：为什么月供总是晚于降息</span>
+<span class="gd" data-i18n="gc_g18_d">基准加固定加点，以及两种重定价日约定</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-affordability-budget.html">
+<span class="gt" data-i18n="gc_g19_t">买房预算怎么算：从月供倒推到房价</span>
+<span class="gd" data-i18n="gc_g19_d">可承受月供、对应可贷额度、扣除税费后的可用首付</span></a></li>
+<li data-topic="credit" data-country="all"><a href="/zh/guides/credit-card-installment-traps.html">
+<span class="gt" data-i18n="gc_g3_t">为什么月费率 0.6% 实际年化接近 13%</span>
+<span class="gd" data-i18n="gc_g3_d">分期定价如何隐藏真实成本，以及怎么自己算出来</span></a></li>
+<li data-topic="credit" data-country="all"><a href="/zh/guides/credit-card-usage-tips.html">
+<span class="gt" data-i18n="gc_g4_t">保护钱包与信用的用卡习惯</span>
+<span class="gd" data-i18n="gc_g4_d">全额还款、守住免息期、压低使用率，以及已负债时怎么办</span></a></li>
+<li data-topic="fx" data-country="all"><a href="/zh/guides/exchange-rate-basics.html">
+<span class="gt" data-i18n="gc_g5_t">汇率详解：中间价、银行报价与点差</span>
+<span class="gd" data-i18n="gc_g5_d">中间价、银行价与卡组织汇率的区别，点差藏在哪里</span></a></li>
+<li data-topic="fx" data-country="all"><a href="/zh/guides/remittance-cost-guide.html">
+<span class="gt" data-i18n="gc_g6_t">跨境汇款：如何比较真实成本</span>
+<span class="gd" data-i18n="gc_g6_d">一行公式算出实际成本，以及费用常藏的四个地方</span></a></li>
+</ul>
+<a class="guide-all" data-i18n="gc_all" href="/zh/guides/">阅读全部指南 →</a>
+</div>
+<footer>
+<a data-i18n="footer_guides" href="/zh/guides/">指南文章</a>·
+    <a data-i18n="footer_about" href="/zh/about.html">关于我们</a>·
+    <a data-i18n="footer_contact" href="/zh/contact.html">联系我们</a>
+<br/>
+<a data-i18n="footer_privacy" href="/zh/privacy.html">隐私政策</a>·
+    <a data-i18n="footer_terms" href="/zh/terms.html">使用条款</a>·
+    <a data-i18n="footer_disclaimer" href="/zh/disclaimer.html">免责声明</a>
+<p data-i18n="footer_note" style="margin-top:10px;font-size:12px;color:#94a3b8;">本站计算结果为参考性估算，不构成任何金融建议。</p>
+<p style="margin-top:6px;font-size:12px;color:#94a3b8;">联系邮箱：<a href="mailto:yokok8@outlook.com">yokok8@outlook.com</a></p>
+<p class="ad-disclosure"><span class="cn-t">本站包含广告，广告不影响我们的计算器、计算结果，也不影响指南中表达的观点。</span></p></footer>
+</div>
+<script>
+// ============ 翻译字典 ============
+const i18n = {
+  zh: {
+    sub_combo: '🏦 组合贷款（商贷+公积金）',
+    combo_hint: '国内最常见：商业贷款 + 住房公积金贷款，两部分利率不同，分别计算后合并。',
+    combo_comm_label: '商业贷款金额（元）',
+    combo_comm_rate_label: '商业贷款利率（%）',
+    combo_fund_label: '公积金贷款金额（元）',
+    combo_fund_rate_label: '公积金贷款利率（%）',
+    combo_years_label: '贷款年限（年）',
+    combo_type_label: '还款方式',
+    btn_combo: '计算组合贷款',
+    combo_comm_short: '商业贷款',
+    combo_fund_short: '公积金贷款',
+    combo_total_pay: '合计月供',
+    combo_blended: '加权综合利率',
+    combo_vs: '对比',
+    combo_vs_note: '若全部走商业贷款',
+    combo_save: '可省',
+    in_interest: '元利息',
+    of_principal: '本金占比',
+    pp_helper_title: '💡 不知道剩余本金？点这里自动推算',
+    pp_orig_label: '原始本金（元）',
+    pp_orig_years: '原始年限（年）',
+    pp_paid_label: '已还期数（月）',
+    pp_orig_rate: '原合同利率（%）',
+    btn_estimate: '推算并填入',
+    pp_estimated: '推算剩余本金',
+    pp_est_note: '已自动填入上方，请以银行账单为准',
+    btn_schedule: '📊 查看逐年还款计划表',
+    sch_hide: '收起计划表',
+    sch_title: '还款计划表（按年汇总）',
+    sch_year: '年度',
+    sch_principal: '还本金',
+    sch_interest: '付利息',
+    sch_balance: '剩余本金',
+    pp_result_term: '剩余期限',
+    pp_unit_month: '期',
+    pp_saved_months: '提前',
+    pp_unchanged: '保持不变',
+    pp_from: '原为',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">房贷 · 信用卡分期 · 汇率换算</span>',
+    site_sub: '房贷决策分析 · 信用卡真实成本 · 汇率换算与换汇成本',
+    ad_top: '[广告位] 顶部首屏',
+    tab_mortgage: '🏠 房贷',
+    tab_credit: '💳 信用卡',
+    tab_fx: '💱 汇率',
+    sub_loan: '🏢 商业/公积金贷款',
+    sub_prepay: '⚡ 提前还款测算',
+    sub_afford: '🛡️ 负债承受力评估',
+    loan_p_label: '贷款本金（元）',
+    loan_base_label: '基准利率（%）',
+    loan_discount_label: '利率折扣',
+    disc_1: '不打折 (1.0)',
+    disc_95: '95 折',
+    disc_9: '9 折',
+    disc_85: '85 折',
+    disc_8: '8 折',
+    loan_years_label: '年限（年）',
+    loan_type_label: '还款方式',
+    repay_equal: '等额本息',
+    repay_principal: '等额本金',
+    loan_lpr_label: '预估 LPR 未来涨幅（%，压力测试）',
+    loan_lpr_hint: '填 0.5 表示未来利率可能再涨 0.5%，看压力下的月供',
+    btn_analyze: '开始分析',
+    pp_p_label: '剩余贷款本金（元）',
+    pp_rate_label: '当前年利率（%）',
+    pp_years_label: '剩余年限（年）',
+    pp_amount_label: '计划提前还款金额（元）',
+    pp_strategy_label: '还款后策略',
+    pp_strategy_term: '缩短年限，月供不变（推荐，更省利息）',
+    pp_strategy_pay: '月供减少，年限不变',
+    btn_prepay: '测算提前还款',
+    af_income_label: '家庭月收入（元）',
+    af_other_label: '其他固定月支出（车贷/消费贷等，元）',
+    af_payment_label: '计划月供（元）',
+    btn_afford: '评估承受力',
+    afford_note: '银行审批通常要求月供不超过月收入的 50%，国际通行的"安全线"是 28%-36%。',
+    ad_mortgage: '[广告位] 房贷页内',
+    mortgage_note: '数据基于标准房贷公式测算，利率浮动、银行政策差异请以实际审批为准。本工具不构成任何贷款建议。',
+    sub_apr: '💰 分期真实成本',
+    sub_compare: '📊 多期数对比',
+    cp_p_label: '分期本金（元）',
+    cp_fee_label: '月手续费率（%）',
+    cr_p_label: '分期本金（元）',
+    cr_fee_label: '月手续费率（%）',
+    cr_months_label: '期数（月）',
+    cr_invest_label: '对比：这笔钱若拿去理财的年化收益（%）',
+    cr_invest_hint: '分期=放弃这笔钱的理财收益+承担手续费，双重成本',
+    btn_apr: '计算真实成本',
+    btn_compare: '对比 3/6/12/24 期',
+    ad_credit: '[广告位] 信用卡页内',
+    credit_note: '银行的"名义年化"=月费率×12，而真实年化(APR)用 IRR 估算，通常接近翻倍。决策前请看清费率条款。',
+    fx_amount_label: '金额',
+    fx_from_label: '从',
+    fx_to_label: '到',
+    btn_fx: '换算',
+    fx_waiting: '选择币种后点换算',
+    ad_fx: '[广告位] 汇率页内',
+    fx_note: '显示的是<b>每日市场中间价</b>，非银行实时牌价。实际换汇以银行卖出价为准，通常会比中间价高 0.3%~1%。',
+    footer_guides: '指南文章',
+    footer_about: '关于我们',
+    footer_contact: '联系我们',
+    footer_privacy: '隐私政策',
+    footer_terms: '使用条款',
+    footer_disclaimer: '免责声明',
+    footer_note: '本站计算结果为参考性估算，不构成任何金融建议。',
+    gc_title: '深度指南文章',
+    gc_sub: '关于房贷、信用卡与汇率的原创长篇解读 —— 追求多年后仍然有用，而非追逐一时热点。',
+    gc_g1_t: '房贷到底怎么算：本金、利息与摊销',
+    gc_g1_d: '摊销机制、等额本息对比等额本金、固定与浮动利率',
+    gc_g2_t: '提前还款：缩短期限还是减少月供？',
+    gc_g2_d: '实例演算、背后的公式，以及还款前必须确认的五件事',
+    gc_g3_t: '为什么月费率 0.6% 实际年化接近 13%',
+    gc_g3_d: '分期定价如何隐藏真实成本，以及怎么自己算出来',
+    gc_g4_t: '保护钱包与信用的用卡习惯',
+    gc_g4_d: '全额还款、守住免息期、压低使用率，以及已负债时怎么办',
+    gc_g5_t: '汇率详解：中间价、银行报价与点差',
+    gc_g5_d: '中间价、银行价与卡组织汇率的区别，点差藏在哪里',
+    gc_g6_t: '跨境汇款：如何比较真实成本',
+    gc_g6_d: '一行公式算出实际成本，以及费用常藏的四个地方',
+    gc_all: '阅读全部指南 →',
+    gc_g11_d: '一个公式、完整实例，以及不该重贷的几种情形',
+    gc_g12_t: '公积金组合贷怎么算：商贷与公积金的真实月供',
+    gc_g12_d: '两笔贷款两个利率——七三开到底省多少',
+    gc_g13_t: '中国买房税费全解：契税、增值税与那些被忽略的支出',
+    gc_g13_d: '140㎡ 契税阈值、满二免征的增值税，以及没人报价的支出',
+    gc_g14_t: '美国过户费用详解：交割当天到底要付多少',
+    gc_g14_d: '机构费用、第三方费用与预缴托管——通常是贷款额的 2%~5%',
+    gc_g15_t: '债务收入比 DTI：你到底买得起多少钱的房子',
+    gc_g15_d: '28/36 规则、前端与后端比率，以及如何倒推真实预算',
+    gc_g16_t: '15 年期与 30 年期房贷：真实的取舍',
+    gc_g16_d: '每月多 956 美元，换少付约 28.3 万美元利息',
+    gc_g17_t: '等额本息与等额本金怎么选：中国房贷还款方式对比',
+    gc_g17_d: '利率相同总额不同——总利息相差约 9 万元',
+    gc_g18_t: 'LPR 与房贷重定价日：为什么月供总是晚于降息',
+    gc_g18_d: '基准加固定加点，以及两种重定价日约定',
+    gc_g19_t: '买房预算怎么算：从月供倒推到房价',
+    gc_g19_d: '可承受月供、对应可贷额度、扣除税费后的可用首付',
+    gc_g11_t: '什么时候该重贷：回本周期这一关',
+    gc_g10_d: '指数加利差、三重利率上限，以及 5/1 ARM 实测',
+    gc_g10_t: '浮动利率 ARM 与固定利率：利率如何重置',
+    gc_g9_d: '首付门槛、MIP 与 PMI 之别，以及并列的真实月供',
+    gc_g9_t: 'FHA、常规贷款与 VA 贷款：哪一款适合你',
+    gc_g8_d: '78% 自动终止规则、80% 主动取消，以及四种消除办法',
+    gc_g8_t: '美国房贷保险 PMI：什么时候终止、怎么规避',
+    gc_g7_d: '本金利息、托管税费、PMI 与 HOA，用真实数字逐层拆解',
+    gc_g7_t: '美国房贷月供是怎么构成的：PITI 与真实成本',
+    result_rate: '执行利率',
+    result_monthly: '月供',
+    result_first: '首月月供',
+    result_total_interest: '总利息',
+    result_total: '本息合计',
+    result_stress: '压力测试',
+    result_if_rise: '若利率再涨',
+    result_prepay_before: '提前还款前',
+    result_prepay_after: '提前还款',
+    result_save: '节省利息',
+    result_dti: '月供/收入比',
+    result_total_debt: '总负债/收入比',
+    result_safe: '安全区间 ✅',
+    result_warning: '临界区间 ⚠️',
+    result_danger: '高风险区间 ❌',
+    result_nominal: '名义年化',
+    result_apr: '真实年化 APR',
+    result_opp_cost: '机会成本',
+    result_high_cost: '真实年化超 15%，属高成本融资，谨慎分期',
+    result_select_diff: '请选择不同币种',
+    result_fetching: '拉取汇率中…',
+    result_fetch_fail: '汇率拉取失败，请稍后重试',
+    fx_source_label: '数据时间',
+    fx_source_from: '来源',
+    fx_mid_note: '每日中间价参考',
+  },
+  en: {
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Mortgage · Credit Card · Currency</span>',
+    site_sub: 'Mortgage Analysis · Credit Card Real Cost · Exchange Rate & Transfer Cost',
+    ad_top: '[Ad] Top Banner',
+    tab_mortgage: '🏠 Mortgage',
+    tab_credit: '💳 Credit Card',
+    tab_fx: '💱 Exchange',
+    sub_loan: '🏢 Loan Calculator',
+    sub_prepay: '⚡ Early Repayment',
+    sub_afford: '🛡️ Affordability',
+    loan_p_label: 'Loan Principal (¥)',
+    loan_base_label: 'Base Rate (%)',
+    loan_discount_label: 'Rate Discount',
+    disc_1: 'No discount (1.0)',
+    disc_95: '5% off',
+    disc_9: '10% off',
+    disc_85: '15% off',
+    disc_8: '20% off',
+    loan_years_label: 'Term (Years)',
+    loan_type_label: 'Repayment Method',
+    repay_equal: 'Equal Installments',
+    repay_principal: 'Equal Principal',
+    loan_lpr_label: 'Estimated Future LPR Increase (%) - Stress Test',
+    loan_lpr_hint: 'Enter 0.5 to see monthly payment if rates rise 0.5%',
+    btn_analyze: 'Analyze',
+    pp_p_label: 'Remaining Principal (¥)',
+    pp_rate_label: 'Current Annual Rate (%)',
+    pp_years_label: 'Remaining Years',
+    pp_amount_label: 'Early Repayment Amount (¥)',
+    pp_strategy_label: 'Strategy After Repayment',
+    pp_strategy_term: 'Shorten term, keep payment (recommended, saves more interest)',
+    pp_strategy_pay: 'Reduce payment, keep term',
+    btn_prepay: 'Calculate Early Repayment',
+    af_income_label: 'Household Monthly Income (¥)',
+    af_other_label: 'Other Fixed Monthly Expenses (¥)',
+    af_payment_label: 'Planned Monthly Payment (¥)',
+    btn_afford: 'Assess Affordability',
+    afford_note: 'Banks typically require DTI ≤ 50%. International "safe zone" is 28%-36%.',
+    ad_mortgage: '[Ad] Mortgage Page',
+    mortgage_note: 'Data based on standard mortgage formulas. Rates and policies vary by bank. Not financial advice.',
+    sub_apr: '💰 Real APR Cost',
+    sub_compare: '📊 Term Comparison',
+    cp_p_label: 'Instalment Principal (¥)',
+    cp_fee_label: 'Monthly Fee Rate (%)',
+    cr_p_label: 'Installment Principal (¥)',
+    cr_fee_label: 'Monthly Fee Rate (%)',
+    cr_months_label: 'Months',
+    cr_invest_label: 'Comparison: Annual investment return if this money was invested (%)',
+    cr_invest_hint: 'Installment = giving up investment returns + paying fees, double cost',
+    btn_apr: 'Calculate Real Cost',
+    btn_compare: 'Compare 3/6/12/24 Months',
+    ad_credit: '[Ad] Credit Card Page',
+    credit_note: 'Banks\' "nominal APR" = monthly fee × 12. Real APR uses IRR and is typically nearly double. Read terms carefully.',
+    fx_amount_label: 'Amount',
+    fx_from_label: 'From',
+    fx_to_label: 'To',
+    btn_fx: 'Convert',
+    fx_waiting: 'Select currencies and click convert',
+    ad_fx: '[Ad] Exchange Page',
+    fx_note: 'Shows <b>daily mid-market rate</b>, not real-time bank rates. Actual exchange uses bank sell rate, typically 0.3%-1% higher than mid-rate.',
+    footer_guides: 'Guides',
+    footer_about: 'About',
+    footer_contact: 'Contact',
+    footer_privacy: 'Privacy Policy',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+    gc_g11_d: 'One formula, a full worked example, and the cases where you should not',
+    gc_g12_t: 'China Combo Mortgage: How Provident Fund and Commercial Loans Combine',
+    gc_g12_d: 'Two loans, two rates — what a 70/30 split actually saves',
+    gc_g13_t: 'China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget',
+    gc_g13_d: 'The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes',
+    gc_g14_t: 'US Closing Costs: What You Actually Pay at Settlement',
+    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan',
+    gc_g15_t: 'Debt-to-Income Ratio: How Much House You Can Actually Afford',
+    gc_g15_d: 'The 28/36 rule, front-end versus back-end, and how to work out your real budget',
+    gc_g16_t: '15-Year vs 30-Year Mortgage: The Real Trade-Off',
+    gc_g16_d: '$956 more per month against about $283,000 less interest',
+    gc_g17_t: 'Equal Instalment vs Equal Principal: How China Mortgages Repay',
+    gc_g17_d: 'Same rate, different totals — about ¥90,000 of interest apart',
+    gc_g18_t: 'China Mortgage LPR and Repricing: Why Your Payment Changes Late',
+    gc_g18_d: 'The reference plus fixed spread, and the two repricing date conventions',
+    gc_g19_t: 'China Home Budget: From Monthly Payment to Purchase Price',
+    gc_g19_d: 'Sustainable payment, supported loan, usable down payment after taxes',
+    gc_g11_t: 'When Refinancing Makes Sense: The Break-Even Test',
+    gc_g10_d: 'Index plus margin, the three rate caps, and a 5/1 ARM worked example',
+    gc_g10_t: 'ARM vs Fixed Rate: How Adjustable Loans Reset',
+    gc_g9_d: 'Down payment, MIP versus PMI, and the real monthly cost side by side',
+    gc_g9_t: 'FHA vs Conventional vs VA Loans: Which One Fits You',
+    gc_g8_d: 'The 78% automatic termination rule, cancellation at 80%, and four ways out',
+    gc_g8_t: 'Private Mortgage Insurance: When It Ends and How to Avoid It',
+    gc_g7_d: 'Principal and interest, escrowed tax and insurance, PMI and HOA — with real numbers',
+    gc_g7_t: 'How a US Mortgage Payment Is Really Built: PITI and the True Monthly Cost',
+    result_rate: 'Applied Rate',
+    result_monthly: 'Monthly Payment',
+    result_first: 'First Month Payment',
+    result_total_interest: 'Total Interest',
+    result_total: 'Total Principal + Interest',
+    result_stress: 'Stress Test',
+    result_if_rise: 'If rate rises',
+    result_prepay_before: 'Before early repayment',
+    result_prepay_after: 'Early repayment',
+    result_save: 'Interest saved',
+    result_dti: 'DTI Ratio',
+    result_total_debt: 'Total Debt Ratio',
+    result_safe: 'Safe Zone ✅',
+    result_warning: 'Warning Zone ⚠️',
+    result_danger: 'High Risk Zone ❌',
+    result_nominal: 'Nominal APR',
+    result_apr: 'Real APR',
+    result_opp_cost: 'Opportunity Cost',
+    result_high_cost: 'Real APR exceeds 15%, high-cost financing, use with caution',
+    result_select_diff: 'Please select different currencies',
+    result_fetching: 'Fetching exchange rate…',
+    result_fetch_fail: 'Failed to fetch rate, please try again',
+    fx_source_label: 'Data Time',
+    fx_source_from: 'Source',
+    fx_mid_note: 'Mid-market reference rate',
+  },
+  es: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Hipoteca · Tarjeta · Divisas</span>',
+    site_sub: 'Análisis Hipotecario · Costo Real de Tarjeta · Tipo de Cambio',
+    ad_top: '[Anuncio] Banner Superior',
+    tab_mortgage: '🏠 Hipoteca',
+    tab_credit: '💳 Tarjeta',
+    tab_fx: '💱 Divisas',
+    sub_loan: '🏢 Préstamo',
+    sub_prepay: '⚡ Pago Anticipado',
+    sub_afford: '🛡️ Capacidad',
+    loan_p_label: 'Capital del Préstamo (¥)',
+    loan_base_label: 'Tasa Base (%)',
+    loan_discount_label: 'Descuento',
+    disc_1: 'Sin descuento (1.0)',
+    disc_95: '5% dto',
+    disc_9: '10% dto',
+    disc_85: '15% dto',
+    disc_8: '20% dto',
+    loan_years_label: 'Plazo (Años)',
+    loan_type_label: 'Método de Pago',
+    repay_equal: 'Cuotas Iguales',
+    repay_principal: 'Capital Igual',
+    loan_lpr_label: 'Aumento estimado de LPR (%) - Prueba de estrés',
+    loan_lpr_hint: 'Ingrese 0.5 para ver el pago si las tasas suben 0.5%',
+    btn_analyze: 'Analizar',
+    pp_p_label: 'Capital Restante (¥)',
+    pp_rate_label: 'Tasa Anual Actual (%)',
+    pp_years_label: 'Años Restantes',
+    pp_amount_label: 'Monto de Pago Anticipado (¥)',
+    pp_strategy_label: 'Estrategia',
+    pp_strategy_term: 'Acortar plazo, mantener cuota (recomendado)',
+    pp_strategy_pay: 'Reducir cuota, mantener plazo',
+    btn_prepay: 'Calcular Pago Anticipado',
+    af_income_label: 'Ingreso Mensual Familiar (¥)',
+    af_other_label: 'Otros Gastos Fijos (¥)',
+    af_payment_label: 'Cuota Planeada (¥)',
+    btn_afford: 'Evaluar Capacidad',
+    afford_note: 'Los bancos suelen exigir DTI ≤ 50%. La zona segura internacional es 28%-36%.',
+    ad_mortgage: '[Anuncio] Página Hipoteca',
+    mortgage_note: 'Datos basados en fórmulas estándar. Las tasas varían según el banco. No es asesoramiento financiero.',
+    sub_apr: '💰 Costo Real APR',
+    sub_compare: '📊 Comparar Plazos',
+    cp_p_label: 'Capital de Cuotas (¥)',
+    cp_fee_label: 'Tasa de Comisión Mensual (%)',
+    cr_p_label: 'Capital de Cuotas (¥)',
+    cr_fee_label: 'Tasa de Comisión Mensual (%)',
+    cr_months_label: 'Meses',
+    cr_invest_label: 'Comparación: retorno anual si se invierte (%)',
+    cr_invest_hint: 'Cuotas = renunciar a ganancias de inversión + pagar comisiones',
+    btn_apr: 'Calcular Costo Real',
+    btn_compare: 'Comparar 3/6/12/24 Meses',
+    ad_credit: '[Anuncio] Página Tarjeta',
+    credit_note: 'La "Tasa Nominal" del banco = comisión mensual × 12. El APR real usa IRR y suele ser casi el doble.',
+    fx_amount_label: 'Monto',
+    fx_from_label: 'De',
+    fx_to_label: 'A',
+    btn_fx: 'Convertir',
+    fx_waiting: 'Seleccione monedas y convierta',
+    ad_fx: '[Anuncio] Página Divisas',
+    fx_note: 'Muestra <b>tipo de cambio medio diario</b>, no tarifas bancarias en tiempo real.',
+    footer_about: 'Acerca',
+    footer_privacy: 'Privacidad',
+    footer_contact: 'Contacto',
+    result_rate: 'Tasa Aplicada',
+    result_monthly: 'Cuota Mensual',
+    result_first: 'Primera Cuota',
+    result_total_interest: 'Interés Total',
+    result_total: 'Total Principal + Interés',
+    result_stress: 'Prueba de Estrés',
+    result_if_rise: 'Si la tasa sube',
+    result_prepay_before: 'Antes del pago anticipado',
+    result_prepay_after: 'Pago anticipado',
+    result_save: 'Interés ahorrado',
+    result_dti: 'Ratio DTI',
+    result_total_debt: 'Ratio Deuda Total',
+    result_safe: 'Zona Segura ✅',
+    result_warning: 'Zona de Advertencia ⚠️',
+    result_danger: 'Zona de Alto Riesgo ❌',
+    result_nominal: 'APR Nominal',
+    result_apr: 'APR Real',
+    result_opp_cost: 'Costo de Oportunidad',
+    result_high_cost: 'APR real supera 15%, financiamiento costoso, use con precaución',
+    result_select_diff: 'Seleccione monedas diferentes',
+    result_fetching: 'Obteniendo tipo de cambio…',
+    result_fetch_fail: 'Error al obtener tipo de cambio',
+    fx_source_label: 'Hora de Datos',
+    fx_source_from: 'Fuente',
+    fx_mid_note: 'Tipo medio de mercado (referencia)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  fr: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Prêt · Carte · Devises</span>',
+    site_sub: 'Analyse de Prêt · Coût Réel Carte · Taux de Change',
+    ad_top: '[Pub] Bannière Haut',
+    tab_mortgage: '🏠 Prêt',
+    tab_credit: '💳 Carte',
+    tab_fx: '💱 Change',
+    sub_loan: '🏢 Calcul Prêt',
+    sub_prepay: '⚡ Remboursement Anticipé',
+    sub_afford: '🛡️ Capacité',
+    loan_p_label: 'Capital (¥)',
+    loan_base_label: 'Taux de Base (%)',
+    loan_discount_label: 'Remise',
+    disc_1: 'Plein tarif (1.0)',
+    disc_95: '-5%',
+    disc_9: '-10%',
+    disc_85: '-15%',
+    disc_8: '-20%',
+    loan_years_label: 'Durée (Années)',
+    loan_type_label: 'Mode de Remboursement',
+    repay_equal: 'Mensualités Constantes',
+    repay_principal: 'Amortissement Constant',
+    loan_lpr_label: 'Hausse LPR estimée (%) - Test de résistance',
+    loan_lpr_hint: 'Entrez 0.5 pour voir le paiement si les taux montent de 0.5%',
+    btn_analyze: 'Analyser',
+    pp_p_label: 'Capital Restant (¥)',
+    pp_rate_label: 'Taux Annuel Actuel (%)',
+    pp_years_label: 'Années Restantes',
+    pp_amount_label: 'Montant Remboursement Anticipé (¥)',
+    pp_strategy_label: 'Stratégie',
+    pp_strategy_term: 'Raccourcir durée, mensualité constante (recommandé)',
+    pp_strategy_pay: 'Réduire mensualité, durée constante',
+    btn_prepay: 'Calculer Remboursement',
+    af_income_label: 'Revenu Mensuel Familial (¥)',
+    af_other_label: 'Autres Dépenses Fixes (¥)',
+    af_payment_label: 'Mensualité Prévue (¥)',
+    btn_afford: 'Évaluer Capacité',
+    afford_note: 'Les banques exigent généralement DTI ≤ 50%. La zone de sécurité est 28%-36%.',
+    ad_mortgage: '[Pub] Page Prêt',
+    mortgage_note: 'Données basées sur formules standard. Les taux varient selon la banque.',
+    sub_apr: '💰 Coût Réel APR',
+    sub_compare: '📊 Comparer Durées',
+    cp_p_label: 'Capital de Mensualités (¥)',
+    cp_fee_label: 'Taux de Frais Mensuel (%)',
+    cr_p_label: 'Capital de Mensualités (¥)',
+    cr_fee_label: 'Taux de Frais Mensuel (%)',
+    cr_months_label: 'Mois',
+    cr_invest_label: 'Comparaison : rendement annuel si investi (%)',
+    cr_invest_hint: 'Mensualités = renoncer aux gains d\'investissement + payer des frais',
+    btn_apr: 'Calculer Coût Réel',
+    btn_compare: 'Comparer 3/6/12/24 Mois',
+    ad_credit: '[Pub] Page Carte',
+    credit_note: 'Le "TAEG nominal" de la banque = frais mensuels × 12. Le TAEG réel utilise IRR.',
+    fx_amount_label: 'Montant',
+    fx_from_label: 'De',
+    fx_to_label: 'Vers',
+    btn_fx: 'Convertir',
+    fx_waiting: 'Sélectionnez devises',
+    ad_fx: '[Pub] Page Change',
+    fx_note: 'Affiche le <b>taux de change moyen quotidien</b>.',
+    footer_about: 'À Propos',
+    footer_privacy: 'Confidentialité',
+    footer_contact: 'Contact',
+    result_rate: 'Taux Appliqué',
+    result_monthly: 'Mensualité',
+    result_first: 'Première Mensualité',
+    result_total_interest: 'Intérêt Total',
+    result_total: 'Total Capital + Intérêts',
+    result_stress: 'Test de Résistance',
+    result_if_rise: 'Si le taux monte',
+    result_prepay_before: 'Avant remboursement',
+    result_prepay_after: 'Remboursement anticipé',
+    result_save: 'Intérêts économisés',
+    result_dti: 'Ratio DTI',
+    result_total_debt: 'Ratio Endettement Total',
+    result_safe: 'Zone Sûre ✅',
+    result_warning: 'Zone d\'Alerte ⚠️',
+    result_danger: 'Zone à Risque Élevé ❌',
+    result_nominal: 'TAEG Nominal',
+    result_apr: 'TAEG Réel',
+    result_opp_cost: 'Coût d\'Opportunité',
+    result_high_cost: 'TAEG réel > 15%, financement coûteux, prudence',
+    result_select_diff: 'Veuillez sélectionner des devises différentes',
+    result_fetching: 'Récupération du taux…',
+    result_fetch_fail: 'Échec de récupération',
+    fx_source_label: 'Heure des Données',
+    fx_source_from: 'Source',
+    fx_mid_note: 'Taux moyen du marché (référence)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  de: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Baufinanzierung · Kreditkarte · Währung</span>',
+    site_sub: 'Hypothekenanalyse · Kreditkartenkosten · Wechselkurse',
+    ad_top: '[Anzeige] Top Banner',
+    tab_mortgage: '🏠 Hypothek',
+    tab_credit: '💳 Kreditkarte',
+    tab_fx: '💱 Wechselkurs',
+    sub_loan: '🏢 Darlehen',
+    sub_prepay: '⚡ Vorzeitige Tilgung',
+    sub_afford: '🛡️ Tragbarkeit',
+    loan_p_label: 'Darlehensbetrag (¥)',
+    loan_base_label: 'Basiszinssatz (%)',
+    loan_discount_label: 'Zinsrabatt',
+    disc_1: 'Kein Rabatt (1.0)',
+    disc_95: '5% Rabatt',
+    disc_9: '10% Rabatt',
+    disc_85: '15% Rabatt',
+    disc_8: '20% Rabatt',
+    loan_years_label: 'Laufzeit (Jahre)',
+    loan_type_label: 'Tilgungsart',
+    repay_equal: 'Gleiche Raten',
+    repay_principal: 'Gleicher Tilgungsanteil',
+    loan_lpr_label: 'Geschätzter künftiger LPR-Anstieg (%) - Stresstest',
+    loan_lpr_hint: '0,5 eingeben um Zahlung bei 0,5% Zinsanstieg zu sehen',
+    btn_analyze: 'Analysieren',
+    pp_p_label: 'Restschuld (¥)',
+    pp_rate_label: 'Aktueller Jahreszins (%)',
+    pp_years_label: 'Verbleibende Jahre',
+    pp_amount_label: 'Vorzeitige Tilgungsrate (¥)',
+    pp_strategy_label: 'Strategie',
+    pp_strategy_term: 'Laufzeit verkürzen, Rate gleich (empfohlen)',
+    pp_strategy_pay: 'Rate senken, Laufzeit gleich',
+    btn_prepay: 'Vorzeitige Tilgung Berechnen',
+    af_income_label: 'Haushaltsmonatseinkommen (¥)',
+    af_other_label: 'Andere Fixkosten (¥)',
+    af_payment_label: 'Geplante Monatsrate (¥)',
+    btn_afford: 'Tragbarkeit Prüfen',
+    afford_note: 'Banken fordern meist DTI ≤ 50%. Internationale Sicherheitszone ist 28%-36%.',
+    ad_mortgage: '[Anzeige] Hypothekenseite',
+    mortgage_note: 'Daten basieren auf Standardformeln. Zinsen variieren je nach Bank.',
+    sub_apr: '💰 Realer APR',
+    sub_compare: '📊 Laufzeiten Vergleichen',
+    cp_p_label: 'Ratenkapital (¥)',
+    cp_fee_label: 'Monatliche Gebühr (%)',
+    cr_p_label: 'Ratenkapital (¥)',
+    cr_fee_label: 'Monatliche Gebühr (%)',
+    cr_months_label: 'Monate',
+    cr_invest_label: 'Vergleich: Jährliche Rendite bei Anlage (%)',
+    cr_invest_hint: 'Raten = Anlagerendite aufgeben + Gebühren zahlen',
+    btn_apr: 'Realen Kosten Berechnen',
+    btn_compare: '3/6/12/24 Monate Vergleichen',
+    ad_credit: '[Anzeige] Kreditkartenseite',
+    credit_note: 'Der "nominelle APR" der Bank = monatliche Gebühr × 12. Realer APR nutzt IRR.',
+    fx_amount_label: 'Betrag',
+    fx_from_label: 'Von',
+    fx_to_label: 'Nach',
+    btn_fx: 'Umrechnen',
+    fx_waiting: 'Währungen wählen',
+    ad_fx: '[Anzeige] Wechselkursseite',
+    fx_note: 'Zeigt den <b>täglichen Mittelkurs</b>.',
+    footer_about: 'Über',
+    footer_privacy: 'Datenschutz',
+    footer_contact: 'Kontakt',
+    result_rate: 'Angewandter Zinssatz',
+    result_monthly: 'Monatsrate',
+    result_first: 'Erste Rate',
+    result_total_interest: 'Gesamtzinsen',
+    result_total: 'Gesamtbetrag',
+    result_stress: 'Stresstest',
+    result_if_rise: 'Bei Zinsanstieg um',
+    result_prepay_before: 'Vor vorzeitiger Tilgung',
+    result_prepay_after: 'Vorzeitige Tilgung',
+    result_save: 'Ersparte Zinsen',
+    result_dti: 'DTI-Ratio',
+    result_total_debt: 'Gesamtschulden-Ratio',
+    result_safe: 'Sicherer Bereich ✅',
+    result_warning: 'Warnbereich ⚠️',
+    result_danger: 'Hochrisikobereich ❌',
+    result_nominal: 'Nomineller APR',
+    result_apr: 'Realer APR',
+    result_opp_cost: 'Opportunitätskosten',
+    result_high_cost: 'Realer APR > 15%, teure Finanzierung, Vorsicht',
+    result_select_diff: 'Bitte verschiedene Währungen wählen',
+    result_fetching: 'Kurs wird abgerufen…',
+    result_fetch_fail: 'Abruf fehlgeschlagen',
+    fx_source_label: 'Datenzeit',
+    fx_source_from: 'Quelle',
+    fx_mid_note: 'Referenz-Mittelkurs',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  ja: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">住宅ローン · カード分割 · 為替</span>',
+    site_sub: '住宅ローン分析・クレジットカード実質コスト・為替計算',
+    ad_top: '[広告] トップバナー',
+    tab_mortgage: '🏠 住宅ローン',
+    tab_credit: '💳 クレジット',
+    tab_fx: '💱 為替',
+    sub_loan: '🏢 ローン計算',
+    sub_prepay: '⚡ 繰上げ返済',
+    sub_afford: '🛡️ 返済能力',
+    loan_p_label: '借入金額（元）',
+    loan_base_label: '基準金利（%）',
+    loan_discount_label: '金利割引',
+    disc_1: '割引なし (1.0)',
+    disc_95: '5%引',
+    disc_9: '10%引',
+    disc_85: '15%引',
+    disc_8: '20%引',
+    loan_years_label: '期間（年）',
+    loan_type_label: '返済方法',
+    repay_equal: '元利均等',
+    repay_principal: '元金均等',
+    loan_lpr_label: '想定将来LPR上昇（%、ストレステスト）',
+    loan_lpr_hint: '0.5を入力すると金利が0.5%上がった場合の返済額を表示',
+    btn_analyze: '分析する',
+    pp_p_label: '残元本（元）',
+    pp_rate_label: '現在の年利（%）',
+    pp_years_label: '残り年数',
+    pp_amount_label: '繰上げ返済額（元）',
+    pp_strategy_label: '返済後の戦略',
+    pp_strategy_term: '期間短縮、返済額維持（推奨、利息削減）',
+    pp_strategy_pay: '返済額減額、期間維持',
+    btn_prepay: '繰上げ返済計算',
+    af_income_label: '世帯月収（元）',
+    af_other_label: 'その他固定月支出（元）',
+    af_payment_label: '予定返済額（元）',
+    btn_afford: '返済能力評価',
+    afford_note: '銀行は通常DTI≤50%を要求。国際的な安全基準は28%-36%。',
+    ad_mortgage: '[広告] ローンページ',
+    mortgage_note: '標準的な住宅ローン計算式に基づく。金利は銀行により異なる。',
+    sub_apr: '💰 実質APR計算',
+    sub_compare: '📊 期間比較',
+    cp_p_label: '分割元本（元）',
+    cp_fee_label: '月手数料率（%）',
+    cr_p_label: '分割元本（元）',
+    cr_fee_label: '月手数料率（%）',
+    cr_months_label: '期間（月）',
+    cr_invest_label: '比較：この資金を投資した場合の年利回り（%）',
+    cr_invest_hint: '分割＝投資収益を放棄＋手数料負担、二重のコスト',
+    btn_apr: '実質コスト計算',
+    btn_compare: '3/6/12/24ヶ月比較',
+    ad_credit: '[広告] カードページ',
+    credit_note: '銀行の「名目年率」＝月手数料×12。実質APRはIRRで計算し、通常約2倍。',
+    fx_amount_label: '金額',
+    fx_from_label: 'From',
+    fx_to_label: 'To',
+    btn_fx: '換算',
+    fx_waiting: '通貨を選択して換算',
+    ad_fx: '[広告] 為替ページ',
+    fx_note: '表示は<b>日次仲値</b>。実際の銀行レートではない。',
+    footer_about: '概要',
+    footer_privacy: 'プライバシー',
+    footer_contact: 'お問い合わせ',
+    result_rate: '適用金利',
+    result_monthly: '月返済額',
+    result_first: '初月返済額',
+    result_total_interest: '総利息',
+    result_total: '元利合計',
+    result_stress: 'ストレステスト',
+    result_if_rise: '金利が上がった場合',
+    result_prepay_before: '繰上げ返済前',
+    result_prepay_after: '繰上げ返済',
+    result_save: '節約利息',
+    result_dti: 'DTI比率',
+    result_total_debt: '総債務比率',
+    result_safe: '安全圏 ✅',
+    result_warning: '注意 ⚠️',
+    result_danger: '高リスク ❌',
+    result_nominal: '名目APR',
+    result_apr: '実質APR',
+    result_opp_cost: '機会費用',
+    result_high_cost: '実質APRが15%超、高コスト融資、注意',
+    result_select_diff: '異なる通貨を選択してください',
+    result_fetching: '為替レート取得中…',
+    result_fetch_fail: '取得失敗',
+    fx_source_label: 'データ時間',
+    fx_source_from: '出典',
+    fx_mid_note: '参考仲値',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  ko: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">주택담보대출 · 카드 · 환율</span>',
+    site_sub: '주택담보대출 분석 · 신용카드 실제 비용 · 환율 계산',
+    ad_top: '[광고] 상단 배너',
+    tab_mortgage: '🏠 대출',
+    tab_credit: '💳 카드',
+    tab_fx: '💱 환율',
+    sub_loan: '🏢 대출 계산',
+    sub_prepay: '⚡ 조기 상환',
+    sub_afford: '🛡️ 상환 능력',
+    loan_p_label: '대출 원금 (¥)',
+    loan_base_label: '기준 금리 (%)',
+    loan_discount_label: '금리 할인',
+    disc_1: '할인 없음 (1.0)',
+    disc_95: '5% 할인',
+    disc_9: '10% 할인',
+    disc_85: '15% 할인',
+    disc_8: '20% 할인',
+    loan_years_label: '기간 (년)',
+    loan_type_label: '상환 방식',
+    repay_equal: '원리금 균등',
+    repay_principal: '원금 균등',
+    loan_lpr_label: '예상 LPR 상승폭 (%)- 스트레스 테스트',
+    loan_lpr_hint: '0.5 입력 시 금리 0.5% 상승 시 월 상환액 표시',
+    btn_analyze: '분석하기',
+    pp_p_label: '잔여 원금 (¥)',
+    pp_rate_label: '현재 연금리 (%)',
+    pp_years_label: '잔여 년수',
+    pp_amount_label: '조기 상환 금액 (¥)',
+    pp_strategy_label: '상환 후 전략',
+    pp_strategy_term: '기간 단축, 월 납입액 유지 (추천)',
+    pp_strategy_pay: '월 납입액 감소, 기간 유지',
+    btn_prepay: '조기 상환 계산',
+    af_income_label: '가구 월 소득 (¥)',
+    af_other_label: '기타 고정 월 지출 (¥)',
+    af_payment_label: '계획 월 상환액 (¥)',
+    btn_afford: '상환 능력 평가',
+    afford_note: '은행은 보통 DTI ≤ 50% 요구. 국제 안전 기준은 28%-36%.',
+    ad_mortgage: '[광고] 대출 페이지',
+    mortgage_note: '표준 대출 공식 기반. 금리는 은행마다 다름.',
+    sub_apr: '💰 실제 APR 비용',
+    sub_compare: '📊 기간 비교',
+    cp_p_label: '할부 원금 (¥)',
+    cp_fee_label: '월 수수료율 (%)',
+    cr_p_label: '할부 원금 (¥)',
+    cr_fee_label: '월 수수료율 (%)',
+    cr_months_label: '개월',
+    cr_invest_label: '비교: 이 돈을 투자했을 때 연 수익률 (%)',
+    cr_invest_hint: '할부 = 투자 수익 포기 + 수수료 부담',
+    btn_apr: '실제 비용 계산',
+    btn_compare: '3/6/12/24개월 비교',
+    ad_credit: '[광고] 카드 페이지',
+    credit_note: '은행의 "명목 연율" = 월 수수료 × 12. 실제 APR은 IRR 사용.',
+    fx_amount_label: '금액',
+    fx_from_label: '보내는 통화',
+    fx_to_label: '받는 통화',
+    btn_fx: '변환',
+    fx_waiting: '통화 선택 후 변환 클릭',
+    ad_fx: '[광고] 환율 페이지',
+    fx_note: '표시는 <b>일일 중간 환율</b>. 실제 은행 환율 아님.',
+    footer_about: '소개',
+    footer_privacy: '개인정보',
+    footer_contact: '연락처',
+    result_rate: '적용 금리',
+    result_monthly: '월 상환액',
+    result_first: '첫 달 상환액',
+    result_total_interest: '총 이자',
+    result_total: '원리금 합계',
+    result_stress: '스트레스 테스트',
+    result_if_rise: '금리 상승 시',
+    result_prepay_before: '조기 상환 전',
+    result_prepay_after: '조기 상환',
+    result_save: '절약 이자',
+    result_dti: 'DTI 비율',
+    result_total_debt: '총 부채 비율',
+    result_safe: '안전 구간 ✅',
+    result_warning: '주의 구간 ⚠️',
+    result_danger: '고위험 구간 ❌',
+    result_nominal: '명목 APR',
+    result_apr: '실제 APR',
+    result_opp_cost: '기회비용',
+    result_high_cost: '실제 APR 15% 초과, 고비용 자금, 주의',
+    result_select_diff: '다른 통화를 선택하세요',
+    result_fetching: '환율 가져오는 중…',
+    result_fetch_fail: '환율 가져오기 실패',
+    fx_source_label: '데이터 시간',
+    fx_source_from: '출처',
+    fx_mid_note: '시장 중간 환율 (참고)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  pt: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Hipoteca · Cartão · Moedas</span>',
+    site_sub: 'Análise de Hipoteca · Custo Real de Cartão · Câmbio',
+    ad_top: '[Anúncio] Banner Superior',
+    tab_mortgage: '🏠 Hipoteca',
+    tab_credit: '💳 Cartão',
+    tab_fx: '💱 Câmbio',
+    sub_loan: '🏢 Empréstimo',
+    sub_prepay: '⚡ Pagamento Antecipado',
+    sub_afford: '🛡️ Capacidade',
+    loan_p_label: 'Valor do Empréstimo (¥)',
+    loan_base_label: 'Taxa Base (%)',
+    loan_discount_label: 'Desconto',
+    disc_1: 'Sem desconto (1.0)',
+    disc_95: '5% off',
+    disc_9: '10% off',
+    disc_85: '15% off',
+    disc_8: '20% off',
+    loan_years_label: 'Prazo (Anos)',
+    loan_type_label: 'Método de Pagamento',
+    repay_equal: 'Parcelas Iguais',
+    repay_principal: 'Amortização Constante',
+    loan_lpr_label: 'Aumento estimado de LPR (%) - Teste de estresse',
+    loan_lpr_hint: 'Digite 0.5 para ver pagamento se taxas subirem 0.5%',
+    btn_analyze: 'Analisar',
+    pp_p_label: 'Saldo Devedor (¥)',
+    pp_rate_label: 'Taxa Anual Atual (%)',
+    pp_years_label: 'Anos Restantes',
+    pp_amount_label: 'Valor de Pagamento Antecipado (¥)',
+    pp_strategy_label: 'Estratégia',
+    pp_strategy_term: 'Encurtar prazo, manter parcela (recomendado)',
+    pp_strategy_pay: 'Reduzir parcela, manter prazo',
+    btn_prepay: 'Calcular Pagamento Antecipado',
+    af_income_label: 'Renda Mensal Familiar (¥)',
+    af_other_label: 'Outras Despesas Fixas (¥)',
+    af_payment_label: 'Parcela Planejada (¥)',
+    btn_afford: 'Avaliar Capacidade',
+    afford_note: 'Bancos exigem DTI ≤ 50%. Zona segura internacional é 28%-36%.',
+    ad_mortgage: '[Anúncio] Página Hipoteca',
+    mortgage_note: 'Dados baseados em fórmulas padrão. Taxas variam por banco.',
+    sub_apr: '💰 Custo Real APR',
+    sub_compare: '📊 Comparar Prazos',
+    cp_p_label: 'Valor Parcelado (¥)',
+    cp_fee_label: 'Taxa de Mensalidade (%)',
+    cr_p_label: 'Valor Parcelado (¥)',
+    cr_fee_label: 'Taxa de Mensalidade (%)',
+    cr_months_label: 'Meses',
+    cr_invest_label: 'Comparação: retorno anual se investido (%)',
+    cr_invest_hint: 'Parcelamento = abrir mão de ganhos de investimento + pagar taxas',
+    btn_apr: 'Calcular Custo Real',
+    btn_compare: 'Comparar 3/6/12/24 Meses',
+    ad_credit: '[Anúncio] Página Cartão',
+    credit_note: 'O "APR nominal" do banco = taxa mensal × 12. APR real usa IRR.',
+    fx_amount_label: 'Valor',
+    fx_from_label: 'De',
+    fx_to_label: 'Para',
+    btn_fx: 'Converter',
+    fx_waiting: 'Selecione moedas',
+    ad_fx: '[Anúncio] Página Câmbio',
+    fx_note: 'Mostra <b>taxa média diária</b>.',
+    footer_about: 'Sobre',
+    footer_privacy: 'Privacidade',
+    footer_contact: 'Contato',
+    result_rate: 'Taxa Aplicada',
+    result_monthly: 'Pagamento Mensal',
+    result_first: 'Primeira Parcela',
+    result_total_interest: 'Juros Totais',
+    result_total: 'Total Principal + Juros',
+    result_stress: 'Teste de Estresse',
+    result_if_rise: 'Se a taxa subir',
+    result_prepay_before: 'Antes do pagamento',
+    result_prepay_after: 'Pagamento antecipado',
+    result_save: 'Juros economizados',
+    result_dti: 'Razão DTI',
+    result_total_debt: 'Razão Dívida Total',
+    result_safe: 'Zona Segura ✅',
+    result_warning: 'Zona de Aviso ⚠️',
+    result_danger: 'Zona de Alto Risco ❌',
+    result_nominal: 'APR Nominal',
+    result_apr: 'APR Real',
+    result_opp_cost: 'Custo de Oportunidade',
+    result_high_cost: 'APR real > 15%, financiamento caro, cuidado',
+    result_select_diff: 'Selecione moedas diferentes',
+    result_fetching: 'Buscando taxa…',
+    result_fetch_fail: 'Falha ao buscar',
+    fx_source_label: 'Horário dos Dados',
+    fx_source_from: 'Fonte',
+    fx_mid_note: 'Taxa média de mercado (referência)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  ru: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Ипотека · Карты · Валюты</span>',
+    site_sub: 'Анализ ипотеки · Реальная стоимость карты · Обмен валют',
+    ad_top: '[Реклама] Верхний баннер',
+    tab_mortgage: '🏠 Ипотека',
+    tab_credit: '💳 Карта',
+    tab_fx: '💱 Валюта',
+    sub_loan: '🏢 Расчет кредита',
+    sub_prepay: '⚡ Досрочное погашение',
+    sub_afford: '🛡️ Платежеспособность',
+    loan_p_label: 'Сумма кредита (¥)',
+    loan_base_label: 'Базовая ставка (%)',
+    loan_discount_label: 'Скидка на ставку',
+    disc_1: 'Без скидки (1.0)',
+    disc_95: 'Скидка 5%',
+    disc_9: 'Скидка 10%',
+    disc_85: 'Скидка 15%',
+    disc_8: 'Скидка 20%',
+    loan_years_label: 'Срок (лет)',
+    loan_type_label: 'Способ погашения',
+    repay_equal: 'Аннуитет',
+    repay_principal: 'Дифференцированный платеж',
+    loan_lpr_label: 'Ожидаемый рост LPR (%) - Стресс-тест',
+    loan_lpr_hint: 'Введите 0.5 чтобы увидеть платеж при росте ставки на 0.5%',
+    btn_analyze: 'Анализировать',
+    pp_p_label: 'Остаток долга (¥)',
+    pp_rate_label: 'Текущая годовая ставка (%)',
+    pp_years_label: 'Оставшиеся годы',
+    pp_amount_label: 'Сумма досрочного погашения (¥)',
+    pp_strategy_label: 'Стратегия',
+    pp_strategy_term: 'Сократить срок, платеж тот же (рекомендуется)',
+    pp_strategy_pay: 'Снизить платеж, срок тот же',
+    btn_prepay: 'Рассчитать досрочное',
+    af_income_label: 'Семейный месячный доход (¥)',
+    af_other_label: 'Другие фиксированные расходы (¥)',
+    af_payment_label: 'Планируемый платеж (¥)',
+    btn_afford: 'Оценить платежеспособность',
+    afford_note: 'Банки обычно требуют DTI ≤ 50%. Безопасная зона 28%-36%.',
+    ad_mortgage: '[Реклама] Страница ипотеки',
+    mortgage_note: 'Данные по стандартным формулам. Ставки различаются.',
+    sub_apr: '💰 Реальная стоимость',
+    sub_compare: '📊 Сравнение сроков',
+    cp_p_label: 'Сумма рассрочки (¥)',
+    cp_fee_label: 'Месячная комиссия (%)',
+    cr_p_label: 'Сумма рассрочки (¥)',
+    cr_fee_label: 'Месячная комиссия (%)',
+    cr_months_label: 'Месяцев',
+    cr_invest_label: 'Сравнение: годовая доходность инвестиций (%)',
+    cr_invest_hint: 'Рассрочка = отказ от инвестиционного дохода + комиссии',
+    btn_apr: 'Рассчитать реальную стоимость',
+    btn_compare: 'Сравнить 3/6/12/24 мес',
+    ad_credit: '[Реклама] Страница карты',
+    credit_note: 'Номинальная ставка банка = месячная комиссия × 12. Реальный APR использует IRR.',
+    fx_amount_label: 'Сумма',
+    fx_from_label: 'Из',
+    fx_to_label: 'В',
+    btn_fx: 'Конвертировать',
+    fx_waiting: 'Выберите валюты',
+    ad_fx: '[Реклама] Страница валюты',
+    fx_note: 'Показывает <b>среднедневной курс</b>.',
+    footer_about: 'О нас',
+    footer_privacy: 'Конфиденциальность',
+    footer_contact: 'Контакт',
+    result_rate: 'Применяемая ставка',
+    result_monthly: 'Ежемесячный платеж',
+    result_first: 'Первый платеж',
+    result_total_interest: 'Всего процентов',
+    result_total: 'Итого',
+    result_stress: 'Стресс-тест',
+    result_if_rise: 'При росте ставки',
+    result_prepay_before: 'До досрочного',
+    result_prepay_after: 'Досрочное погашение',
+    result_save: 'Сэкономлено процентов',
+    result_dti: 'Коэффициент DTI',
+    result_total_debt: 'Общий долг',
+    result_safe: 'Безопасная зона ✅',
+    result_warning: 'Зона внимания ⚠️',
+    result_danger: 'Высокий риск ❌',
+    result_nominal: 'Номинальный APR',
+    result_apr: 'Реальный APR',
+    result_opp_cost: 'Альтернативные издержки',
+    result_high_cost: 'Реальный APR > 15%, дорогое финансирование',
+    result_select_diff: 'Выберите разные валюты',
+    result_fetching: 'Получение курса…',
+    result_fetch_fail: 'Ошибка получения',
+    fx_source_label: 'Время данных',
+    fx_source_from: 'Источник',
+    fx_mid_note: 'Среднерыночный курс (справочно)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  ar: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">الرهن العقاري · البطاقات · العملات</span>',
+    site_sub: 'تحليل الرهن العقاري · التكلفة الحقيقية للبطاقة · أسعار الصرف',
+    ad_top: '[إعلان] الشريط العلوي',
+    tab_mortgage: '🏠 رهن',
+    tab_credit: '💳 بطاقة',
+    tab_fx: '💱 صرف',
+    sub_loan: '🏢 حاسبة القرض',
+    sub_prepay: '⚡ سداد مبكر',
+    sub_afford: '🛡️ القدرة على السداد',
+    loan_p_label: 'أصل القرض (¥)',
+    loan_base_label: 'سعر الفائدة الأساسي (%)',
+    loan_discount_label: 'خصم الفائدة',
+    disc_1: 'بدون خصم (1.0)',
+    disc_95: 'خصم 5%',
+    disc_9: 'خصم 10%',
+    disc_85: 'خصم 15%',
+    disc_8: 'خصم 20%',
+    loan_years_label: 'المدة (سنوات)',
+    loan_type_label: 'طريقة السداد',
+    repay_equal: 'أقساط متساوية',
+    repay_principal: 'أصل متساوٍ',
+    loan_lpr_label: 'زيادة LPR المتوقعة (%) - اختبار الإجهاد',
+    loan_lpr_hint: 'أدخل 0.5 لرؤية القسط إذا ارتفعت الأسعار 0.5%',
+    btn_analyze: 'تحليل',
+    pp_p_label: 'الرصيد المتبقي (¥)',
+    pp_rate_label: 'معدل الفائدة السنوي الحالي (%)',
+    pp_years_label: 'السنوات المتبقية',
+    pp_amount_label: 'مبلغ السداد المبكر (¥)',
+    pp_strategy_label: 'الاستراتيجية',
+    pp_strategy_term: 'تقليل المدة، القسط ثابت (موصى به)',
+    pp_strategy_pay: 'تقليل القسط، المدة ثابتة',
+    btn_prepay: 'حساب السداد المبكر',
+    af_income_label: 'الدخل الشهري الأسري (¥)',
+    af_other_label: 'نفقات شهرية ثابتة أخرى (¥)',
+    af_payment_label: 'القسط المخطط (¥)',
+    btn_afford: 'تقييم القدرة',
+    afford_note: 'البنوك تتطلب عادة DTI ≤ 50%. المنطقة الآمنة 28%-36%.',
+    ad_mortgage: '[إعلان] صفحة الرهن',
+    mortgage_note: 'البيانات بناءً على صيغ قياسية. الأسعار تختلف حسب البنك.',
+    sub_apr: '💰 التكلفة الحقيقية APR',
+    sub_compare: '📊 مقارنة المدد',
+    cp_p_label: 'أصل الأقساط (¥)',
+    cp_fee_label: 'رسوم شهرية (%)',
+    cr_p_label: 'أصل الأقساط (¥)',
+    cr_fee_label: 'رسوم شهرية (%)',
+    cr_months_label: 'أشهر',
+    cr_invest_label: 'مقارنة: عائد سنوي إذا تم استثمار المبلغ (%)',
+    cr_invest_hint: 'التقسيط = التخلي عن عوائد الاستثمار + دفع الرسوم',
+    btn_apr: 'حساب التكلفة الحقيقية',
+    btn_compare: 'مقارنة 3/6/12/24 شهر',
+    ad_credit: '[إعلان] صفحة البطاقة',
+    credit_note: 'APR الاسمي للبنك = الرسوم الشهرية × 12. APR الحقيقي يستخدم IRR.',
+    fx_amount_label: 'المبلغ',
+    fx_from_label: 'من',
+    fx_to_label: 'إلى',
+    btn_fx: 'تحويل',
+    fx_waiting: 'اختر العملات',
+    ad_fx: '[إعلان] صفحة الصرف',
+    fx_note: 'يعرض <b>سعر الصرف اليومي المتوسط</b>.',
+    footer_about: 'حول',
+    footer_privacy: 'الخصوصية',
+    footer_contact: 'اتصل بنا',
+    result_rate: 'سعر الفائدة المطبق',
+    result_monthly: 'القسط الشهري',
+    result_first: 'القسط الأول',
+    result_total_interest: 'إجمالي الفوائد',
+    result_total: 'المجموع',
+    result_stress: 'اختبار الإجهاد',
+    result_if_rise: 'إذا ارتفع السعر',
+    result_prepay_before: 'قبل السداد المبكر',
+    result_prepay_after: 'السداد المبكر',
+    result_save: 'الفوائد الموفرة',
+    result_dti: 'نسبة DTI',
+    result_total_debt: 'نسبة الدين الإجمالي',
+    result_safe: 'منطقة آمنة ✅',
+    result_warning: 'منطقة تحذير ⚠️',
+    result_danger: 'منطقة خطر عالي ❌',
+    result_nominal: 'APR الاسمي',
+    result_apr: 'APR الحقيقي',
+    result_opp_cost: 'تكلفة الفرصة',
+    result_high_cost: 'APR الحقيقي > 15%، تمويل مكلف',
+    result_select_diff: 'يرجى اختيار عملات مختلفة',
+    result_fetching: 'جاري جلب سعر الصرف…',
+    result_fetch_fail: 'فشل في الجلب',
+    fx_source_label: 'وقت البيانات',
+    fx_source_from: 'المصدر',
+    fx_mid_note: 'سعر السوق المتوسط (مرجعي)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  it: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Mutuo · Carta · Valute</span>',
+    site_sub: 'Analisi Mutuo · Costo Reale Carta · Tassi di Cambio',
+    ad_top: '[Annuncio] Banner Superiore',
+    tab_mortgage: '🏠 Mutuo',
+    tab_credit: '💳 Carta',
+    tab_fx: '💱 Cambio',
+    sub_loan: '🏢 Calcolo Prestito',
+    sub_prepay: '⚡ Rimborso Anticipato',
+    sub_afford: '🛡️ Capacità',
+    loan_p_label: 'Capitale (¥)',
+    loan_base_label: 'Tasso Base (%)',
+    loan_discount_label: 'Sconto',
+    disc_1: 'Nessuno sconto (1.0)',
+    disc_95: 'Sconto 5%',
+    disc_9: 'Sconto 10%',
+    disc_85: 'Sconto 15%',
+    disc_8: 'Sconto 20%',
+    loan_years_label: 'Durata (Anni)',
+    loan_type_label: 'Metodo di Rimborso',
+    repay_equal: 'Rate Costanti',
+    repay_principal: 'Capitale Costante',
+    loan_lpr_label: 'Aumento LPR stimato (%) - Stress Test',
+    loan_lpr_hint: 'Inserisci 0.5 per vedere rata se tassi salgono 0.5%',
+    btn_analyze: 'Analizza',
+    pp_p_label: 'Capitale Residuo (¥)',
+    pp_rate_label: 'Tasso Annuale Attuale (%)',
+    pp_years_label: 'Anni Rimanenti',
+    pp_amount_label: 'Importo Rimborso Anticipato (¥)',
+    pp_strategy_label: 'Strategia',
+    pp_strategy_term: 'Ridurre durata, rata invariata (consigliato)',
+    pp_strategy_pay: 'Ridurre rata, durata invariata',
+    btn_prepay: 'Calcola Rimborso',
+    af_income_label: 'Reddito Mensile Familiare (¥)',
+    af_other_label: 'Altre Spese Fisse (¥)',
+    af_payment_label: 'Rata Pianificata (¥)',
+    btn_afford: 'Valuta Capacità',
+    afford_note: 'Le banche richiedono solitamente DTI ≤ 50%. Zona sicura 28%-36%.',
+    ad_mortgage: '[Annuncio] Pagina Mutuo',
+    mortgage_note: 'Dati basati su formule standard. Tassi variano per banca.',
+    sub_apr: '💰 Costo Reale APR',
+    sub_compare: '📊 Confronta Durate',
+    cp_p_label: 'Capitale Rateale (¥)',
+    cp_fee_label: 'Tasso Commissione Mensile (%)',
+    cr_p_label: 'Capitale Rateale (¥)',
+    cr_fee_label: 'Tasso Commissione Mensile (%)',
+    cr_months_label: 'Mesi',
+    cr_invest_label: 'Confronto: rendimento annuale se investito (%)',
+    cr_invest_hint: 'Rate = rinunciare a guadagni di investimento + pagare commissioni',
+    btn_apr: 'Calcola Costo Reale',
+    btn_compare: 'Confronta 3/6/12/24 Mesi',
+    ad_credit: '[Annuncio] Pagina Carta',
+    credit_note: 'Il "TAEG nominale" della banca = commissione mensile × 12. TAEG reale usa IRR.',
+    fx_amount_label: 'Importo',
+    fx_from_label: 'Da',
+    fx_to_label: 'A',
+    btn_fx: 'Converti',
+    fx_waiting: 'Seleziona valute',
+    ad_fx: '[Annuncio] Pagina Cambio',
+    fx_note: 'Mostra il <b>tasso di cambio medio giornaliero</b>.',
+    footer_about: 'Chi Siamo',
+    footer_privacy: 'Privacy',
+    footer_contact: 'Contatto',
+    result_rate: 'Tasso Applicato',
+    result_monthly: 'Rata Mensile',
+    result_first: 'Prima Rata',
+    result_total_interest: 'Interessi Totali',
+    result_total: 'Totale Capitale + Interessi',
+    result_stress: 'Stress Test',
+    result_if_rise: 'Se il tasso sale',
+    result_prepay_before: 'Prima del rimborso',
+    result_prepay_after: 'Rimborso anticipato',
+    result_save: 'Interessi risparmiati',
+    result_dti: 'Rapporto DTI',
+    result_total_debt: 'Rapporto Debito Totale',
+    result_safe: 'Zona Sicura ✅',
+    result_warning: 'Zona Attenzione ⚠️',
+    result_danger: 'Zona Ad Alto Rischio ❌',
+    result_nominal: 'TAEG Nominale',
+    result_apr: 'TAEG Reale',
+    result_opp_cost: 'Costo Opportunità',
+    result_high_cost: 'TAEG reale > 15%, finanziamento costoso',
+    result_select_diff: 'Seleziona valute diverse',
+    result_fetching: 'Recupero tasso…',
+    result_fetch_fail: 'Recupero fallito',
+    fx_source_label: 'Orario Dati',
+    fx_source_from: 'Fonte',
+    fx_mid_note: 'Tasso medio di mercato (riferimento)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+  th: {
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">สินเชื่อบ้าน · บัตรเครดิต · อัตราแลกเปลี่ยน</span>',
+    site_sub: 'วิเคราะห์สินเชื่อที่อยู่อาศัย · ต้นทุนบัตรเครดิตจริง · อัตราแลกเปลี่ยน',
+    ad_top: '[โฆษณา] แบนเนอร์บน',
+    tab_mortgage: '🏠 สินเชื่อ',
+    tab_credit: '💳 บัตรเครดิต',
+    tab_fx: '💱 อัตราแลกเปลี่ยน',
+    sub_loan: '🏢 คำนวณสินเชื่อ',
+    sub_prepay: '⚡ ชำระล่วงหน้า',
+    sub_afford: '🛡️ ความสามารถในการชำระ',
+    loan_p_label: 'เงินต้น (¥)',
+    loan_base_label: 'อัตราดอกเบี้ยฐาน (%)',
+    loan_discount_label: 'ส่วนลดดอกเบี้ย',
+    disc_1: 'ไม่ลด (1.0)',
+    disc_95: 'ลด 5%',
+    disc_9: 'ลด 10%',
+    disc_85: 'ลด 15%',
+    disc_8: 'ลด 20%',
+    loan_years_label: 'ระยะเวลา (ปี)',
+    loan_type_label: 'วิธีการชำระ',
+    repay_equal: 'ผ่อนเท่ากัน',
+    repay_principal: 'ต้นเท่ากัน',
+    loan_lpr_label: 'คาดการณ์การขึ้นของ LPR (%) - ทดสอบความเครียด',
+    loan_lpr_hint: 'ใส่ 0.5 เพื่อดูยอดผ่อนหากดอกเบี้ยขึ้น 0.5%',
+    btn_analyze: 'วิเคราะห์',
+    pp_p_label: 'เงินต้นคงเหลือ (¥)',
+    pp_rate_label: 'อัตราดอกเบี้ยรายปีปัจจุบัน (%)',
+    pp_years_label: 'ปีที่เหลือ',
+    pp_amount_label: 'จำนวนเงินชำระล่วงหน้า (¥)',
+    pp_strategy_label: 'กลยุทธ์',
+    pp_strategy_term: 'ลดระยะเวลา คงยอดผ่อน (แนะนำ)',
+    pp_strategy_pay: 'ลดยอดผ่อน คงระยะเวลา',
+    btn_prepay: 'คำนวณชำระล่วงหน้า',
+    af_income_label: 'รายได้ครอบครัวรายเดือน (¥)',
+    af_other_label: 'ค่าใช้จ่ายประจำอื่น (¥)',
+    af_payment_label: 'ยอดผ่อนที่วางแผน (¥)',
+    btn_afford: 'ประเมินความสามารถ',
+    afford_note: 'ธนาคารมักต้องการ DTI ≤ 50% โซนปลอดภัยสากลคือ 28%-36%',
+    ad_mortgage: '[โฆษณา] หน้าสินเชื่อ',
+    mortgage_note: 'ข้อมูลตามสูตรมาตรฐาน อัตราดอกเบี้ยแตกต่างกันตามธนาคาร',
+    sub_apr: '💰 ต้นทุน APR จริง',
+    sub_compare: '📊 เปรียบเทียบระยะเวลา',
+    cp_p_label: 'เงินต้นผ่อน (¥)',
+    cp_fee_label: 'ค่าธรรมเนียมรายเดือน (%)',
+    cr_p_label: 'เงินต้นผ่อน (¥)',
+    cr_fee_label: 'ค่าธรรมเนียมรายเดือน (%)',
+    cr_months_label: 'เดือน',
+    cr_invest_label: 'เปรียบเทียบ: ผลตอบแทนรายปีหากนำไปลงทุน (%)',
+    cr_invest_hint: 'ผ่อน = สละผลตอบแทนการลงทุน + จ่ายค่าธรรมเนียม',
+    btn_apr: 'คำนวณต้นทุนจริง',
+    btn_compare: 'เปรียบเทียบ 3/6/12/24 เดือน',
+    ad_credit: '[โฆษณา] หน้าบัตร',
+    credit_note: 'อัตราที่ธนาคารแจ้ง = ค่าธรรมเนียมรายเดือน × 12 APR จริงใช้ IRR',
+    fx_amount_label: 'จำนวนเงิน',
+    fx_from_label: 'จาก',
+    fx_to_label: 'เป็น',
+    btn_fx: 'แปลง',
+    fx_waiting: 'เลือกสกุลเงิน',
+    ad_fx: '[โฆษณา] หน้าอัตราแลกเปลี่ยน',
+    fx_note: 'แสดง <b>อัตรากลางรายวัน</b>',
+    footer_about: 'เกี่ยวกับ',
+    footer_privacy: 'ความเป็นส่วนตัว',
+    footer_contact: 'ติดต่อ',
+    result_rate: 'อัตราที่ใช้',
+    result_monthly: 'ยอดผ่อนรายเดือน',
+    result_first: 'งวดแรก',
+    result_total_interest: 'ดอกเบี้ยรวม',
+    result_total: 'รวมต้นและดอก',
+    result_stress: 'ทดสอบความเครียด',
+    result_if_rise: 'หากดอกเบี้ยขึ้น',
+    result_prepay_before: 'ก่อนชำระล่วงหน้า',
+    result_prepay_after: 'ชำระล่วงหน้า',
+    result_save: 'ดอกเบี้ยที่ประหยัดได้',
+    result_dti: 'สัดส่วน DTI',
+    result_total_debt: 'สัดส่วนหนี้รวม',
+    result_safe: 'โซนปลอดภัย ✅',
+    result_warning: 'โซนเตือน ⚠️',
+    result_danger: 'โซนเสี่ยงสูง ❌',
+    result_nominal: 'APR ตามชื่อ',
+    result_apr: 'APR จริง',
+    result_opp_cost: 'ต้นทุนโอกาส',
+    result_high_cost: 'APR จริง > 15% ต้นทุนสูง ระวัง',
+    result_select_diff: 'กรุณาเลือกสกุลเงินต่างกัน',
+    result_fetching: 'กำลังดึงอัตราแลกเปลี่ยน…',
+    result_fetch_fail: 'ดึงข้อมูลไม่สำเร็จ',
+    fx_source_label: 'เวลาข้อมูล',
+    fx_source_from: 'แหล่งที่มา',
+    fx_mid_note: 'อัตรากลางตลาด (อ้างอิง)',
+    sub_combo: '🏦 Combo Loan',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
+    combo_comm_label: 'Commercial Loan Amount (¥)',
+    combo_comm_rate_label: 'Commercial Loan Rate (%)',
+    combo_fund_label: 'Provident Fund Loan Amount (¥)',
+    combo_fund_rate_label: 'Provident Fund Rate (%)',
+    combo_years_label: 'Term (Years)',
+    combo_type_label: 'Repayment Method',
+    btn_combo: 'Calculate Combo Loan',
+    combo_comm_short: 'Commercial',
+    combo_fund_short: 'Provident Fund',
+    combo_total_pay: 'Combined monthly payment',
+    combo_blended: 'Blended effective rate',
+    combo_vs: 'vs.',
+    combo_vs_note: 'If the whole loan were commercial',
+    combo_save: 'you save',
+    in_interest: 'in interest',
+    of_principal: 'of principal',
+    pp_helper_title: '💡 Don\'t know your remaining balance? Tap to estimate it',
+    pp_orig_label: 'Original Principal (¥)',
+    pp_orig_years: 'Original Term (Years)',
+    pp_paid_label: 'Months Already Paid',
+    pp_orig_rate: 'Original Rate (%)',
+    btn_estimate: 'Estimate & Fill In',
+    pp_estimated: 'Estimated remaining balance',
+    pp_est_note: '— filled in above. Verify against your bank statement.',
+    btn_schedule: '📊 Show Year-by-Year Amortization Schedule',
+    sch_hide: 'Hide Schedule',
+    sch_title: 'Amortization Schedule ( yearly summary )',
+    sch_year: 'Year',
+    sch_principal: 'Principal',
+    sch_interest: 'Interest',
+    sch_balance: 'Balance',
+    pp_result_term: 'Remaining term',
+    pp_unit_month: 'months',
+    pp_saved_months: 'shortened by',
+    pp_unchanged: 'unchanged',
+    pp_from: 'was',
+    footer_guides: 'Guides',
+    footer_terms: 'Terms of Use',
+    footer_disclaimer: 'Disclaimer',
+    footer_note: 'Results are estimates for reference only and do not constitute financial advice.',
+    gc_title: 'In-depth Guides',
+    gc_sub: 'Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.',
+    gc_g1_t: 'How Mortgages Actually Work',
+    gc_g1_d: 'Amortisation, equal instalment vs equal principal, fixed vs variable rates',
+    gc_g2_t: 'Early Repayment: Shorten the Term or Cut the Payment?',
+    gc_g2_d: 'A worked example, the formula behind it, and five checks before you prepay',
+    gc_g3_t: 'Why a 0.6% Monthly Fee Is Really About 13% a Year',
+    gc_g3_d: 'How instalment pricing hides the true cost, and how to compute it',
+    gc_g4_t: 'Credit Card Habits That Protect Your Wallet and Score',
+    gc_g4_d: 'Paying in full, grace periods, utilisation, and clearing existing debt',
+    gc_g5_t: 'Exchange Rates Explained',
+    gc_g5_d: 'Mid-market vs bank vs card network rates, and where the spread hides',
+    gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
+    gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
+    gc_all: 'Read all guides →',
+  },
+};
+
+// ============ 语言切换逻辑 ============
+let currentLang = (document.documentElement.lang||'').toLowerCase().indexOf('zh')===0 ? 'zh' : 'en';
+
+/* 中文站：已移除语言切换 */
+
+// ============ Tab 切换 ============
+document.querySelectorAll('.tab').forEach(t => {
+  t.onclick = () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.card').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.tab).classList.add('active');
+  };
+});
+document.querySelectorAll('.sub-tab').forEach(t => {
+  t.onclick = () => {
+    const parent = t.closest('.card');
+    parent.querySelectorAll('.sub-tab').forEach(x => x.classList.remove('active'));
+    parent.querySelectorAll('.sub-card').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.sub).classList.add('active');
+  };
+});
+
+// ============ 通用月供计算 ============
+function monthly(P, annualRate, years, type) {
+  const r = annualRate / 100 / 12, n = years * 12;
+  if (type === 'equal') {
+    if (r === 0) return { pay: P / n, totalInterest: 0 };
+    const f = Math.pow(1 + r, n);
+    const pay = P * r * f / (f - 1);
+    return { pay, totalInterest: pay * n - P };
+  } else {
+    const first = P / n + P * r;
+    const last = P / n + (P / n) * r;
+    return { pay: first, totalInterest: P * r * (n + 1) / 2, first, last };
+  }
+}
+
+// ============ 房贷：贷款分析 ============
+function calcLoan() {
+  const dict = i18n[currentLang] || i18n.en;
+  const P = +loan_p.value, base = +loan_base.value, disc = +loan_discount.value, years = +loan_years.value, type = loan_type.value, lprDelta = +loan_lpr.value;
+  const rate = base * disc;
+  const res = monthly(P, rate, years, type);
+  let html = `${dict.result_rate}：<b>${rate.toFixed(3)}%</b>（${base}% × ${disc === 1 ? dict.disc_1 : (disc*10)+dict.disc_1.replace('1.0','')}）<br>`;
+  if (type === 'equal') html += `${dict.result_monthly}：<b>${res.pay.toFixed(2)} 元</b><br>`;
+  else html += `${dict.result_first}：<b>${res.pay.toFixed(2)} 元</b>（逐月递减）<br>`;
+  html += `${dict.result_total_interest}：<b>${res.totalInterest.toFixed(2)} 元</b>（占本金 <b>${(res.totalInterest/P*100).toFixed(1)}%</b>）<br>`;
+  html += `${dict.result_total}：${(P + res.totalInterest).toFixed(2)} 元<br>`;
+  if (lprDelta > 0) {
+    const stressed = monthly(P, rate + lprDelta, years, type);
+    html += `<hr class="divider"><span class="badge warn">${dict.result_stress}</span> ${dict.result_if_rise} ${lprDelta}%，${dict.result_monthly} ${dict.result_if_rise.replace('若利率再涨','')} <b>${stressed.pay.toFixed(2)} 元</b>，增加 <span class="warn">${(stressed.pay-res.pay).toFixed(2)} 元/月</span>`;
+  }
+  loan_result.innerHTML = html;
+
+  // 生成还款计划数据并显示入口按钮
+  try {
+    schData = buildSchedule(P, rate, years, type);
+    schBtn.style.display = 'block';
+    schBox.innerHTML = '';
+    const d0 = i18n[currentLang] || i18n.en;
+    schBtn.textContent = '\u{1F4CA} ' + (d0.btn_schedule || 'Show Year-by-Year Amortization Schedule');
+  } catch (e) { /* 计划表失败不影响主结果 */ }
+}
+
+// ============ 提前还款 ============
+function calcPrepay() {
+  const dict = i18n[currentLang] || i18n.en;
+  const P = +pp_p.value, rate = +pp_rate.value, years = +pp_years.value, amount = +pp_amount.value, strategy = pp_strategy.value;
+  const res = monthly(P, rate, years, 'equal');
+  const B = P - amount;                      // 提前还款后剩余本金
+  const r = rate / 100 / 12;
+
+  let newRes, saved, monthsLeft = null;
+  if (strategy === 'reduce-term') {
+    // ★ 缩短期限：月供保持不变，反解剩余期数
+    //   由 pay = B*r*(1+r)^n / ((1+r)^n - 1)  反解 n：
+    //   n = ln( pay / (pay - B*r) ) / ln(1+r)
+    const target = res.pay;
+    if (r === 0) {
+      monthsLeft = B / (P / (years * 12));
+      newRes = { pay: target, totalInterest: 0 };
+    } else if (target <= B * r) {
+      // 月供不足以覆盖利息，退化处理
+      monthsLeft = years * 12;
+      newRes = monthly(B, rate, years, 'equal');
+    } else {
+      monthsLeft = Math.log(target / (target - B * r)) / Math.log(1 + r);
+      const n = Math.max(1, Math.round(monthsLeft));
+      newRes = { pay: target, totalInterest: target * n - B };
+    }
+    saved = res.totalInterest - newRes.totalInterest;
+  } else {
+    // ★ 减少月供：期限不变，本金减少，重算月供
+    newRes = monthly(B, rate, years, 'equal');
+    saved  = res.totalInterest - newRes.totalInterest;
+    monthsLeft = years * 12;
+  }
+  let html = `${dict.result_prepay_before}：${dict.result_monthly} ${res.pay.toFixed(2)} 元，${dict.result_total_interest} ${res.totalInterest.toFixed(2)} 元<br>`;
+  html += `${dict.result_prepay_after} <b>${amount.toLocaleString()} 元</b> ${dict.result_prepay_after.replace('提前还款','')}：<br>`;
+  if (strategy === 'reduce-term') {
+    const savedMonths = Math.max(0, years * 12 - monthsLeft);
+    html += `${dict.pp_result_term || 'Remaining term'}: <b>${Math.ceil(monthsLeft)} ${dict.pp_unit_month || 'months'}</b> (${dict.pp_saved_months || 'save'} <span class="good">${Math.round(savedMonths)} ${dict.pp_unit_month || 'months'}</span>)<br>`;
+    html += `${dict.result_monthly}: <b>${res.pay.toFixed(2)}</b> (${dict.pp_unchanged || 'unchanged'})<br>`;
+    html += `${dict.result_save}: <span class="good"><b>${saved.toFixed(2)}</b></span><br>`;
+  } else {
+    html += `${dict.result_monthly}: <b>${newRes.pay.toFixed(2)}</b> (${dict.pp_from || 'was'} ${res.pay.toFixed(2)})<br>`;
+    html += `${dict.result_save}: <span class="good"><b>${saved.toFixed(2)}</b></span>`;
+  }
+  html += `<hr class="divider"><span class="badge good">${dict.result_save}</span> ${dict.result_save.replace('节省利息','')}`;
+  pp_result.innerHTML = html;
+}
+
+
+// ============ 辅助：等额本息下已还 t 期后的剩余本金 ============
+function balanceAfter(P, annualRate, years, t) {
+  const r = annualRate / 100 / 12;
+  if (!t || t <= 0) return P;
+  const res = monthly(P, annualRate, years, 'equal');
+  let bal = P;
+  for (let k = 0; k < t; k++) {
+    const interest = bal * r;
+    bal = bal - (res.pay - interest);
+  }
+  return Math.max(0, bal);
+}
+
+// ============ 推算剩余本金（小工具）============
+function toggleHelper() {
+  const b = document.getElementById('helperBody');
+  b.style.display = (b.style.display === 'none') ? 'grid' : 'none';
+}
+function calcRemaining() {
+  const dict = i18n[currentLang] || i18n.en;
+  const P = +hp_orig.value, years = +hp_years.value, paid = +hp_paid.value, rate = +hp_rate.value;
+  if (!(P > 0) || !(years > 0) || !(paid >= 0)) { helperNote.innerHTML = '<span class="warn">Please fill in all fields.</span>'; return; }
+  if (paid >= years * 12) { helperNote.innerHTML = '<span class="warn">Months paid must be less than the full term.</span>'; return; }
+  const bal = balanceAfter(P, rate, years, paid);
+  const monthsLeft = years * 12 - paid;
+  pp_p.value = bal.toFixed(0);
+  pp_years.value = (monthsLeft / 12).toFixed(1);
+  if (+pp_rate.value === 0) pp_rate.value = rate;
+  helperNote.innerHTML = `<span class="good">✓ ${dict.pp_estimated || 'Estimated remaining balance'}: <b>${bal.toFixed(0)}</b> ${dict.pp_est_note || '— filled in above. Verify against your bank statement.'}</span>`;
+}
+
+// ============ 组合贷款（商贷 + 公积金）============
+function calcCombo() {
+  const dict = i18n[currentLang] || i18n.en;
+  const Pc = +cb_comm.value, rc = +cb_comm_rate.value;
+  const Pf = +cb_fund.value, rf = +cb_fund_rate.value;
+  const years = +cb_years.value, type = cb_type.value;
+  if (!(years > 0)) { cb_result.innerHTML = '<span class="warn">Please enter a valid term.</span>'; return; }
+
+  const resC = (Pc > 0) ? monthly(Pc, rc, years, type) : { pay: 0, totalInterest: 0 };
+  const resF = (Pf > 0) ? monthly(Pf, rf, years, type) : { pay: 0, totalInterest: 0 };
+  const totalP = Pc + Pf;
+  const totalPay = resC.pay + resF.pay;
+  const totalInterest = resC.totalInterest + resF.totalInterest;
+
+  let html = '';
+  if (Pc > 0) {
+    html += `<b>${dict.combo_comm_short || 'Commercial'} (${rc}%):</b> ${dict.result_monthly || 'Monthly'} <b>${resC.pay.toFixed(2)}</b>, ${dict.result_total_interest || 'Total interest'} ${resC.totalInterest.toFixed(2)}<br>`;
+  }
+  if (Pf > 0) {
+    html += `<b>${dict.combo_fund_short || 'Provident Fund'} (${rf}%):</b> ${dict.result_monthly || 'Monthly'} <b>${resF.pay.toFixed(2)}</b>, ${dict.result_total_interest || 'Total interest'} ${resF.totalInterest.toFixed(2)}<br>`;
+  }
+  html += `<hr class="divider">`;
+  html += `${dict.combo_total_pay || 'Combined monthly payment'}: <span class="good"><b>${totalPay.toFixed(2)}</b></span><br>`;
+  html += `${dict.result_total_interest || 'Total interest'}: <b>${totalInterest.toFixed(2)}</b> (${(totalInterest / totalP * 100).toFixed(1)}% ${dict.of_principal || 'of principal'})<br>`;
+  html += `${dict.result_total || 'Total repaid'}: ${(totalP + totalInterest).toFixed(2)}<br>`;
+  if (Pc > 0 && Pf > 0) {
+    const blended = (Pc * rc + Pf * rf) / totalP;
+    html += `<hr class="divider">${dict.combo_blended || 'Blended effective rate'}: <b>${blended.toFixed(3)}%</b><br>`;
+    html += `<span class="badge good">${dict.combo_vs || 'vs. all-commercial'}</span> ${dict.combo_vs_note || 'If the whole loan were commercial'}: ${dict.result_monthly || 'Monthly'} ${monthly(totalP, rc, years, type).pay.toFixed(2)}, ${dict.combo_save || 'you save'} <span class="good"><b>${(monthly(totalP, rc, years, type).totalInterest - totalInterest).toFixed(2)}</b></span> ${dict.in_interest || 'in interest'}`;
+  }
+  cb_result.innerHTML = html;
+}
+
+// ============ 还款计划表（年度汇总）============
+let schData = null;
+function buildSchedule(P, annualRate, years, type) {
+  const r = annualRate / 100 / 12, n = Math.round(years * 12);
+  const rows = [];
+  let bal = P, yP = 0, yI = 0;
+  const res = monthly(P, annualRate, years, 'equal');
+  const fixedPrincipal = P / n;
+  for (let k = 1; k <= n; k++) {
+    const interest = bal * r;
+    const principal = (type === 'equal') ? (res.pay - interest) : fixedPrincipal;
+    bal -= principal;
+    yP += principal; yI += interest;
+    if (k % 12 === 0 || k === n) {
+      rows.push({ y: Math.ceil(k / 12), p: yP, i: yI, b: Math.max(0, bal) });
+      yP = 0; yI = 0;
+    }
+  }
+  return rows;
+}
+function toggleSchedule() {
+  const dict = i18n[currentLang] || i18n.en;
+  const box = document.getElementById('schBox');
+  if (!schData) { box.innerHTML = '<div class="result"><span class="warn">Run an analysis first.</span></div>'; return; }
+  if (box.innerHTML.trim() !== '') { box.innerHTML = ''; schBtn.textContent = '📊 ' + (dict.btn_schedule || 'Show Year-by-Year Amortization Schedule'); return; }
+  let h = '<div class="result"><b>' + (dict.sch_title || 'Amortization Schedule ( yearly summary )') + '</b><div class="sch-wrap"><div class="tw"><table class="sch-table">';
+  h += '<tr><th>' + (dict.sch_year || 'Year') + '</th><th>' + (dict.sch_principal || 'Principal') + '</th><th>' + (dict.sch_interest || 'Interest') + '</th><th>' + (dict.sch_balance || 'Balance') + '</th></tr>';
+  schData.forEach(r => {
+    h += `<tr><td>${r.y}</td><td>${r.p.toFixed(0)}</td><td>${r.i.toFixed(0)}</td><td>${r.b.toFixed(0)}</td></tr>`;
+  });
+  h += '</table></div></div></div>';
+  box.innerHTML = h;
+  schBtn.textContent = '📉 ' + (dict.sch_hide || 'Hide Schedule');
+}
+
+// ============ 负债承受力 ============
+function calcAfford() {
+  const dict = i18n[currentLang] || i18n.en;
+  const income = +af_income.value, other = +af_other.value, payment = +af_payment.value;
+  const dti = payment / income * 100;
+  const totalDebt = (payment + other) / income * 100;
+  let html = `${dict.result_dti}：<b>${dti.toFixed(1)}%</b><br>`;
+  html += `${dict.result_total_debt}：<b>${totalDebt.toFixed(1)}%</b><br>`;
+  let level, cls;
+  if (dti <= 28 && totalDebt <= 36) { level = dict.result_safe; cls = 'good'; }
+  else if (dti <= 50) { level = dict.result_warning; cls = 'warn'; }
+  else { level = dict.result_danger; cls = 'warn'; }
+  html += `${dict.btn_afford.replace('评估承受力','评估结果')}：<span class="${cls}"><b>${level}</b></span>`;
+  af_result.innerHTML = html;
+}
+
+// ============ 信用卡 APR ============
+function calcApr() {
+  const dict = i18n[currentLang] || i18n.en;
+  const P = +cr_p.value, fr = +cr_fee.value/100, n = +cr_months.value, investRate = +cr_invest.value/100;
+  const pay = P/n + P*fr;
+  const nominal = fr*12 * 100;
+  function npv(rm){let s=-P;for(let k=1;k<=n;k++)s+=pay/Math.pow(1+rm,k);return s;}
+  let lo=0,hi=1;for(let i=0;i<100;i++){const mid=(lo+hi)/2;npv(mid)>0?lo=mid:hi=mid;}
+  const apr=((lo+hi)/2)*12 * 100;
+  const lostProfit = P * investRate * (n/12);
+  let html = `${dict.result_monthly}：<b>${pay.toFixed(2)} 元</b><br>`;
+  html += `${dict.result_nominal}：${nominal.toFixed(2)}%<br>`;
+  html += `${dict.result_apr}：<span class="warn"><b>${apr.toFixed(2)}%</b></span><br>`;
+  html += `<hr class="divider">${dict.result_opp_cost}：${mcCNY2(lostProfit)}<br>`;
+  if (apr > 15) html += `<span class="badge warn">${dict.result_high_cost}</span>`;
+  cr_result.innerHTML = html;
+}
+
+// ============ 多期数对比 ============
+function calcCompare() {
+  const dict = i18n[currentLang] || i18n.en;
+  const P = +cp_p.value, fr = +cp_fee.value/100;
+  let html = `<b>${dict.cp_p_label} ${P.toLocaleString()} / ${dict.cp_fee_label} ${(fr*100).toFixed(2)}%</b><br><br>`;
+  [3, 6, 12, 24].forEach(n => {
+    const pay = P/n + P*fr;
+    const fee = P*fr*n;
+    function npv(rm){let s=-P;for(let k=1;k<=n;k++)s+=pay/Math.pow(1+rm,k);return s;}
+    let lo=0,hi=1;for(let i=0;i<100;i++){const mid=(lo+hi)/2;npv(mid)>0?lo=mid:hi=mid;}
+    const apr=((lo+hi)/2)*12 * 100;
+    html += `${n} ${dict.cr_months_label.replace('（月）','')}：${dict.result_monthly} ${pay.toFixed(2)} 元 · ${dict.result_total_interest.replace('总利息','手续费')} ${fee.toFixed(2)} 元 · <b>${dict.result_apr} ${apr.toFixed(1)}%</b><br>`;
+  });
+  cp_result.innerHTML = html;
+}
+
+// ============ 汇率 ============
+const CURRENCIES = [
+  ["USD","美元 USD"],["CNY","人民币 CNY"],["EUR","欧元 EUR"],
+  ["JPY","日元 JPY"],["GBP","英镑 GBP"],["HKD","港元 HKD"],
+  ["TWD","新台币 TWD"],["KRW","韩元 KRW"],["AUD","澳元 AUD"],
+  ["CAD","加元 CAD"],["SGD","新加坡元 SGD"],["CHF","瑞士法郎 CHF"],
+  ["MYR","马来西亚林吉特 MYR"],["THB","泰铢 THB"],["INR","印度卢比 INR"],
+  ["PHP","菲律宾比索 PHP"],["VND","越南盾 VND"],["NZD","新西兰元 NZD"]
+];
+(function initFX(){
+  ['fx_from','fx_to'].forEach(id=>{
+    const sel=document.getElementById(id);
+    CURRENCIES.forEach(([c,n])=>sel.add(new Option(n,c)));
+  });
+  fx_from.value='USD'; fx_to.value='CNY';
+})();
+function swapCurrency(){[fx_from.value,fx_to.value]=[fx_to.value,fx_from.value];}
+
+async function fetchLiveRate(from, to) {
+  try {
+    const res = await fetch(`https://open.er-api.com/v6/latest/${from}`, { signal: AbortSignal.timeout(8000) });
+    const data = await res.json();
+    const rate = data?.rates?.[to];
+    if (rate) return { rate, date: data.time_last_update_utc || 'today', source: '<a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener nofollow">ExchangeRate-API</a> Open' };
+  } catch(e) {}
+  try {
+    const res = await fetch(`https://api.frankfurter.dev/v1/latest?base=${from}&symbols=${to}`);
+    const data = await res.json();
+    if (data?.rates?.[to]) return { rate: data.rates[to], date: data.date, source: '<a href="https://frankfurter.dev/" target="_blank" rel="noopener nofollow">Frankfurter</a> (ECB)' };
+  } catch(e) {}
+  return null;
+}
+
+async function calcFx() {
+  const dict = i18n[currentLang] || i18n.en;
+  const amt = +fx_amount.value, from = fx_from.value, to = fx_to.value;
+  if (from === to) { fx_result.innerHTML = dict.result_select_diff; return; }
+  fx_result.innerHTML = dict.result_fetching;
+  const r = await fetchLiveRate(from, to);
+  if (!r) { fx_result.innerHTML = dict.result_fetch_fail; return; }
+  fx_result.innerHTML =
+    `${amt.toLocaleString()} ${from} = <b>${(amt*r.rate).toFixed(2)} ${to}</b><br>` +
+    `1 ${from} = ${r.rate} ${to}<br>` +
+    `<span class="rate-hint">${dict.fx_source_label}：${r.date}<br>${dict.fx_source_from}：<span class="fx-credit">${r.source}</span> · ${dict.fx_mid_note}</span>`;
+}
+
+/* ============================================================
+   Mortgage: all-in-one calculator (US default, CN switchable)
+   ============================================================ */
+function mcV(id){var e=document.getElementById(id);return e?parseFloat(e.value)||0:0;}
+function mcOn(id){var e=document.getElementById(id);return !!(e&&e.checked);}
+function mcUSD(x){return '$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function mcUSD0(x){return '$'+Math.round(x).toLocaleString('en-US');}
+function mcCNY(x){return '¥'+x.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});}
+function mcCNY2(x){return '¥'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function mcPmt(P,r,n){ if(n<=0) return 0; if(r===0) return P/n; return P*r/(1-Math.pow(1+r,-n)); }
+
+/* country switch */
+(function(){
+  var sel=document.getElementById('mcountry');
+  if(!sel) return;
+  sel.onchange=function(){
+    var isZh=(location.pathname.indexOf('/zh/')===0);
+    var target=(isZh?'/zh':'')+'/mortgage/'+sel.value+'/';
+    var cur=location.pathname.replace(/index\.html$/,'');
+    if(cur!==target) location.href=target;
+  };
+})();
+
+/* US module toggles + initial sync */
+(function(){
+  ['tax','ins','hoa','pmi','close','extra','refi','dti'].forEach(function(k){
+    var cb=document.getElementById('us_k_'+k);
+    var box=document.getElementById('us_m_'+k);
+    if(!cb||!box) return;
+    box.classList.toggle('on', cb.checked);
+    cb.addEventListener('change',function(){ box.classList.toggle('on', cb.checked); });
+  });
+  var st=document.getElementById('us_struct');
+  if(st) st.addEventListener('change',function(){
+    document.getElementById('us_armbox').style.display = (st.value==='arm')?'':'none';
+  });
+  var dm=document.getElementById('us_dpmode');
+  if(dm) dm.addEventListener('change',function(){
+    var l=document.querySelector('label[for="us_dp"]'), i=document.getElementById('us_dp');
+    if(dm.value==='pct'){ l.textContent='首付比例（%）'; i.value=20; i.step='0.1'; }
+    else { l.textContent='首付金额（美元）'; i.value=120000; i.step='1000'; }
+  });
+  /* PMI live state: grey out when not applicable and say why */
+  var MI_PRESET={conv:[0.5,0],fha:[0.55,1.75],va:[0,2.15],usda:[0.35,1.0],jumbo:[0.5,0]};
+  var lastLt=null;
+  function vaFee(dpPct,use){ return use==='sub' ? (dpPct<5?3.3:1.5) : (dpPct<5?2.15:1.25); }
+  var cmdm=document.getElementById('cn_dpmode');
+  if(cmdm) cmdm.addEventListener('change',function(){
+    var l=document.querySelector('label[for="cn_dppct"]'), i=document.getElementById('cn_dppct');
+    var pr=mcV('cn_price');
+    if(cmdm.value==='pct'){ l.textContent='首付比例（%）'; i.value=30; i.step='1'; }
+    else { l.textContent='首付金额（元）'; i.value=Math.round(pr*0.3); i.step='10000'; }
+    i.dispatchEvent(new Event('input')); i.dispatchEvent(new Event('change'));
+  });
+  function pmi(){
+    var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
+    var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
+    var loan=Math.max(0, price-dp);
+    var ltv = price>0 ? loan/price*100 : 0;
+    var dpPct = price>0 ? dp/price*100 : 0;
+    var lt=document.getElementById('us_ltype').value;
+    var inp=document.getElementById('us_pmir'), up=document.getElementById('us_upfront');
+    var vbox=document.getElementById('us_va_box'), vuse=document.getElementById('us_va_use');
+    if(lastLt!==lt && MI_PRESET[lt]){
+      if(inp) inp.value=MI_PRESET[lt][0];
+      if(up) up.value=(lt==='va')?vaFee(dpPct,vuse?vuse.value:'first'):MI_PRESET[lt][1];
+      lastLt=lt;
+    }
+    if(lt==='va'&&up&&vuse) up.value=vaFee(dpPct,vuse.value);
+    if(vbox) vbox.style.display=(lt==='va')?'':'none';
+    var exempt=(lt==='va');
+    var need = !exempt && ltv>80;
+    var box=document.getElementById('us_pmi_state');
+    var hd=document.querySelector('#us_m_pmi .mod-hd');
+    if(!box||!inp) return;
+    inp.disabled=!need;
+    inp.style.background = need?'#fff':'#f1f5f9';
+    inp.style.color = need?'#222':'#94a3b8';
+    if(hd) hd.style.opacity = (need||lt==='va'||lt==='fha'||lt==='usda')?'1':'0.55';
+    if(need){ box.style.display='none'; return; }
+    box.style.display='';
+    box.style.background = exempt?'#f0fdf4':'#fff7ed';
+    box.style.border = exempt?'1px solid #bbf7d0':'1px solid #fed7aa';
+    box.style.color = exempt?'#166534':'#9a3412';
+    box.textContent = exempt
+      ? '退伍军人事务部贷款不收年房贷保险，仅收取上方的一次性资金费。'
+      : '当前首付 '+dpPct.toFixed(1)+'%（对应贷款占房价 '+ltv.toFixed(1)+'%），已达 20%，无需缴纳房贷保险，年费率不参与计算。如需计入，请把首付调到 20% 以下。';
+  }
+  ['us_price','us_dp','us_dpmode','us_ltype','us_va_use'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e) return;
+    e.addEventListener('input',pmi); e.addEventListener('change',pmi);
+  });
+  pmi();
+})();
+
+function usRun(){
+  if(!document.getElementById('us_price')) return;
+  var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
+  var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
+  if(dp>=price){ alert('首付金额必须小于房屋总价。'); return; }
+  var baseLoan=price-dp, ltv=baseLoan/price*100;
+  var ltype=document.getElementById('us_ltype').value;
+  var struct=document.getElementById('us_struct').value;
+  var years=mcV('us_years'), n=Math.round(years*12);
+  var rate=mcV('us_rate') - (mcOn('us_k_close')?mcV('us_pts')*0.25:0);
+  var r=rate/100/12;
+  if(n<=0){ alert('贷款年限必须大于 0。'); return; }
+
+  var upRate=(ltype==='fha'||ltype==='usda'||ltype==='va')?mcV('us_upfront'):0;
+  var upAmt=baseLoan*upRate/100;
+  var upFinEl=document.getElementById('us_upfin'); var upFin=upFinEl?upFinEl.checked:false;
+  var loan=baseLoan+(upFin?upAmt:0);
+  var pi = struct==='io' ? loan*r : mcPmt(loan,r,n);
+  var taxM = mcOn('us_k_tax') ? price*mcV('us_taxr')/100/12 : 0;
+  var insM = mcOn('us_k_ins') ? mcV('us_ins')/12 : 0;
+  var hoaM = mcOn('us_k_hoa') ? mcV('us_hoa') : 0;
+  var pmiOn = mcOn('us_k_pmi') && ltype!=='va' && ltv>80;
+  var pmiM = pmiOn ? baseLoan*mcV('us_pmir')/100/12 : 0;
+  var total = pi+taxM+insM+hoaM+pmiM;
+
+  /* ---- 实际总支出（含利息/税费/保险/HOA/房贷保险/过户费，按实际持有月数） ---- */
+  var usMonths=n, usIntAll=Math.max(0,pi*n-loan);
+  var ptAll=taxM*usMonths, insAll=insM*usMonths, hoaAll=hoaM*usMonths, pmiAll=0;
+  if(pmiOn){
+    var pbZ=loan;
+    for(var pzZ=0;pzZ<usMonths;pzZ++){
+      if(price>0 && pbZ/price*100<=78) break;
+      pmiAll+=pmiM;
+      var ipZ=pbZ*r, ppZ=pi-ipZ; if(ppZ>pbZ) ppZ=pbZ; pbZ-=ppZ;
+    }
+  }
+  var closeAll = mcOn('us_k_close') ? mcV('us_close') : 0;
+  var ptsAll = mcOn('us_k_close') ? loan*mcV('us_pts')/100 : 0;
+  var upAll = (upAmt>0 && !upFin) ? upAmt : 0;
+  var usSpend = price + usIntAll + ptAll + insAll + hoaAll + pmiAll + closeAll + ptsAll + upAll;
+
+  var h='<h3>综合计算结果</h3>';
+  h+='<div class="mc-hero"><div class="big">'+mcUSD(total)+'</div><div class="cap">月供合计 · 本息 + 房产税 + 房屋保险 + 物业费 + 房贷保险</div></div>';
+  if(struct==='arm'){
+    var fixN=Math.round(mcV('us_fixy')*12), rr=mcV('us_rate2')/100/12;
+    var balA=loan;
+    for(var ai=0;ai<fixN&&ai<n;ai++){ balA-=(pi-balA*r); }
+    if(balA<0) balA=0;
+    var remA=Math.max(0,n-fixN);
+    var piA=(remA>0&&balA>0)?mcPmt(balA,rr,remA):0;
+    var jump=pi>0?((piA-pi)/pi*100):0;
+    h+='<div class="mc-sec2"><div class="t">浮动利率重算</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>固定期</td><td>'+mcV('us_fixy')+' 年 @ '+rate.toFixed(2)+'%</td></tr>';
+    h+='<tr><td>固定期内月供</td><td>'+mcUSD(pi)+'</td></tr>';
+    h+='<tr><td>重设时剩余本金</td><td>'+mcUSD(balA)+'</td></tr>';
+    h+='<tr><td>剩余期限</td><td>'+remA+' 个月</td></tr>';
+    h+='<tr><td>重设后月供 @ '+mcV('us_rate2').toFixed(2)+'%</td><td>'+mcUSD(piA)+'</td></tr>';
+    h+='<tr><td><b>月供变化</b></td><td><b>'+mcUSD(piA-pi)+'（'+(jump>=0?'+':'')+jump.toFixed(1)+'%）</b></td></tr>';
+    h+='</table></div></div>';
+  }
+  if(struct==='io') h+='<div class="mc-warn">只付利息提示：前期只还利息不还本金，之后月供将大幅上升。</div>';
+
+  h+='<div class="mc-sec2"><div class="t">贷款构成</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>房屋总价</td><td>'+mcUSD0(price)+'</td></tr>';
+  h+='<tr><td>首付金额</td><td>'+mcUSD0(dp)+' ('+(dp/price*100).toFixed(1)+'%)</td></tr>';
+  h+='<tr><td>贷款金额</td><td><b>'+mcUSD0(loan)+'</b></td></tr>';
+  h+='<tr><td>贷款价值比</td><td>'+ltv.toFixed(1)+'%</td></tr>';
+  h+='<tr><td>贷款年限</td><td>'+Math.round(years)+' 年</td></tr>';
+  h+='<tr><td>贷款类型</td><td>'+({conv:'常规贷款',fha:'联邦住房管理局贷款',va:'退伍军人事务部贷款',usda:'农业部农村住房贷款',jumbo:'大额贷款'}[ltype]||ltype)+'</td></tr>';
+  h+='<tr><td>本金与利息</td><td>'+mcUSD(pi)+'</td></tr>';
+  if(struct!=='io'){ h+='<tr><td>还款总额</td><td>'+mcUSD0(pi*n)+'</td></tr>';
+    h+='<tr><td>支付利息</td><td>'+mcUSD0(pi*n-loan)+'</td></tr>'; }
+  h+='</table></div></div>';
+
+  h+='<div class="mc-sec2"><div class="t">月度费用明细</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>本金与利息</td><td>'+mcUSD(pi)+'</td></tr>';
+  if(mcOn('us_k_tax')) h+='<tr><td>房产税</td><td>'+mcUSD(taxM)+'</td></tr>';
+  if(mcOn('us_k_ins')) h+='<tr><td>房屋保险</td><td>'+mcUSD(insM)+'</td></tr>';
+  if(mcOn('us_k_hoa')) h+='<tr><td>物业费</td><td>'+mcUSD(hoaM)+'</td></tr>';
+  if(pmiOn) h+='<tr><td>房贷保险</td><td>'+mcUSD(pmiM)+'</td></tr>';
+  h+='<tr><td><b>月供合计</b></td><td><b>'+mcUSD(total)+'</b></td></tr>';
+  h+='</table></div></div>';
+
+  if(mcOn('us_k_close')){
+    var ptsCost=loan*mcV('us_pts')/100;
+    h+='<div class="mc-sec2"><div class="t">过户时需准备现金</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>首付金额</td><td>'+mcUSD0(dp)+'</td></tr>';
+    h+='<tr><td>过户费</td><td>'+mcUSD0(mcV('us_close'))+'</td></tr>';
+    h+='<tr><td>买点成本</td><td>'+mcUSD0(ptsCost)+'</td></tr>';
+    if(upAmt>0&&!upFin) h+='<tr><td>一次性预付费用</td><td>'+mcUSD0(upAmt)+'</td></tr>';
+    h+='<tr><td><b>需准备现金合计</b></td><td><b>'+mcUSD0(dp+mcV('us_close')+ptsCost+(upAmt>0&&!upFin?upAmt:0))+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('us_k_pmi')){
+    h+='<div class="mc-sec2"><div class="t">房贷保险</div>';
+    var miName = ltype==='fha'?'MIP —— 联邦住房管理局贷款年度保费':(ltype==='usda'?'年度担保费 —— 农业部农村住房贷款':(ltype==='va'?'资金费 —— 退伍军人事务部贷款，一次性':'PMI —— 私人房贷保险'));
+    if(!pmiOn && upAmt<=0){
+      h+='<div class="mc-ok">不计收房贷保险 —— '+(ltype==='va'?'退伍军人事务部贷款无年度保费':'首付已达 20%')+'。</div>';
+    } else {
+      h+='<div class="tw"><table class="mc-tbl">';
+      h+='<tr><td>保险类型</td><td>'+miName+'</td></tr>';
+      if(upAmt>0){
+        h+='<tr><td>一次性预付费用（'+upRate.toFixed(2)+'% 贷款额）</td><td>'+mcUSD(upAmt)+'</td></tr>';
+        h+='<tr><td>预付费用是否计入本金</td><td>'+(upFin?('是 —— 贷款额由 '+mcUSD(baseLoan)+' 提高到 '+mcUSD(loan)):'否 —— 过户时支付，计入需准备现金')+'</td></tr>';
+      }
+      if(pmiOn){
+        h+='<tr><td>每月保险费</td><td>'+mcUSD(pmiM)+'</td></tr>';
+        var cm=0, mm=0, bal=loan;
+        if(ltype==='fha'){
+          if(ltv<=90){ cm=Math.min(132,n); h+='<tr><td>收取至</td><td><b>第 '+cm+' 个月</b>（11 年 —— 首付不低于 10% 时的联邦住房管理局规则）</td></tr>'; }
+          else { h+='<tr><td>收取至</td><td><b>收取至贷款结束</b> —— 首付低于 10% 时的联邦住房管理局规则</td></tr>'; cm=0; }
+        } else if(ltype==='usda'){
+          h+='<tr><td>收取至</td><td><b>收取至贷款结束</b> —— 农业部农村住房贷款年度费用不会取消</td></tr>'; cm=0;
+        } else {
+          while(bal>0 && mm<n){ var it=bal*r, pr=pi-it; if(pr<=0) break; bal-=pr; mm++; if(cm===0 && bal/price*100<=78) cm=mm; }
+          if(cm>0) h+='<tr><td>取消月份</td><td><b>第 '+cm+' 个月</b>（第 '+(cm/12).toFixed(1)+' 年，贷款价值比降至 78% 时）</td></tr>';
+          else { h+='<tr><td colspan="2">贷款期内贷款价值比始终未降到 78%，保险费将收取至贷款结束。</td></tr>'; cm=0; }
+        }
+        if(cm>0){ var paid=0, b2=loan; for(var q=0;q<cm;q++){ b2-=(pi-b2*r); paid+=pmiM; } h+='<tr><td>取消前累计已缴</td><td>'+mcUSD0(paid)+'</td></tr>'; }
+        else { h+='<tr><td>整个贷款期保险费合计</td><td>'+mcUSD0(pmiM*n)+'</td></tr>'; }
+      } else {
+        h+='<tr><td>年度保险费</td><td>不计收'+(ltype==='va'?'（退伍军人事务部贷款无此项）':'（首付已达 20%）')+'</td></tr>';
+      }
+      h+='</table></div>';
+    }
+    h+='</div>';
+  }
+
+  if(mcOn('us_k_extra') && struct!=='io'){
+    var ex=mcV('us_extra');
+    var m2=pi+ex, cnt=0, b3=loan, i3=0;
+    while(b3>0.01&&cnt<1200){ var c3=b3*r, d3=m2-c3; if(d3<=0) break; b3-=d3; i3+=c3; cnt++; }
+    var iBase=pi*n-loan;
+    h+='<div class="mc-sec2"><div class="t">额外还款</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>原月供</td><td>'+mcUSD(pi)+'</td></tr>';
+    h+='<tr><td>新月供</td><td>'+mcUSD(m2)+'</td></tr>';
+    h+='<tr><td>缩短至</td><td><b>'+(cnt/12).toFixed(1)+'</b> years ('+Math.round(years)+' &rarr; '+(cnt/12).toFixed(1)+')</td></tr>';
+    h+='<tr><td><b>节省利息</b></td><td><b>'+mcUSD0(iBase-i3)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('us_k_refi')){
+    var ro=mcV('us_orate')/100/12, rn=mcV('us_nrate')/100/12;
+    var mo=mcPmt(loan,ro,n), mn=mcPmt(loan,rn,n);
+    h+='<div class="mc-sec2"><div class="t">再融资分析</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>当前月供</td><td>'+mcUSD(mo)+'</td></tr>';
+    h+='<tr><td>新月供</td><td>'+mcUSD(mn)+'</td></tr>';
+    if(mn>=mo){ h+='<tr><td colspan="2">新利率并未降低月供，再融资不划算。</td></tr>'; }
+    else {
+      var sv=mo-mn, cc=mcOn('us_k_close')?mcV('us_close'):0;
+      h+='<tr><td>每月节省</td><td>'+mcUSD(sv)+'</td></tr>';
+      h+='<tr><td>回本月数</td><td><b>'+(sv>0?Math.ceil(cc/sv):0)+'</b> 个月</td></tr>';
+    }
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('us_k_dti')){
+    var inc=mcV('us_inc')/12, debt=mcV('us_debt');
+    var front=inc*0.28, back=Math.max(0,inc*0.36-debt), budget=Math.min(front,back);
+    var hr=total/inc*100, tr=(total+debt)/inc*100;
+    h+='<div class="mc-sec2"><div class="t">负债承受力评估（28/36）</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>月收入</td><td>'+mcUSD(inc)+'</td></tr>';
+    h+='<tr><td>前端上限（28%）</td><td>'+mcUSD(front)+'</td></tr>';
+    h+='<tr><td>后端上限（36% 减其他负债）</td><td>'+mcUSD(back)+'</td></tr>';
+    h+='<tr><td>可支配月供上限</td><td>'+mcUSD(budget)+'</td></tr>';
+    h+='<tr><td>住房支出占比</td><td>'+hr.toFixed(1)+'%</td></tr>';
+    h+='<tr><td>总负债占比</td><td>'+tr.toFixed(1)+'%</td></tr>';
+    var needFront=total/0.28, needBack=(total+debt)/0.36;
+    var needInc=Math.max(needFront,needBack), needAnnual=needInc*12;
+    h+='<tr><td><b>要通过审批所需收入</b></td><td><b>'+mcUSD(needInc)+'</b> / 月（约 '+mcUSD0(needAnnual)+' / 年）</td></tr>';
+    h+='</table></div>';
+    if(hr<=28 && tr<=36){
+      h+='<div class="mc-ok">符合 28/36 规则 —— 住房支出 '+hr.toFixed(1)+'%（上限 28%），总负债 '+tr.toFixed(1)+'%（上限 36%）。</div>';
+    } else {
+      var over=total-budget;
+      h+='<div class="mc-warn">不符合 28/36 规则。当前住房支出比预算上限 '+mcUSD(budget)+' 超出 '+mcUSD(over)+' / 月。要买下这套房，税前年收入大约需要 '+mcUSD0(needAnnual)+'（你填的是 '+mcUSD0(mcV('us_inc'))+'）。可考虑：提高首付比例、换总价更低的房子，或先降低其他负债。</div>';
+    }
+    h+='</div>';
+  }
+
+  h+='<div class="mc-hero" style="background:linear-gradient(135deg,#fff7ed,#fefce8);border:1px solid #fcd34d"><div class="big" style="color:#92400e">'+mcUSD(usSpend)+'</div><div class="cap" style="color:#b45309">为这套房实际总支出 = 房价 '+mcUSD0(price)+' + 利息 '+mcUSD0(usIntAll)+' + 房产税 '+mcUSD0(ptAll)+' + 房屋保险 '+mcUSD0(insAll)+' + 物业费 '+mcUSD0(hoaAll)+' + 房贷保险 '+mcUSD0(pmiAll)+' + 过户费/买点 '+mcUSD0(closeAll+ptsAll+upAll)+'</div></div>';
+  h+='<div class="mc-sec2"><div class="t">实际总支出明细</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>房屋总价</td><td>'+mcUSD0(price)+'</td></tr>';
+  h+='<tr><td>首付金额</td><td>'+mcUSD0(dp)+'</td></tr>';
+  h+='<tr><td>贷款金额</td><td>'+mcUSD0(loan)+'</td></tr>';
+  h+='<tr><td>实际支付利息</td><td>'+mcUSD0(usIntAll)+'</td></tr>';
+  if(mcOn('us_k_tax')) h+='<tr><td>房产税（'+usMonths+' 个月）</td><td>'+mcUSD0(ptAll)+'</td></tr>';
+  if(mcOn('us_k_ins')) h+='<tr><td>房屋保险</td><td>'+mcUSD0(insAll)+'</td></tr>';
+  if(mcOn('us_k_hoa')) h+='<tr><td>物业费 / 公寓管理费</td><td>'+mcUSD0(hoaAll)+'</td></tr>';
+  if(pmiOn) h+='<tr><td>房贷保险（付至贷款占房价降到 78%）</td><td>'+mcUSD0(pmiAll)+'</td></tr>';
+  if((closeAll+ptsAll+upAll)>0) h+='<tr><td>过户费 + 买点 + 预付费用</td><td>'+mcUSD0(closeAll+ptsAll+upAll)+'</td></tr>';
+  h+='<tr><td><b>实际总支出</b></td><td><b>'+mcUSD(usSpend)+'</b></td></tr>';
+  h+='<tr><td>相当于房价的倍数</td><td>'+(price>0?(usSpend/price).toFixed(2):'0')+'x</td></tr>';
+  h+='</table></div></div>';
+  var o=document.getElementById('us_out'); o.innerHTML=h; o.style.display='';
+  /* keep the total-spend hero right after the main payment hero */
+  (function(){
+    var _fh=o.querySelector('.mc-hero');
+    var _sh=o.querySelector('.mc-hero[style*="fcd34d"]');
+    if(_fh&&_sh&&_fh!==_sh){ _fh.parentNode.insertBefore(_sh,_fh.nextSibling); }
+  })();
+
+
+  var ah='<b>逐年还款计划表</b><div class="mc-scroll"><div class="tw"><table class="mc-tbl">';
+  ah+='<tr><th>年度</th><th>本金</th><th>利息</th><th>剩余余额</th></tr>';
+  var b4=loan, useM = struct==='io' ? loan*r : pi;
+  for(var yr=1;yr<=Math.ceil(n/12);yr++){
+    var yp=0, yi=0;
+    for(var m=0;m<12;m++){
+      if(b4<=0.01) break;
+      var i4=b4*r, p4=useM-i4;
+      if(struct==='io'||p4<=0){ yi+=i4; continue; }
+      if(p4>b4) p4=b4;
+      b4-=p4; yp+=p4; yi+=i4;
+    }
+    ah+='<tr><td>'+yr+'</td><td>'+mcUSD0(yp)+'</td><td>'+mcUSD0(yi)+'</td><td>'+mcUSD0(b4)+'</td></tr>';
+    if(b4<=0.01) break;
+  }
+  ah+='</table></div></div>';
+  document.getElementById('us_amort').innerHTML=ah;
+}
+
+/* CN module toggles + initial sync */
+(function(){
+  ['fund','tax','pre','ded','aff'].forEach(function(k){
+    var cb=document.getElementById('cn_k_'+k);
+    var box=document.getElementById('cn_m_'+k);
+    if(!cb||!box) return;
+    box.classList.toggle('on', cb.checked);
+    cb.addEventListener('change',function(){ box.classList.toggle('on', cb.checked); });
+  });
+  function syncCN(){
+    var t=document.getElementById('cn_total'), c=document.getElementById('cn_camt'), f=document.getElementById('cn_famt');
+    var kf=document.getElementById('cn_k_fund');
+    if(!t||!c) return;
+    var fv=(kf&&kf.checked&&f)?mcV('cn_famt'):0;
+    var cv=Math.round(mcV('cn_total')-fv);
+    c.value=cv>0?cv:0;
+  }
+  function syncTotalFromPrice(){
+    var t=document.getElementById('cn_total');
+    var _m=document.getElementById('cn_dpmode'), _pr=mcV('cn_price');
+    var _dp = (_m&&_m.value==='amt') ? mcV('cn_dppct') : _pr*mcV('cn_dppct')/100;
+    if(t) t.value=Math.round(_pr-_dp);
+    syncCN();
+  }
+  ['cn_price','cn_dppct','cn_dpmode'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e) return;
+    e.addEventListener('input',syncTotalFromPrice);
+    if(e.tagName==='SELECT') e.addEventListener('change',syncTotalFromPrice);
+  });
+  ['cn_total','cn_famt','cn_k_fund'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e) return;
+    e.addEventListener('input',syncCN); e.addEventListener('change',syncCN);
+  });
+  syncCN();
+})();
+
+function cnRun(){
+  if(!document.getElementById('cn_price')) return;
+  var price=mcV('cn_price');
+  var cndm=document.getElementById('cn_dpmode');
+  var cnMode=cndm?cndm.value:'pct';
+  var dppct = cnMode==='pct' ? mcV('cn_dppct') : (price>0 ? mcV('cn_dppct')/price*100 : 0);
+  var down = cnMode==='pct' ? price*mcV('cn_dppct')/100 : mcV('cn_dppct');
+  var camt=mcV('cn_camt'), crate=mcV('cn_crate')*parseFloat(document.getElementById('cn_disc').value||1);
+  var years=mcV('cn_years');
+  var rtype=document.getElementById('cn_rtype').value;
+  var n=Math.round(years*12);
+  if(n<=0){ alert('贷款年限必须大于 0。'); return; }
+  var cr=crate/100/12;
+  var famt=mcOn('cn_k_fund')?mcV('cn_famt'):0;
+  var fr=mcOn('cn_k_fund')?mcV('cn_frate')/100/12:0;
+  var fn=mcOn('cn_k_fund')?Math.round(mcV('cn_fyears')*12):n;
+
+  var cm,fm,cInt,fInt;
+  if(rtype==='equal'){
+    cm=mcPmt(camt,cr,n); cInt=cm*n-camt;
+    fm=mcPmt(famt,fr,fn); fInt=fm*fn-famt;
+  } else {
+    cm = n>0 ? camt/n+camt*cr : 0; cInt=camt*cr*(n+1)/2;
+    fm = fn>0 ? famt/fn+famt*fr : 0; fInt=famt*fr*(fn+1)/2;
+  }
+  var monthPay=cm+fm, totalInt=cInt+fInt, loanTotal=camt+famt;
+
+  /* ---- 提前还款预计算（供顶部直接展示"还完之后每月多少"） ---- */
+  var ppNew=monthPay, ppNote='', ppSaved=0, ppAfter=0;
+  if(mcOn('cn_k_pre')){
+    var paid2=Math.round(mcV('cn_paid')), pay2=mcV('cn_ppay'), str2=document.getElementById('cn_pstr').value;
+    var fee2=pay2*mcV('cn_pfee')/100;
+    var bcA=camt, bfA=famt;
+    for(var z=0;z<paid2;z++){
+      if(rtype==='principal'){ if(bcA>0){bcA-=camt/n;} if(bfA>0&&fn>0){bfA-=famt/fn;} }
+      else { if(bcA>0){bcA-=(cm-bcA*cr);} if(bfA>0){bfA-=(fm-bfA*fr);} }
+    }
+    if(bcA<0)bcA=0; if(bfA<0)bfA=0;
+    var remA2=n-paid2; if(remA2<1)remA2=1;
+    var remF2=fn-paid2; if(remF2<1)remF2=0;
+    var pc2=Math.min(pay2,bcA), pf2=Math.min(Math.max(0,pay2-bcA),bfA);
+    var bc2A=bcA-pc2, bf2A=bfA-pf2;
+    ppAfter=bc2A+bf2A;
+    if(str2==='shorten'){
+      ppNew=cm+fm;
+      var cntC2=0,cntF2=0;
+      if(rtype==='principal'){
+        var pcx=n>0?camt/n:0, pfx=fn>0?famt/fn:0;
+        cntC2=pcx>0?Math.ceil(bc2A/pcx):0; cntF2=pfx>0?Math.ceil(bf2A/pfx):0;
+      } else {
+        var s1a=bc2A; while(s1a>0.01&&cntC2<1200){ s1a-=(cm-s1a*cr); cntC2++; }
+        var s2a=bf2A; while(s2a>0.01&&cntF2<1200){ s2a-=(fm-s2a*fr); cntF2++; }
+      }
+      var cnt2=Math.max(cntC2,cntF2);
+      ppNote='缩短年限：月供保持 '+mcCNY2(cm+fm)+' 不变，剩余 '+ (cnt2/12).toFixed(1) +' 年（原 '+(remA2/12).toFixed(1)+' 年）';
+    } else {
+      var m3a=(bc2A>0&&remA2>0)?mcPmt(bc2A,cr,remA2):0;
+      var m4a=(bf2A>0&&remF2>0)?mcPmt(bf2A,fr,remF2):0;
+      ppNew=m3a+m4a;
+      ppNote='减少月供：每月少还 '+mcCNY2(monthPay-ppNew)+'，剩余年限 '+(remA2/12).toFixed(1)+' 年不变';
+    }
+  }
+
+  var h='<h3>综合计算结果</h3>';
+  h+='<div class="mc-hero"><div class="big">'+mcCNY2(monthPay)+'</div><div class="cap">月供合计 · 商业贷款 '+mcCNY2(cm)+' + 公积金 '+mcCNY2(fm)+'</div></div>';
+  if(rtype==='principal') h+='<div class="mc-hero"><div class="cap">等额本金：首月月供，之后每月递减约 '+mcCNY2(camt/n*cr)+'</div></div>';
+  if(mcOn('cn_k_pre')){
+    h+='<div class="mc-hero" style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:1px solid #a7f3d0"><div class="big" style="color:#065f46">'+mcCNY2(ppNew)+'</div><div class="cap" style="color:#047857">提前还款 '+mcCNY(mcV('cn_ppay'))+' 后的月供 · '+ppNote+'</div></div>';
+  }
+
+  /* ================= 实际总支出预计算 ================= */
+  var tDeed=0,tVat=0,tIit=0,tMf=0,taxAll=0,agentAll=0,decoAll=0;
+  if(mcOn('cn_k_tax')){
+    var aZ=mcV('cn_area'), noZ=document.getElementById('cn_no').value;
+    var twoZ=document.getElementById('cn_two').value==='1';
+    var fiveZ=document.getElementById('cn_five').value==='1';
+    var origZ=mcV('cn_orig');
+    if(noZ==='1') tDeed = aZ<=140?price*0.01:price*0.015;
+    else if(noZ==='2') tDeed = aZ<=140?price*0.01:price*0.02;
+    else tDeed = price*0.03;
+    tVat = twoZ?0:(price/1.03*0.03);
+    var iitZ=document.getElementById('cn_iitmode').value;
+    tIit = fiveZ?0:Math.max(0,(iitZ==='20')?(price-origZ)*0.20:(price-origZ)*0.01);
+    tMf = aZ*mcV('cn_mf');
+    taxAll = tDeed+tVat+tIit+tMf;
+    agentAll = mcV('cn_agent'); decoAll = mcV('cn_deco');
+  }
+  /* 实际支付的利息总额：若勾选提前还款，按"已还利息 + 提前还款后剩余利息"计算 */
+  var actIntAll=totalInt, feeAll=0, actMonthsAll=n;
+  if(mcOn('cn_k_pre')){
+    var pdZ=Math.round(mcV('cn_paid')), pz=mcV('cn_ppay'), stZ=document.getElementById('cn_pstr').value;
+    feeAll = pz*mcV('cn_pfee')/100;
+    var b1z=camt, b2z=famt, paidIntZ=0;
+    for(var qz=0;qz<pdZ;qz++){
+      if(rtype==='principal'){
+        if(b1z>0){ paidIntZ+=b1z*cr; b1z-=camt/n; }
+        if(b2z>0&&fn>0){ paidIntZ+=b2z*fr; b2z-=famt/fn; }
+      } else {
+        if(b1z>0){ paidIntZ+=b1z*cr; b1z-=(cm-b1z*cr); }
+        if(b2z>0){ paidIntZ+=b2z*fr; b2z-=(fm-b2z*fr); }
+      }
+    }
+    if(b1z<0)b1z=0; if(b2z<0)b2z=0;
+    var remNZ=n-pdZ; if(remNZ<1)remNZ=1;
+    var remNF=fn-pdZ; if(remNF<1)remNF=0;
+    var pcZ=Math.min(pz,b1z), pfZ=Math.min(Math.max(0,pz-b1z),b2z);
+    var b1b=b1z-pcZ, b2b=b2z-pfZ;
+    var afterIntZ=0, cntZ=0;
+    if(stZ==='shorten'){
+      if(rtype==='principal'){
+        var pcz=n>0?camt/n:0, pfzz=fn>0?famt/fn:0;
+        var cC=pcz>0?Math.ceil(b1b/pcz):0, cF=pfzz>0?Math.ceil(b2b/pfzz):0;
+        afterIntZ=b1b*cr*(cC+1)/2 + b2b*fr*(cF+1)/2; cntZ=Math.max(cC,cF);
+      } else {
+        var s1z=b1b, cC2=0; while(s1z>0.01&&cC2<1200){ afterIntZ+=s1z*cr; s1z-=(cm-s1z*cr); cC2++; }
+        var s2z=b2b, cF2=0; while(s2z>0.01&&cF2<1200){ afterIntZ+=s2z*fr; s2z-=(fm-s2z*fr); cF2++; }
+        cntZ=Math.max(cC2,cF2);
+      }
+      actMonthsAll=pdZ+cntZ;
+    } else {
+      var m3z=(b1b>0&&remNZ>0)?mcPmt(b1b,cr,remNZ):0;
+      var m4z=(b2b>0&&remNF>0)?mcPmt(b2b,fr,remNF):0;
+      afterIntZ=(m3z*remNZ-b1b)+(m4z*remNF-b2b);
+      actMonthsAll=n;
+    }
+    actIntAll = paidIntZ + afterIntZ;
+  }
+  var spendAll = price + actIntAll + taxAll + agentAll + decoAll + feeAll;
+  h+='<div class="mc-hero" style="background:linear-gradient(135deg,#fff7ed,#fefce8);border:1px solid #fcd34d"><div class="big" style="color:#92400e">'+mcCNY(spendAll)+'</div><div class="cap" style="color:#b45309">为这套房实际总支出 = 房价 '+mcCNY(price)+' + 利息 '+mcCNY(actIntAll)+' + 税费 '+mcCNY(taxAll)+' + 中介装修 '+mcCNY(agentAll+decoAll)+(feeAll>0?(' + 违约金 '+mcCNY(feeAll)):'')+'</div></div>';
+
+  var inc=[];
+  inc.push(['商业贷款月供', mcCNY2(cm)]);
+  if(mcOn('cn_k_fund')) inc.push(['住房公积金月供（'+mcCNY(famt)+' @ '+mcV('cn_frate').toFixed(2)+'% / '+mcV('cn_fyears')+' 年）', mcCNY2(fm)]);
+  if(mcOn('cn_k_pre')) inc.push(['提前还款后月供（还 '+mcCNY(mcV('cn_ppay'))+' 之后）', mcCNY2(ppNew)]);
+  h+='<div class="mc-sec2"><div class="t">本次计算已纳入的模块</div><div class="tw"><table class="mc-tbl">';
+  for(var ii=0;ii<inc.length;ii++) h+='<tr><td>'+inc[ii][0]+'</td><td>'+inc[ii][1]+'</td></tr>';
+  h+='<tr><td><b>月供合计</b></td><td><b>'+mcCNY2(monthPay)+'</b></td></tr>';
+  if(mcOn('cn_k_pre')) h+='<tr><td><b>提前还款后月供</b></td><td><b>'+mcCNY2(ppNew)+'</b>（'+ppNote+'）</td></tr>';
+  h+='</table></div>';
+  var noChg=[];
+  if(mcOn('cn_k_tax')) noChg.push('购房税费（计入下方「需准备现金」）');
+  if(mcOn('cn_k_ded')) noChg.push('房贷利息抵个税（详见下方独立分区）');
+  if(mcOn('cn_k_aff')) noChg.push('负债承受力评估（详见下方独立分区）');
+  if(noChg.length) h+='<div class="mc-note"><b>以下模块不改变月供，只在下方单独出结果：</b><br>'+noChg.join('<br>')+'</div>';
+  h+='<div class="mc-note">勾选或取消上方任一模块后，再次点击计算，数值会随之更新。</div></div>';
+
+  h+='<div class="mc-sec2"><div class="t">贷款构成</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>房屋总价</td><td>'+mcCNY(price)+'</td></tr>';
+  h+='<tr><td>首付金额（'+dppct+'%）</td><td>'+mcCNY(down)+'</td></tr>';
+  h+='<tr><td>商业贷款</td><td>'+mcCNY(camt)+' @ '+crate.toFixed(2)+'%</td></tr>';
+  if(mcOn('cn_k_fund')) h+='<tr><td>公积金贷款</td><td>'+mcCNY(famt)+' @ '+mcV('cn_frate').toFixed(2)+'%</td></tr>';
+  h+='<tr><td>贷款总额</td><td><b>'+mcCNY(loanTotal)+'</b></td></tr>';
+  h+='<tr><td>还款总额</td><td>'+mcCNY(loanTotal+totalInt)+'</td></tr>';
+  h+='<tr><td>支付利息</td><td>'+mcCNY(totalInt)+'</td></tr>';
+  h+='</table></div></div>';
+
+  if(mcOn('cn_k_tax')){
+    var area=mcV('cn_area'), no=document.getElementById('cn_no').value;
+    var two=document.getElementById('cn_two').value==='1';
+    var five=document.getElementById('cn_five').value==='1';
+    var orig=mcV('cn_orig'), deed;
+    /* 契税：2024-12-01 起，唯一/二套 面积标准由 90㎡ 提高到 140㎡ */
+/* 契税面积阈值 140㎡：依据 财政部/税务总局/住建部公告2024年第16号（2024-12-01 起施行，财税〔2016〕23号同时废止）：唯一/第二套 ≤140㎡ 减按 1%；唯一 >140㎡ 1.5%；第二套 >140㎡ 2%。⚠️ 90㎡ 是 2016 年旧标准，已废止，请勿改回 */
+    if(no==='1') deed = area<=140?price*0.01:price*0.015;
+    else if(no==='2') deed = area<=140?price*0.01:price*0.02;
+    else deed = price*0.03;
+    /* 增值税：2026-01-01 起，不满 2 年按 3% 征收率全额缴纳；满 2 年免征 */
+    var vat = two?0:(price/1.03*0.03);
+    /* 个税：满五唯一免征；否则核定 1% 或差额 20%（可选） */
+    var iitm=document.getElementById('cn_iitmode').value;
+    var iit = five?0:Math.max(0,(iitm==='20')?(price-orig)*0.20:(price-orig)*0.01);
+    var mfv=area*mcV('cn_mf');
+    /* 印花税：财税〔2008〕137号 第二条，个人销售或购买住房暂免征收印花税 */
+    var taxSum=deed+vat+iit+mfv;
+    var cash=down+taxSum+mcV('cn_agent')+mcV('cn_deco');
+    h+='<div class="mc-sec2"><div class="t">购房税费</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>契税</td><td>'+mcCNY(deed)+'（'+(no==='1'?'唯一住房':(no==='2'?'第二套':'三套及以上'))+'，'+(area<=140?'≤140㎡ 1%':(no==='1'?'>140㎡ 1.5%':'>140㎡ 2%'))+'）</td></tr>';
+    h+='<tr><td>增值税</td><td>'+mcCNY(vat)+(two?'（满两年，免征）':'（不满两年，按全额 3% 征收）')+'</td></tr>';
+    h+='<tr><td>个人所得税</td><td>'+mcCNY(iit)+(five?'（满五唯一，免征）':(iitm==='20'?'（差额 20%）':'（核定 1%）'))+'</td></tr>';
+    h+='<tr><td>印花税</td><td>免征（个人买卖住房暂免征收）</td></tr>';
+    h+='<tr><td>维修基金</td><td>'+mcCNY(mfv)+'</td></tr>';
+    h+='<tr><td>税费小计</td><td><b>'+mcCNY(taxSum)+'</b></td></tr>';
+    h+='</table></div>';
+    h+='<div class="mc-note">契税按财政部、税务总局、住房城乡建设部 2024 年第 16 号公告（2024-12-01 起执行，面积标准 140㎡）；增值税按财政部、税务总局 2025 年第 17 号公告（2026-01-01 起，不满 2 年 3%）；印花税按财税〔2008〕137 号第二条暂免征收。各地执行口径可能略有差异，以当地税务机关为准。</div></div>';
+    h+='<div class="mc-sec2"><div class="t">需准备现金</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>首付金额</td><td>'+mcCNY(down)+'</td></tr>';
+    h+='<tr><td>税费</td><td>'+mcCNY(taxSum)+'</td></tr>';
+    h+='<tr><td>中介费</td><td>'+mcCNY(mcV('cn_agent'))+'</td></tr>';
+    h+='<tr><td>装修预留</td><td>'+mcCNY(mcV('cn_deco'))+'</td></tr>';
+    h+='<tr><td><b>合计</b></td><td><b>'+mcCNY(cash)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('cn_k_pre')){
+    var paid=Math.round(mcV('cn_paid')), pay=mcV('cn_ppay'), str=document.getElementById('cn_pstr').value;
+    var fee=pay*mcV('cn_pfee')/100;
+    var bc=camt, bf=famt;
+    for(var i=0;i<paid;i++){
+      if(rtype==='principal'){ if(bc>0){bc-=camt/n;} if(bf>0&&fn>0){bf-=famt/fn;} }
+      else { if(bc>0){bc-=(cm-bc*cr);} if(bf>0){bf-=(fm-bf*fr);} }
+    }
+    if(bc<0)bc=0; if(bf<0)bf=0;
+    var bal=bc+bf;
+    var rem=n-paid; if(rem<1) rem=1;
+    var remF=fn-paid; if(remF<1) remF=0;
+    var payC=Math.min(pay,bc), payF=Math.min(Math.max(0,pay-bc),bf);
+    var bc2=bc-payC, bf2=bf-payF;
+    var saved, note, origInt=0;
+    if(rtype==='principal'){
+      origInt = bc*cr*(rem+1)/2 + bf*fr*(remF+1)/2;
+    } else {
+      var q1=bc,q2=bf;
+      for(var a1=0;a1<rem;a1++){ if(q1>0.01){origInt+=q1*cr; q1-=(cm-q1*cr);} }
+      for(var a2=0;a2<remF;a2++){ if(q2>0.01){origInt+=q2*fr; q2-=(fm-q2*fr);} }
+    }
+    if(str==='shorten'){
+      var newInt=0, cntC=0, cntF=0;
+      if(rtype==='principal'){
+        var pc=n>0?camt/n:0, pf=fn>0?famt/fn:0;
+        cntC=pc>0?Math.ceil(bc2/pc):0; cntF=pf>0?Math.ceil(bf2/pf):0;
+        newInt=bc2*cr*(cntC+1)/2 + bf2*fr*(cntF+1)/2;
+      } else {
+        var s1=bc2; while(s1>0.01&&cntC<1200){ newInt+=s1*cr; s1-=(cm-s1*cr); cntC++; }
+        var s2=bf2; while(s2>0.01&&cntF<1200){ newInt+=s2*fr; s2-=(fm-s2*fr); cntF++; }
+      }
+      var cnt=Math.max(cntC,cntF);
+      saved=origInt-newInt-fee;
+      note=(famt>0? ('商贷剩 '+(cntC/12).toFixed(1)+' 年，公积金剩 '+(cntF/12).toFixed(1)+' 年，全部还清 '+(cnt/12).toFixed(1)+' 年（原 '+(rem/12).toFixed(1)+' 年）') : ('剩余 '+(cnt/12).toFixed(1)+' 年（原 '+(rem/12).toFixed(1)+' 年）'))+'，月供保持 '+mcCNY2(cm+fm);
+      if(famt>0) note+='（先冲商贷 '+mcCNY(payC)+(payF>0?'，余 '+mcCNY(payF)+' 冲公积金':'')+'）';
+    } else {
+      var m3=(bc2>0&&rem>0)?mcPmt(bc2,cr,rem):0;
+      var m4=(bf2>0&&remF>0)?mcPmt(bf2,fr,remF):0;
+      var newInt=(m3*rem-bc2)+(m4*remF-bf2);
+      saved=origInt-newInt-fee;
+      note='新月供 '+mcCNY2(m3+m4)+'（原 '+mcCNY2(cm+fm)+'），贷款年限不变';
+    }
+    h+='<div class="mc-sec2"><div class="t">提前还款</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>已还 '+paid+' 期后剩余本金</td><td>'+mcCNY(bal)+'</td></tr>';
+    h+='<tr><td>提前还款金额</td><td>'+mcCNY(pay)+'</td></tr>';
+    h+='<tr><td>违约金</td><td>'+mcCNY(fee)+'</td></tr>';
+    h+='<tr><td>结果</td><td>'+note+'</td></tr>';
+    h+='<tr><td><b>节省利息</b></td><td><b>'+mcCNY(saved)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('cn_k_ded')){
+    var mode=parseFloat(document.getElementById('cn_dmode').value), tr2=mcV('cn_taxr')/100;
+    var mon=1000*mode;
+    h+='<div class="mc-sec2"><div class="t">房贷利息抵个税</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>每月扣除额</td><td>'+mcCNY(mon)+'</td></tr>';
+    h+='<tr><td>每年少缴个税</td><td>'+mcCNY(mon*12*tr2)+'</td></tr>';
+    h+='<tr><td>240 个月累计</td><td><b>'+mcCNY(mon*240*tr2)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('cn_k_aff')){
+    var inc2=mcV('cn_inc'), debt2=mcV('cn_debt'), cp=mcV('cn_cap');
+    var r1=monthPay/inc2*100, r2=(monthPay+debt2)/inc2*100;
+    h+='<div class="mc-sec2"><div class="t">负债承受力评估</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>家庭月收入</td><td>'+mcCNY(inc2)+'</td></tr>';
+    h+='<tr><td>月供收入比</td><td>'+r1.toFixed(1)+'%</td></tr>';
+    h+='<tr><td>总负债占比</td><td>'+r2.toFixed(1)+'%</td></tr>';
+    h+='</table></div>';
+    h+= (r2<=cp) ? '<div class="mc-ok">通过：总负债占比在 '+cp+'% 上限以内。</div>'
+                 : '<div class="mc-warn">超出 '+cp+'% 上限 —— 月供偏高。建议提高首付比例或延长贷款年限。</div>';
+    h+='</div>';
+  }
+
+  h+='<div class="mc-sec2"><div class="t">实际总支出明细</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>房屋总价</td><td>'+mcCNY(price)+'</td></tr>';
+  h+='<tr><td>首付</td><td>'+mcCNY(down)+'</td></tr>';
+  h+='<tr><td>贷款本金</td><td>'+mcCNY(loanTotal)+'</td></tr>';
+  h+='<tr><td>实际支付利息</td><td>'+mcCNY(actIntAll)+(mcOn('cn_k_pre')?'（已按提前还款后的实际还款过程计算）':'')+'</td></tr>';
+  if(mcOn('cn_k_pre')) h+='<tr><td>提前还款违约金</td><td>'+mcCNY(feeAll)+'</td></tr>';
+  if(mcOn('cn_k_tax')){
+    h+='<tr><td>契税</td><td>'+mcCNY(tDeed)+'</td></tr>';
+    h+='<tr><td>增值税</td><td>'+mcCNY(tVat)+'</td></tr>';
+    h+='<tr><td>个人所得税</td><td>'+mcCNY(tIit)+'</td></tr>';
+    h+='<tr><td>维修基金</td><td>'+mcCNY(tMf)+'</td></tr>';
+    h+='<tr><td>中介费</td><td>'+mcCNY(agentAll)+'</td></tr>';
+    h+='<tr><td>装修预留</td><td>'+mcCNY(decoAll)+'</td></tr>';
+    h+='<tr><td>税费及附加小计</td><td>'+mcCNY(taxAll+agentAll+decoAll)+'</td></tr>';
+  } else {
+    h+='<tr><td colspan="2" style="color:#b45309">未勾选「购房税费」，税费、中介费、装修未计入。勾选后可完整统计。</td></tr>';
+  }
+  h+='<tr><td><b>实际总支出</b></td><td><b>'+mcCNY(spendAll)+'</b></td></tr>';
+  h+='<tr><td>相当于房价的</td><td>'+(price>0?(spendAll/price*100).toFixed(1):'0')+'%</td></tr>';
+  h+='</table></div></div>';
+  var o2=document.getElementById('cn_out'); o2.innerHTML=h; o2.style.display='';
+  /* keep the total-spend hero right after the main payment hero */
+  (function(){
+    var _fh=o2.querySelector('.mc-hero');
+    var _sh=o2.querySelector('.mc-hero[style*="fcd34d"]');
+    if(_fh&&_sh&&_fh!==_sh){ _fh.parentNode.insertBefore(_sh,_fh.nextSibling); }
+  })();
+
+
+  var ah2='<b>逐年还款计划表</b><div class="mc-scroll"><div class="tw"><table class="mc-tbl">';
+  ah2+='<tr><th>年度</th><th>本金</th><th>利息</th><th>剩余余额</th></tr>';
+  var bc=camt, bf=famt;
+  for(var yr2=1;yr2<=Math.ceil(n/12);yr2++){
+    var yp2=0, yi2=0;
+    for(var m2c=0;m2c<12;m2c++){
+      var it2=0, pr2=0;
+      if(rtype==='equal'){
+        if(bc>0.01){ var itc=bc*cr; var prc=cm-itc; if(prc>bc) prc=bc; bc-=prc; it2+=itc; pr2+=prc; }
+        if(bf>0.01){ var itf=bf*fr; var prf=fm-itf; if(prf>bf) prf=bf; bf-=prf; it2+=itf; pr2+=prf; }
+      } else {
+        if(bc>0.01 && n>0){ it2+=bc*cr; pr2+=camt/n; bc-=camt/n; }
+        if(bf>0.01 && fn>0){ it2+=bf*fr; pr2+=famt/fn; bf-=famt/fn; }
+      }
+      yp2+=pr2; yi2+=it2;
+    }
+    ah2+='<tr><td>'+yr2+'</td><td>'+mcCNY(yp2)+'</td><td>'+mcCNY(yi2)+'</td><td>'+mcCNY(bc+bf)+'</td></tr>';
+    if(bc<=0.01&&bf<=0.01) break;
+  }
+  ah2+='</table></div></div>';
+  document.getElementById('cn_amort').innerHTML=ah2;
+}
+
+</script>
+<script>
+function toggleLang() {
+  var dd = document.getElementById('langDropdown');
+  var btn = document.getElementById('langBtn');
+  if (dd) dd.classList.toggle('show');
+  if (btn) btn.classList.toggle('open');
+}
+function closeLang() {
+  var dd = document.getElementById('langDropdown');
+  var btn = document.getElementById('langBtn');
+  if (dd) dd.classList.remove('show');
+  if (btn) btn.classList.remove('open');
+}
+function goEn() {
+  var p = location.pathname.replace(/^\/zh/, '');
+  if (!p || p === '' || p === '/index.html') { location.href = '/'; }
+  else { location.href = p; }
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest || !e.target.closest('.lang-switcher')) { closeLang(); }
+});
+(function initLang(){
+  var lbl = document.getElementById('langLabel');
+  if (lbl) lbl.textContent = '中文';
+})();
+</script>
+
+
+
+
+
+</body></html>

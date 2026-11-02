@@ -5,11 +5,13 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8915931557404979" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Mortgage, Credit Card APR &amp; Currency Calculators | CalcHub</title>
+<title>Free Mortgage, Credit Card APR &amp; Currency Calculators | LendMath</title>
 <meta name="description" content="Free mortgage, credit card APR and currency calculators. See the true cost behind every rate. Transparent formulas, runs in your browser, nothing uploaded.">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="keywords" content="mortgage calculator, mortgage prepayment calculator, early repayment calculator, mortgage affordability calculator, credit card installment APR calculator, true APR calculator, credit card interest calculator, currency converter, exchange rate calculator, remittance cost calculator, loan amortization calculator, calculadora hipoteca, calculateur pret immobilier, hypothekenrechner, calculadora de hipoteca, Mutuo Rechner, 房贷计算器, 信用卡分期利率, 汇率换算">
+<meta name="keywords" content="mortgage calculator,mortgage prepayment calculator,early repayment calculator,mortgage affordability calculator,credit card installment APR calculator,true APR calculator,credit card interest calculator,currency converter,exchange rate calculator,remittance cost calculator,loan amortization calculator,calculadora hipoteca,calculateur pret immobilier,hypothekenrechner,calculadora de hipoteca,Mutuo Rechner">
 <link rel="canonical" href="https://home.saoo.me/">
+  <link rel="alternate" hreflang="zh-CN" href="https://home.saoo.me/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://home.saoo.me/">
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -17,21 +19,21 @@
 <meta content="https://home.saoo.me/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="CalcHub 品牌分享图" property="og:image:alt"/>
+<meta content="LendMath brand share image" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://home.saoo.me/og-image.png" name="twitter:image"/>
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="CalcHub">
-<meta property="og:title" content="Free Mortgage, Credit Card APR &amp; Currency Calculators | CalcHub">
+<meta property="og:site_name" content="LendMath">
+<meta property="og:title" content="Free Mortgage, Credit Card APR &amp; Currency Calculators | LendMath">
 <meta property="og:description" content="Mortgage payments, early repayment, the real APR behind credit card instalments, and true currency conversion cost. Transparent formulas, calculated in your browser, nothing uploaded.">
 <meta property="og:url" content="https://home.saoo.me/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free Mortgage, Credit Card APR &amp; Currency Calculators | CalcHub">
+<meta name="twitter:title" content="Free Mortgage, Credit Card APR &amp; Currency Calculators | LendMath">
 <meta name="twitter:description" content="Free mortgage analysis, true credit card instalment APR and daily mid-market currency rates.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"CalcHub","url":"https://home.saoo.me/",
+{"@context":"https://schema.org","@type":"WebApplication","name":"LendMath","url":"https://home.saoo.me/",
 "applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript",
 "description":"Free mortgage, credit card APR and currency conversion calculators that run entirely in the browser.",
 "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -134,167 +136,415 @@
   .helper-note { font-size:12px; color:#78350f; margin-top:6px; line-height:1.5; }
 
   @media (max-width:600px){ .guide-card{padding:16px 14px;} }
-<style>
+
 .ad-disclosure{margin-top:8px;font-size:12px;color:#94a3b8;line-height:1.7}
 html[lang="en"] .ad-disclosure .cn-t{display:none}
 html:not([lang="en"]) .ad-disclosure .en-t{display:none}
-</style>
+
+  /* ===== Mortgage: all-in-one calculator ===== */
+  .mc-sel { margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid #e2e8f0; }
+  .mc-sel label { font-size:12.5px; color:#555; margin:0 0 4px; display:block; font-weight:600; }
+  .mc-sel select { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:14px; background:#fff; }
+  .mc-hd { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:10px; display:flex; align-items:center; gap:7px; }
+  .mc-sec { margin-bottom:16px; }
+  .mc-calc { width:100%; padding:14px; background:#2563eb; color:#fff; border:none; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; margin-top:4px; }
+  .mc-calc:hover { background:#1d4ed8; }
+  .row2 { display:flex; gap:10px; flex-wrap:wrap; } .row2 > div { flex:1; min-width:104px; }
+  .hint { font-size:11.5px; color:#94a3b8; margin-top:4px; line-height:1.5; }
+  .mod { border:1px solid #e2e8f0; border-radius:10px; margin-bottom:9px; overflow:hidden; }
+  .mod-hd { display:flex; align-items:center; gap:9px; padding:11px 13px; background:#f8fafc; cursor:pointer; font-size:13px; font-weight:600; margin:0; }
+  .mod-hd input[type=checkbox] { width:16px; height:16px; accent-color:#2563eb; flex-shrink:0; }
+  .mod-bd { padding:2px 13px 13px; display:none; }
+  .mod.on .mod-bd { display:block; }
+  .pmi-state { margin-top:7px; padding:8px 11px; border-radius:7px; font-size:12px; font-weight:600; line-height:1.5; }
+  .final { margin-top:16px; background:#f0fdf4; border:2px solid #86efac; border-radius:12px; padding:16px; }
+  .final h3 { font-size:15px; color:#166534; margin:0 0 11px; }
+  .mc-hero { text-align:center; padding:10px 0 12px; border-bottom:1px dashed #a7f3d0; margin-bottom:12px; }
+  .mc-hero .big { font-size:27px; font-weight:700; color:#15803d; }
+  .mc-hero .cap { font-size:12px; color:#4b5563; margin-top:2px; }
+  .mc-sec2 { margin-bottom:12px; }
+  .mc-sec2 .t { font-size:12.5px; font-weight:700; color:#166534; margin-bottom:5px; border-left:3px solid #4ade80; padding-left:7px; }
+  .mc-tbl { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .mc-tbl th, .mc-tbl td { padding:5px 8px; border-bottom:1px solid #e5e7eb; text-align:right; }
+  .mc-tbl th:first-child, .mc-tbl td:first-child { text-align:left; }
+  .mc-tbl th { background:#f1f5f9; font-weight:600; }
+  .mc-warn { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; padding:9px 12px; border-radius:8px; font-size:12.5px; margin-top:8px; line-height:1.5; }
+  .mc-ok { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:9px 12px; border-radius:8px; font-size:12.5px; margin-top:8px; line-height:1.5; }
+  .mc-scroll { overflow-x:auto; margin-top:8px; }
+
+  
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; margin:12px 0; }
+  .tw table { min-width:100%; }
+
+
+
+
+
+.ad-disclosure{margin-top:8px;font-size:12px;color:#94a3b8;line-height:1.7}
+html[lang="en"] .ad-disclosure .cn-t{display:none}
+html:not([lang="en"]) .ad-disclosure .en-t{display:none}
+
+  /* ===== Mortgage: all-in-one calculator ===== */
+  .mc-sel { margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid #e2e8f0; }
+  .mc-sel label { font-size:12.5px; color:#555; margin:0 0 4px; display:block; font-weight:600; }
+  .mc-sel select { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:14px; background:#fff; }
+  .mc-hd { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:10px; display:flex; align-items:center; gap:7px; }
+  .mc-sec { margin-bottom:16px; }
+  .mc-calc { width:100%; padding:14px; background:#2563eb; color:#fff; border:none; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; margin-top:4px; }
+  .mc-calc:hover { background:#1d4ed8; }
+  .row2 { display:flex; gap:10px; flex-wrap:wrap; } .row2 > div { flex:1; min-width:104px; }
+  .hint { font-size:11.5px; color:#94a3b8; margin-top:4px; line-height:1.5; }
+  .mod { border:1px solid #e2e8f0; border-radius:10px; margin-bottom:9px; overflow:hidden; }
+  .mod-hd { display:flex; align-items:center; gap:9px; padding:11px 13px; background:#f8fafc; cursor:pointer; font-size:13px; font-weight:600; margin:0; }
+  .mod-hd input[type=checkbox] { width:16px; height:16px; accent-color:#2563eb; flex-shrink:0; }
+  .mod-bd { padding:2px 13px 13px; display:none; }
+  .mod.on .mod-bd { display:block; }
+  .pmi-state { margin-top:7px; padding:8px 11px; border-radius:7px; font-size:12px; font-weight:600; line-height:1.5; }
+  .final { margin-top:16px; background:#f0fdf4; border:2px solid #86efac; border-radius:12px; padding:16px; }
+  .final h3 { font-size:15px; color:#166534; margin:0 0 11px; }
+  .mc-hero { text-align:center; padding:10px 0 12px; border-bottom:1px dashed #a7f3d0; margin-bottom:12px; }
+  .mc-hero .big { font-size:27px; font-weight:700; color:#15803d; }
+  .mc-hero .cap { font-size:12px; color:#4b5563; margin-top:2px; }
+  .mc-sec2 { margin-bottom:12px; }
+  .mc-sec2 .t { font-size:12.5px; font-weight:700; color:#166534; margin-bottom:5px; border-left:3px solid #4ade80; padding-left:7px; }
+  .mc-tbl { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .mc-tbl th, .mc-tbl td { padding:5px 8px; border-bottom:1px solid #e5e7eb; text-align:right; }
+  .mc-tbl th:first-child, .mc-tbl td:first-child { text-align:left; }
+  .mc-tbl th { background:#f1f5f9; font-weight:600; }
+  .mc-warn { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; padding:9px 12px; border-radius:8px; font-size:12.5px; margin-top:8px; line-height:1.5; }
+  .mc-ok { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:9px 12px; border-radius:8px; font-size:12.5px; margin-top:8px; line-height:1.5; }
+  .mc-scroll { overflow-x:auto; margin-top:8px; }
+
+  
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; margin:12px 0; }
+  .tw table { min-width:100%; }
+
+
+  /* --- tab row with language switcher (mobile alignment) --- */
+  .tabrow { display:flex; align-items:center; gap:8px; flex-wrap:nowrap; }
+  .tabrow .tabs { flex:1 1 auto; min-width:0; margin:8px 0 16px; flex-wrap:nowrap; }
+  .tabrow .lang-switcher { flex:0 0 auto; margin-left:auto; }
+  /* ★修复：tab 行预留语言框高度，语言框搬入时下方内容不再被推挤 */
+  @media (max-width:768px){
+    .tabrow { min-height:44px; align-items:center; }
+  }
+  @media (max-width:768px){
+    .tabrow { margin-bottom:4px; gap:8px; align-items:flex-start; flex-wrap:wrap; }
+    .tabrow .tabs { margin:8px 0 8px; gap:6px; flex:0 1 auto; }
+    .tabrow .tabs .tab { padding:8px 8px; font-size:13px; white-space:nowrap; }
+    .tabrow .lang-switcher { margin-top:8px; margin-left:auto; align-self:flex-start; }
+    .tabrow .lang-btn { min-width:0; padding:8px 12px; font-size:13px; gap:6px;
+      border-radius:999px; line-height:1.35; font-weight:500; }
+    .tabrow .lang-btn .arrow { font-size:11px; }
+    .tabrow .lang-dropdown { min-width:106px; }
+    .tabrow .lang-option { padding:9px 13px; font-size:13px; }
+  }
+  @media (min-width:769px){
+    .tabrow { display:block; }
+    .tabrow .lang-switcher { display:none; }
+  }
+
+
+
+
+
 </style>
 </head>
 <body>
 <div class="wrap">
-  <!-- 顶部 -->
+  
   <div class="topbar">
     <div>
-      <h1 data-i18n="site_title"><img class="logo-icon" src="/icon-192.png" alt="CalcHub" style="width:34px;height:34px;border-radius:8px;vertical-align:-8px;margin-right:8px">CalcHub <span style="font-size:13px;color:#94a3b8;">Mortgage · Credit Card · Currency</span></h1>
+      <h1 data-i18n="site_title"><img class="logo-icon" src="data:image/png;base64,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" alt="LendMath" style="width:34px;height:34px;border-radius:8px;vertical-align:-8px;margin-right:8px">LendMath <span style="font-size:13px;color:#94a3b8;">Mortgage · Credit Card · Currency</span></h1>
       <div class="sub" data-i18n="site_sub">Mortgage analysis &middot; True credit card cost &middot; Currency conversion</div>
     </div>
-    <div class="lang-switcher">
-      <div class="lang-btn" id="langBtn" onclick="toggleLang()">
-        <span id="langLabel">🇺🇸 English</span>
-        <span class="arrow">▼</span>
-      </div>
-      <div class="lang-dropdown" id="langDropdown">
-        <div class="lang-option" data-lang="en" onclick="selectLang('en')"><span class="flag">🇺🇸</span> English</div>
-        <div class="lang-option" data-lang="zh" onclick="selectLang('zh')"><span class="flag">🇨🇳</span> 中文</div>
-      </div>
-    </div>
+
   </div>
 
-  <div class="tabs">
+  <div class="tabrow">
+<div class="tabs">
     <div class="tab active" data-tab="mortgage" data-i18n="tab_mortgage">🏠 Mortgage</div>
     <div class="tab" data-tab="credit" data-i18n="tab_credit">💳 Credit Card</div>
     <div class="tab" data-tab="fx" data-i18n="tab_fx">💱 Exchange</div>
   </div>
-
-  <!-- ========== 房贷 ========== -->
-  <div class="card active" id="mortgage">
-    <div class="sub-tabs">
-      <div class="sub-tab active" data-sub="loan" data-i18n="sub_loan">🏢 Loan Calculator</div>
-      <div class="sub-tab" data-sub="combo" data-i18n="sub_combo">🏦 Combo Loan (Commercial + Fund)</div>
-      <div class="sub-tab" data-sub="prepay" data-i18n="sub_prepay">⚡ Early Repayment</div>
-      <div class="sub-tab" data-sub="afford" data-i18n="sub_afford">🛡️ Affordability</div>
-    </div>
-
-    <div class="sub-card active" id="loan">
-      <label data-i18n="loan_p_label">Loan Principal (¥)</label>
-      <input id="loan_p" type="number" value="1000000">
-      <label data-i18n="loan_base_label">Base Rate (%)</label>
-      <input id="loan_base" type="number" value="4.2" step="0.01">
-      <label data-i18n="loan_discount_label">Rate Discount</label>
-      <select id="loan_discount">
-        <option value="1" data-i18n="disc_1">No discount (1.0)</option>
-        <option value="0.95" data-i18n="disc_95">5% off</option>
-        <option value="0.9" data-i18n="disc_9">10% off</option>
-        <option value="0.85" selected data-i18n="disc_85">15% off</option>
-        <option value="0.8" data-i18n="disc_8">20% off</option>
-      </select>
-      <label data-i18n="loan_years_label">Term (Years)</label>
-      <input id="loan_years" type="number" value="30">
-      <label data-i18n="loan_type_label">Repayment Method</label>
-      <select id="loan_type">
-        <option value="equal" data-i18n="repay_equal">Equal Installments</option>
-        <option value="principal" data-i18n="repay_principal">Equal Principal</option>
-      </select>
-      <label data-i18n="loan_lpr_label">Estimated Future LPR Increase (%) - Stress Test</label>
-      <input id="loan_lpr" type="number" value="0" step="0.1">
-      <div class="rate-hint" data-i18n="loan_lpr_hint">Enter 0.5 to see monthly payment if rates rise 0.5%</div>
-      <button class="calc" onclick="calcLoan()" data-i18n="btn_analyze">Analyze</button>
-      <div class="result" id="loan_result"></div>
-      <button class="sch-btn" id="schBtn" onclick="toggleSchedule()" style="display:none;" data-i18n="btn_schedule">📊 Show Year-by-Year Amortization Schedule</button>
-      <div id="schBox"></div>
-    </div>
-
-    <div class="sub-card" id="combo">
-      <div class="rate-hint" data-i18n="combo_hint">Most common in China: a commercial loan plus a housing provident fund (公积金) loan, each with its own rate. Calculated separately, then combined.</div>
-      <label data-i18n="combo_comm_label">Commercial Loan Amount (¥)</label>
-      <input id="cb_comm" type="number" value="700000">
-      <label data-i18n="combo_comm_rate_label">Commercial Loan Rate (%)</label>
-      <input id="cb_comm_rate" type="number" value="3.45" step="0.01">
-      <label data-i18n="combo_fund_label">Provident Fund Loan Amount (¥)</label>
-      <input id="cb_fund" type="number" value="500000">
-      <label data-i18n="combo_fund_rate_label">Provident Fund Rate (%)</label>
-      <input id="cb_fund_rate" type="number" value="2.85" step="0.01">
-      <label data-i18n="combo_years_label">Term (Years)</label>
-      <input id="cb_years" type="number" value="30">
-      <label data-i18n="combo_type_label">Repayment Method</label>
-      <select id="cb_type">
-        <option value="equal" data-i18n="repay_equal">Equal Installments</option>
-        <option value="principal" data-i18n="repay_principal">Equal Principal</option>
-      </select>
-      <button class="calc" onclick="calcCombo()" data-i18n="btn_combo">Calculate Combo Loan</button>
-      <div class="result" id="cb_result"></div>
-    </div>
-
-    <div class="sub-card" id="prepay">
-      <label data-i18n="pp_p_label">Remaining Principal (¥)</label>
-      <input id="pp_p" type="number" value="800000">
-      <label data-i18n="pp_rate_label">Current Annual Rate (%)</label>
-      <input id="pp_rate" type="number" value="3.57" step="0.01">
-      <label data-i18n="pp_years_label">Remaining Years</label>
-      <input id="pp_years" type="number" value="25">
-      <div class="helper">
-        <div class="helper-title" onclick="toggleHelper()" data-i18n="pp_helper_title">💡 Don't know your remaining balance? Tap to estimate it</div>
-        <div class="helper-body" id="helperBody" style="display:none;">
-          <div>
-            <label data-i18n="pp_orig_label">Original Principal (¥)</label>
-            <input id="hp_orig" type="number" value="1000000">
-          </div>
-          <div>
-            <label data-i18n="pp_orig_years">Original Term (Years)</label>
-            <input id="hp_years" type="number" value="30">
-          </div>
-          <div>
-            <label data-i18n="pp_paid_label">Months Already Paid</label>
-            <input id="hp_paid" type="number" value="60">
-          </div>
-          <div>
-            <label data-i18n="pp_orig_rate">Original Rate (%)</label>
-            <input id="hp_rate" type="number" value="4.9" step="0.01">
-          </div>
-          <button class="helper-btn" onclick="calcRemaining()" data-i18n="btn_estimate">Estimate & Fill In</button>
-        </div>
-        <div class="helper-note" id="helperNote"></div>
+    <div class="lang-switcher">
+      <div class="lang-btn" id="langBtn" onclick="toggleLang()">
+        <span id="langLabel">English</span>
+        <span class="arrow">▼</span>
       </div>
-      <label data-i18n="pp_amount_label">Early Repayment Amount (¥)</label>
-      <input id="pp_amount" type="number" value="200000">
-      <label data-i18n="pp_strategy_label">Strategy After Repayment</label>
-      <select id="pp_strategy">
-        <option value="reduce-term" data-i18n="pp_strategy_term">Shorten term, keep payment (recommended, saves more interest)</option>
-        <option value="reduce-payment" data-i18n="pp_strategy_pay">Reduce payment, keep term</option>
-      </select>
-      <button class="calc" onclick="calcPrepay()" data-i18n="btn_prepay">Calculate Early Repayment</button>
-      <div class="result" id="pp_result"></div>
+      <div class="lang-dropdown" id="langDropdown">
+        <div class="lang-option" data-lang="en" onclick="closeLang()">English</div>
+        <div class="lang-option" data-lang="zh" onclick="goZh()">中文</div>
+      </div>
     </div>
-
-    <div class="sub-card" id="afford">
-      <label data-i18n="af_income_label">Household Monthly Income (¥)</label>
-      <input id="af_income" type="number" value="20000">
-      <label data-i18n="af_other_label">Other Fixed Monthly Expenses (¥)</label>
-      <input id="af_other" type="number" value="3000">
-      <label data-i18n="af_payment_label">Planned Monthly Payment (¥)</label>
-      <input id="af_payment" type="number" value="5000">
-      <button class="calc" onclick="calcAfford()" data-i18n="btn_afford">Assess Affordability</button>
-      <div class="result" id="af_result"></div>
-      <div class="note" data-i18n="afford_note">Banks typically require DTI ≤ 50%. International "safe zone" is 28%-36%.</div>
-    </div>
-
-    <!-- ===== AD SLOT 1：房贷页内 =====
-     AdSense 通过后：删掉注释标记，把 data-ad-slot 换成后台真实广告单元 ID
-<div class="ad-slot">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8915931557404979"
-       data-ad-slot="0000000000"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-===== /AD SLOT 1 ===== -->
-    <div class="note" data-i18n="mortgage_note">Data based on standard mortgage formulas. Rates and policies vary by bank. Not financial advice.</div>
   </div>
 
-  <!-- ========== 信用卡 ========== -->
+<script>
+/* --- 语言框位置：手机端静态在 tab 行（零搬运→零跳动）；仅桌面端搬到标题右侧 --- */
+(function(){
+  var row=document.querySelector('.tabrow');
+  var sw=row && row.querySelector('.lang-switcher');
+  var tb=document.querySelector('.topbar');
+  if(!sw||!tb) return;
+  function place(){
+    if(window.innerWidth>768){ if(sw.parentNode!==tb) tb.appendChild(sw); }
+    else if(sw.parentNode!==row){ row.appendChild(sw); }
+  }
+  place();
+  window.addEventListener('resize',place);
+})();
+</script>
+
+  
+  <div class="card active" id="mortgage">
+      <div class="mc-sel">
+        <label for="mcountry">Mortgage Calculator</label>
+        <select id="mcountry">
+          <option value="us" selected>US Mortgage Calculator</option>
+          <option value="cn">China Mortgage Calculator</option>
+        </select>
+        <div class="hint">Calculators for different countries use different rules and fields. Switching replaces the whole form below.</div>
+      </div>
+
+      <!-- ============ US ============ -->
+      <div id="grp_us" class="mc-grp">
+        <div class="mc-sec">
+          <div class="mc-hd">1 · Loan Basics (required)</div>
+          <div class="row2">
+            <div><label for="us_price">Home Price ($)</label><input id="us_price" type="number" value="600000"></div>
+            <div><label for="us_dpmode">Down payment entered as</label>
+              <select id="us_dpmode"><option value="pct">Percent of price (%)</option><option value="amt">Dollar amount ($)</option></select></div>
+          </div>
+          <div class="row2">
+            <div><label for="us_dp">Down Payment (%)</label><input id="us_dp" type="number" step="0.1" value="20"></div>
+            <div><label for="us_ltype">Loan Type</label>
+              <select id="us_ltype">
+                <option value="conv">Conventional</option>
+                <option value="fha">FHA</option>
+                <option value="va">VA</option>
+                <option value="usda">USDA</option>
+                <option value="jumbo">Jumbo</option>
+              </select></div>
+          </div>
+          <div class="row2">
+            <div><label for="us_struct">Loan Structure</label>
+              <select id="us_struct">
+                <option value="fixed">Fixed Rate</option>
+                <option value="arm">Adjustable (ARM)</option>
+                <option value="io">Interest-Only</option>
+                <option value="balloon">Balloon</option>
+              </select></div>
+            <div><label for="us_years">Loan Term (Years)</label><input id="us_years" type="number" value="30"></div>
+          </div>
+          <label for="us_rate">Interest Rate (% APR)</label>
+          <input id="us_rate" type="number" step="0.01" value="6.5">
+          <div id="us_armbox" style="display:none">
+            <div class="row2">
+              <div><label for="us_fixy">Fixed Period (Years)</label><input id="us_fixy" type="number" value="5"></div>
+              <div><label for="us_rate2">Rate After Reset (% APR)</label><input id="us_rate2" type="number" step="0.01" value="7.5"></div>
+            </div>
+            <div class="hint">Typical ARM caps: first adjustment +/-2%, then +/-2% per year, lifetime +/-5%.</div>
+          </div>
+        </div>
+
+        <div class="mc-sec">
+          <div class="mc-hd">2 · Add-on Modules (tick to include in the payment)</div>
+
+          <div class="mod" id="us_m_tax">
+            <label class="mod-hd"><input type="checkbox" id="us_k_tax" checked><span>Property Tax</span></label>
+            <div class="mod-bd">
+              <label for="us_taxr">Property Tax Rate (% of home price / year)</label>
+              <input id="us_taxr" type="number" step="0.01" value="1.2">
+              <div class="hint">Levied separately by state, county and city — rates vary widely, so enter your own actual rate.</div>
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_ins">
+            <label class="mod-hd"><input type="checkbox" id="us_k_ins" checked><span>Homeowners Insurance</span></label>
+            <div class="mod-bd">
+              <label for="us_ins">Annual Premium ($ / year)</label><input id="us_ins" type="number" value="1800">
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_hoa">
+            <label class="mod-hd"><input type="checkbox" id="us_k_hoa"><span>HOA / Condo Fee</span></label>
+            <div class="mod-bd">
+              <label for="us_hoa">Monthly Fee ($ / month)</label><input id="us_hoa" type="number" value="0">
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_pmi">
+            <label class="mod-hd"><input type="checkbox" id="us_k_pmi" checked><span>Mortgage Insurance (PMI / MIP)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="us_pmir">Annual Rate (% of loan / year)</label><input id="us_pmir" type="number" step="0.01" value="0.5"></div>
+                <div><label for="us_upfront">Upfront Fee (% of loan, one-time)</label><input id="us_upfront" type="number" step="0.01" value="0"></div>
+              </div>
+              <label class="sub-chk"><input type="checkbox" id="us_upfin"><span>Finance the upfront fee into the loan amount</span></label>
+              <div id="us_va_box" style="display:none">
+                <label for="us_va_use">VA entitlement usage</label>
+                <select id="us_va_use"><option value="first">First use</option><option value="sub">Subsequent use</option></select>
+              </div>
+              <div class="hint">Typical rates are auto-filled when you choose a loan type — edit them to match your lender. Conventional PMI ends at 78% LTV. FHA MIP runs 11 years when the down payment is 10% or more, otherwise for the life of the loan. USDA charges annually for the life of the loan. VA charges no annual fee, only a one-time funding fee.</div>
+              <div id="us_pmi_state" class="pmi-state" style="display:none"></div>
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_close">
+            <label class="mod-hd"><input type="checkbox" id="us_k_close" checked><span>Closing Costs</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="us_close">Closing Costs ($)</label><input id="us_close" type="number" value="12000"></div>
+                <div><label for="us_pts">Points (1 point = 1% of loan)</label><input id="us_pts" type="number" step="0.25" value="0"></div>
+              </div>
+              <div class="hint">Each point typically buys about 0.25% off the rate.</div>
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_extra">
+            <label class="mod-hd"><input type="checkbox" id="us_k_extra"><span>Extra Payment</span></label>
+            <div class="mod-bd">
+              <label for="us_extra">Extra Monthly Payment ($ / month)</label><input id="us_extra" type="number" value="300">
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_refi">
+            <label class="mod-hd"><input type="checkbox" id="us_k_refi"><span>Refinance</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="us_orate">Current Rate (% APR)</label><input id="us_orate" type="number" step="0.01" value="7.5"></div>
+                <div><label for="us_nrate">New Rate (% APR)</label><input id="us_nrate" type="number" step="0.01" value="6.0"></div>
+              </div>
+              <div class="hint">Compares old vs new payment and the break-even period.</div>
+            </div>
+          </div>
+
+          <div class="mod" id="us_m_dti">
+            <label class="mod-hd"><input type="checkbox" id="us_k_dti" checked><span>Affordability (DTI 28/36 Rule)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="us_inc">Gross Annual Income ($ / year)</label><input id="us_inc" type="number" value="120000"></div>
+                <div><label for="us_debt">Other Monthly Debt ($ / month)</label><input id="us_debt" type="number" value="800"></div>
+              </div>
+              <div class="hint">US lenders use the 28/36 rule: housing under 28% of income, total debt under 36%.</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mc-calc" onclick="usRun()">Calculate (rolls up every ticked module)</button>
+        <div class="final" id="us_out" style="display:none"></div>
+        <div class="note" id="us_amort"></div>
+      </div>
+
+      <!-- ============ CN ============ -->
+      <div id="grp_cn" class="mc-grp" style="display:none">
+        <div class="mc-sec">
+          <div class="mc-hd">1 · Basics (required)</div>
+          <div class="row2">
+            <div><label for="cn_price">Property Price (¥)</label><input id="cn_price" type="number" value="3000000"></div>
+            <div><label for="cn_dppct">Down Payment (%)</label><input id="cn_dppct" type="number" step="1" value="30"></div>
+          </div>
+          <label for="cn_total">Total Loan (¥) — auto-filled from price and down payment, editable</label>
+          <input id="cn_total" type="number" value="2100000">
+          <div class="row2">
+            <div><label for="cn_camt">Commercial Loan (¥)</label><input id="cn_camt" type="number" value="1500000"></div>
+            <div><label for="cn_crate">Commercial Rate (%)</label><input id="cn_crate" type="number" step="0.01" value="3.5"></div>
+          </div>
+          <div class="row2">
+            <div><label for="cn_disc">Rate Discount</label>
+              <select id="cn_disc">
+                <option value="1">None (1.0)</option><option value="0.95">95%</option>
+                <option value="0.9">90%</option><option value="0.85" selected>85%</option><option value="0.8">80%</option>
+              </select></div>
+            <div><label for="cn_years">Term (Years)</label><input id="cn_years" type="number" value="30"></div>
+          </div>
+          <label for="cn_rtype">Repayment Method</label>
+          <select id="cn_rtype"><option value="equal">Equal instalment (principal + interest)</option><option value="principal">Equal principal</option></select>
+        </div>
+
+        <div class="mc-sec">
+          <div class="mc-hd">2 · Add-on Modules (tick to include)</div>
+
+          <div class="mod" id="cn_m_fund">
+            <label class="mod-hd"><input type="checkbox" id="cn_k_fund"><span>Housing Provident Fund Loan (combined with the commercial loan)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="cn_famt">Fund Loan Amount (¥)</label><input id="cn_famt" type="number" value="600000"></div>
+                <div><label for="cn_frate">Fund Rate (%)</label><input id="cn_frate" type="number" step="0.01" value="2.6"></div>
+              </div>
+              <label for="cn_fyears">Fund Term (Years)</label><input id="cn_fyears" type="number" value="30">
+            </div>
+          </div>
+
+          <div class="mod" id="cn_m_tax">
+            <label class="mod-hd"><input type="checkbox" id="cn_k_tax"><span>Purchase Taxes &amp; Fees (counted into total cash needed)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="cn_area">Floor Area (m²)</label><input id="cn_area" type="number" step="0.01" value="89"></div>
+                <div><label for="cn_no">Property Number</label><select id="cn_no"><option value="1">First home</option><option value="2">Second home</option><option value="3">Third or more</option></select></div>
+              </div>
+              <div class="row2">
+                <div><label for="cn_two">Held 2+ years by seller</label><select id="cn_two"><option value="1">Yes</option><option value="0">No</option></select></div>
+                <div><label for="cn_five">Only home &amp; held 5+ years</label><select id="cn_five"><option value="1">Yes</option><option value="0">No</option></select></div>
+              </div>
+              <div class="row2">
+                <div><label for="cn_orig">Original / Registered Price (¥)</label><input id="cn_orig" type="number" value="2000000"></div><div><label for="cn_iitm">Personal income tax basis</label><select id="cn_iitm"><option value="1">Assessed 1%</option><option value="2">Difference 20%</option></select></div>
+                <div><label for="cn_mf">Maintenance Fund (¥ / m²)</label><input id="cn_mf" type="number" value="100"></div>
+              </div>
+              <div class="row2">
+                <div><label for="cn_agent">Agency Fee (¥)</label><input id="cn_agent" type="number" value="30000"></div>
+                <div><label for="cn_deco">Renovation Budget (¥)</label><input id="cn_deco" type="number" value="200000"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mod" id="cn_m_pre">
+            <label class="mod-hd"><input type="checkbox" id="cn_k_pre"><span>Early Repayment (second pass on top of the monthly payment)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="cn_paid">Months Already Paid</label><input id="cn_paid" type="number" value="36"></div>
+                <div><label for="cn_ppay">Lump Sum Repayment (¥)</label><input id="cn_ppay" type="number" value="300000"></div>
+              </div>
+              <div class="row2">
+                <div><label for="cn_pstr">Strategy</label><select id="cn_pstr"><option value="shorten">Shorten the term (payment unchanged)</option><option value="reduce">Reduce the payment (term unchanged)</option></select></div>
+                <div><label for="cn_pfee">Penalty Rate (%)</label><input id="cn_pfee" type="number" step="0.01" value="0"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mod" id="cn_m_ded">
+            <label class="mod-hd"><input type="checkbox" id="cn_k_ded"><span>Mortgage Interest Tax Deduction (reduces your cost)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="cn_taxr">Income Tax Bracket (%)</label><select id="cn_taxr">
+                  <option value="3">3%</option><option value="10" selected>10%</option><option value="20">20%</option>
+                  <option value="25">25%</option><option value="30">30%</option><option value="35">35%</option><option value="45">45%</option></select></div>
+                <div><label for="cn_dmode">Deduction Split</label><select id="cn_dmode"><option value="1">Full 1,000 ¥/month to you</option><option value="0.5">500 ¥/month each for a couple</option></select></div>
+              </div>
+              <div class="hint">First-home loans only. Flat 1,000 ¥/month, up to 240 months.</div>
+            </div>
+          </div>
+
+          <div class="mod" id="cn_m_aff">
+            <label class="mod-hd"><input type="checkbox" id="cn_k_aff"><span>Affordability Check (flags an over-limit payment)</span></label>
+            <div class="mod-bd">
+              <div class="row2">
+                <div><label for="cn_inc">Household Monthly Income (¥)</label><input id="cn_inc" type="number" value="30000"></div>
+                <div><label for="cn_debt">Other Fixed Monthly Expenses (¥)</label><input id="cn_debt" type="number" value="5000"></div>
+              </div>
+              <label for="cn_cap">Lender Payment-to-Income Limit (%)</label><input id="cn_cap" type="number" step="1" value="50">
+            </div>
+          </div>
+        </div>
+
+        <button class="mc-calc" onclick="cnRun()">Calculate (rolls up every ticked module)</button>
+        <div class="final" id="cn_out" style="display:none"></div>
+        <div class="note" id="cn_amort"></div>
+      </div>
+
+      </div>
+
+  
   <div class="card" id="credit">
     <div class="sub-tabs">
       <div class="sub-tab active" data-sub="apr" data-i18n="sub_apr">💰 Real APR Cost</div>
@@ -324,8 +574,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
       <div class="result" id="cp_result"></div>
     </div>
 
-    <!-- ===== AD SLOT 2：信用卡页内 =====
-     AdSense 通过后：删掉注释标记，把 data-ad-slot 换成后台真实广告单元 ID
+    
+    <!-- ===== AD SLOT 2 =====
+     AdSense approved: remove the comment markers and replace data-ad-slot with your real ad unit ID
 <div class="ad-slot">
   <ins class="adsbygoogle"
        style="display:block"
@@ -339,7 +590,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <div class="note" data-i18n="credit_note">Banks' "nominal APR" = monthly fee × 12. Real APR uses IRR and is typically nearly double. Read terms carefully.</div>
   </div>
 
-  <!-- ========== 汇率 ========== -->
+  
   <div class="card" id="fx">
     <label data-i18n="fx_amount_label">Amount</label>
     <input id="fx_amount" type="number" value="1000">
@@ -350,8 +601,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <select id="fx_to"></select>
     <button class="calc" onclick="calcFx()" data-i18n="btn_fx">Convert</button>
     <div class="result" id="fx_result" data-i18n="fx_waiting">Select currencies and click convert</div>
-    <!-- ===== AD SLOT 3：汇率页内 =====
-     AdSense 通过后：删掉注释标记，把 data-ad-slot 换成后台真实广告单元 ID
+    
+    <!-- ===== AD SLOT 3 =====
+     AdSense approved: remove the comment markers and replace data-ad-slot with your real ad unit ID
 <div class="ad-slot">
   <ins class="adsbygoogle"
        style="display:block"
@@ -365,27 +617,66 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <div class="note" data-i18n="fx_note">Shows <b>daily mid-market rate</b>, not real-time bank rates. Actual exchange uses bank sell rate, typically 0.3%-1% higher than mid-rate.</div>
   </div>
 
-  <!-- 指南文章入口卡片 -->
+  
   <div class="guide-card">
     <h3><span>📚</span><span data-i18n="gc_title">In-depth Guides</span></h3>
     <p class="gsub" data-i18n="gc_sub">Original long-form explainers on mortgages, credit cards and currency — written to stay useful for years.</p>
     <ul class="guide-list">
-      <li><a href="/guides/mortgage-basics.html">
+      <li data-topic="mortgage" data-country="us"><a href="/guides/us-mortgage-payment-breakdown.html">
+        <span class="gt" data-i18n="gc_g7_t">How a US Mortgage Payment Is Really Built: PITI and the True Monthly Cost</span>
+        <span class="gd" data-i18n="gc_g7_d">Principal and interest, escrowed tax and insurance, PMI and HOA — with real numbers</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/guides/us-pmi-guide.html">
+        <span class="gt" data-i18n="gc_g8_t">Private Mortgage Insurance: When It Ends and How to Avoid It</span>
+        <span class="gd" data-i18n="gc_g8_d">The 78% automatic termination rule, cancellation at 80%, and four ways out</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/guides/us-fha-vs-conventional.html">
+        <span class="gt" data-i18n="gc_g9_t">FHA vs Conventional vs VA Loans: Which One Fits You</span>
+        <span class="gd" data-i18n="gc_g9_d">Down payment, MIP versus PMI, and the real monthly cost side by side</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/guides/us-arm-vs-fixed.html">
+        <span class="gt" data-i18n="gc_g10_t">ARM vs Fixed Rate: How Adjustable Loans Reset</span>
+        <span class="gd" data-i18n="gc_g10_d">Index plus margin, the three rate caps, and a 5/1 ARM worked example</span></a></li>
+      <li data-topic="mortgage" data-country="us"><a href="/guides/us-refinance-guide.html">
+        <span class="gt" data-i18n="gc_g11_t">When Refinancing Makes Sense: The Break-Even Test</span>
+        <span class="gd" data-i18n="gc_g11_d">One formula, a full worked example, and the cases where you should not</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/guides/us-closing-costs.html">
+<span class="gt" data-i18n="gc_g14_t">US Closing Costs: What You Actually Pay at Settlement</span>
+<span class="gd" data-i18n="gc_g14_d">Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/guides/us-dti-affordability.html">
+<span class="gt" data-i18n="gc_g15_t">Debt-to-Income Ratio: How Much House You Can Actually Afford</span>
+<span class="gd" data-i18n="gc_g15_d">The 28/36 rule, front-end versus back-end, and how to work out your real budget</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/guides/us-15-vs-30-year.html">
+<span class="gt" data-i18n="gc_g16_t">15-Year vs 30-Year Mortgage: The Real Trade-Off</span>
+<span class="gd" data-i18n="gc_g16_d">$956 more per month against about $283,000 less interest</span></a></li>
+      <li data-topic="mortgage" data-country="cn"><a href="/guides/mortgage-basics.html">
         <span class="gt" data-i18n="gc_g1_t">How Mortgages Actually Work</span>
         <span class="gd" data-i18n="gc_g1_d">Amortisation, equal instalment vs equal principal, fixed vs variable rates</span></a></li>
-      <li><a href="/guides/mortgage-prepayment.html">
+      <li data-topic="mortgage" data-country="cn"><a href="/guides/mortgage-prepayment.html">
         <span class="gt" data-i18n="gc_g2_t">Early Repayment: Shorten the Term or Cut the Payment?</span>
         <span class="gd" data-i18n="gc_g2_d">A worked example, the formula behind it, and five checks before you prepay</span></a></li>
-      <li><a href="/guides/credit-card-installment-traps.html">
+      <li data-topic="mortgage" data-country="cn"><a href="guides/cn-combo-loan.html">
+        <span class="gt" data-i18n="gc_g12_t">China Combo Mortgage: How Provident Fund and Commercial Loans Combine</span>
+        <span class="gd" data-i18n="gc_g12_d">Two loans, two rates — what a 70/30 split actually saves</span></a></li>
+      <li data-topic="mortgage" data-country="cn"><a href="guides/cn-property-taxes.html">
+        <span class="gt" data-i18n="gc_g13_t">China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget</span>
+        <span class="gd" data-i18n="gc_g13_d">The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/guides/cn-amortization-compare.html">
+<span class="gt" data-i18n="gc_g17_t">Equal Instalment vs Equal Principal: How China Mortgages Repay</span>
+<span class="gd" data-i18n="gc_g17_d">Same rate, different totals — about ¥90,000 of interest apart</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/guides/cn-lpr-repricing.html">
+<span class="gt" data-i18n="gc_g18_t">China Mortgage LPR and Repricing: Why Your Payment Changes Late</span>
+<span class="gd" data-i18n="gc_g18_d">The reference plus fixed spread, and the two repricing date conventions</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/guides/cn-affordability-budget.html">
+<span class="gt" data-i18n="gc_g19_t">China Home Budget: From Monthly Payment to Purchase Price</span>
+<span class="gd" data-i18n="gc_g19_d">Sustainable payment, supported loan, usable down payment after taxes</span></a></li>
+      <li data-topic="credit" data-country="all"><a href="/guides/credit-card-installment-traps.html">
         <span class="gt" data-i18n="gc_g3_t">Why a 0.6% Monthly Fee Is Really About 13% a Year</span>
         <span class="gd" data-i18n="gc_g3_d">How instalment pricing hides the true cost, and how to compute it</span></a></li>
-      <li><a href="/guides/credit-card-usage-tips.html">
+      <li data-topic="credit" data-country="all"><a href="/guides/credit-card-usage-tips.html">
         <span class="gt" data-i18n="gc_g4_t">Credit Card Habits That Protect Your Wallet and Score</span>
         <span class="gd" data-i18n="gc_g4_d">Paying in full, grace periods, utilisation, and clearing existing debt</span></a></li>
-      <li><a href="/guides/exchange-rate-basics.html">
+      <li data-topic="fx" data-country="all"><a href="/guides/exchange-rate-basics.html">
         <span class="gt" data-i18n="gc_g5_t">Exchange Rates Explained</span>
         <span class="gd" data-i18n="gc_g5_d">Mid-market vs bank vs card network rates, and where the spread hides</span></a></li>
-      <li><a href="/guides/remittance-cost-guide.html">
+      <li data-topic="fx" data-country="all"><a href="/guides/remittance-cost-guide.html">
         <span class="gt" data-i18n="gc_g6_t">Sending Money Abroad: How to Compare the True Cost</span>
         <span class="gd" data-i18n="gc_g6_d">The one-line effective cost formula and the four places fees hide</span></a></li>
     </ul>
@@ -403,7 +694,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <p style="margin-top:10px;font-size:12px;color:#94a3b8;" data-i18n="footer_note">Results are estimates for reference only and do not constitute financial advice.</p>
     <p style="margin-top:6px;font-size:12px;color:#94a3b8;">Contact: <a href="mailto:yokok8@outlook.com">yokok8@outlook.com</a></p>
   
-  <p class="ad-disclosure"><span class="en-t">This site contains advertisements. Ads do not influence our calculators, results or the opinions expressed in our guides.</span><span class="cn-t">本站包含广告，广告不影响我们的计算器、计算结果，也不影响指南中表达的观点。</span></p></footer>
+  <p class="ad-disclosure"><span class="en-t">This site contains advertisements. Ads do not influence our calculators, results or the opinions expressed in our guides.</span></p></footer>
 </div>
 
 <script>
@@ -448,7 +739,7 @@ const i18n = {
     pp_saved_months: '提前',
     pp_unchanged: '保持不变',
     pp_from: '原为',
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">房贷 · 信用卡分期 · 汇率换算</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">房贷 · 信用卡分期 · 汇率换算</span>',
     site_sub: '房贷决策分析 · 信用卡真实成本 · 汇率换算与换汇成本',
     ad_top: '[广告位] 顶部首屏',
     tab_mortgage: '🏠 房贷',
@@ -529,6 +820,16 @@ const i18n = {
     gc_g6_t: '跨境汇款：如何比较真实成本',
     gc_g6_d: '一行公式算出实际成本，以及费用常藏的四个地方',
     gc_all: '阅读全部指南 →',
+    gc_g11_d: '一个公式、完整实例，以及不该重贷的几种情形',
+    gc_g11_t: '什么时候该重贷：回本周期这一关',
+    gc_g10_d: '指数加利差、三重利率上限，以及 5/1 ARM 实测',
+    gc_g10_t: '浮动利率 ARM 与固定利率：利率如何重置',
+    gc_g9_d: '首付门槛、MIP 与 PMI 之别，以及并列的真实月供',
+    gc_g9_t: 'FHA、常规贷款与 VA 贷款：哪一款适合你',
+    gc_g8_d: '78% 自动终止规则、80% 主动取消，以及四种消除办法',
+    gc_g8_t: '美国房贷保险 PMI：什么时候终止、怎么规避',
+    gc_g7_d: '本金利息、托管税费、PMI 与 HOA，用真实数字逐层拆解',
+    gc_g7_t: '美国房贷月供是怎么构成的：PITI 与真实成本',
     result_rate: '执行利率',
     result_monthly: '月供',
     result_first: '首月月供',
@@ -553,10 +854,11 @@ const i18n = {
     result_fetch_fail: '汇率拉取失败，请稍后重试',
     fx_source_label: '数据时间',
     fx_source_from: '来源',
+    fx_mid_note: '每日中间价参考',
   },
   en: {
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -593,7 +895,7 @@ const i18n = {
     pp_saved_months: 'shortened by',
     pp_unchanged: 'unchanged',
     pp_from: 'was',
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Mortgage · Credit Card · Currency</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Mortgage · Credit Card · Currency</span>',
     site_sub: 'Mortgage Analysis · Credit Card Real Cost · Exchange Rate & Transfer Cost',
     ad_top: '[Ad] Top Banner',
     tab_mortgage: '🏠 Mortgage',
@@ -674,6 +976,16 @@ const i18n = {
     gc_g6_t: 'Sending Money Abroad: How to Compare the True Cost',
     gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
     gc_all: 'Read all guides →',
+    gc_g11_d: 'One formula, a full worked example, and the cases where you should not',
+    gc_g11_t: 'When Refinancing Makes Sense: The Break-Even Test',
+    gc_g10_d: 'Index plus margin, the three rate caps, and a 5/1 ARM worked example',
+    gc_g10_t: 'ARM vs Fixed Rate: How Adjustable Loans Reset',
+    gc_g9_d: 'Down payment, MIP versus PMI, and the real monthly cost side by side',
+    gc_g9_t: 'FHA vs Conventional vs VA Loans: Which One Fits You',
+    gc_g8_d: 'The 78% automatic termination rule, cancellation at 80%, and four ways out',
+    gc_g8_t: 'Private Mortgage Insurance: When It Ends and How to Avoid It',
+    gc_g7_d: 'Principal and interest, escrowed tax and insurance, PMI and HOA — with real numbers',
+    gc_g7_t: 'How a US Mortgage Payment Is Really Built: PITI and the True Monthly Cost',
     result_rate: 'Applied Rate',
     result_monthly: 'Monthly Payment',
     result_first: 'First Month Payment',
@@ -698,9 +1010,10 @@ const i18n = {
     result_fetch_fail: 'Failed to fetch rate, please try again',
     fx_source_label: 'Data Time',
     fx_source_from: 'Source',
+    fx_mid_note: 'Mid-market reference rate',
   },
   es: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Hipoteca · Tarjeta · Divisas</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Hipoteca · Tarjeta · Divisas</span>',
     site_sub: 'Análisis Hipotecario · Costo Real de Tarjeta · Tipo de Cambio',
     ad_top: '[Anuncio] Banner Superior',
     tab_mortgage: '🏠 Hipoteca',
@@ -786,8 +1099,9 @@ const i18n = {
     result_fetch_fail: 'Error al obtener tipo de cambio',
     fx_source_label: 'Hora de Datos',
     fx_source_from: 'Fuente',
+    fx_mid_note: 'Tipo medio de mercado (referencia)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -845,7 +1159,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   fr: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Prêt · Carte · Devises</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Prêt · Carte · Devises</span>',
     site_sub: 'Analyse de Prêt · Coût Réel Carte · Taux de Change',
     ad_top: '[Pub] Bannière Haut',
     tab_mortgage: '🏠 Prêt',
@@ -931,8 +1245,9 @@ const i18n = {
     result_fetch_fail: 'Échec de récupération',
     fx_source_label: 'Heure des Données',
     fx_source_from: 'Source',
+    fx_mid_note: 'Taux moyen du marché (référence)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -990,7 +1305,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   de: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Baufinanzierung · Kreditkarte · Währung</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Baufinanzierung · Kreditkarte · Währung</span>',
     site_sub: 'Hypothekenanalyse · Kreditkartenkosten · Wechselkurse',
     ad_top: '[Anzeige] Top Banner',
     tab_mortgage: '🏠 Hypothek',
@@ -1076,8 +1391,9 @@ const i18n = {
     result_fetch_fail: 'Abruf fehlgeschlagen',
     fx_source_label: 'Datenzeit',
     fx_source_from: 'Quelle',
+    fx_mid_note: 'Referenz-Mittelkurs',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -1135,7 +1451,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   ja: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">住宅ローン · カード分割 · 為替</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">住宅ローン · カード分割 · 為替</span>',
     site_sub: '住宅ローン分析・クレジットカード実質コスト・為替計算',
     ad_top: '[広告] トップバナー',
     tab_mortgage: '🏠 住宅ローン',
@@ -1221,8 +1537,9 @@ const i18n = {
     result_fetch_fail: '取得失敗',
     fx_source_label: 'データ時間',
     fx_source_from: '出典',
+    fx_mid_note: '参考仲値',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -1280,7 +1597,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   ko: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">주택담보대출 · 카드 · 환율</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">주택담보대출 · 카드 · 환율</span>',
     site_sub: '주택담보대출 분석 · 신용카드 실제 비용 · 환율 계산',
     ad_top: '[광고] 상단 배너',
     tab_mortgage: '🏠 대출',
@@ -1366,8 +1683,9 @@ const i18n = {
     result_fetch_fail: '환율 가져오기 실패',
     fx_source_label: '데이터 시간',
     fx_source_from: '출처',
+    fx_mid_note: '시장 중간 환율 (참고)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -1425,7 +1743,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   pt: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Hipoteca · Cartão · Moedas</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Hipoteca · Cartão · Moedas</span>',
     site_sub: 'Análise de Hipoteca · Custo Real de Cartão · Câmbio',
     ad_top: '[Anúncio] Banner Superior',
     tab_mortgage: '🏠 Hipoteca',
@@ -1511,8 +1829,9 @@ const i18n = {
     result_fetch_fail: 'Falha ao buscar',
     fx_source_label: 'Horário dos Dados',
     fx_source_from: 'Fonte',
+    fx_mid_note: 'Taxa média de mercado (referência)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -1570,7 +1889,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   ru: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Ипотека · Карты · Валюты</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Ипотека · Карты · Валюты</span>',
     site_sub: 'Анализ ипотеки · Реальная стоимость карты · Обмен валют',
     ad_top: '[Реклама] Верхний баннер',
     tab_mortgage: '🏠 Ипотека',
@@ -1656,8 +1975,9 @@ const i18n = {
     result_fetch_fail: 'Ошибка получения',
     fx_source_label: 'Время данных',
     fx_source_from: 'Источник',
+    fx_mid_note: 'Среднерыночный курс (справочно)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -1715,7 +2035,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   ar: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">الرهن العقاري · البطاقات · العملات</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">الرهن العقاري · البطاقات · العملات</span>',
     site_sub: 'تحليل الرهن العقاري · التكلفة الحقيقية للبطاقة · أسعار الصرف',
     ad_top: '[إعلان] الشريط العلوي',
     tab_mortgage: '🏠 رهن',
@@ -1801,8 +2121,9 @@ const i18n = {
     result_fetch_fail: 'فشل في الجلب',
     fx_source_label: 'وقت البيانات',
     fx_source_from: 'المصدر',
+    fx_mid_note: 'سعر السوق المتوسط (مرجعي)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -1860,7 +2181,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   it: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">Mutuo · Carta · Valute</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">Mutuo · Carta · Valute</span>',
     site_sub: 'Analisi Mutuo · Costo Reale Carta · Tassi di Cambio',
     ad_top: '[Annuncio] Banner Superiore',
     tab_mortgage: '🏠 Mutuo',
@@ -1946,8 +2267,9 @@ const i18n = {
     result_fetch_fail: 'Recupero fallito',
     fx_source_label: 'Orario Dati',
     fx_source_from: 'Fonte',
+    fx_mid_note: 'Tasso medio di mercato (riferimento)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -2005,7 +2327,7 @@ const i18n = {
     gc_all: 'Read all guides →',
   },
   th: {
-    site_title: 'CalcHub <span style="font-size:13px;color:#94a3b8;">สินเชื่อบ้าน · บัตรเครดิต · อัตราแลกเปลี่ยน</span>',
+    site_title: 'LendMath <span style="font-size:13px;color:#94a3b8;">สินเชื่อบ้าน · บัตรเครดิต · อัตราแลกเปลี่ยน</span>',
     site_sub: 'วิเคราะห์สินเชื่อที่อยู่อาศัย · ต้นทุนบัตรเครดิตจริง · อัตราแลกเปลี่ยน',
     ad_top: '[โฆษณา] แบนเนอร์บน',
     tab_mortgage: '🏠 สินเชื่อ',
@@ -2091,8 +2413,9 @@ const i18n = {
     result_fetch_fail: 'ดึงข้อมูลไม่สำเร็จ',
     fx_source_label: 'เวลาข้อมูล',
     fx_source_from: 'แหล่งที่มา',
+    fx_mid_note: 'อัตรากลางตลาด (อ้างอิง)',
     sub_combo: '🏦 Combo Loan',
-    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (公积金) loan at different rates. Calculated separately, then combined.',
+    combo_hint: 'Common in China: a commercial loan plus a housing provident fund (HPF) loan at different rates. Calculated separately, then combined.',
     combo_comm_label: 'Commercial Loan Amount (¥)',
     combo_comm_rate_label: 'Commercial Loan Rate (%)',
     combo_fund_label: 'Provident Fund Loan Amount (¥)',
@@ -2152,7 +2475,7 @@ const i18n = {
 };
 
 // ============ 语言切换逻辑 ============
-let currentLang = 'zh';
+let currentLang = (document.documentElement.lang||'').toLowerCase().indexOf('zh')===0 ? 'zh' : 'en';
 
 // ★ 默认永远英文：不根据访客地区/浏览器语言自动切换
 //   只有用户手动选过（存在 localStorage）才用他选的语言
@@ -2167,28 +2490,16 @@ function toggleLang() {
   btn.classList.toggle('open');
 }
 
-function selectLang(lang) {
-  if (lang !== 'zh' && lang !== 'en') lang = 'en';   // 仅中英
-  currentLang = lang;
-  localStorage.setItem('calchub_lang', lang);
-  applyTranslations();
-  // 更新下拉按钮显示
-  const labels = {en:'🇺🇸 English', zh:'🇨🇳 中文'};
-  document.getElementById('langLabel').textContent = labels[lang] || '🇺🇸 English';
-  // 更新选项高亮
-  document.querySelectorAll('.lang-option').forEach(opt => {
-    opt.classList.toggle('active', opt.dataset.lang === lang);
-  });
-  // 关闭下拉
-  document.getElementById('langDropdown').classList.remove('show');
-  document.getElementById('langBtn').classList.remove('open');
-  // 重新计算当前结果（如果有）
-  if (document.getElementById('loan_result').innerHTML) calcLoan();
-  if (document.getElementById('pp_result').innerHTML) calcPrepay();
-  if (document.getElementById('af_result').innerHTML) calcAfford();
-  if (document.getElementById('cr_result').innerHTML) calcApr();
-  if (document.getElementById('cp_result').innerHTML) calcCompare();
-  if (document.getElementById('fx_result').innerHTML && document.getElementById('fx_result').innerHTML !== i18n[currentLang].fx_waiting) calcFx();
+function closeLang() {
+  var dd = document.getElementById('langDropdown');
+  var btn = document.getElementById('langBtn');
+  if (dd) dd.classList.remove('show');
+  if (btn) btn.classList.remove('open');
+}
+function goZh() {
+  var p = location.pathname;
+  if (!p || p === '/' || p === '/index.html') { location.href = '/zh/index.html'; }
+  else { location.href = '/zh' + p; }
 }
 
 function applyTranslations() {
@@ -2221,14 +2532,11 @@ document.addEventListener('click', e => {
 
 // 初始化语言
 (function initLang(){
-  const saved = localStorage.getItem('calchub_lang');
-  currentLang = (saved === 'zh' || saved === 'en') ? saved : 'en';
-  const labels = {en:'🇺🇸 English', zh:'🇨🇳 中文'};
-  document.getElementById('langLabel').textContent = labels[currentLang] || '🇺🇸 English';
-  document.querySelectorAll('.lang-option').forEach(opt => {
-    opt.classList.toggle('active', opt.dataset.lang === currentLang);
+  var lbl = document.getElementById('langLabel');
+  if (lbl) lbl.textContent = 'English';
+  document.querySelectorAll('.lang-option').forEach(function(opt){
+    opt.classList.toggle('active', opt.dataset.lang === 'en');
   });
-  applyTranslations();
 })();
 
 // ============ Tab 切换 ============
@@ -2336,7 +2644,7 @@ function calcPrepay() {
     html += `${dict.result_monthly}: <b>${newRes.pay.toFixed(2)}</b> (${dict.pp_from || 'was'} ${res.pay.toFixed(2)})<br>`;
     html += `${dict.result_save}: <span class="good"><b>${saved.toFixed(2)}</b></span>`;
   }
-  html += `<hr class="divider"><span class="badge good">${dict.result_save}</span> ${dict.result_save.replace('节省利息','')}`;
+  html += `<hr class="divider"><span class="badge good">${dict.result_save}</span>`;
   pp_result.innerHTML = html;
 }
 
@@ -2430,12 +2738,12 @@ function toggleSchedule() {
   const box = document.getElementById('schBox');
   if (!schData) { box.innerHTML = '<div class="result"><span class="warn">Run an analysis first.</span></div>'; return; }
   if (box.innerHTML.trim() !== '') { box.innerHTML = ''; schBtn.textContent = '📊 ' + (dict.btn_schedule || 'Show Year-by-Year Amortization Schedule'); return; }
-  let h = '<div class="result"><b>' + (dict.sch_title || 'Amortization Schedule ( yearly summary )') + '</b><div class="sch-wrap"><table class="sch-table">';
+  let h = '<div class="result"><b>' + (dict.sch_title || 'Amortization Schedule ( yearly summary )') + '</b><div class="sch-wrap"><div class="tw"><table class="sch-table">';
   h += '<tr><th>' + (dict.sch_year || 'Year') + '</th><th>' + (dict.sch_principal || 'Principal') + '</th><th>' + (dict.sch_interest || 'Interest') + '</th><th>' + (dict.sch_balance || 'Balance') + '</th></tr>';
   schData.forEach(r => {
     h += `<tr><td>${r.y}</td><td>${r.p.toFixed(0)}</td><td>${r.i.toFixed(0)}</td><td>${r.b.toFixed(0)}</td></tr>`;
   });
-  h += '</table></div></div>';
+  h += '</table></div></div></div>';
   box.innerHTML = h;
   schBtn.textContent = '📉 ' + (dict.sch_hide || 'Hide Schedule');
 }
@@ -2465,11 +2773,11 @@ function calcApr() {
   function npv(rm){let s=-P;for(let k=1;k<=n;k++)s+=pay/Math.pow(1+rm,k);return s;}
   let lo=0,hi=1;for(let i=0;i<100;i++){const mid=(lo+hi)/2;npv(mid)>0?lo=mid:hi=mid;}
   const apr=((lo+hi)/2)*12 * 100;
-  const lostProfit = P * investRate;
-  let html = `${dict.result_monthly}：<b>${pay.toFixed(2)} 元</b><br>`;
-  html += `${dict.result_nominal}：${nominal.toFixed(2)}%<br>`;
-  html += `${dict.result_apr}：<span class="warn"><b>${apr.toFixed(2)}%</b></span><br>`;
-  html += `<hr class="divider">${dict.result_opp_cost}：${dict.cr_invest_label.replace('对比：这笔钱若拿去理财的年化收益（%）','这笔钱若拿去理财')}，${dict.result_opp_cost.replace('机会成本：这笔钱若拿去理财，年收益约 ','年收益约 ')}${lostProfit.toFixed(2)} 元<br>`;
+  const lostProfit = P * investRate * (n/12);
+  let html = `${dict.result_monthly}: <b>${mcCNY2(pay)}</b><br>`;
+  html += `${dict.result_nominal}: ${nominal.toFixed(2)}%<br>`;
+  html += `${dict.result_apr}: <span class="warn"><b>${apr.toFixed(2)}%</b></span><br>`;
+  html += `<hr class="divider">${dict.result_opp_cost}: ${mcCNY2(lostProfit)}<br>`;
   if (apr > 15) html += `<span class="badge warn">${dict.result_high_cost}</span>`;
   cr_result.innerHTML = html;
 }
@@ -2485,7 +2793,7 @@ function calcCompare() {
     function npv(rm){let s=-P;for(let k=1;k<=n;k++)s+=pay/Math.pow(1+rm,k);return s;}
     let lo=0,hi=1;for(let i=0;i<100;i++){const mid=(lo+hi)/2;npv(mid)>0?lo=mid:hi=mid;}
     const apr=((lo+hi)/2)*12 * 100;
-    html += `${n} ${dict.cr_months_label.replace('（月）','')}：${dict.result_monthly} ${pay.toFixed(2)} 元 · ${dict.result_total_interest.replace('总利息','手续费')} ${fee.toFixed(2)} 元 · <b>${dict.result_apr} ${apr.toFixed(1)}%</b><br>`;
+    html += `${n} ${dict.cr_months_label.replace('（月）','')}: ${dict.result_monthly} ${mcCNY2(pay)} · ${dict.result_total_interest.replace('总利息','手续费')} ${mcCNY2(fee)} · <b>${dict.result_apr} ${apr.toFixed(1)}%</b><br>`;
   });
   cp_result.innerHTML = html;
 }
@@ -2533,8 +2841,651 @@ async function calcFx() {
   fx_result.innerHTML =
     `${amt.toLocaleString()} ${from} = <b>${(amt*r.rate).toFixed(2)} ${to}</b><br>` +
     `1 ${from} = ${r.rate} ${to}<br>` +
-    `<span class="rate-hint">${dict.fx_source_label}：${r.date}<br>${dict.fx_source_from}：<span class="fx-credit">${r.source}</span> · 每日中间价参考</span>`;
+    `<span class="rate-hint">${dict.fx_source_label}: ${r.date}<br>${dict.fx_source_from}: <span class="fx-credit">${r.source}</span> · ${dict.fx_mid_note}</span>`;
 }
+
+/* ============================================================
+   Mortgage: all-in-one calculator (US default, CN switchable)
+   ============================================================ */
+function mcV(id){var e=document.getElementById(id);return e?parseFloat(e.value)||0:0;}
+function mcOn(id){var e=document.getElementById(id);return !!(e&&e.checked);}
+function mcUSD(x){return '$'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function mcUSD0(x){return '$'+Math.round(x).toLocaleString('en-US');}
+function mcCNY(x){return '¥'+x.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});}
+function mcCNY2(x){return '¥'+x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function mcPmt(P,r,n){ if(n<=0) return 0; if(r===0) return P/n; return P*r/(1-Math.pow(1+r,-n)); }
+
+/* country switch */
+(function(){
+  var sel=document.getElementById('mcountry');
+  if(!sel) return;
+  sel.onchange=function(){
+    var isZh=(location.pathname.indexOf('/zh/')===0);
+    var target=(isZh?'/zh':'')+'/mortgage/'+sel.value+'/';
+    var cur=location.pathname.replace(/index\.html$/,'');
+    if(cur!==target) location.href=target;
+  };
+})();
+
+/* US module toggles + initial sync */
+(function(){
+  ['tax','ins','hoa','pmi','close','extra','refi','dti'].forEach(function(k){
+    var cb=document.getElementById('us_k_'+k);
+    var box=document.getElementById('us_m_'+k);
+    if(!cb||!box) return;
+    box.classList.toggle('on', cb.checked);
+    cb.addEventListener('change',function(){ box.classList.toggle('on', cb.checked); });
+  });
+  var st=document.getElementById('us_struct');
+  if(st) st.addEventListener('change',function(){
+    document.getElementById('us_armbox').style.display = (st.value==='arm')?'':'none';
+  });
+  var dm=document.getElementById('us_dpmode');
+  if(dm) dm.addEventListener('change',function(){
+    var l=document.querySelector('label[for="us_dp"]'), i=document.getElementById('us_dp');
+    if(dm.value==='pct'){ l.textContent='Down Payment (%)'; i.value=20; i.step='0.1'; }
+    else { l.textContent='Down Payment ($)'; i.value=120000; i.step='1000'; }
+  });
+  /* PMI live state: grey out when not applicable and say why */
+  var MI_PRESET={conv:[0.5,0],fha:[0.55,1.75],va:[0,2.15],usda:[0.35,1.0],jumbo:[0.5,0]};
+  var lastLt=null;
+  function vaFee(dpPct,use){ return use==='sub' ? (dpPct<5?3.3:1.5) : (dpPct<5?2.15:1.25); }
+  function pmi(){
+    var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
+    var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
+    var loan=Math.max(0, price-dp);
+    var ltv = price>0 ? loan/price*100 : 0;
+    var dpPct = price>0 ? dp/price*100 : 0;
+    var lt=document.getElementById('us_ltype').value;
+    var inp=document.getElementById('us_pmir'), up=document.getElementById('us_upfront');
+    var vbox=document.getElementById('us_va_box'), vuse=document.getElementById('us_va_use');
+    if(lastLt!==lt && MI_PRESET[lt]){
+      if(inp) inp.value=MI_PRESET[lt][0];
+      if(up) up.value=(lt==='va')?vaFee(dpPct,vuse?vuse.value:'first'):MI_PRESET[lt][1];
+      lastLt=lt;
+    }
+    if(lt==='va'&&up&&vuse) up.value=vaFee(dpPct,vuse.value);
+    if(vbox) vbox.style.display=(lt==='va')?'':'none';
+    var exempt=(lt==='va');
+    var need = !exempt && ltv>80;
+    var box=document.getElementById('us_pmi_state');
+    var hd=document.querySelector('#us_m_pmi .mod-hd');
+    if(!box||!inp) return;
+    inp.disabled=!need;
+    inp.style.background = need?'#fff':'#f1f5f9';
+    inp.style.color = need?'#222':'#94a3b8';
+    if(hd) hd.style.opacity = (need||lt==='va'||lt==='fha'||lt==='usda')?'1':'0.55';
+    if(need){ box.style.display='none'; return; }
+    box.style.display='';
+    box.style.background = exempt?'#f0fdf4':'#fff7ed';
+    box.style.border = exempt?'1px solid #bbf7d0':'1px solid #fed7aa';
+    box.style.color = exempt?'#166534':'#9a3412';
+    box.textContent = exempt
+      ? 'VA loans charge no annual mortgage insurance — only the one-time funding fee above.'
+      : 'Current down payment '+dpPct.toFixed(1)+'% (loan is '+ltv.toFixed(1)+'% of price). At 20% or more no mortgage insurance is required, so the annual rate is not applied. To include it, set the down payment below 20%.';
+  }
+  ['us_price','us_dp','us_dpmode','us_ltype','us_va_use'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e) return;
+    e.addEventListener('input',pmi); e.addEventListener('change',pmi);
+  });
+  pmi();
+})();
+
+function usRun(){
+  if(!document.getElementById('us_price')) return;
+  var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
+  var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
+  if(dp>=price){ alert('Down payment must be less than the home price.'); return; }
+  var baseLoan=price-dp, ltv=baseLoan/price*100;
+  var ltype=document.getElementById('us_ltype').value;
+  var struct=document.getElementById('us_struct').value;
+  var years=mcV('us_years'), n=Math.round(years*12);
+  var rate=mcV('us_rate') - (mcOn('us_k_close')?mcV('us_pts')*0.25:0);
+  var r=rate/100/12;
+  if(n<=0){ alert('Loan term must be greater than zero.'); return; }
+
+  var upRate=(ltype==='fha'||ltype==='usda'||ltype==='va')?mcV('us_upfront'):0;
+  var upAmt=baseLoan*upRate/100;
+  var upFinEl=document.getElementById('us_upfin'); var upFin=upFinEl?upFinEl.checked:false;
+  var loan=baseLoan+(upFin?upAmt:0);
+  var pi = struct==='io' ? loan*r : mcPmt(loan,r,n);
+  var taxM = mcOn('us_k_tax') ? price*mcV('us_taxr')/100/12 : 0;
+  var insM = mcOn('us_k_ins') ? mcV('us_ins')/12 : 0;
+  var hoaM = mcOn('us_k_hoa') ? mcV('us_hoa') : 0;
+  var pmiOn = mcOn('us_k_pmi') && ltype!=='va' && ltv>80;
+  var pmiM = pmiOn ? baseLoan*mcV('us_pmir')/100/12 : 0;
+  var total = pi+taxM+insM+hoaM+pmiM;
+
+  /* ---- extra payment: new monthly P&I after the lump sum ---- */
+  var exNewPI=0, exSaved=0, exMonths=0;
+  if(mcOn('us_k_extra') && struct!=='io'){
+    var exAmt=mcV('us_extra');
+    var bal=loan, exCnt=0;
+    while(bal>0.01 && exCnt<1200){
+      var intP=bal*r, prP=pi-intP+exAmt;
+      if(prP>bal) prP=bal;
+      bal-=prP; exCnt++;
+    }
+    exMonths=exCnt;
+    exNewPI=pi+exAmt;
+    exSaved=(pi*n-loan)-((exNewPI*exCnt)-loan);
+    if(exSaved<0) exSaved=0;
+  }
+
+  /* ================= True total cost of owning this home ================= */
+  var usMonths = (mcOn('us_k_extra') && struct!=='io') ? exMonths : n;
+  var usIntAll = (mcOn('us_k_extra') && struct!=='io') ? (exNewPI*exMonths-loan) : (pi*n-loan);
+  if(usIntAll<0) usIntAll=0;
+  var ptAll=taxM*usMonths, insAll=insM*usMonths, hoaAll=hoaM*usMonths;
+  var pmiAll=0;
+  if(pmiOn){
+    var pbZ=loan;
+    for(var pzZ=0;pzZ<usMonths;pzZ++){
+      if(price>0 && pbZ/price*100<=78) break;
+      pmiAll+=pmiM;
+      var ipZ=pbZ*r, ppZ=pi-ipZ; if(ppZ>pbZ) ppZ=pbZ; pbZ-=ppZ;
+    }
+  }
+  var closeAll = mcOn('us_k_close') ? mcV('us_close') : 0;
+  var ptsAll = mcOn('us_k_close') ? loan*mcV('us_pts')/100 : 0;
+  var upAll = (upAmt>0 && !upFin) ? upAmt : 0;
+  var usSpend = price + usIntAll + ptAll + insAll + hoaAll + pmiAll + closeAll + ptsAll + upAll;
+  var h='<h3>Combined Result</h3>';
+  h+='<div class="mc-hero"><div class="big">'+mcUSD(total)+'</div><div class="cap">Total Monthly Payment — principal &amp; interest + property tax + insurance + HOA + mortgage insurance</div></div>';
+  if(mcOn('us_k_extra') && struct!=='io'){
+    var exTotal2=exNewPI+taxM+insM+hoaM+pmiM;
+    h+='<div class="mc-hero" style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:1px solid #a7f3d0"><div class="big" style="color:#065f46">'+mcUSD(exTotal2)+'</div><div class="cap" style="color:#047857">Paying an extra '+mcUSD(mcV('us_extra'))+' / month — you actually pay '+mcUSD(exNewPI)+' (P&amp;I '+mcUSD(pi)+' + extra '+mcUSD(mcV('us_extra'))+'), loan cleared in '+(exMonths/12).toFixed(1)+' years instead of '+(n/12).toFixed(1)+'</div></div>';
+  }
+  if(mcOn('us_k_refi')){
+    var ro2=mcV('us_orate')/100/12, rn2=mcV('us_nrate')/100/12;
+    var rPI=mcPmt(loan,rn2,n);
+    var rTotal=rPI+taxM+insM+hoaM+pmiM;
+    var rSave=total-rTotal;
+    h+='<div class="mc-hero" style="background:linear-gradient(135deg,#eff6ff,#f0f9ff);border:1px solid #bfdbfe"><div class="big" style="color:#1e40af">'+mcUSD(rTotal)+'</div><div class="cap" style="color:#1d4ed8">After refinancing from '+mcV('us_orate').toFixed(2)+'% to '+mcV('us_nrate').toFixed(2)+'% — '+(rSave>0?('saves '+mcUSD(rSave)+' / month'):('payment rises '+mcUSD(-rSave)+' / month, not worthwhile'))+'</div></div>';
+  }
+  h+='<div class="mc-hero" style="background:linear-gradient(135deg,#fff7ed,#fefce8);border:1px solid #fcd34d"><div class="big" style="color:#92400e">'+mcUSD(usSpend)+'</div><div class="cap" style="color:#b45309">True total cost of this home = price '+mcUSD(price)+' + interest '+mcUSD(usIntAll)+' + property tax '+mcUSD(ptAll)+' + insurance '+mcUSD(insAll)+' + HOA '+mcUSD(hoaAll)+' + mortgage insurance '+mcUSD(pmiAll)+' + closing/points '+mcUSD(closeAll+ptsAll+upAll)+'</div></div>';
+  /* Modules included in this run */
+  var inc=[];
+  inc.push(['Principal & interest (base)', mcUSD(pi)]);
+  if(mcOn('us_k_tax')) inc.push(['Property tax', mcUSD(taxM)]);
+  if(mcOn('us_k_ins')) inc.push(['Homeowners insurance', mcUSD(insM)]);
+  if(mcOn('us_k_hoa')) inc.push(['HOA / condo fee', mcUSD(hoaM)]);
+  if(mcOn('us_k_pmi')) inc.push(['Mortgage insurance', mcUSD(pmiM)+(pmiOn?'':' (not charged at this down payment)')]);
+  if(mcOn('us_k_extra')&&struct!=='io') inc.push(['Extra monthly payment', '+'+mcUSD(mcV('us_extra'))+' (you pay '+mcUSD(exNewPI)+' P&amp;I)']);
+  if(mcOn('us_k_refi')) inc.push(['Refinanced payment @ '+mcV('us_nrate').toFixed(2)+'%', mcUSD(mcPmt(loan,mcV('us_nrate')/100/12,n)+taxM+insM+hoaM+pmiM)]);
+  if(mcOn('us_k_close')) inc.push(['Closing costs (one-off)', mcUSD0(mcV('us_close'))]);
+  h+='<div class="mc-sec2"><div class="t">Modules included in this calculation</div><div class="tw"><table class="mc-tbl">';
+  for(var ii=0;ii<inc.length;ii++) h+='<tr><td>'+inc[ii][0]+'</td><td>'+inc[ii][1]+'</td></tr>';
+  h+='<tr><td><b>Total monthly payment</b></td><td><b>'+mcUSD(total)+'</b></td></tr>';
+  h+='</table></div>';
+  var oneOff=[];
+  if(upAmt>0&&!upFin) oneOff.push('Upfront fee '+mcUSD0(upAmt)+' (one-off, not part of the monthly payment)');
+  if(mcOn('us_k_dti')) oneOff.push('Affordability check (shown in its own section below)');
+  if(oneOff.length){
+    h+='<div class="mc-note"><b>One-off amounts (not part of the monthly payment):</b><br>'+oneOff.join('<br>')+'</div>';
+  }
+  h+='<div class="mc-note">Tick or untick a module above, then press Calculate again — the figures update to match.</div></div>';
+  if(struct==='arm'){
+    var fixN=Math.round(mcV('us_fixy')*12), rr=mcV('us_rate2')/100/12;
+    var balA=loan;
+    for(var ai=0;ai<fixN&&ai<n;ai++){ balA-=(pi-balA*r); }
+    if(balA<0) balA=0;
+    var remA=Math.max(0,n-fixN);
+    var piA=(remA>0&&balA>0)?mcPmt(balA,rr,remA):0;
+    var jump=pi>0?((piA-pi)/pi*100):0;
+    h+='<div class="mc-sec2"><div class="t">ARM Reset</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Fixed period</td><td>'+mcV('us_fixy')+' years @ '+rate.toFixed(2)+'%</td></tr>';
+    h+='<tr><td>Payment in fixed period</td><td>'+mcUSD(pi)+'</td></tr>';
+    h+='<tr><td>Balance at reset</td><td>'+mcUSD(balA)+'</td></tr>';
+    h+='<tr><td>Remaining term</td><td>'+remA+' months</td></tr>';
+    h+='<tr><td>Payment after reset @ '+mcV('us_rate2').toFixed(2)+'%</td><td>'+mcUSD(piA)+'</td></tr>';
+    h+='<tr><td><b>Payment change</b></td><td><b>'+mcUSD(piA-pi)+' ('+(jump>=0?'+':'')+jump.toFixed(1)+'%)</b></td></tr>';
+    h+='</table></div></div>';
+  }
+  if(struct==='io') h+='<div class="mc-warn">Interest-only note: you repay no principal up front, so the payment rises sharply later.</div>';
+
+  h+='<div class="mc-sec2"><div class="t">Loan Breakdown</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>Home price</td><td>'+mcUSD0(price)+'</td></tr>';
+  h+='<tr><td>Down payment</td><td>'+mcUSD0(dp)+' ('+(dp/price*100).toFixed(1)+'%)</td></tr>';
+  h+='<tr><td>Loan amount</td><td><b>'+mcUSD0(loan)+'</b></td></tr>';
+  h+='<tr><td>Loan-to-value</td><td>'+ltv.toFixed(1)+'%</td></tr>';
+  h+='<tr><td>Term</td><td>'+Math.round(years)+' years</td></tr>';
+  h+='<tr><td>Loan type</td><td>'+ltype.toUpperCase()+'</td></tr>';
+  h+='<tr><td>Principal &amp; interest</td><td>'+mcUSD(pi)+'</td></tr>';
+  if(struct!=='io'){ h+='<tr><td>Total repayment</td><td>'+mcUSD0(pi*n)+'</td></tr>';
+    h+='<tr><td>Total interest</td><td>'+mcUSD0(pi*n-loan)+'</td></tr>'; }
+  h+='</table></div></div>';
+
+  h+='<div class="mc-sec2"><div class="t">Monthly Cost Detail</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>Principal &amp; interest</td><td>'+mcUSD(pi)+'</td></tr>';
+  if(mcOn('us_k_tax')) h+='<tr><td>Property tax</td><td>'+mcUSD(taxM)+'</td></tr>';
+  if(mcOn('us_k_ins')) h+='<tr><td>Homeowners insurance</td><td>'+mcUSD(insM)+'</td></tr>';
+  if(mcOn('us_k_hoa')) h+='<tr><td>HOA</td><td>'+mcUSD(hoaM)+'</td></tr>';
+  if(pmiOn) h+='<tr><td>Mortgage insurance</td><td>'+mcUSD(pmiM)+'</td></tr>';
+  h+='<tr><td><b>Total monthly payment</b></td><td><b>'+mcUSD(total)+'</b></td></tr>';
+  h+='</table></div></div>';
+
+  if(mcOn('us_k_close')){
+    var ptsCost=loan*mcV('us_pts')/100;
+    h+='<div class="mc-sec2"><div class="t">Cash Needed at Closing</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Down payment</td><td>'+mcUSD0(dp)+'</td></tr>';
+    h+='<tr><td>Closing costs</td><td>'+mcUSD0(mcV('us_close'))+'</td></tr>';
+    h+='<tr><td>Points cost</td><td>'+mcUSD0(ptsCost)+'</td></tr>';
+    if(upAmt>0&&!upFin) h+='<tr><td>Upfront mortgage fee</td><td>'+mcUSD0(upAmt)+'</td></tr>';
+    h+='<tr><td><b>Total cash needed</b></td><td><b>'+mcUSD0(dp+mcV('us_close')+ptsCost+(upAmt>0&&!upFin?upAmt:0))+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('us_k_pmi')){
+    h+='<div class="mc-sec2"><div class="t">Mortgage Insurance</div>';
+    var miName = ltype==='fha'?'MIP — FHA annual premium':(ltype==='usda'?'Annual guarantee fee — USDA':(ltype==='va'?'VA funding fee — one-time':'PMI — private mortgage insurance'));
+    if(!pmiOn && upAmt<=0){
+      h+='<div class="mc-ok">No mortgage insurance charged — '+(ltype==='va'?'VA loans carry no annual fee':'the down payment is 20% or more')+'.</div>';
+    } else {
+      h+='<div class="tw"><table class="mc-tbl">';
+      h+='<tr><td>Type</td><td>'+miName+'</td></tr>';
+      if(upAmt>0){
+        h+='<tr><td>Upfront fee ('+upRate.toFixed(2)+'% of loan)</td><td>'+mcUSD(upAmt)+'</td></tr>';
+        h+='<tr><td>Upfront fee financed</td><td>'+(upFin?('Yes — loan raised from '+mcUSD(baseLoan)+' to '+mcUSD(loan)):'No — paid at closing, counted into cash needed')+'</td></tr>';
+      }
+      if(pmiOn){
+        h+='<tr><td>Monthly insurance</td><td>'+mcUSD(pmiM)+'</td></tr>';
+        var cm=0, mm=0, bal=loan;
+        if(ltype==='fha'){
+          if(ltv<=90){ cm=Math.min(132,n); h+='<tr><td>Stops after</td><td><b>'+cm+'</b> months (11 years — FHA rule for a down payment of 10% or more)</td></tr>'; }
+          else { h+='<tr><td>Stops after</td><td><b>Charged for the life of the loan</b> — FHA rule when the down payment is under 10%</td></tr>'; cm=0; }
+        } else if(ltype==='usda'){
+          h+='<tr><td>Stops after</td><td><b>Charged for the life of the loan</b> — the USDA annual fee never drops off</td></tr>'; cm=0;
+        } else {
+          while(bal>0 && mm<n){ var it=bal*r, pr=pi-it; if(pr<=0) break; bal-=pr; mm++; if(cm===0 && bal/price*100<=78) cm=mm; }
+          if(cm>0) h+='<tr><td>Drops off at month</td><td><b>'+cm+'</b> (year '+(cm/12).toFixed(1)+', when LTV reaches 78%)</td></tr>';
+          else { h+='<tr><td colspan="2">LTV never reaches 78% within the term — insurance runs for the full loan.</td></tr>'; cm=0; }
+        }
+        if(cm>0){ var paid=0, b2=loan; for(var q=0;q<cm;q++){ b2-=(pi-b2*r); paid+=pmiM; } h+='<tr><td>Paid before it stops</td><td>'+mcUSD0(paid)+'</td></tr>'; }
+        else { h+='<tr><td>Total insurance over the term</td><td>'+mcUSD0(pmiM*n)+'</td></tr>'; }
+      } else {
+        h+='<tr><td>Annual insurance</td><td>Not charged'+(ltype==='va'?' (VA loans carry none)':' (down payment 20%+)')+'</td></tr>';
+      }
+      h+='</table></div>';
+    }
+    h+='</div>';
+  }
+
+  if(mcOn('us_k_extra') && struct!=='io'){
+    var ex=mcV('us_extra');
+    var m2=pi+ex, cnt=0, b3=loan, i3=0;
+    while(b3>0.01&&cnt<1200){ var c3=b3*r, d3=m2-c3; if(d3<=0) break; b3-=d3; i3+=c3; cnt++; }
+    var iBase=pi*n-loan;
+    h+='<div class="mc-sec2"><div class="t">Extra Payment</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Base payment</td><td>'+mcUSD(pi)+'</td></tr>';
+    h+='<tr><td>New payment</td><td>'+mcUSD(m2)+'</td></tr>';
+    h+='<tr><td>Shortened to</td><td><b>'+(cnt/12).toFixed(1)+'</b> years ('+Math.round(years)+' &rarr; '+(cnt/12).toFixed(1)+')</td></tr>';
+    h+='<tr><td><b>Interest saved</b></td><td><b>'+mcUSD0(iBase-i3)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('us_k_refi')){
+    var ro=mcV('us_orate')/100/12, rn=mcV('us_nrate')/100/12;
+    var mo=mcPmt(loan,ro,n), mn=mcPmt(loan,rn,n);
+    h+='<div class="mc-sec2"><div class="t">Refinance Analysis</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Current payment</td><td>'+mcUSD(mo)+'</td></tr>';
+    h+='<tr><td>New payment</td><td>'+mcUSD(mn)+'</td></tr>';
+    if(mn>=mo){ h+='<tr><td colspan="2">The new rate does not lower the payment — refinancing is not worthwhile.</td></tr>'; }
+    else {
+      var sv=mo-mn, cc=mcOn('us_k_close')?mcV('us_close'):0;
+      h+='<tr><td>Monthly saving</td><td>'+mcUSD(sv)+'</td></tr>';
+      h+='<tr><td>Break-even</td><td><b>'+(sv>0?Math.ceil(cc/sv):0)+'</b> months</td></tr>';
+    }
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('us_k_dti')){
+    var inc=mcV('us_inc')/12, debt=mcV('us_debt');
+    var front=inc*0.28, back=Math.max(0,inc*0.36-debt), budget=Math.min(front,back);
+    var hr=total/inc*100, tr=(total+debt)/inc*100;
+    h+='<div class="mc-sec2"><div class="t">Affordability (28/36)</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Monthly income</td><td>'+mcUSD(inc)+'</td></tr>';
+    h+='<tr><td>Front-end limit (28%)</td><td>'+mcUSD(front)+'</td></tr>';
+    h+='<tr><td>Back-end limit (36% minus other debt)</td><td>'+mcUSD(back)+'</td></tr>';
+    h+='<tr><td>Governing budget</td><td>'+mcUSD(budget)+'</td></tr>';
+    h+='<tr><td>Housing ratio</td><td>'+hr.toFixed(1)+'%</td></tr>';
+    h+='<tr><td>Total debt ratio</td><td>'+tr.toFixed(1)+'%</td></tr>';
+    var needFront=total/0.28, needBack=(total+debt)/0.36;
+    var needInc=Math.max(needFront,needBack);
+    var needAnnual=needInc*12;
+    h+='<tr><td><b>Income needed to qualify</b></td><td><b>'+mcUSD(needInc)+'</b> / month ('+mcUSD0(needAnnual)+' / year)</td></tr>';
+    h+='</table></div>';
+    if(hr<=28 && tr<=36){
+      h+='<div class="mc-ok">Passes the 28/36 rule — housing '+hr.toFixed(1)+'% (limit 28%), total '+tr.toFixed(1)+'% (limit 36%).</div>';
+    } else {
+      var over=total-budget;
+      h+='<div class="mc-warn">Fails the 28/36 rule. Your housing cost is '+mcUSD(over)+' / month above the '+mcUSD(budget)+' budget.'
+        +' To afford this home you need about '+mcUSD0(needAnnual)+' / year gross income (you entered '+mcUSD0(mcV('us_inc'))+').'
+        +' Options: raise the down payment, choose a cheaper home, or reduce other debt.</div>';
+    }
+    h+='</div>';
+  }
+
+  h+='<div class="mc-sec2"><div class="t">True Total Cost Breakdown</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>Home price</td><td>'+mcUSD(price)+'</td></tr>';
+  h+='<tr><td>Down payment</td><td>'+mcUSD(dp)+'</td></tr>';
+  h+='<tr><td>Loan amount</td><td>'+mcUSD(loan)+'</td></tr>';
+  h+='<tr><td>Total interest paid</td><td>'+mcUSD(usIntAll)+((mcOn('us_k_extra')&&struct!=='io')?(' (loan cleared in '+(exMonths/12).toFixed(1)+' years)'):'')+'</td></tr>';
+  if(mcOn('us_k_extra')&&struct!=='io') h+='<tr><td>Payment period</td><td>'+exMonths+' months ('+(exMonths/12).toFixed(1)+' years) instead of '+(n/12).toFixed(1)+'</td></tr>';
+  if(mcOn('us_k_tax')) h+='<tr><td>Property tax (over '+usMonths+' months)</td><td>'+mcUSD(ptAll)+'</td></tr>';
+  if(mcOn('us_k_ins')) h+='<tr><td>Homeowners insurance</td><td>'+mcUSD(insAll)+'</td></tr>';
+  if(mcOn('us_k_hoa')) h+='<tr><td>HOA / condo fees</td><td>'+mcUSD(hoaAll)+'</td></tr>';
+  if(pmiOn) h+='<tr><td>Mortgage insurance (until LTV hits 78%)</td><td>'+mcUSD(pmiAll)+'</td></tr>';
+  if((closeAll+ptsAll+upAll)>0) h+='<tr><td>Closing costs + points + upfront fee</td><td>'+mcUSD(closeAll+ptsAll+upAll)+'</td></tr>';
+  h+='<tr><td><b>True total cost</b></td><td><b>'+mcUSD(usSpend)+'</b></td></tr>';
+  h+='<tr><td>As a multiple of home price</td><td>'+(price>0?(usSpend/price).toFixed(2):'0')+'x</td></tr>';
+  h+='</table></div></div>';
+  h+='</table></div></div>';
+  var o=document.getElementById('us_out'); o.innerHTML=h; o.style.display='';
+  /* keep the total-spend hero right after the main payment hero */
+  (function(){
+    var _fh=o.querySelector('.mc-hero');
+    var _sh=o.querySelector('.mc-hero[style*="fcd34d"]');
+    if(_fh&&_sh&&_fh!==_sh){ _fh.parentNode.insertBefore(_sh,_fh.nextSibling); }
+  })();
+
+
+  var ah='<b>Year-by-Year Amortization</b><div class="mc-scroll"><div class="tw"><table class="mc-tbl">';
+  ah+='<tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>';
+  var b4=loan, useM = struct==='io' ? loan*r : pi;
+  for(var yr=1;yr<=Math.ceil(n/12);yr++){
+    var yp=0, yi=0;
+    for(var m=0;m<12;m++){
+      if(b4<=0.01) break;
+      var i4=b4*r, p4=useM-i4;
+      if(struct==='io'||p4<=0){ yi+=i4; continue; }
+      if(p4>b4) p4=b4;
+      b4-=p4; yp+=p4; yi+=i4;
+    }
+    ah+='<tr><td>'+yr+'</td><td>'+mcUSD0(yp)+'</td><td>'+mcUSD0(yi)+'</td><td>'+mcUSD0(b4)+'</td></tr>';
+    if(b4<=0.01) break;
+  }
+  ah+='</table></div></div>';
+  document.getElementById('us_amort').innerHTML=ah;
+}
+
+/* CN module toggles + initial sync */
+(function(){
+  ['fund','tax','pre','ded','aff'].forEach(function(k){
+    var cb=document.getElementById('cn_k_'+k);
+    var box=document.getElementById('cn_m_'+k);
+    if(!cb||!box) return;
+    box.classList.toggle('on', cb.checked);
+    cb.addEventListener('change',function(){ box.classList.toggle('on', cb.checked); });
+  });
+  function syncCN(){
+    var t=document.getElementById('cn_total'), c=document.getElementById('cn_camt'), f=document.getElementById('cn_famt');
+    var kf=document.getElementById('cn_k_fund');
+    if(!t||!c) return;
+    var fv=(kf&&kf.checked&&f)?mcV('cn_famt'):0;
+    var cv=Math.round(mcV('cn_total')-fv);
+    c.value=cv>0?cv:0;
+  }
+  function syncTotalFromPrice(){
+    var t=document.getElementById('cn_total');
+    if(t) t.value=Math.round(mcV('cn_price')*(1-mcV('cn_dppct')/100));
+    syncCN();
+  }
+  ['cn_price','cn_dppct'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e) return;
+    e.addEventListener('input',syncTotalFromPrice);
+  });
+  ['cn_total','cn_famt','cn_k_fund'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e) return;
+    e.addEventListener('input',syncCN); e.addEventListener('change',syncCN);
+  });
+  syncCN();
+})();
+
+function cnRun(){
+  if(!document.getElementById('cn_price')) return;
+  var price=mcV('cn_price'), dppct=mcV('cn_dppct');
+  var down=price*dppct/100;
+  var camt=mcV('cn_camt'), crate=mcV('cn_crate')*parseFloat(document.getElementById('cn_disc').value||1);
+  var years=mcV('cn_years');
+  var rtype=document.getElementById('cn_rtype').value;
+  var n=Math.round(years*12);
+  if(n<=0){ alert('Loan term must be greater than zero.'); return; }
+  var cr=crate/100/12;
+  var famt=mcOn('cn_k_fund')?mcV('cn_famt'):0;
+  var fr=mcOn('cn_k_fund')?mcV('cn_frate')/100/12:0;
+  var fn=mcOn('cn_k_fund')?Math.round(mcV('cn_fyears')*12):n;
+
+  var cm,fm,cInt,fInt;
+  if(rtype==='equal'){
+    cm=mcPmt(camt,cr,n); cInt=cm*n-camt;
+    fm=mcPmt(famt,fr,fn); fInt=fm*fn-famt;
+  } else {
+    cm = n>0 ? camt/n+camt*cr : 0; cInt=camt*cr*(n+1)/2;
+    fm = fn>0 ? famt/fn+famt*fr : 0; fInt=famt*fr*(fn+1)/2;
+  }
+  var monthPay=cm+fm, totalInt=cInt+fInt, loanTotal=camt+famt;
+  var taxAll=0, agentAll=0, decoAll=0, spendAll=0;
+
+  var h='<h3>Combined Result</h3>';
+  h+='<div class="mc-hero"><div class="big">'+mcCNY2(monthPay)+'</div><div class="cap">Total Monthly Payment — commercial '+mcCNY2(cm)+' + provident fund '+mcCNY2(fm)+'</div></div>';
+  if(rtype==='principal') h+='<div class="mc-hero"><div class="cap">Equal principal: first-month payment, decreasing by about '+mcCNY2(camt/n*cr)+' each month</div></div>';
+
+  h+='<div class="mc-sec2"><div class="t">Loan Breakdown</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>Property price</td><td>'+mcCNY(price)+'</td></tr>';
+  h+='<tr><td>Down payment ('+dppct+'%)</td><td>'+mcCNY(down)+'</td></tr>';
+  h+='<tr><td>Commercial loan</td><td>'+mcCNY(camt)+' @ '+crate.toFixed(2)+'%</td></tr>';
+  if(mcOn('cn_k_fund')) h+='<tr><td>Provident fund loan</td><td>'+mcCNY(famt)+' @ '+mcV('cn_frate').toFixed(2)+'%</td></tr>';
+  h+='<tr><td>Total loan</td><td><b>'+mcCNY(loanTotal)+'</b></td></tr>';
+  h+='<tr><td>Total repayment</td><td>'+mcCNY(loanTotal+totalInt)+'</td></tr>';
+  h+='<tr><td>Total interest</td><td>'+mcCNY(totalInt)+'</td></tr>';
+  h+='</table></div></div>';
+
+  if(mcOn('cn_k_tax')){
+    var area=mcV('cn_area'), no=document.getElementById('cn_no').value;
+    var two=document.getElementById('cn_two').value==='1';
+    var five=document.getElementById('cn_five').value==='1';
+    var orig=mcV('cn_orig'), deed;
+/* 契税面积阈值 140㎡：依据 财政部/税务总局/住建部公告2024年第16号（2024-12-01 起施行，财税〔2016〕23号同时废止）：唯一/第二套 ≤140㎡ 减按 1%；唯一 >140㎡ 1.5%；第二套 >140㎡ 2%。⚠️ 90㎡ 是 2016 年旧标准，已废止，请勿改回 */
+    if(no==='1') deed = area<=140?price*0.01:price*0.015;
+    else if(no==='2') deed = area<=140?price*0.01:price*0.02;
+    else deed = price*0.03;
+/* 增值税：自 2026-01-01 起，个人销售购买不足2年住房的征收率由 5% 下调为 3%（财政部/税务总局 2025-12-30 公告）；满2年免征。计算公式：全额 ÷(1+3%)×3%。附加税费（城建税等）另按各地税率计征，不在本项内。⚠️ 5% 是 2025 年及以前的旧口径，已失效，请勿改回 */
+    var vat = two?0:(price/1.03*0.03);
+    var iitm=document.getElementById('cn_iitm'); var iitmv=iitm?iitm.value:'1';
+    var iit = five?0:(iitmv==='1'?price*0.01:Math.max(0,(price-orig)*0.20));
+    var stamp=0, mfv=area*mcV('cn_mf');
+    var taxSum=deed+vat+iit+stamp+mfv;
+    taxAll=taxSum; agentAll=mcV('cn_agent'); decoAll=mcV('cn_deco');
+    var cash=down+taxSum+mcV('cn_agent')+mcV('cn_deco');
+    h+='<div class="mc-sec2"><div class="t">Purchase Taxes &amp; Fees</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Deed tax</td><td>'+mcCNY(deed)+'</td></tr>';
+    h+='<tr><td>VAT</td><td>'+mcCNY(vat)+(two?' (exempt, held 2+ years)':'')+'</td></tr>';
+    h+='<tr><td>Personal income tax</td><td>'+mcCNY(iit)+(five?' (exempt, only home held 5+ years)':'')+'</td></tr>';
+    h+='<tr><td>Stamp duty</td><td>Exempt (individuals buying a home are exempt)</td></tr>';
+    h+='<tr><td>Maintenance fund</td><td>'+mcCNY(mfv)+'</td></tr>';
+    h+='<tr><td>Taxes subtotal</td><td><b>'+mcCNY(taxSum)+'</b></td></tr>';
+    h+='</table></div></div>';
+    h+='<div class="mc-sec2"><div class="t">Cash You Need to Prepare</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Down payment</td><td>'+mcCNY(down)+'</td></tr>';
+    h+='<tr><td>Taxes &amp; fees</td><td>'+mcCNY(taxSum)+'</td></tr>';
+    h+='<tr><td>Agency fee</td><td>'+mcCNY(mcV('cn_agent'))+'</td></tr>';
+    h+='<tr><td>Renovation budget</td><td>'+mcCNY(mcV('cn_deco'))+'</td></tr>';
+    h+='<tr><td><b>Total</b></td><td><b>'+mcCNY(cash)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('cn_k_pre')){
+    var paid=Math.round(mcV('cn_paid')), pay=mcV('cn_ppay'), str=document.getElementById('cn_pstr').value;
+    var fee=pay*mcV('cn_pfee')/100;
+    var bc=camt, bf=famt;
+    for(var i=0;i<paid;i++){
+      if(rtype==='principal'){ if(bc>0){bc-=camt/n;} if(bf>0&&fn>0){bf-=famt/fn;} }
+      else { if(bc>0){bc-=(cm-bc*cr);} if(bf>0){bf-=(fm-bf*fr);} }
+    }
+    if(bc<0)bc=0; if(bf<0)bf=0;
+    var bal=bc+bf;
+    var rem=n-paid; if(rem<1) rem=1;
+    var remF=fn-paid; if(remF<1) remF=0;
+    var payC=Math.min(pay,bc), payF=Math.min(Math.max(0,pay-bc),bf);
+    var bc2=bc-payC, bf2=bf-payF;
+    var saved, note, origInt=0;
+    if(rtype==='principal'){
+      origInt = bc*cr*(rem+1)/2 + bf*fr*(remF+1)/2;
+    } else {
+      var q1=bc,q2=bf;
+      for(var a1=0;a1<rem;a1++){ if(q1>0.01){origInt+=q1*cr; q1-=(cm-q1*cr);} }
+      for(var a2=0;a2<remF;a2++){ if(q2>0.01){origInt+=q2*fr; q2-=(fm-q2*fr);} }
+    }
+    if(str==='shorten'){
+      var newInt=0, cntC=0, cntF=0;
+      if(rtype==='principal'){
+        var pc=n>0?camt/n:0, pf=fn>0?famt/fn:0;
+        cntC=pc>0?Math.ceil(bc2/pc):0; cntF=pf>0?Math.ceil(bf2/pf):0;
+        newInt=bc2*cr*(cntC+1)/2 + bf2*fr*(cntF+1)/2;
+      } else {
+        var s1=bc2; while(s1>0.01&&cntC<1200){ newInt+=s1*cr; s1-=(cm-s1*cr); cntC++; }
+        var s2=bf2; while(s2>0.01&&cntF<1200){ newInt+=s2*fr; s2-=(fm-s2*fr); cntF++; }
+      }
+      var cnt=Math.max(cntC,cntF);
+      saved=origInt-newInt-fee;
+      note=(famt>0? ('Commercial '+(cntC/12).toFixed(1)+' yrs, fund '+(cntF/12).toFixed(1)+' yrs, all clear in '+(cnt/12).toFixed(1)+' yrs (was '+(rem/12).toFixed(1)+')') : ('Remaining '+(cnt/12).toFixed(1)+' years (was '+(rem/12).toFixed(1)+')'))+', payment stays '+mcCNY2(cm+fm);
+      if(famt>0) note+=' (applied '+mcCNY(payC)+' to commercial'+(payF>0?', '+mcCNY(payF)+' to fund':'')+')';
+    } else {
+      var m3=(bc2>0&&rem>0)?mcPmt(bc2,cr,rem):0;
+      var m4=(bf2>0&&remF>0)?mcPmt(bf2,fr,remF):0;
+      var newInt=(m3*rem-bc2)+(m4*remF-bf2);
+      saved=origInt-newInt-fee;
+      note='New payment '+mcCNY2(m3+m4)+' (was '+mcCNY2(cm+fm)+'), term unchanged';
+    }
+    h+='<div class="mc-sec2"><div class="t">Early Repayment</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Balance after '+paid+' months</td><td>'+mcCNY(bal)+'</td></tr>';
+    h+='<tr><td>Lump sum repayment</td><td>'+mcCNY(pay)+'</td></tr>';
+    h+='<tr><td>Penalty</td><td>'+mcCNY(fee)+'</td></tr>';
+    h+='<tr><td>Result</td><td>'+note+'</td></tr>';
+    h+='<tr><td><b>Interest saved</b></td><td><b>'+mcCNY(saved)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('cn_k_ded')){
+    var mode=parseFloat(document.getElementById('cn_dmode').value), tr2=mcV('cn_taxr')/100;
+    var mon=1000*mode;
+    h+='<div class="mc-sec2"><div class="t">Mortgage Interest Tax Deduction</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Monthly deduction</td><td>'+mcCNY(mon)+'</td></tr>';
+    h+='<tr><td>Income tax saved per year</td><td>'+mcCNY(mon*12*tr2)+'</td></tr>';
+    h+='<tr><td>Cumulative over 240 months</td><td><b>'+mcCNY(mon*240*tr2)+'</b></td></tr>';
+    h+='</table></div></div>';
+  }
+
+  if(mcOn('cn_k_aff')){
+    var inc2=mcV('cn_inc'), debt2=mcV('cn_debt'), cp=mcV('cn_cap');
+    var r1=monthPay/inc2*100, r2=(monthPay+debt2)/inc2*100;
+    h+='<div class="mc-sec2"><div class="t">Affordability Check</div><div class="tw"><table class="mc-tbl">';
+    h+='<tr><td>Household monthly income</td><td>'+mcCNY(inc2)+'</td></tr>';
+    h+='<tr><td>Payment-to-income</td><td>'+r1.toFixed(1)+'%</td></tr>';
+    h+='<tr><td>Total debt ratio</td><td>'+r2.toFixed(1)+'%</td></tr>';
+    h+='</table></div>';
+    h+= (r2<=cp) ? '<div class="mc-ok">Passes: total debt ratio is within the '+cp+'% limit.</div>'
+                 : '<div class="mc-warn">Over the '+cp+'% limit — the payment is too high. Consider a larger down payment or a longer term.</div>';
+    h+='</div>';
+  }
+
+  /* ---- Actual total spend for this home ---- */
+  var actIntAll = totalInt;
+  if(mcOn('cn_k_pre')){
+    /* 修复：原公式用线性近似 + camt*0.5，会算出超过总利息的荒谬值。
+       改为：逐期模拟已还期数实付利息 + 提前还款后剩余利息（与中文页一致）。*/
+    var pd2=Math.round(mcV('cn_paid')), pz=mcV('cn_ppay'), stZ=document.getElementById('cn_pstr').value;
+    var b1z=camt, b2z=famt, paidIntZ=0;
+    for(var qz=0;qz<pd2;qz++){
+      if(rtype==='principal'){
+        if(b1z>0){ paidIntZ+=b1z*cr; b1z-=(n>0?camt/n:0); }
+        if(b2z>0&&fn>0){ paidIntZ+=b2z*fr; b2z-=famt/fn; }
+      } else {
+        if(b1z>0){ paidIntZ+=b1z*cr; b1z-=(cm-b1z*cr); }
+        if(b2z>0){ paidIntZ+=b2z*fr; b2z-=(fm-b2z*fr); }
+      }
+    }
+    if(b1z<0)b1z=0; if(b2z<0)b2z=0;
+    var remNZ=n-pd2; if(remNZ<1)remNZ=1;
+    var remNF=fn-pd2; if(remNF<1)remNF=0;
+    var pcZ=Math.min(pz,b1z), pfZ=Math.min(Math.max(0,pz-b1z),b2z);
+    var b1b=b1z-pcZ, b2b=b2z-pfZ;
+    var afterIntZ=0, cntZ=0;
+    if(stZ==='shorten'){
+      if(rtype==='principal'){
+        var pcz=n>0?camt/n:0, pfzz=fn>0?famt/fn:0;
+        var cC=pcz>0?Math.ceil(b1b/pcz):0, cF=pfzz>0?Math.ceil(b2b/pfzz):0;
+        afterIntZ=b1b*cr*(cC+1)/2 + b2b*fr*(cF+1)/2; cntZ=Math.max(cC,cF);
+      } else {
+        var s1z=b1b, cC2=0; while(s1z>0.01&&cC2<1200){ afterIntZ+=s1z*cr; s1z-=(cm-s1z*cr); cC2++; }
+        var s2z=b2b, cF2=0; while(s2z>0.01&&cF2<1200){ afterIntZ+=s2z*fr; s2z-=(fm-s2z*fr); cF2++; }
+        cntZ=Math.max(cC2,cF2);
+      }
+    } else {
+      var m3z=(b1b>0&&remNZ>0)?mcPmt(b1b,cr,remNZ):0;
+      var m4z=(b2b>0&&remNF>0)?mcPmt(b2b,fr,remNF):0;
+      afterIntZ=(m3z*remNZ-b1b)+(m4z*remNF-b2b);
+    }
+    actIntAll = Math.max(0, paidIntZ + afterIntZ);
+  }
+  spendAll = price + actIntAll + taxAll + agentAll + decoAll;
+  h+='<div class="mc-hero" style="background:linear-gradient(135deg,#fff7ed,#fefce8);border:1px solid #fcd34d"><div class="big" style="color:#92400e">'+mcCNY(spendAll)+'</div><div class="cap" style="color:#b45309">Actual total spend on this home = price '+mcCNY(price)+' + interest '+mcCNY(actIntAll)+' + taxes &amp; fees '+mcCNY(taxAll)+' + agent &amp; renovation '+mcCNY(agentAll+decoAll)+'</div></div>';
+  h+='<div class="mc-sec2"><div class="t">Actual Total Spend Breakdown</div><div class="tw"><table class="mc-tbl">';
+  h+='<tr><td>Home price</td><td>'+mcCNY(price)+'</td></tr>';
+  h+='<tr><td>Down payment</td><td>'+mcCNY(down)+'</td></tr>';
+  h+='<tr><td>Loan principal</td><td>'+mcCNY(loanTotal)+'</td></tr>';
+  h+='<tr><td>Interest actually paid</td><td>'+mcCNY(actIntAll)+(mcOn('cn_k_pre')?' (recomputed after the early repayment)':'')+'</td></tr>';
+  if(mcOn('cn_k_tax')){
+    h+='<tr><td>Taxes &amp; fees</td><td>'+mcCNY(taxAll)+'</td></tr>';
+    h+='<tr><td>Agent fee</td><td>'+mcCNY(agentAll)+'</td></tr>';
+    h+='<tr><td>Renovation budget</td><td>'+mcCNY(decoAll)+'</td></tr>';
+  } else {
+    h+='<tr><td colspan="2" style="color:#b45309">Purchase taxes not ticked — taxes, agent fee and renovation are excluded. Tick it for the full total.</td></tr>';
+  }
+  h+='<tr><td><b>Actual total spend</b></td><td><b>'+mcCNY(spendAll)+'</b></td></tr>';
+  h+='<tr><td>As a share of home price</td><td>'+(price>0?(spendAll/price*100).toFixed(1):'0')+'%</td></tr>';
+  h+='</table></div></div>';
+  var o2=document.getElementById('cn_out'); o2.innerHTML=h; o2.style.display='';
+  /* keep the total-spend hero right after the main payment hero */
+  (function(){
+    var _fh=o2.querySelector('.mc-hero');
+    var _sh=o2.querySelector('.mc-hero[style*="fcd34d"]');
+    if(_fh&&_sh&&_fh!==_sh){ _fh.parentNode.insertBefore(_sh,_fh.nextSibling); }
+  })();
+
+
+  var ah2='<b>Year-by-Year Amortization</b><div class="mc-scroll"><div class="tw"><table class="mc-tbl">';
+  ah2+='<tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>';
+  var bc=camt, bf=famt;
+  for(var yr2=1;yr2<=Math.ceil(n/12);yr2++){
+    var yp2=0, yi2=0;
+    for(var m2c=0;m2c<12;m2c++){
+      var it2=0, pr2=0;
+      if(rtype==='equal'){
+        if(bc>0.01){ var itc=bc*cr; var prc=cm-itc; if(prc>bc) prc=bc; bc-=prc; it2+=itc; pr2+=prc; }
+        if(bf>0.01){ var itf=bf*fr; var prf=fm-itf; if(prf>bf) prf=bf; bf-=prf; it2+=itf; pr2+=prf; }
+      } else {
+        if(bc>0.01 && n>0){ it2+=bc*cr; pr2+=camt/n; bc-=camt/n; }
+        if(bf>0.01 && fn>0){ it2+=bf*fr; pr2+=famt/fn; bf-=famt/fn; }
+      }
+      yp2+=pr2; yi2+=it2;
+    }
+    ah2+='<tr><td>'+yr2+'</td><td>'+mcCNY(yp2)+'</td><td>'+mcCNY(yi2)+'</td><td>'+mcCNY(bc+bf)+'</td></tr>';
+    if(bc<=0.01&&bf<=0.01) break;
+  }
+  ah2+='</table></div></div>';
+  document.getElementById('cn_amort').innerHTML=ah2;
+}
+
 </script>
+
+
+
+
+
 </body>
 </html>

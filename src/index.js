@@ -1,5 +1,5 @@
 /**
- * 5号 房贷站 CalcHub（home.saoo.me）—— Cloudflare Workers + Assets
+ * 5号 房贷站 LendMath（home.saoo.me）—— Cloudflare Workers + Assets
  *
  * ★ 为什么从「纯静态」改成 Workers：
  *   纯静态部署时，Search Console 容易出现「无法抓取 / 类型未知 / 0 个网址」，
@@ -41,7 +41,7 @@ export default {
     /* ★ robots.txt 硬拦截（含 Mediapartners-Google，AdSense 专用爬虫） */
     if (pathname === '/robots.txt') {
       return new Response(
-        'User-agent: Mediapartners-Google\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://home.saoo.me/sitemap.xml\n',
+        'User-agent: Mediapartners-Google\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://home.saoo.me/sitemap.xml\nSitemap: https://home.saoo.me/sitemap-zh.xml\n',
         {
           status: 200,
           headers: {
@@ -92,6 +92,32 @@ export default {
         'cache-control': 'public, max-age=3600' } });
     }
 
+    /* ★ sitemap-zh.xml（中文站站点地图，13 条 /zh/ 页面）
+     * 与 sitemap.xml 同样处理：静态优先 + XML 校验，保证 Content-Type 正确。 */
+    if (pathname === '/sitemap-zh.xml') {
+      try {
+        const r2 = await env.ASSETS.fetch(
+          new Request(url.origin + '/sitemap-zh.xml', request.clone())
+        );
+        if (r2.status === 200) {
+          const t2 = (await r2.text()).trim();
+          if (t2.startsWith('<?xml') && t2.includes('<urlset')) {
+            return new Response(t2, {
+              status: 200,
+              headers: {
+                'content-type': 'application/xml; charset=utf-8',
+                'cache-control': 'public, max-age=3600',
+              },
+            });
+          }
+        }
+      } catch (e) {}
+      return new Response(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>\n',
+        { status: 200, headers: { 'content-type': 'application/xml; charset=utf-8' } }
+      );
+    }
+
     /* 无扩展名路径补 .html（如 /about → /about.html），301 转移权重
      *
      * ⚠️ 只对 GET/HEAD 做：new Request(url, request) 会复用原请求 body 流，
@@ -123,6 +149,46 @@ export default {
         new Request(url.origin + '/guides/index.html', request.clone())
       );
       if (idx.status === 200) return idx;
+    }
+
+    // /zh/ 与 /zh/guides/ → 中文索引页（目录索引兜底）
+    if (isNav && (pathname === '/zh' || pathname === '/zh/')) {
+      const zhIdx = await env.ASSETS.fetch(
+        new Request(url.origin + '/zh/index.html', request.clone())
+      );
+      if (zhIdx.status === 200) return zhIdx;
+    }
+    if (isNav && (pathname === '/zh/guides' || pathname === '/zh/guides/')) {
+      const zhGuide = await env.ASSETS.fetch(
+        new Request(url.origin + '/zh/guides/index.html', request.clone())
+      );
+      if (zhGuide.status === 200) return zhGuide;
+    }
+    if (isNav && pathname.startsWith('/zh/guides')) {
+      const clean = pathname.replace(/\/+$/, '');
+      const probe = await env.ASSETS.fetch(
+        new Request(url.origin + clean + '.html', request.clone())
+      );
+      if (probe.status === 200) {
+        return Response.redirect(url.origin + clean + '.html' + url.search, 301);
+      }
+    }
+
+    /* ★ /mortgage/ 与 /zh/mortgage/ 目录索引兜底
+     * sitemap 与 canonical 写的是 /mortgage/us/（目录形式），
+     * 但 Workers Assets 不保证对目录路径自动补 index.html，
+     * 一旦返回 404，这两个新增国家页就等于白做。
+     * 这里显式探测 xxx/index.html，与 /zh/ 的处理保持一致。 */
+    if (isNav && pathname.includes('/mortgage')) {
+      const clean = pathname.replace(/\/+$/, '');   // /mortgage/us/ → /mortgage/us
+      const probe = await env.ASSETS.fetch(
+        new Request(url.origin + clean + '/index.html', request.clone())
+      );
+      if (probe.status === 200) return probe;
+      const probe2 = await env.ASSETS.fetch(
+        new Request(url.origin + clean + '.html', request.clone())
+      );
+      if (probe2.status === 200) return probe2;
     }
 
     const res = await env.ASSETS.fetch(request);
