@@ -76,8 +76,8 @@ export default {
      * 旧版把 URL 硬编码在这里，加页面时只改 public/sitemap.xml 忘了改这里，
      * 线上就会一直返回旧的硬编码（4号站已实测踩坑：静态96条，线上返回31条
      * 且含已删除页面）。现在改为优先读静态，以后加页面不用再动这里。 */
-    const SITEMAP_FALLBACK = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
+    const SITEMAP_FALLBACK = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://home.saoo.me/</loc>
     <lastmod>2026-11-02</lastmod>
@@ -303,7 +303,7 @@ export default {
     <lastmod>2026-11-02</lastmod>
   </url>
 </urlset>
-";
+`;
 
     if (pathname === '/sitemap.xml') {
       let body = SITEMAP_FALLBACK;
