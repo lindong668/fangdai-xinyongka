@@ -260,10 +260,17 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 </div>
 
 <script>
+/* ★语言切换加固（2026-11-02）
+ * 1) localStorage 在 iOS Safari 隐私模式/禁用网站数据时会抛 SecurityError，
+ *    未捕获会导致整个脚本中断，语言下拉失效。全部改为安全读写。
+ * 2) 跳转前同步写入语言标记，避免 URL 已切、状态未同步造成“切不回去”。 */
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+
 (function(){
   var KEY='calchub_lang';
   function valid(v){ return (v==='zh'||v==='en') ? v : null; }
-  function cur(){ return valid(localStorage.getItem(KEY)) || 'en'; }
+  function cur(){ return valid(lsGet(KEY)) || 'en'; }
   function apply(lang){
     document.documentElement.lang = (lang==='zh') ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-lang-block]').forEach(function(el){
@@ -277,7 +284,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
   }
   window.selectLang=function(lang){
     if(!valid(lang)) lang='en';
-    localStorage.setItem(KEY,lang); apply(lang);
+    lsSet(KEY,lang); apply(lang);
     var d=document.getElementById('langDropdown'); if(d) d.classList.remove('show');
     var b=document.getElementById('langBtn'); if(b) b.classList.remove('open');
   };
@@ -295,7 +302,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 })();
 </script>
 <script>
-function goZh() {
+function goZh() {try{localStorage.setItem('calchub_lang','zh');}catch(e){}
   var p = location.pathname;
   if (!p || p === '/' || p === '/index.html') { location.href = '/zh/index.html'; }
   else { location.href = '/zh' + p; }

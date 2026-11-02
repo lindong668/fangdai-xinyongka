@@ -87,9 +87,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
   "@graph": [
     {
       "@type": "Article",
-      "headline": "International Transfer Fees: Compare True Cost",
-      "description": "Compare international money transfers properly: the effective cost formula, the four places fees hide, why small transfers cost more, and fraud red flags.",
-      "inLanguage": "en",
+      "headline": "跨境汇款：如何比较真实成本",
+      "description": "换汇的真实成本不只是手续费，点差才是大头。",
+      "inLanguage": "zh-CN",
       "datePublished": "2026-10-22",
       "dateModified": "2026-10-22",
       "author": {
@@ -104,9 +104,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://home.saoo.me/guides/remittance-cost-guide.html"
+        "@id": "https://home.saoo.me/zh/guides/remittance-cost-guide.html"
       },
-      "keywords": "international money transfer fees, remittance cost comparison, effective transfer cost, hidden transfer fees, cheapest way to send money abroad",
+      "keywords": "international money transfer fees, remittance cost comparison, effective transfer cost, hidden transfer fees, cheapest way to send money abroad, 跨境汇款,汇款手续费,实际汇率,电汇费用,小额汇款,汇款渠道对比",
       "articleSection": "Personal Finance",
       "wordCount": 2500
     },
@@ -116,20 +116,20 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
-          "item": "https://home.saoo.me/"
+          "name": "首页",
+          "item": "https://home.saoo.me/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Guides",
-          "item": "https://home.saoo.me/guides/"
+          "name": "深度指南",
+          "item": "https://home.saoo.me/zh/guides/"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Remittance Costs",
-          "item": "https://home.saoo.me/guides/remittance-cost-guide.html"
+          "name": "跨境汇款：如何比较真实成本",
+          "item": "https://home.saoo.me/zh/guides/remittance-cost-guide.html"
         }
       ]
     }
@@ -299,7 +299,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <script>
 function toggleLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.toggle('show');if(b)b.classList.toggle('open');}
 function closeLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.remove('show');if(b)b.classList.remove('open');}
-function goEn(){var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
+function goEn(){try{localStorage.setItem('calchub_lang','en');}catch(e){}var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
 document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.lang-switcher')){closeLang();}});
 (function(){var l=document.getElementById('langLabel');if(l)l.textContent='中文';})();
 </script>

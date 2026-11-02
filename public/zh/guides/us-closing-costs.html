@@ -90,9 +90,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
   "@graph": [
     {
       "@type": "Article",
-      "headline": "How Mortgages Work: Amortization & Principal",
-      "description": "How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.",
-      "inLanguage": "en",
+      "headline": "美国过户费用详解：交割当天到底要付多少",
+      "description": "美国过户费用详解：占贷款额的比例区间、贷款方费用、第三方费用、预缴托管项，以及如何看懂 Loan Estimate。",
+      "inLanguage": "zh-CN",
       "datePublished": "2026-10-22",
       "dateModified": "2026-10-22",
       "author": {
@@ -107,9 +107,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://home.saoo.me/guides/mortgage-basics.html"
+        "@id": "https://home.saoo.me/zh/guides/us-closing-costs.html"
       },
-      "keywords": "mortgage calculator, amortization schedule, mortgage principal and interest, equal instalment vs equal principal, fixed vs variable mortgage rate, debt to income ratio",
+      "keywords": "美国过户费用,closing costs,过户成本,Loan Estimate,美国买房费用",
       "articleSection": "Personal Finance",
       "wordCount": 2500
     },
@@ -119,20 +119,20 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
-          "item": "https://home.saoo.me/"
+          "name": "首页",
+          "item": "https://home.saoo.me/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Guides",
-          "item": "https://home.saoo.me/guides/"
+          "name": "深度指南",
+          "item": "https://home.saoo.me/zh/guides/"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "How Mortgages Work",
-          "item": "https://home.saoo.me/guides/mortgage-basics.html"
+          "name": "美国过户费用详解：交割当天到底要付多少",
+          "item": "https://home.saoo.me/zh/guides/us-closing-costs.html"
         }
       ]
     }
@@ -273,7 +273,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <script>
 function toggleLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.toggle('show');if(b)b.classList.toggle('open');}
 function closeLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.remove('show');if(b)b.classList.remove('open');}
-function goEn(){var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
+function goEn(){try{localStorage.setItem('calchub_lang','en');}catch(e){}var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
 document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.lang-switcher')){closeLang();}});
 (function(){var l=document.getElementById('langLabel');if(l)l.textContent='中文';})();
 </script>

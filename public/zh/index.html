@@ -3422,7 +3422,7 @@ function closeLang() {
   if (dd) dd.classList.remove('show');
   if (btn) btn.classList.remove('open');
 }
-function goEn() {
+function goEn() {try{localStorage.setItem('calchub_lang','en');}catch(e){}
   var p = location.pathname.replace(/^\/zh/, '');
   if (!p || p === '' || p === '/index.html') { location.href = '/'; }
   else { location.href = p; }

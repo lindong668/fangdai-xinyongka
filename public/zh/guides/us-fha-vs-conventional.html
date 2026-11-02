@@ -90,9 +90,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
   "@graph": [
     {
       "@type": "Article",
-      "headline": "How Mortgages Work: Amortization & Principal",
-      "description": "How mortgages really work: amortization explained, equal instalment vs equal principal, why early payments are mostly interest, fixed vs variable rates, and the DTI ratio.",
-      "inLanguage": "en",
+      "headline": "FHA、常规贷款与 VA 贷款：美国三大房贷类型横向对比",
+      "description": "用真实数字对比 FHA、常规贷款与 VA 贷款：首付要求、MIP 与 PMI 差异、前期保费，以及 40 万美元房产的真实月供。",
+      "inLanguage": "zh-CN",
       "datePublished": "2026-10-22",
       "dateModified": "2026-10-22",
       "author": {
@@ -107,9 +107,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://home.saoo.me/guides/mortgage-basics.html"
+        "@id": "https://home.saoo.me/zh/guides/us-fha-vs-conventional.html"
       },
-      "keywords": "mortgage calculator, amortization schedule, mortgage principal and interest, equal instalment vs equal principal, fixed vs variable mortgage rate, debt to income ratio",
+      "keywords": "FHA 贷款,常规贷款,VA 贷款,美国房贷类型对比,FHA MIP,USDA 贷款",
       "articleSection": "Personal Finance",
       "wordCount": 2500
     },
@@ -119,20 +119,20 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
-          "item": "https://home.saoo.me/"
+          "name": "首页",
+          "item": "https://home.saoo.me/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Guides",
-          "item": "https://home.saoo.me/guides/"
+          "name": "深度指南",
+          "item": "https://home.saoo.me/zh/guides/"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "How Mortgages Work",
-          "item": "https://home.saoo.me/guides/mortgage-basics.html"
+          "name": "FHA、常规贷款与 VA 贷款：美国三大房贷类型横向对比",
+          "item": "https://home.saoo.me/zh/guides/us-fha-vs-conventional.html"
         }
       ]
     }
@@ -284,7 +284,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <script>
 function toggleLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.toggle('show');if(b)b.classList.toggle('open');}
 function closeLang(){var d=document.getElementById('langDropdown'),b=document.getElementById('langBtn');if(d)d.classList.remove('show');if(b)b.classList.remove('open');}
-function goEn(){var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
+function goEn(){try{localStorage.setItem('calchub_lang','en');}catch(e){}var p=location.pathname.replace(/^\/zh/,'');if(!p||p===''||p==='/index.html'){location.href='/';}else{location.href=p;}}
 document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.lang-switcher')){closeLang();}});
 (function(){var l=document.getElementById('langLabel');if(l)l.textContent='中文';})();
 </script>
